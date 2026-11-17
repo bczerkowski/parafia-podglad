@@ -726,3 +726,20 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 .announce ol > li:first-child::before { top: 4px; }
 @media (max-width: 600px) { .announce ol > li { font-size: 1.14rem; padding-top: 20px; padding-bottom: 20px; } .announce ol > li::before { top: 18px; } }
 @media print { .announce ol > li { font-size: 12pt; padding: 7pt 0 7pt 30pt; } .announce ol > li::before { top: 6pt; } .office .hours li.is-today { background: none; box-shadow: none; } }
+
+/* Duszpasterze – jednolite portrety 4:5 */
+.priests-photo { margin: 0 0 28px; }
+.priests-photo img { border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 4 / 3; object-fit: cover; }
+.priest { align-items: center; gap: 24px; }
+.priest__photo { width: 150px; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 12px; flex: none; box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--line), var(--shadow); }
+.priest h2 { font-size: 1.8rem; margin: 0 0 4px; }
+.priest__contact { margin-top: 8px !important; }
+@media (max-width: 560px) {
+  .priest { display: grid; grid-template-columns: 96px 1fr; column-gap: 14px; row-gap: 2px; align-items: start; }
+  .priest > div { display: contents; }
+  .priest__photo { width: 96px; border-radius: 10px; grid-row: 1 / span 3; grid-column: 1; }
+  .priest .role, .priest h2, .priest h2 + p { grid-column: 2; }
+  .priest h2 { font-size: 1.4rem; }
+  .priest .priest__contact { grid-column: 1 / -1; margin-top: 12px !important; padding-top: 10px; border-top: 1px solid var(--line); overflow-wrap: break-word; }
+}
+.priest a[href^="tel:"] { white-space: nowrap; }
