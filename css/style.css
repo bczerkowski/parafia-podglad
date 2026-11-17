@@ -743,3 +743,8 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
   .priest .priest__contact { grid-column: 1 / -1; margin-top: 12px !important; padding-top: 10px; border-top: 1px solid var(--line); overflow-wrap: break-word; }
 }
 .priest a[href^="tel:"] { white-space: nowrap; }
+
+/* Znak parafii (węzeł Trójcy z krzyżem) – pole w proporcjach znaku */
+.brand__symbol { width: auto; height: 70px; aspect-ratio: 140 / 192; }
+@media (max-width: 480px) { .brand__symbol { width: auto; height: 50px; } }
+@media (max-width: 350px) { .brand__symbol { display: none; } }

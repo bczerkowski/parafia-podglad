@@ -1,8 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 48 48" role="img" aria-label="Triquetra – węzeł Trójcy Świętej">
-  <g fill="none" stroke="#b48f3f" stroke-width="2" stroke-linejoin="round">
-    <path d="M32 35A12.7 12.7 0 0 1 32 13A12.7 12.7 0 0 1 32 35Z"/>
-    <path d="M32 35A12.7 12.7 0 0 1 12.95 46A12.7 12.7 0 0 1 32 35Z"/>
-    <path d="M32 35A12.7 12.7 0 0 1 51.05 46A12.7 12.7 0 0 1 32 35Z"/>
-    <circle cx="32" cy="35" r="11"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 4 140 192" role="img" aria-label="Znak parafii – węzeł Trójcy Świętej z krzyżem">
+  <defs>
+    <linearGradient id="zloto" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2c57c"/>
+      <stop offset=".55" stop-color="#c29a45"/>
+      <stop offset="1" stop-color="#9a7428"/>
+    </linearGradient>
+  </defs>
+  <!-- Klasyczny węzeł Trójcy (triquetra): trzy łuki z okręgów o promieniu 58,9 i środkach w wierzchołkach trójkąta równobocznego.
+       Górny łuk wychodzi ponad okrąg, na jego szczycie krzyż; dolne łuki kończą się na okręgu. -->
+  <g fill="none" stroke="url(#zloto)" stroke-width="6.5" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M100 46V11M88 23h24"/>
+    <!-- okrąg z przerwą u góry: przechodzi „pod” górnym łukiem jak na wzorze -->
+    <path d="M128.37 72.31A62.5 62.5 0 1 1 71.63 72.31"/>
+    <path d="M100 47A58.9 58.9 0 0 1 100 149A58.9 58.9 0 0 1 100 47Z"/>
+    <path d="M41.1 149A58.9 58.9 0 0 1 129.45 98A58.9 58.9 0 0 1 41.1 149Z"/>
+    <path d="M158.9 149A58.9 58.9 0 0 1 70.55 98A58.9 58.9 0 0 1 158.9 149Z"/>
   </g>
 </svg>

@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#1b2942"/>
-  <g fill="none" stroke="#d9b867" stroke-width="3" stroke-linejoin="round" transform="translate(32 33) scale(1.12) translate(-32 -32)">
-    <path d="M32 35A12.7 12.7 0 0 1 32 13A12.7 12.7 0 0 1 32 35Z"/>
-    <path d="M32 35A12.7 12.7 0 0 1 12.95 46A12.7 12.7 0 0 1 32 35Z"/>
-    <path d="M32 35A12.7 12.7 0 0 1 51.05 46A12.7 12.7 0 0 1 32 35Z"/>
-    <circle cx="32" cy="35" r="11"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="40" fill="#1b2942"/>
+  <g transform="translate(100 101) scale(.86) translate(-100 -100)" fill="none" stroke="#e2c57c" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M100 46V11M88 23h24"/>
+    <path d="M128.37 72.31A62.5 62.5 0 1 1 71.63 72.31"/>
+    <path d="M100 47A58.9 58.9 0 0 1 100 149A58.9 58.9 0 0 1 100 47Z"/>
+    <path d="M41.1 149A58.9 58.9 0 0 1 129.45 98A58.9 58.9 0 0 1 41.1 149Z"/>
+    <path d="M158.9 149A58.9 58.9 0 0 1 70.55 98A58.9 58.9 0 0 1 158.9 149Z"/>
   </g>
 </svg>
