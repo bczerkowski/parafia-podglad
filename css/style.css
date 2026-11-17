@@ -237,7 +237,7 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
   .hero:has(.hero__bg--zachod) h1, .hero:has(.hero__bg--zachod) .hero__quote, .hero:has(.hero__bg--zachod) .hero__eyebrow { text-shadow: 0 2px 12px rgba(10, 16, 28, .65); }
 }
 @media (min-width: 901px) {
-  .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.webp"); background-position: 22% 40%; }
+  .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.webp"); background-position: 0% 45%; }
   .hero:has(.hero__bg--zachod)::after {
     background: linear-gradient(90deg, #131d30 0%, #131d30 36%, rgba(19,29,48,.45) 40%, rgba(19,29,48,0) 48%),
                 linear-gradient(0deg, rgba(19,29,48,.3), transparent 30%);
