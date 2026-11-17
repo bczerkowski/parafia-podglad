@@ -555,7 +555,7 @@
           (img ? '<img src="' + esc(img) + '" alt="" loading="lazy">' : '<div class="tile__ph"><img src="img/triquetra.svg" alt="" width="56" height="56"></div>') +
           '<div class="news-card__body"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time>' +
           '<h3>' + esc(w.tytul) + '</h3><p>' + esc(w.opis || w.tresc[0] || '') + '</p>' +
-          '<a href="' + esc(href) + '"' + (w.link ? ' rel="noopener" target="_blank"' : '') + '>Pełna relacja →</a></div></article>';
+          '<a href="' + esc(href) + '"' + (/^https?:/.test(href) ? ' rel="noopener" target="_blank"' : '') + '>Pełna relacja →</a></div></article>';
       }).join('');
       $('#aktualnosci-sekcja').hidden = false;
     }).catch(function () { /* sekcja opcjonalna */ });
@@ -569,7 +569,7 @@
           '<h2>' + esc(w.tytul) + '</h2>' +
           (w.data ? '<p class="day__sub"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time></p>' : '') +
           w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-          (w.link ? '<p><a href="' + esc(w.link) + '" rel="noopener" target="_blank">Pełna relacja →</a></p>' : '') +
+          (w.link ? '<p><a href="' + esc(w.link) + '"' + (/^https?:/.test(w.link) ? ' rel="noopener" target="_blank"' : '') + '>' + (/^https?:/.test(w.link) ? 'Pełna relacja →' : 'Zobacz ogłoszenia parafialne →') + '</a></p>' : '') +
           (w.youtube ? '<div class="video"><button type="button" class="video__facade" data-yt="' + esc(w.youtube) + '"' +
             ' style="background-image:url(\'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg\')"' +
             ' aria-label="Odtwórz film: ' + esc(w.tytul) + ' (YouTube)">' +

@@ -701,3 +701,28 @@ html[data-contrast="high"] .announce ol > li::before { background: #000; }
   .nav a, .nav__more { white-space: nowrap; padding: 10px 10px; }
   .nav__cta { margin-left: 4px; }
 }
+
+/* „Poznaj naszą parafię” – równa siatka 3 × 2 */
+.tiles--parish { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.tiles--parish .tile { flex: none; }
+@media (max-width: 900px) { .tiles--parish { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tiles--parish { grid-template-columns: 1fr; gap: 16px; } }
+
+/* Kancelaria – większe godziny, więcej odstępu, wyraźny dzisiejszy dzień */
+.office .hours li { padding: 16px 12px; margin: 0 -12px; font-size: 1.18rem; border-radius: 10px; }
+.office .hours li span { font-size: 1.45rem; }
+.office .hours li small { font-size: .9rem; margin-top: 2px; }
+.office .hours li.is-today { background: var(--gold-soft); border-bottom-color: transparent; box-shadow: inset 4px 0 0 #d9b867; }
+.office .hours li.is-today b::after { content: " · dziś"; color: var(--gold-text); }
+.office .office-status { padding: 14px 16px; }
+.office .office-status b { font-size: 1.15rem; }
+html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box-shadow: inset 4px 0 0 #000; }
+
+/* Ogłoszenia – o ok. 1 px większy tekst i większe odstępy (dla starszych parafian) */
+.announce ol > li { font-size: 1.18rem; padding-top: 24px; padding-bottom: 24px; }
+.announce ol > li:first-child { padding-top: 6px; }
+.announce ol > li li { font-size: 1.1rem; }
+.announce ol > li::before { top: 22px; }
+.announce ol > li:first-child::before { top: 4px; }
+@media (max-width: 600px) { .announce ol > li { font-size: 1.14rem; padding-top: 20px; padding-bottom: 20px; } .announce ol > li::before { top: 18px; } }
+@media print { .announce ol > li { font-size: 12pt; padding: 7pt 0 7pt 30pt; } .announce ol > li::before { top: 6pt; } .office .hours li.is-today { background: none; box-shadow: none; } }

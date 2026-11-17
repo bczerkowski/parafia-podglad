@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://swtrojca.pl/img/kosciol-zewnatrz.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=mwki18ix">
+<link rel="stylesheet" href="css/style.css?v=mwkifvut">
 <script>try{var f=localStorage.getItem('font'),c=localStorage.getItem('contrast');if(f&&f!=='0')document.documentElement.setAttribute('data-font',f);if(c==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
 <script type="application/ld+json">
 {
@@ -39,7 +39,7 @@
   "sameAs": ["https://www.facebook.com/swtrojcakrzyki/"]
 }
 </script>
-<script src="js/main.js?v=mwki18ix" defer></script>
+<script src="js/main.js?v=mwkifvut" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -168,7 +168,22 @@
   </div>
 </section>
 
-<section class="section" id="kancelaria" aria-labelledby="kanc-title">
+
+<!-- Aktualności: sekcja pojawia się automatycznie, gdy w content/aktualnosci.json są wpisy z ostatnich 12 miesięcy -->
+<section class="section" id="aktualnosci-sekcja" aria-labelledby="akt-title" hidden>
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <span class="eyebrow">Z życia parafii</span>
+        <h2 id="akt-title">Aktualności i wydarzenia</h2>
+      </div>
+      <a class="btn btn--line btn--sm" href="aktualnosci.html">Wszystkie aktualności <svg aria-hidden="true"><use href="img/icons.svg#i-arrow"/></svg></a>
+    </div>
+    <div class="news-grid" id="aktualnosci-home"></div>
+  </div>
+</section>
+
+<section class="section section--cream" id="kancelaria" aria-labelledby="kanc-title">
   <div class="wrap">
     <div class="section__head">
       <div>
@@ -205,7 +220,7 @@
   </div>
 </section>
 
-<section class="section section--cream" aria-labelledby="poznaj-title">
+<section class="section" aria-labelledby="poznaj-title">
   <div class="wrap">
     <div class="section__head">
       <div>
@@ -223,8 +238,8 @@
         <div class="tile__body"><h3>Sakramenty</h3><p>Chrzest, I Komunia, bierzmowanie, małżeństwo, spowiedź – terminy i dokumenty.</p></div>
       </a>
       <a class="tile" href="duszpasterze.html">
-        <!-- Brak zdjęć duszpasterzy: neutralne miejsce na zdjęcie. Po otrzymaniu fotografii od parafii zamień na <img class="tile__img" ...> -->
-        <div class="tile__ph"><img src="img/triquetra.svg" alt="" width="64" height="64"><span>Miejsce na zdjęcie duszpasterzy</span></div>
+        <!-- Zdjęcie z archiwum parafii (roraty, Adwent 2020). Po otrzymaniu portretów obecnych duszpasterzy można je tu podmienić. -->
+        <img class="tile__img" src="img/adwent-2020/thumb/49.jpg" alt="Kapłan przy ołtarzu podczas rorat w kościele Trójcy Świętej" loading="lazy" width="520" height="696" style="object-position:50% 40%">
         <div class="tile__body"><h3>Duszpasterze</h3><p>Ks. Proboszcz i księża wikariusze.</p></div>
       </a>
       <a class="tile" href="wspolnoty.html">
@@ -232,25 +247,15 @@
         <div class="tile__body"><h3>Wspólnoty i grupy</h3><p>Żywy Różaniec, schole, młodzież, Wspólnota Rodzin św. Rity i inne.</p></div>
       </a>
       <a class="tile" href="galeria.html">
-        <img class="tile__img" src="img/adwent-2020/thumb/45.jpg" alt="Wierni we wnętrzu kościoła" loading="lazy" width="520" height="390">
+        <img class="tile__img" src="img/adwent-2020/thumb/44.jpg" alt="Liturgia w kościele Trójcy Świętej" loading="lazy" width="520" height="390">
         <div class="tile__body"><h3>Galeria</h3><p>Zdjęcia z życia parafii i jej historii.</p></div>
+      </a>
+      <a class="tile" href="aktualnosci.html">
+        <img class="tile__img" src="img/sdm/thumb/27.jpg" alt="Parafianie żegnają pielgrzymów wyjeżdżających na Światowe Dni Młodzieży" loading="lazy" width="520" height="364">
+        <div class="tile__body"><h3>Aktualności i wydarzenia</h3><p>Uroczystości, pielgrzymki, spotkania wspólnot i inicjatywy parafii.</p></div>
       </a>
     </div>
     <p class="follow"><a class="btn btn--line btn--sm" href="https://www.facebook.com/swtrojcakrzyki" rel="noopener" target="_blank"><svg aria-hidden="true"><use href="img/icons.svg#i-facebook"/></svg>Obserwuj nas na Facebooku<span class="visually-hidden"> (otwiera się w nowej karcie)</span></a></p>
-  </div>
-</section>
-
-<!-- Aktualności: sekcja pojawia się automatycznie, gdy w content/aktualnosci.json są wpisy z ostatnich 12 miesięcy -->
-<section class="section" id="aktualnosci-sekcja" aria-labelledby="akt-title" hidden>
-  <div class="wrap">
-    <div class="section__head">
-      <div>
-        <span class="eyebrow">Z życia parafii</span>
-        <h2 id="akt-title">Aktualności i wydarzenia</h2>
-      </div>
-      <a class="btn btn--line btn--sm" href="aktualnosci.html">Wszystkie aktualności <svg aria-hidden="true"><use href="img/icons.svg#i-arrow"/></svg></a>
-    </div>
-    <div class="news-grid" id="aktualnosci-home"></div>
   </div>
 </section>
 </main>
