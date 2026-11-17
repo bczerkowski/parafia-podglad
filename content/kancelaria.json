@@ -1,0 +1,21 @@
+{
+  "_instrukcja": "Godziny kancelarii i dane kontaktowe. 'uwaga' wyświetla się na złotym tle (np. o zmianie godzin) – zostaw pusty tekst, jeśli nie potrzeba.",
+  "uwaga": "Uwaga – zmiana godzin urzędowania.",
+  "godziny": [
+    { "dzien": "Wtorek", "godz": "19:00 – 20:00" },
+    { "dzien": "Czwartek", "godz": "16:00 – 18:00", "dopisek": "w czasie ferii i kolędy – nieczynna" },
+    { "dzien": "Sobota", "godz": "9:00 – 10:00" }
+  ],
+  "godzinyDodatkowe": [
+    "W czasie wakacji w czwartek kancelaria nieczynna.",
+    "W czasie kolędy i ferii zimowych: wtorek 19:00 – 20:00, sobota 9:00 – 10:00."
+  ],
+  "telefony": [
+    { "opis": "Kancelaria / ks. Proboszcz", "numer": "71 362 82 54" },
+    { "opis": "Księża wikariusze", "numer": "71 362 81 62" },
+    { "opis": "Ks. Proboszcz (komórka)", "numer": "694 453 433" }
+  ],
+  "email": "proboszczswtrojca@gmail.com",
+  "konto": "62 1020 5242 0000 2602 0121 0681",
+  "odbiorcaKonta": "Rzymskokatolicka Parafia pw. Trójcy Świętej, ul. Krzycka 42-44, 53-020 Wrocław"
+}

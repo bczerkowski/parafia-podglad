@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="8 8 48 48" role="img" aria-label="Triquetra – węzeł Trójcy Świętej">
+  <g fill="none" stroke="#b48f3f" stroke-width="2" stroke-linejoin="round">
+    <path d="M32 35A12.7 12.7 0 0 1 32 13A12.7 12.7 0 0 1 32 35Z"/>
+    <path d="M32 35A12.7 12.7 0 0 1 12.95 46A12.7 12.7 0 0 1 32 35Z"/>
+    <path d="M32 35A12.7 12.7 0 0 1 51.05 46A12.7 12.7 0 0 1 32 35Z"/>
+    <circle cx="32" cy="35" r="11"/>
+  </g>
+</svg>

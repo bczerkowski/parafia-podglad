@@ -1,0 +1,25 @@
+{
+  "_instrukcja": "Albumy zdjęć. Zdjęcia wgraj do img/<katalog>/ (duże, do ok. 1600 px szerokości) oraz miniatury do img/<katalog>/thumb/ (ok. 520 px).",
+  "albumy": [
+    {
+      "tytul": "Rozpoczęcie Adwentu 2020",
+      "katalog": "adwent-2020",
+      "zdjecia": ["43.jpg", "42.jpg", "44.jpg", "45.jpg", "46.jpg", "47.jpg", "48.jpg", "49.jpg"]
+    },
+    {
+      "tytul": "Światowe Dni Młodzieży",
+      "katalog": "sdm",
+      "zdjecia": ["23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg"]
+    },
+    {
+      "tytul": "Droga krzyżowa ulicami 2013",
+      "katalog": "droga-krzyzowa-2013",
+      "zdjecia": ["17.jpg", "16.jpg", "18.jpg", "19.jpg", "21.jpg", "20.jpg", "22.jpg"]
+    },
+    {
+      "tytul": "Historia",
+      "katalog": "historia",
+      "zdjecia": ["10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg"]
+    }
+  ]
+}

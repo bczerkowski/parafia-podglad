@@ -1,0 +1,28 @@
+{
+  "_instrukcja": "Stały porządek Mszy świętych. 'bezWakacji': true = tej Mszy nie ma w wakacje. 'wakacje' to okres letni (MM-DD). 'swietaStale' = dni (MM-DD) z porządkiem niedzielnym co roku; Poniedziałek Wielkanocny i Boże Ciało liczone są automatycznie. 'dodatkoweSwieta' = pojedyncze daty (RRRR-MM-DD) z porządkiem niedzielnym.",
+  "niedziele": [
+    { "godz": "7:00" },
+    { "godz": "9:00" },
+    { "godz": "10:30", "uwaga": "z udziałem dzieci" },
+    { "godz": "12:00" },
+    { "godz": "13:30", "bezWakacji": true },
+    { "godz": "18:00" },
+    { "godz": "19:30", "bezWakacji": true }
+  ],
+  "powszednie": [
+    { "godz": "6:30" },
+    { "godz": "7:30", "bezWakacji": true },
+    { "godz": "18:30" }
+  ],
+  "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30.",
+  "uwagaPowszednie": "W wakacje nie ma Mszy św. o 7:30.",
+  "uwagaSwieta": "Święta zniesione – według porządku tygodniowego.",
+  "spowiedz": [
+    "Codziennie w czasie Mszy świętej.",
+    "W pierwszy czwartek, piątek i sobotę miesiąca – podczas adoracji Najświętszego Sakramentu od 17:00 do 19:00.",
+    "W czasie wakacji – 15 minut przed Mszą św."
+  ],
+  "wakacje": { "od": "07-01", "do": "08-31" },
+  "swietaStale": ["01-01", "01-06", "08-15", "11-01", "12-25", "12-26"],
+  "dodatkoweSwieta": []
+}
