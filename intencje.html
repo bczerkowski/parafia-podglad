@@ -5,21 +5,21 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Intencje mszalne – Parafia Trójcy Świętej we Wrocławiu</title>
-<meta name="description" content="Intencje Mszy świętych na bieżący tydzień w parafii pw. Trójcy Świętej we Wrocławiu.">
+<meta name="description" content="Intencje Mszy świętych na bieżący tydzień w parafii pw. Trójcy Świętej we Wrocławiu – pełny harmonogram tygodnia.">
 <link rel="canonical" href="https://swtrojca.pl/intencje.html">
 <meta name="theme-color" content="#1b2942">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Parafia pw. Trójcy Świętej we Wrocławiu">
 <meta property="og:title" content="Intencje mszalne – Parafia Trójcy Świętej we Wrocławiu">
-<meta property="og:description" content="Intencje Mszy świętych na bieżący tydzień w parafii pw. Trójcy Świętej we Wrocławiu.">
+<meta property="og:description" content="Intencje Mszy świętych na bieżący tydzień w parafii pw. Trójcy Świętej we Wrocławiu – pełny harmonogram tygodnia.">
 <meta property="og:url" content="https://swtrojca.pl/intencje.html">
 <meta property="og:image" content="https://swtrojca.pl/img/kosciol-zewnatrz.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=mwkhd1e5">
+<link rel="stylesheet" href="css/style.css?v=mwki18ix">
 <script>try{var f=localStorage.getItem('font'),c=localStorage.getItem('contrast');if(f&&f!=='0')document.documentElement.setAttribute('data-font',f);if(c==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
-<script src="js/main.js?v=mwkhd1e5" defer></script>
+<script src="js/main.js?v=mwki18ix" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -88,9 +88,18 @@
 </section>
 <section class="section">
   <div class="wrap narrow">
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px">
-      <a class="btn btn--navy btn--sm" href="#dzis" onclick="var t=document.querySelector('.week-day.is-today');if(t){t.scrollIntoView({behavior:'smooth'});return false;}"><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Przejdź do dzisiaj</a>
-      <button type="button" class="btn btn--line btn--sm" data-print><svg aria-hidden="true"><use href="img/icons.svg#i-print"/></svg>Drukuj</button>
+    <nav class="week-nav no-print" aria-label="Wybór tygodnia">
+      <button type="button" class="btn btn--line btn--sm" id="week-prev"><svg aria-hidden="true"><use href="img/icons.svg#i-left"/></svg>Poprzedni tydzień</button>
+      <div class="week-nav__mid">
+        <strong id="week-label">Bieżący tydzień</strong>
+        <span data-week>…</span>
+      </div>
+      <button type="button" class="btn btn--line btn--sm" id="week-next">Następny tydzień<svg aria-hidden="true"><use href="img/icons.svg#i-right"/></svg></button>
+    </nav>
+    <div class="toolbar toolbar--compact no-print">
+      <button type="button" class="btn btn--gold btn--sm" id="week-now" hidden><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Wróć do bieżącego tygodnia</button>
+      <a class="btn btn--navy btn--sm" id="jump-today" href="#dzis" onclick="var t=document.querySelector('.week-day.is-today');if(t){t.scrollIntoView({behavior:'smooth'});return false;}"><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Przejdź do dzisiaj</a>
+      <button type="button" class="btn btn--line btn--sm" data-print><svg aria-hidden="true"><use href="img/icons.svg#i-print"/></svg>Drukuj intencje</button>
     </div>
     <div class="grid" id="intencje-tydzien"><p class="loading">Wczytywanie intencji…</p></div>
     <p class="note" style="margin-top:24px"><svg aria-hidden="true"><use href="img/icons.svg#i-info"/></svg><span>W sprawie zamawiania intencji prosimy o kontakt z <a href="kancelaria.html">kancelarią parafialną</a>.</span></p>
@@ -127,11 +136,11 @@
       <div>
         <h3>Parafia</h3>
         <ul>
-          <li><a href="o-parafii.html">Historia</a></li>
+          <li><a href="o-parafii.html">Historia parafii</a></li>
           <li><a href="duszpasterze.html">Duszpasterze</a></li>
           <li><a href="wspolnoty.html">Wspólnoty i grupy</a></li>
           <li><a href="galeria.html">Galeria</a></li>
-          <li><a href="https://www.facebook.com/swtrojcakrzyki/" rel="noopener" target="_blank">Facebook parafii</a></li>
+          <li><a href="https://www.facebook.com/swtrojcakrzyki/" rel="noopener" target="_blank">Facebook parafii<span class="visually-hidden"> (otwiera się w nowej karcie)</span></a></li>
           <li><a href="https://www.misyjne.pl/" rel="noopener" target="_blank">Misyjne.pl</a></li>
           <li><a href="https://www.wroclaw.caritas.pl/" rel="noopener" target="_blank">Caritas Archidiecezji Wrocławskiej</a></li>
         </ul>
@@ -140,7 +149,7 @@
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Parafia pw. Trójcy Świętej we Wrocławiu</span>
       <span>Zdjęcie kościoła: <a href="https://commons.wikimedia.org/wiki/File:Holy_Trinity_church_in_Wroc%C5%82aw_Krzyki_2014_P01.JPG" rel="noopener" target="_blank">Pnapora</a>, licencja <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.pl" rel="noopener" target="_blank">CC BY-SA 3.0</a></span>
-      <a href="#tresc">Do góry ↑</a>
+      <span class="footer-links"><a href="polityka-prywatnosci.html">Polityka prywatności</a> <a href="#tresc">Do góry ↑</a></span>
     </div>
   </div>
 </footer>

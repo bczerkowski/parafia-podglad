@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Aktualności – najnowsze na górze. Pola: tytul, data (RRRR-MM-DD, opcjonalnie), tresc (lista akapitów), youtube (identyfikator filmu, opcjonalnie).",
+  "_instrukcja": "Aktualności i wydarzenia – najnowsze na górze. Pola: tytul, data (RRRR-MM-DD), opis (1–2 zdania na stronę główną), tresc (lista akapitów), zdjecie (np. img/aktualnosci/pielgrzymka.jpg – opcjonalnie), link (adres pełnej relacji, np. post na Facebooku – opcjonalnie), youtube (identyfikator filmu – opcjonalnie). Wpisy z ostatnich 12 miesięcy pokazują się automatycznie na stronie głównej (maks. 3).",
   "wpisy": [
     {
       "tytul": "Nauki przedmałżeńskie – czasowo odwołane",

@@ -1,0 +1,4 @@
+{
+  "_instrukcja": "Archiwum ogłoszeń. Gdy wpisujesz nowe ogłoszenia do ogloszenia.json, skopiuj poprzednie (cały blok: tytul, data, punkty) i wklej jako pierwszy element listy \"tygodnie\" poniżej. Strona sama pokaże je w wyborze tygodnia na podstronie Ogłoszenia. Przykład jednego tygodnia: { \"tytul\": \"32 Niedziela Zwykła\", \"data\": \"2026-11-08\", \"punkty\": [\"...\"] }",
+  "tygodnie": []
+}

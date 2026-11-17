@@ -1,0 +1,4 @@
+{
+  "_instrukcja": "Archiwum intencji (a także intencje na kolejne tygodnie, jeśli są już znane). Każdy element listy \"tygodnie\" ma ten sam kształt co intencje.json: { \"tydzien\": \"8–14 listopada 2026\", \"dni\": [ ... ] }. Gdy wpisujesz nowy tydzień do intencje.json, przenieś poprzedni tutaj. Kolejność nie ma znaczenia – strona sama sortuje tygodnie po dacie.",
+  "tygodnie": []
+}

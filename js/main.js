@@ -121,6 +121,11 @@
   });
 
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
+  var hdr = $('.site-header');
+  if (hdr) {
+    var onScroll = function () { hdr.classList.toggle('is-scrolled', window.scrollY > 8); };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  }
   $$('[data-print]').forEach(function (b) { b.addEventListener('click', function () { window.print(); }); });
 
   /* ---------- kalendarz: święta i wakacje ---------- */
@@ -215,6 +220,12 @@
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaPowszednie) + '</span></p>' +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaSwieta) + '</span></p>';
       if (elConf) elConf.innerHTML = '<ul class="checklist">' + cfg.spowiedz.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>';
+      // legenda: co oznacza granatowe wyróżnienie godziny
+      var leg = $('#msze-legenda');
+      if (leg && nextToday) {
+        $('.legend-chip', leg).textContent = nextToday.mass.godz;
+        leg.hidden = false;
+      }
       // karta obowiązująca dziś dostaje wyróżnienie i znaczek „Dziś”
       if (!today.exception) {
         var card = $(today.sunday ? '.mass-card--sunday' : '.mass-card--weekday');
@@ -251,19 +262,51 @@
   }
 
   /* ---------- Ogłoszenia ---------- */
+  // plik opcjonalny (np. archiwum) – brak pliku nie jest błędem
+  function loadOptional(name, fallback) { return load(name).catch(function () { return fallback; }); }
+  function param(name) { var m = new RegExp('[?&]' + name + '=([^&#]*)').exec(location.search); return m ? decodeURIComponent(m[1]) : null; }
+  function setParam(name, value) {
+    try { var u = new URL(location.href); if (value) u.searchParams.set(name, value); else u.searchParams.delete(name); history.replaceState(null, '', u); } catch (e) { /* stara przeglądarka */ }
+  }
+  function annItems(o) {
+    return o.punkty.map(function (p) {
+      if (typeof p === 'string') return '<li><p>' + esc(p) + '</p></li>';
+      return '<li><p>' + esc(p.tekst) + '</p>' +
+        (p.lista ? '<ul>' + p.lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
+        (p.dopisek ? '<p class="dopisek">' + esc(p.dopisek) + '</p>' : '') + '</li>';
+    }).join('');
+  }
   var elAnn = $('#ogloszenia');
   if (elAnn) {
-    load('ogloszenia').then(function (o) {
-      var items = o.punkty.map(function (p) {
-        if (typeof p === 'string') return '<li><p>' + esc(p) + '</p></li>';
-        return '<li><p>' + esc(p.tekst) + '</p>' +
-          (p.lista ? '<ul>' + p.lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
-          (p.dopisek ? '<p class="dopisek">' + esc(p.dopisek) + '</p>' : '') + '</li>';
-      }).join('');
-      var d = parseDate(o.data);
-      $$('[data-ann-title]').forEach(function (el) { el.textContent = o.tytul; });
-      $$('[data-ann-date]').forEach(function (el) { el.textContent = longDate(d) + ' r.'; el.setAttribute('datetime', o.data); });
-      elAnn.innerHTML = '<ol>' + items + '</ol>';
+    Promise.all([load('ogloszenia'), loadOptional('ogloszenia-archiwum', { tygodnie: [] })]).then(function (res) {
+      var current = res[0];
+      var weeks = [current].concat((res[1].tygodnie || []).filter(function (w) { return w.data !== current.data; }))
+        .sort(function (a, b) { return a.data < b.data ? 1 : -1; });
+      var sel = $('#ann-week'), note = $('#ann-archive-note');
+      function render(o) {
+        var d = parseDate(o.data);
+        $$('[data-ann-title]').forEach(function (el) { el.textContent = o.tytul; });
+        $$('[data-ann-date]').forEach(function (el) { el.textContent = longDate(d) + ' r.'; el.setAttribute('datetime', o.data); });
+        elAnn.innerHTML = '<ol>' + annItems(o) + '</ol>';
+        if (note) {
+          note.hidden = o === current;
+          if (o !== current) note.innerHTML = icon('info') + '<span>To ogłoszenia archiwalne z dnia ' + esc(longDate(d)) + ' r. <a href="ogloszenia.html">Wróć do bieżących ogłoszeń</a></span>';
+        }
+      }
+      var chosen = weeks.filter(function (w) { return w.data === param('tydzien'); })[0] || current;
+      render(chosen);
+      if (sel) {
+        sel.innerHTML = weeks.map(function (w) {
+          return '<option value="' + esc(w.data) + '"' + (w === chosen ? ' selected' : '') + '>' +
+            esc(longDate(parseDate(w.data))) + ' – ' + esc(w.tytul) + (w === current ? ' (bieżące)' : '') + '</option>';
+        }).join('');
+        sel.disabled = weeks.length < 2;
+        var hint = $('#ann-week-hint'); if (hint) hint.hidden = weeks.length > 1;
+        sel.addEventListener('change', function () {
+          var w = weeks.filter(function (x) { return x.data === sel.value; })[0];
+          setParam('tydzien', w === current ? null : w.data); render(w);
+        });
+      }
       var lim = elAnn.getAttribute('data-collapse');
       if (lim && elAnn.scrollHeight > 640) {
         elAnn.classList.add('announce--collapsed');
@@ -334,15 +377,34 @@
   }
   var elWeekInt = $('#intencje-tydzien');
   if (elWeekInt) {
-    load('intencje').then(function (data) {
-      var todayIso = isoDate(warsawNow());
-      $$('[data-week]').forEach(function (el) { el.textContent = data.tydzien; });
-      elWeekInt.innerHTML = data.dni.map(function (day) {
-        var h = dayHeading(day), today = day.data === todayIso;
-        return '<article class="card week-day' + (today ? ' is-today' : '') + '" id="d-' + day.data + '">' +
-          '<h2 class="day__title" style="font-size:1.6rem">' + esc(h.title) + (today ? ' <span class="badge">dziś</span>' : '') + '</h2>' +
-          (h.sub ? '<p class="day__sub">' + esc(h.sub) + '</p>' : '') + intentionsList(day) + '</article>';
-      }).join('');
+    Promise.all([load('intencje'), loadOptional('intencje-archiwum', { tygodnie: [] })]).then(function (res) {
+      var current = res[0], todayIso = isoDate(warsawNow());
+      var first = function (w) { return w.dni[0].data; };
+      // tygodnie od najstarszego do najnowszego
+      var weeks = [current].concat((res[1].tygodnie || []).filter(function (w) { return first(w) !== first(current); }))
+        .sort(function (a, b) { return first(a) < first(b) ? -1 : 1; });
+      var pos = weeks.indexOf(weeks.filter(function (w) { return first(w) === param('tydzien'); })[0] || current);
+      var prev = $('#week-prev'), next = $('#week-next'), now = $('#week-now');
+      function render() {
+        var data = weeks[pos], isCur = data === current;
+        $$('[data-week]').forEach(function (el) { el.textContent = data.tydzien; });
+        elWeekInt.innerHTML = data.dni.map(function (day) {
+          var h = dayHeading(day), today = day.data === todayIso;
+          return '<article class="card week-day' + (today ? ' is-today' : '') + '" id="d-' + day.data + '">' +
+            '<h2 class="day__title">' + esc(h.title) + (today ? ' <span class="badge">dziś</span>' : '') + '</h2>' +
+            (h.sub ? '<p class="day__sub">' + esc(h.sub) + '</p>' : '') + intentionsList(day) + '</article>';
+        }).join('');
+        if (prev) { prev.disabled = pos === 0; prev.title = pos === 0 ? 'Brak wcześniejszych tygodni w archiwum' : ''; }
+        if (next) next.disabled = pos === weeks.length - 1;
+        if (now) now.hidden = isCur;
+        var lab = $('#week-label'); if (lab) lab.textContent = isCur ? 'Bieżący tydzień' : (first(data) < first(current) ? 'Tydzień archiwalny' : 'Kolejny tydzień');
+        var jump = $('#jump-today'); if (jump) jump.hidden = !document.getElementById('d-' + todayIso);
+        setParam('tydzien', isCur ? null : first(data));
+      }
+      if (prev) prev.addEventListener('click', function () { if (pos > 0) { pos--; render(); } });
+      if (next) next.addEventListener('click', function () { if (pos < weeks.length - 1) { pos++; render(); } });
+      if (now) now.addEventListener('click', function () { pos = weeks.indexOf(current); render(); });
+      render();
       var t = document.getElementById('d-' + todayIso);
       if (t && location.hash === '#dzis') t.scrollIntoView();
     }).catch(function () { fail(elWeekInt, 'intencje mszalne'); });
@@ -352,16 +414,45 @@
   var elOffice = $('#kancelaria-godziny'), elContact = $('#kancelaria-kontakt'), elAcc = $('#konto');
   if (elOffice || elContact || elAcc) {
     load('kancelaria').then(function (k) {
-      var wd = cap(DNI[warsawNow().getDay()]);
-      if (elOffice) elOffice.innerHTML = (k.uwaga ? '<p class="alert">' + esc(k.uwaga) + '</p>' : '') +
-        '<ul class="hours">' + k.godziny.map(function (g) {
-          return '<li' + (g.dzien === wd ? ' class="is-today"' : '') + '><b>' + esc(g.dzien) + '</b><span>' + esc(g.godz) + '</span>' +
-            (g.dopisek ? '<small>' + esc(g.dopisek) + '</small>' : '') + '</li>';
-        }).join('') + '</ul>' +
-        k.godzinyDodatkowe.map(function (s) { return '<p class="note">' + icon('info') + '<span>' + esc(s) + '</span></p>'; }).join('');
-      if (elContact) elContact.innerHTML = '<ul class="contact-list">' + k.telefony.map(function (t) {
-        return '<li>' + icon('phone') + '<div><small>' + esc(t.opis) + '</small><a href="' + telHref(t.numer) + '">' + esc(t.numer) + '</a></div></li>';
-      }).join('') + '<li>' + icon('mail') + '<div><small>E-mail</small><a href="mailto:' + esc(k.email) + '">' + esc(k.email) + '</a></div></li></ul>';
+      var now = warsawNow(), wd = cap(DNI[now.getDay()]);
+      // najbliższy dyżur wyliczony z godzin w kancelaria.json (bez zgadywania wyjątków – te opisują notki pod spodem)
+      function officeStatus() {
+        var nowMin = now.getHours() * 60 + now.getMinutes();
+        for (var i = 0; i < 8; i++) {
+          var d = addDays(now, i), name = cap(DNI[d.getDay()]);
+          var g = k.godziny.filter(function (x) { return x.dzien === name; })[0];
+          if (!g) continue;
+          var m = g.godz.match(/(\d{1,2})[:.](\d{2})\D+(\d{1,2})[:.](\d{2})/);
+          if (!m) continue;
+          var start = +m[1] * 60 + +m[2], end = +m[3] * 60 + +m[4];
+          if (i === 0 && nowMin >= start && nowMin < end) return { open: true, g: g };
+          if (i > 0 || nowMin < start) return { open: false, g: g, today: i === 0, offset: i, d: d };
+        }
+        return null;
+      }
+      if (elOffice) {
+        var st = officeStatus(), statusHtml = '';
+        if (st) {
+          statusHtml = st.open
+            ? '<p class="office-status office-status--open"><b>Kancelaria jest teraz czynna</b><span>dziś do ' + esc(st.g.godz.split(/[–-]/).pop().trim()) + '</span></p>'
+            : '<p class="office-status"><b>' + (st.today ? 'Dziś dyżur: ' : 'Najbliższy dyżur: ') + esc(st.today ? st.g.godz : (st.offset === 1 ? 'jutro' : st.g.dzien.toLowerCase())) + '</b>' +
+              '<span>' + (st.today ? 'kancelaria będzie czynna w tych godzinach' : esc(st.g.godz)) + '</span></p>';
+        }
+        elOffice.innerHTML = (k.uwaga ? '<p class="alert">' + esc(k.uwaga) + '</p>' : '') + statusHtml +
+          '<ul class="hours">' + k.godziny.map(function (g) {
+            return '<li' + (g.dzien === wd ? ' class="is-today"' : '') + '><b>' + esc(g.dzien) + '</b><span>' + esc(g.godz) + '</span>' +
+              (g.dopisek ? '<small>' + esc(g.dopisek) + '</small>' : '') + '</li>';
+          }).join('') + '</ul>' +
+          '<div class="office-notes">' + k.godzinyDodatkowe.map(function (s) { return '<p class="note">' + icon('info') + '<span>' + esc(s) + '</span></p>'; }).join('') + '</div>';
+      }
+      if (elContact) {
+        var main = k.telefony[0], rest = k.telefony.slice(1);
+        elContact.innerHTML = '<div class="contact-main"><small>' + esc(main.opis) + '</small>' +
+          '<a class="contact-main__tel" href="' + telHref(main.numer) + '">' + icon('phone') + esc(main.numer) + '</a></div>' +
+          '<ul class="contact-list">' + rest.map(function (t) {
+            return '<li>' + icon('phone') + '<div><small>' + esc(t.opis) + '</small><a href="' + telHref(t.numer) + '">' + esc(t.numer) + '</a></div></li>';
+          }).join('') + '<li>' + icon('mail') + '<div><small>E-mail</small><a href="mailto:' + esc(k.email) + '">' + esc(k.email) + '</a></div></li></ul>';
+      }
       if (elAcc) {
         elAcc.innerHTML = '<div class="account__label">Konto parafii – ofiary</div>' +
           '<div class="account__nr" id="konto-nr">' + esc(k.konto) + '</div>' +
@@ -441,13 +532,44 @@
   }
 
   /* ---------- Aktualności ---------- */
+  function slug(s) {
+    return String(s).toLowerCase().replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; })
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+  function newsImage(w) {
+    if (w.zdjecie) return w.zdjecie;
+    if (w.youtube) return 'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg';
+    return null;
+  }
+  // strona główna: maks. 3 wpisy z ostatnich 12 miesięcy; bez takich wpisów sekcja pozostaje ukryta
+  var elNewsHome = $('#aktualnosci-home');
+  if (elNewsHome) {
+    load('aktualnosci').then(function (a) {
+      var limit = addDays(warsawNow(), -365);
+      var recent = a.wpisy.filter(function (w) { return w.data && parseDate(w.data) >= limit; })
+        .sort(function (x, y) { return x.data < y.data ? 1 : -1; }).slice(0, 3);
+      if (!recent.length) return;
+      elNewsHome.innerHTML = recent.map(function (w) {
+        var img = newsImage(w), href = w.link || ('aktualnosci.html#' + slug(w.tytul));
+        return '<article class="news-card">' +
+          (img ? '<img src="' + esc(img) + '" alt="" loading="lazy">' : '<div class="tile__ph"><img src="img/triquetra.svg" alt="" width="56" height="56"></div>') +
+          '<div class="news-card__body"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time>' +
+          '<h3>' + esc(w.tytul) + '</h3><p>' + esc(w.opis || w.tresc[0] || '') + '</p>' +
+          '<a href="' + esc(href) + '"' + (w.link ? ' rel="noopener" target="_blank"' : '') + '>Pełna relacja →</a></div></article>';
+      }).join('');
+      $('#aktualnosci-sekcja').hidden = false;
+    }).catch(function () { /* sekcja opcjonalna */ });
+  }
   var elNews = $('#aktualnosci');
   if (elNews) {
     load('aktualnosci').then(function (a) {
       elNews.innerHTML = a.wpisy.map(function (w) {
-        return '<article class="card"><h2 style="font-size:1.8rem">' + esc(w.tytul) + '</h2>' +
+        return '<article class="card news-entry" id="' + slug(w.tytul) + '">' +
+          (w.zdjecie ? '<img class="news-entry__img" src="' + esc(w.zdjecie) + '" alt="" loading="lazy">' : '') +
+          '<h2>' + esc(w.tytul) + '</h2>' +
           (w.data ? '<p class="day__sub"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time></p>' : '') +
           w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
+          (w.link ? '<p><a href="' + esc(w.link) + '" rel="noopener" target="_blank">Pełna relacja →</a></p>' : '') +
           (w.youtube ? '<div class="video"><button type="button" class="video__facade" data-yt="' + esc(w.youtube) + '"' +
             ' style="background-image:url(\'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg\')"' +
             ' aria-label="Odtwórz film: ' + esc(w.tytul) + ' (YouTube)">' +
