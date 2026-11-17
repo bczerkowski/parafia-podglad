@@ -229,8 +229,8 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
 @media (max-width: 900px) {
   .hero__bg--photo { background-position: 45% 20%; }
 }
-/* Zdjęcie o zachodzie słońca: pionowe na telefonach, poziome na komputerach */
-.hero__bg--zachod { background-image: url("../img/kosciol-zachod-pion.jpg"); background-position: 35% 25%; }
+/* Zdjęcie kościoła w świetle zachodzącego słońca (naturalne kolory, bez retuszu HDR) */
+.hero__bg--zachod { background-image: url("../img/kosciol-zachod.jpg"); background-position: 35% 30%; }
 @media (max-width: 900px) {
   .hero:has(.hero__bg--zachod)::after {
     background: linear-gradient(180deg, rgba(19,29,48,.78) 0%, rgba(19,29,48,.6) 45%, rgba(19,29,48,.45) 75%, rgba(19,29,48,.7) 100%);
@@ -239,11 +239,11 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
 }
 /* na telefonie baner jest niski i szeroki – lepiej pasuje kadr panoramiczny */
 @media (max-width: 600px) {
-  .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.jpg"); background-position: 42% 35%; }
+  .hero__bg--zachod { background-image: url("../img/kosciol-zachod.jpg"); background-position: 38% 25%; }
   .hero:has(.hero__bg--zachod)::after { background: linear-gradient(180deg, rgba(19,29,48,.62), rgba(19,29,48,.5) 55%, rgba(19,29,48,.72)); }
 }
 @media (min-width: 901px) {
-  .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.jpg"); background-position: 0% 45%; }
+  .hero__bg--zachod { background-image: url("../img/kosciol-zachod.jpg"); background-position: 0% 40%; }
   .hero:has(.hero__bg--zachod)::after {
     background: linear-gradient(90deg, #131d30 0%, #131d30 36%, rgba(19,29,48,.45) 40%, rgba(19,29,48,0) 48%),
                 linear-gradient(0deg, rgba(19,29,48,.3), transparent 30%);
