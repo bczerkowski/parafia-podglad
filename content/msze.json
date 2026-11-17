@@ -24,5 +24,7 @@
   ],
   "wakacje": { "od": "07-01", "do": "08-31" },
   "swietaStale": ["01-01", "01-06", "08-15", "11-01", "12-25", "12-26"],
-  "dodatkoweSwieta": []
+  "dodatkoweSwieta": [],
+  "_instrukcjaZmiany": "Wyjątkowe zmiany godzin w konkretne dni. Przykład: { \"data\": \"2026-12-24\", \"opis\": \"Wigilia Bożego Narodzenia\", \"msze\": [ { \"godz\": \"6:30\" }, { \"godz\": \"24:00\", \"uwaga\": \"Pasterka\" } ] }. Pusta lista msze: [] oznacza, że tego dnia nie ma Mszy. Zamiast listy można podać \"porzadek\": \"niedzielny\" albo \"powszedni\". Zmiany na najbliższe 14 dni wyświetlają się automatycznie przy godzinach Mszy.",
+  "zmiany": []
 }

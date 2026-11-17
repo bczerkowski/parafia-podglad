@@ -17,9 +17,9 @@
 <meta property="og:image" content="https://swtrojca.pl/img/kosciol-zewnatrz.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=mwkgugao">
+<link rel="stylesheet" href="css/style.css?v=mwkh7uch">
 <script>try{var f=localStorage.getItem('font'),c=localStorage.getItem('contrast');if(f&&f!=='0')document.documentElement.setAttribute('data-font',f);if(c==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
-<script src="js/main.js?v=mwkgugao" defer></script>
+<script src="js/main.js?v=mwkh7uch" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -90,13 +90,16 @@
 
 <section class="section">
   <div class="wrap">
+    <div id="msze-zmiany" hidden></div>
     <div class="grid grid--2">
-      <article class="card mass-card">
-        <h2 style="font-size:1.8rem;display:flex;gap:10px;align-items:center"><svg aria-hidden="true" style="width:26px;height:26px;color:var(--gold)"><use href="img/icons.svg#i-sun"/></svg>Niedziele i święta nakazane</h2>
+      <article class="card mass-card mass-card--sunday" aria-labelledby="mc-sun">
+        <div class="mass-card__band">Niedziele i święta nakazane <span class="badge badge--today" data-today-badge hidden>Dziś</span></div>
+        <h2 id="mc-sun"><svg aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>Niedziele i święta</h2>
         <div id="msze-niedziele"><p class="loading">Wczytywanie…</p></div>
       </article>
-      <article class="card mass-card">
-        <h2 style="font-size:1.8rem;display:flex;gap:10px;align-items:center"><svg aria-hidden="true" style="width:26px;height:26px;color:var(--gold)"><use href="img/icons.svg#i-calendar"/></svg>Dni powszednie</h2>
+      <article class="card mass-card mass-card--weekday" aria-labelledby="mc-week">
+        <div class="mass-card__band">Poniedziałek – sobota <span class="badge badge--today" data-today-badge hidden>Dziś</span></div>
+        <h2 id="mc-week"><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Dni powszednie</h2>
         <div id="msze-powszednie"><p class="loading">Wczytywanie…</p></div>
       </article>
     </div>

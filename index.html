@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://swtrojca.pl/img/kosciol-zewnatrz.jpg">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=mwkgugao">
+<link rel="stylesheet" href="css/style.css?v=mwkh7uch">
 <script>try{var f=localStorage.getItem('font'),c=localStorage.getItem('contrast');if(f&&f!=='0')document.documentElement.setAttribute('data-font',f);if(c==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
 <script type="application/ld+json">
 {
@@ -39,7 +39,7 @@
   "sameAs": ["https://www.facebook.com/swtrojcakrzyki/"]
 }
 </script>
-<script src="js/main.js?v=mwkgugao" defer></script>
+<script src="js/main.js?v=mwkh7uch" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
@@ -109,10 +109,11 @@
       <a class="btn btn--gold" href="#msze"><svg aria-hidden="true"><use href="img/icons.svg#i-clock"/></svg>Godziny Mszy Świętych</a>
       <a class="btn btn--ghost" href="#ogloszenia-sekcja">Ogłoszenia i intencje</a>
     </div>
-    <div class="next-mass" id="next-mass" hidden aria-live="polite">
+    <!-- Bez danych (np. błąd wczytania) pole pokazuje link do harmonogramu zamiast pustego komunikatu -->
+    <a class="next-mass" id="next-mass" href="#msze" aria-live="polite">
       <span class="next-mass__icon"><svg aria-hidden="true"><use href="img/icons.svg#i-cross"/></svg></span>
-      <span><span class="next-mass__label">Najbliższa Msza święta</span><span class="next-mass__value">—</span></span>
-    </div>
+      <span><span class="next-mass__label">Msze święte</span><span class="next-mass__value">Zobacz godziny ↓</span></span>
+    </a>
   </div>
 </section>
 
@@ -124,20 +125,22 @@
         <h2 id="msze-title">Msze Święte</h2>
         <p class="lead" style="margin:0" data-today-type></p>
       </div>
-      <a class="btn btn--line btn--sm" href="msze.html">Nabożeństwa i spowiedź <svg aria-hidden="true"><use href="img/icons.svg#i-arrow"/></svg></a>
+      <a class="btn btn--line btn--sm section__more" href="msze.html">Nabożeństwa i spowiedź <svg aria-hidden="true"><use href="img/icons.svg#i-arrow"/></svg></a>
     </div>
+    <div id="msze-zmiany" hidden></div>
     <div class="grid grid--2">
-      <article class="card mass-card">
-        <h3><svg aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>Niedziele i święta</h3>
-        <p class="mass-card__sub">Niedziele i święta nakazane</p>
+      <article class="card mass-card mass-card--sunday" aria-labelledby="mc-sun">
+        <div class="mass-card__band">Niedziele i święta nakazane <span class="badge badge--today" data-today-badge hidden>Dziś</span></div>
+        <h3 id="mc-sun"><svg aria-hidden="true"><use href="img/icons.svg#i-sun"/></svg>Niedziele i święta</h3>
         <div id="msze-niedziele"><p class="loading">Wczytywanie…</p></div>
       </article>
-      <article class="card mass-card">
-        <h3><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Dni powszednie</h3>
-        <p class="mass-card__sub">Od poniedziałku do soboty</p>
+      <article class="card mass-card mass-card--weekday" aria-labelledby="mc-week">
+        <div class="mass-card__band">Poniedziałek – sobota <span class="badge badge--today" data-today-badge hidden>Dziś</span></div>
+        <h3 id="mc-week"><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg>Dni powszednie</h3>
         <div id="msze-powszednie"><p class="loading">Wczytywanie…</p></div>
       </article>
     </div>
+    <p class="section__more-mobile"><a href="msze.html">Nabożeństwa, spowiedź i porządek okresowy →</a></p>
   </div>
 </section>
 

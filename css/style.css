@@ -55,6 +55,7 @@ html[data-contrast="high"] .panel { border: 2px solid #000; }
 html[data-contrast="high"] .hero__bg { opacity: .25; }
 
 *, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body {
   margin: 0;
   background: var(--bg);
@@ -236,6 +237,11 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
   }
   .hero:has(.hero__bg--zachod) h1, .hero:has(.hero__bg--zachod) .hero__quote, .hero:has(.hero__bg--zachod) .hero__eyebrow { text-shadow: 0 2px 12px rgba(10, 16, 28, .65); }
 }
+/* na telefonie baner jest niski i szeroki – lepiej pasuje kadr panoramiczny */
+@media (max-width: 600px) {
+  .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.jpg"); background-position: 42% 35%; }
+  .hero:has(.hero__bg--zachod)::after { background: linear-gradient(180deg, rgba(19,29,48,.62), rgba(19,29,48,.5) 55%, rgba(19,29,48,.72)); }
+}
 @media (min-width: 901px) {
   .hero__bg--zachod { background-image: url("../img/kosciol-zachod-szeroki.jpg"); background-position: 0% 45%; }
   .hero:has(.hero__bg--zachod)::after {
@@ -255,6 +261,8 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
   background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(6px);
   border-radius: var(--radius); padding: 14px 20px;
 }
+a.next-mass { color: #fff; text-decoration: none; }
+a.next-mass:hover { background: rgba(255,255,255,.18); color: #fff; }
 .next-mass__icon { width: 42px; height: 42px; border-radius: 50%; background: #d9b867; color: var(--navy); display: grid; place-items: center; flex: none; }
 .next-mass__icon svg { width: 22px; height: 22px; }
 .next-mass__label { font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; color: #cfd6e4; display: block; }
@@ -292,9 +300,28 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
 .grid > * { min-width: 0; }
 
 /* ---------- Msze ---------- */
-.mass-card h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-.mass-card h3 svg { width: 24px; height: 24px; color: var(--gold); flex: none; }
+.mass-card { padding-top: 0; overflow: hidden; }
+.mass-card h2, .mass-card h3 { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; font-size: clamp(1.5rem, 2.6vw, 1.8rem); }
+.mass-card h2 svg, .mass-card h3 svg { width: 26px; height: 26px; color: var(--gold); flex: none; }
 .mass-card__sub { color: var(--muted); font-size: .95rem; margin-bottom: 18px; }
+/* pasek u góry karty: złoty = niedziele i święta, granatowy = dni powszednie */
+.mass-card__band {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  margin: 0 calc(-1 * clamp(20px, 3vw, 32px)) 18px; padding: 10px clamp(20px, 3vw, 32px);
+  font-size: .82rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+}
+.mass-card--sunday .mass-card__band { background: #ead8a6; color: #4a3a10; }
+.mass-card--weekday .mass-card__band { background: var(--navy); color: #fff; }
+.mass-card--sunday .time { background: #fbf3df; border-color: #e6d3a0; }
+.badge--today { background: var(--navy); color: #fff; letter-spacing: .08em; }
+.mass-card--weekday .badge--today { background: #d9b867; color: var(--navy); }
+.mass-card--today { box-shadow: 0 0 0 3px #d9b867, var(--shadow); border-color: #d9b867; }
+html[data-contrast="high"] .mass-card--sunday .mass-card__band { background: #fff3c4; color: #000; border-bottom: 2px solid #000; }
+.alert--changes { font-weight: 400; margin-bottom: 22px; }
+.alert--changes strong { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.alert--changes svg { width: 18px; height: 18px; }
+.alert--changes ul { margin: 0; padding-left: 1.2em; }
+.section__more-mobile { display: none; margin: 16px 0 0; font-weight: 600; }
 .times { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 10px; }
 .times li { margin: 0; }
 .time {
@@ -315,7 +342,8 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
 /* ---------- Ogłoszenia ---------- */
 .announce__meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; color: var(--muted); }
 .announce ol { counter-reset: item; list-style: none; padding: 0; margin: 0; }
-.announce ol > li { counter-increment: item; position: relative; padding: 14px 0 14px 50px; border-top: 1px solid var(--line); margin: 0; }
+.announce ol > li { counter-increment: item; position: relative; padding: 16px 0 16px 50px; border-top: 1px solid var(--line); margin: 0; font-size: 1.06rem; line-height: 1.7; }
+.announce ol > li li { font-size: 1rem; }
 .announce ol > li:first-child { border-top: 0; padding-top: 4px; }
 .announce ol > li::before {
   content: counter(item); position: absolute; left: 0; top: 12px;
@@ -487,10 +515,49 @@ details.more[open] summary { margin-bottom: 8px; }
 .error-box { background: #fdecea; color: #7a1c12; padding: 12px 14px; border-radius: 8px; }
 .toast { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 12px 20px; border-radius: 999px; box-shadow: var(--shadow); z-index: 90; font-weight: 600; }
 
+/* ---------- Telefon: najważniejsze informacje bez przewijania ---------- */
+@media (max-width: 600px) {
+  .hero .wrap { padding-top: 22px; padding-bottom: 20px; }
+  .hero__eyebrow { margin-bottom: 8px; font-size: .72rem; }
+  .hero h1 { font-size: 2.05rem; margin-bottom: 0; }
+  .hero__quote, .hero__actions { display: none; }
+  .next-mass { margin-top: 16px; padding: 10px 14px; width: 100%; }
+  .next-mass__icon { width: 36px; height: 36px; }
+  .next-mass__value { font-size: 1.35rem; }
+  #msze.section { padding-top: 16px; }
+  /* nagłówki zostają dla czytników ekranu, wizualnie zastępują je kolorowe paski kart */
+  #msze .section__head, .mass-card h2, .mass-card h3 { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: 0; }
+  .section__more-mobile { display: block; }
+  .mass-card { padding-left: 14px; padding-right: 14px; padding-bottom: 12px; display: flex; flex-direction: column; }
+  .mass-card__band { margin: 0 -14px 10px; padding: 9px 14px; font-size: .8rem; }
+  .mass-card--today { order: -1; }
+  .times { gap: 7px; margin-bottom: 8px; }
+  .time { min-width: 60px; padding: 7px 6px; font-size: 1.32rem; border-radius: 10px; }
+  .time small { font-size: .66rem; margin-top: 3px; }
+  .mass-card .note { font-size: .86rem; }
+  .mass-card .note + .note { margin-top: 3px; }
+  #msze .grid--2 { display: flex; flex-direction: column; gap: 12px; }
+  .announce ol > li { padding-left: 44px; }
+  /* wygodne przyciski dotykowe */
+  .a11y button { min-width: 40px; min-height: 40px; }
+  .topbar .wrap { min-height: 50px; }
+}
+
 @media print {
-  .topbar, .site-header, .site-footer, .hero__actions, .tabs, .btn, .map-wrap { display: none !important; }
-  body { background: #fff; font-size: 12pt; }
+  .topbar, .site-header, .site-footer, .hero__actions, .tabs, .btn, .map-wrap, .breadcrumb, .section__more-mobile, .no-print, .announce .section__head { display: none !important; }
+  body { background: #fff; font-size: 12pt; color: #000; }
+  main::before { content: "Parafia pw. Trójcy Świętej we Wrocławiu · ul. Krzycka 42-44 · tel. 71 362 82 54 · swtrojca.pl"; display: block; font-size: 10pt; border-bottom: 1px solid #000; padding-bottom: 6pt; margin-bottom: 10pt; }
   .hero, .page-hero { background: none; color: #000; }
-  .hero h1, .page-hero h1 { color: #000; }
-  .card, .panel { box-shadow: none; border: 1px solid #999; }
+  .hero__bg { display: none; }
+  .page-hero .wrap { padding: 0 0 8pt; }
+  .hero h1, .page-hero h1 { color: #000; font-size: 20pt; }
+  .page-hero p { color: #000; }
+  .section { padding: 0; }
+  .card, .panel { box-shadow: none; border: 0; padding: 0; }
+  .announce--collapsed { max-height: none; overflow: visible; }
+  .announce--collapsed::after { display: none; }
+  .announce ol > li { break-inside: avoid; font-size: 12pt; line-height: 1.5; padding: 7pt 0 7pt 30pt; border-top: 1px solid #bbb; }
+  .announce ol > li::before { background: none; border: 1px solid #000; width: 20pt; height: 20pt; font-size: 11pt; top: 6pt; }
+  .week-day { break-inside: avoid; border: 0; border-top: 1px solid #999; box-shadow: none; padding: 6pt 0; }
+  a { color: #000; text-decoration: none; }
 }

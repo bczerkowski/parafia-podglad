@@ -144,11 +144,32 @@
     var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
     return md >= cfg.wakacje.od && md <= cfg.wakacje.do;
   }
+  /* Aktualny czas w Polsce (Europe/Warsaw) – niezależnie od strefy ustawionej w urządzeniu.
+     Zwracamy „lokalną” datę z polskimi wartościami, żeby dalsze obliczenia były proste. */
+  function warsawNow() {
+    try {
+      var parts = {};
+      new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Warsaw', year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date())
+        .forEach(function (p) { parts[p.type] = p.value; });
+      return new Date(+parts.year, +parts.month - 1, +parts.day, +parts.hour, +parts.minute);
+    } catch (e) { return new Date(); }
+  }
+  function exceptionFor(d, cfg) {
+    var iso = isoDate(d);
+    return (cfg.zmiany || []).filter(function (z) { return z.data === iso; })[0] || null;
+  }
   function massesFor(d, cfg) {
+    var ex = exceptionFor(d, cfg);
     var sunday = d.getDay() === 0 || isFeast(d, cfg);
-    var list = sunday ? cfg.niedziele : cfg.powszednie;
+    if (ex) {
+      if (ex.porzadek === 'niedzielny') sunday = true;
+      if (ex.porzadek === 'powszedni') sunday = false;
+    }
     var hol = isHoliday(d, cfg);
-    return { sunday: sunday, list: list.filter(function (m) { return !(hol && m.bezWakacji); }) };
+    var list = (ex && ex.msze) ? ex.msze : (sunday ? cfg.niedziele : cfg.powszednie).filter(function (m) { return !(hol && m.bezWakacji); });
+    list = list.slice().sort(function (a, b) { return toMin(a.godz) - toMin(b.godz); });
+    return { sunday: sunday, list: list, exception: ex };
   }
   function nextMass(cfg, now) {
     for (var i = 0; i < 8; i++) {
@@ -161,16 +182,19 @@
     }
     return null;
   }
+  // do testów logiki „najbliższej Mszy” w konsoli przeglądarki
+  window.ParafiaKalendarz = { massesFor: massesFor, nextMass: nextMass, warsawNow: warsawNow, isFeast: isFeast, relDay: function (n) { return relDay(n); } };
   function relDay(n) {
     if (n.offset === 0) return 'dziś';
     if (n.offset === 1) return 'jutro';
     var w = n.day.getDay();
-    return (w === 2 ? 'we ' : 'w ') + ['niedzielę', 'poniedziałek', 'wtorek', 'środę', 'czwartek', 'piątek', 'sobotę'][w];
+    return (w === 2 ? 'we ' : 'w ') + ['niedzielę', 'poniedziałek', 'wtorek', 'środę', 'czwartek', 'piątek', 'sobotę'][w] +
+      ' ' + n.day.getDate() + '.' + pad(n.day.getMonth() + 1);
   }
 
   /* ---------- Msze święte ---------- */
   function renderTimes(list, cfg, isToday, next) {
-    var hol = isHoliday(new Date(), cfg);
+    var hol = isHoliday(warsawNow(), cfg);
     return '<ul class="times">' + list.map(function (m) {
       var off = hol && m.bezWakacji;
       var isNext = next && isToday && next.mass === m;
@@ -183,19 +207,45 @@
   var elSun = $('#msze-niedziele'), elWeek = $('#msze-powszednie'), elNext = $('#next-mass'), elConf = $('#spowiedz-lista');
   if (elSun || elWeek || elNext || elConf) {
     load('msze').then(function (cfg) {
-      var now = new Date(), today = massesFor(now, cfg), next = nextMass(cfg, now);
-      if (elSun) elSun.innerHTML = renderTimes(cfg.niedziele, cfg, today.sunday, next && next.offset === 0 ? next : null) +
+      var now = warsawNow(), today = massesFor(now, cfg), next = nextMass(cfg, now);
+      var nextToday = next && next.offset === 0 && !today.exception ? next : null;
+      if (elSun) elSun.innerHTML = renderTimes(cfg.niedziele, cfg, today.sunday, nextToday) +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaNiedziele) + '</span></p>';
-      if (elWeek) elWeek.innerHTML = renderTimes(cfg.powszednie, cfg, !today.sunday, next && next.offset === 0 ? next : null) +
+      if (elWeek) elWeek.innerHTML = renderTimes(cfg.powszednie, cfg, !today.sunday, nextToday) +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaPowszednie) + '</span></p>' +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaSwieta) + '</span></p>';
       if (elConf) elConf.innerHTML = '<ul class="checklist">' + cfg.spowiedz.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>';
+      // karta obowiązująca dziś dostaje wyróżnienie i znaczek „Dziś”
+      if (!today.exception) {
+        var card = $(today.sunday ? '.mass-card--sunday' : '.mass-card--weekday');
+        if (card) {
+          card.classList.add('mass-card--today');
+          var b = $('[data-today-badge]', card); if (b) b.hidden = false;
+        }
+      }
+      // zmiany godzin w najbliższych 14 dniach
+      var elCh = $('#msze-zmiany');
+      if (elCh) {
+        var soon = (cfg.zmiany || []).filter(function (z) {
+          var dd = parseDate(z.data); return dd >= addDays(new Date(now.getFullYear(), now.getMonth(), now.getDate()), 0) && dd <= addDays(now, 14);
+        }).sort(function (a, b) { return a.data < b.data ? -1 : 1; });
+        if (soon.length) {
+          elCh.innerHTML = '<div class="alert alert--changes"><strong>' + icon('info') + ' Zmiany w porządku Mszy</strong><ul>' + soon.map(function (z) {
+            var dd = parseDate(z.data);
+            var times = (z.msze || []).length ? z.msze.map(function (m) { return m.godz + (m.uwaga ? ' (' + m.uwaga + ')' : ''); }).join(', ') : 'brak Mszy świętych';
+            return '<li><b>' + cap(DNI[dd.getDay()]) + ', ' + dd.getDate() + ' ' + MIES[dd.getMonth()] + (z.opis ? ' – ' + esc(z.opis) : '') + ':</b> ' + esc(times) + '</li>';
+          }).join('') + '</ul></div>';
+          elCh.hidden = false;
+        }
+      }
       if (elNext && next) {
+        $('.next-mass__label', elNext).textContent = 'Najbliższa Msza święta';
         $('.next-mass__value', elNext).textContent = cap(relDay(next)) + ', godz. ' + next.mass.godz;
-        elNext.hidden = false;
+        if (elNext.tagName === 'A') elNext.setAttribute('aria-label', 'Najbliższa Msza święta: ' + relDay(next) + ', godzina ' + next.mass.godz + '. Pokaż wszystkie godziny');
       }
       $$('[data-today-type]').forEach(function (el) {
-        el.textContent = today.sunday ? 'Dziś obowiązuje porządek niedzielny' : 'Dziś: porządek dni powszednich';
+        el.textContent = today.exception ? 'Dziś zmieniony porządek Mszy – szczegóły poniżej'
+          : (today.sunday ? 'Dziś obowiązuje porządek niedzielny' : 'Dziś obowiązuje porządek dni powszednich');
       });
     }).catch(function () { [elSun, elWeek].forEach(function (el) { if (el) fail(el, 'porządek Mszy'); }); });
   }
@@ -248,7 +298,7 @@
   var elTabs = $('#intencje-tabs');
   if (elTabs) {
     load('intencje').then(function (data) {
-      var todayIso = isoDate(new Date());
+      var todayIso = isoDate(warsawNow());
       var idx = data.dni.findIndex(function (d) { return d.data === todayIso; });
       if (idx < 0) idx = data.dni.findIndex(function (d) { return d.data > todayIso; });
       if (idx < 0) idx = 0;
@@ -285,7 +335,7 @@
   var elWeekInt = $('#intencje-tydzien');
   if (elWeekInt) {
     load('intencje').then(function (data) {
-      var todayIso = isoDate(new Date());
+      var todayIso = isoDate(warsawNow());
       $$('[data-week]').forEach(function (el) { el.textContent = data.tydzien; });
       elWeekInt.innerHTML = data.dni.map(function (day) {
         var h = dayHeading(day), today = day.data === todayIso;
@@ -302,7 +352,7 @@
   var elOffice = $('#kancelaria-godziny'), elContact = $('#kancelaria-kontakt'), elAcc = $('#konto');
   if (elOffice || elContact || elAcc) {
     load('kancelaria').then(function (k) {
-      var wd = cap(DNI[new Date().getDay()]);
+      var wd = cap(DNI[warsawNow().getDay()]);
       if (elOffice) elOffice.innerHTML = (k.uwaga ? '<p class="alert">' + esc(k.uwaga) + '</p>' : '') +
         '<ul class="hours">' + k.godziny.map(function (g) {
           return '<li' + (g.dzien === wd ? ' class="is-today"' : '') + '><b>' + esc(g.dzien) + '</b><span>' + esc(g.godz) + '</span>' +
