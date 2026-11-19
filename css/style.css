@@ -891,3 +891,6 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .en-sub { font-size: .55em; color: var(--muted); font-family: var(--sans); font-weight: 500; }
 .mass-card h3 { display: flex; align-items: center; gap: 10px; }
 @media (max-width: 600px) { .en-welcome { flex-direction: column; align-items: flex-start; gap: 12px; } }
+.stack { display: grid; gap: 24px; align-content: start; }
+.chapel .group__emblem { width: 64px; height: 64px; margin-bottom: 12px; }
+.chapel .group__emblem svg { width: 40px; height: 40px; }
