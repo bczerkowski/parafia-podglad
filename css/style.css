@@ -871,3 +871,9 @@ html[data-contrast="high"] .devotion__em { background: #fff3c4; color: #000; }
 html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .group__links { display: flex; flex-wrap: wrap; gap: 8px; }
 .group__contact { font-size: .95rem; color: var(--muted); }
+
+/* Intencje na stronie głównej: cały tydzień mieści się w wąskiej kolumnie, bez uciętych kafelków */
+#intencje-tabs .tabs { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; overflow: visible; margin: 0 0 14px; padding: 0 0 10px; }
+#intencje-tabs .tab { min-width: 0; padding: 7px 2px; }
+#intencje-tabs .tab b { font-size: 1.25rem; }
+#intencje-tabs .tab span { font-size: .66rem; letter-spacing: .04em; }
