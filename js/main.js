@@ -144,6 +144,12 @@
     var e = easter(d.getFullYear()), iso = isoDate(d);
     return iso === isoDate(addDays(e, 1)) || iso === isoDate(addDays(e, 60)); // Poniedziałek Wielkanocny, Boże Ciało
   }
+  // święta, w które nie ma wieczornej Mszy (pole „bezSwiat” w msze.json): święta stałe z listy i Boże Ciało
+  function noEveningFeast(d, cfg) {
+    var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    if ((cfg.swietaStale || []).indexOf(md) >= 0) return true;
+    return isoDate(d) === isoDate(addDays(easter(d.getFullYear()), 60));
+  }
   function isHoliday(d, cfg) {
     if (!cfg.wakacje) return false;
     var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
@@ -172,7 +178,7 @@
       if (ex.porzadek === 'powszedni') sunday = false;
     }
     var hol = isHoliday(d, cfg);
-    var list = (ex && ex.msze) ? ex.msze : (sunday ? cfg.niedziele : cfg.powszednie).filter(function (m) { return !(hol && m.bezWakacji); });
+    var list = (ex && ex.msze) ? ex.msze : (sunday ? cfg.niedziele : cfg.powszednie).filter(function (m) { return !(hol && m.bezWakacji) && !(m.bezSwiat && noEveningFeast(d, cfg)); });
     list = list.slice().sort(function (a, b) { return toMin(a.godz) - toMin(b.godz); });
     return { sunday: sunday, list: list, exception: ex };
   }
@@ -201,9 +207,10 @@
   function renderTimes(list, cfg, isToday, next) {
     var hol = isHoliday(warsawNow(), cfg);
     return '<ul class="times">' + list.map(function (m) {
-      var off = hol && m.bezWakacji;
+      var feastOff = isToday && m.bezSwiat && noEveningFeast(warsawNow(), cfg);
+      var off = (hol && m.bezWakacji) || feastOff;
       var isNext = next && isToday && next.mass === m;
-      var label = m.uwaga || (off ? 'nie w wakacje' : '');
+      var label = m.uwaga || (feastOff ? 'nie w to święto' : (off ? 'nie w wakacje' : ''));
       return '<li><span class="time' + (off ? ' time--off' : '') + (isNext ? ' time--next' : '') + '"' +
         (isNext ? ' aria-label="' + esc(m.godz) + ' – najbliższa Msza"' : '') + '>' + esc(m.godz) +
         (isNext ? '<small>najbliższa</small>' : (label ? '<small>' + esc(label) + '</small>' : '')) + '</span></li>';

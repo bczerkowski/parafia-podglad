@@ -41,6 +41,13 @@
       <circle cx="39.5" cy="38.5" r="2.8"/>
       <path d="M34.5 54v-3.2c0-3.6 2.2-6.1 5-6.1s5 2.5 5 6.1V54"/>
     </symbol>
+    <symbol id="e-lso" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 8v20M24.5 15h15"/>
+      <path d="M8 40h48M12 40v16M52 40v16"/>
+      <path d="M15 40V28h4v12M45 40V28h4v12"/>
+      <path d="M17 26c-2-2-1.6-4.4 0-6.4 1.6 2 2 4.4 0 6.4zM47 26c-2-2-1.6-4.4 0-6.4 1.6 2 2 4.4 0 6.4z"/>
+      <path d="M26 40v-6c0-3.3 2.7-6 6-6s6 2.7 6 6v6"/>
+    </symbol>
     <symbol id="e-caritas" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <path d="M32 50C17 40 12 30 18 24c4.6-4.2 10.6-2.8 14 1.8 3.4-4.6 9.4-6 14-1.8 6 6 1 16-14 26z"/>
       <path d="M32 28v14M26 34h12M8 46c6 0 10 4 14 8h20c4-4 8-8 14-8"/></symbol>

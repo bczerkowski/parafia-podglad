@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Stały porządek Mszy świętych. 'bezWakacji': true = tej Mszy nie ma w wakacje. 'wakacje' to okres letni (MM-DD). 'swietaStale' = dni (MM-DD) z porządkiem niedzielnym co roku; Poniedziałek Wielkanocny i Boże Ciało liczone są automatycznie. 'dodatkoweSwieta' = pojedyncze daty (RRRR-MM-DD) z porządkiem niedzielnym.",
+  "_instrukcja": "Stały porządek Mszy świętych. 'bezWakacji': true = tej Mszy nie ma w wakacje. 'bezSwiat': true = tej Mszy nie ma w święta stałe z listy 'swietaStale' ani w Boże Ciało. 'wakacje' to okres letni (MM-DD). 'swietaStale' = dni (MM-DD) z porządkiem niedzielnym co roku; Poniedziałek Wielkanocny i Boże Ciało liczone są automatycznie. 'dodatkoweSwieta' = pojedyncze daty (RRRR-MM-DD) z porządkiem niedzielnym.",
   "niedziele": [
     { "godz": "7:00" },
     { "godz": "9:00" },
@@ -7,14 +7,14 @@
     { "godz": "12:00" },
     { "godz": "13:30", "bezWakacji": true },
     { "godz": "18:00" },
-    { "godz": "19:30", "bezWakacji": true }
+    { "godz": "19:30", "bezWakacji": true, "bezSwiat": true }
   ],
   "powszednie": [
     { "godz": "6:30" },
     { "godz": "7:30", "bezWakacji": true },
     { "godz": "18:30" }
   ],
-  "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30.",
+  "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30. W uroczystości 25 i 26 grudnia, 1 i 6 stycznia, 1 listopada oraz w Boże Ciało nie ma Mszy św. o 19:30.",
   "uwagaPowszednie": "W wakacje nie ma Mszy św. o 7:30.",
   "uwagaSwieta": "Święta zniesione – według porządku tygodniowego.",
   "spowiedz": [
