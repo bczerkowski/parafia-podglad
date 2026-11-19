@@ -558,9 +558,26 @@
     var d = parseDate(day.data);
     return { title: cap(DNI[d.getDay()]) + ', ' + d.getDate() + ' ' + MIES[d.getMonth()], sub: day.nazwa || '' };
   }
+  // Bieżący tydzień intencji: tydzień zawierający dzisiejszą datę – z intencje.json albo z archiwum
+  // (można więc wpisać kolejne tygodnie z wyprzedzeniem; strona przełączy się sama). Zapasowo: intencje.json.
+  function loadIntentionWeeks() {
+    return Promise.all([load('intencje'), loadOptional('intencje-archiwum', { tygodnie: [] })]).then(function (res) {
+      var file = res[0], todayIso = isoDate(warsawNow());
+      var first = function (w) { return w.dni[0].data; }, last = function (w) { return w.dni[w.dni.length - 1].data; };
+      var weeks = [file].concat((res[1].tygodnie || []).filter(function (w) { return w.dni && w.dni.length && first(w) !== first(file); }))
+        .sort(function (a, b) { return first(a) < first(b) ? -1 : 1; });
+      var current = weeks.filter(function (w) { return first(w) <= todayIso && todayIso <= last(w); })[0];
+      if (!current && last(file) < todayIso) {
+        // intencje.json są już nieaktualne – weź najbliższy przyszły tydzień z archiwum, jeśli jest
+        current = weeks.filter(function (w) { return first(w) > todayIso; })[0];
+      }
+      return { current: current || file, weeks: weeks };
+    });
+  }
   var elTabs = $('#intencje-tabs');
   if (elTabs) {
-    load('intencje').then(function (data) {
+    loadIntentionWeeks().then(function (r) {
+      var data = r.current;
       var todayIso = isoDate(warsawNow());
       var idx = data.dni.findIndex(function (d) { return d.data === todayIso; });
       if (idx < 0) idx = data.dni.findIndex(function (d) { return d.data > todayIso; });
@@ -597,12 +614,9 @@
   }
   var elWeekInt = $('#intencje-tydzien');
   if (elWeekInt) {
-    Promise.all([load('intencje'), loadOptional('intencje-archiwum', { tygodnie: [] })]).then(function (res) {
-      var current = res[0], todayIso = isoDate(warsawNow());
+    loadIntentionWeeks().then(function (r) {
+      var current = r.current, weeks = r.weeks, todayIso = isoDate(warsawNow());
       var first = function (w) { return w.dni[0].data; };
-      // tygodnie od najstarszego do najnowszego
-      var weeks = [current].concat((res[1].tygodnie || []).filter(function (w) { return first(w) !== first(current); }))
-        .sort(function (a, b) { return first(a) < first(b) ? -1 : 1; });
       var pos = weeks.indexOf(weeks.filter(function (w) { return first(w) === param('tydzien'); })[0] || current);
       var prev = $('#week-prev'), next = $('#week-next'), now = $('#week-now');
       function render() {
