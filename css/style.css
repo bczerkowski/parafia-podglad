@@ -748,3 +748,32 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 .brand__symbol { width: auto; height: 70px; aspect-ratio: 140 / 192; }
 @media (max-width: 480px) { .brand__symbol { width: auto; height: 50px; } }
 @media (max-width: 350px) { .brand__symbol { display: none; } }
+
+/* Czytania na dziś */
+.mass-readings { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.mass-readings svg { width: 18px; height: 18px; color: var(--gold); flex: none; }
+
+/* Najbliższe nabożeństwa (wyliczane automatycznie) */
+.upcoming { margin-top: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(16px, 2.6vw, 24px); }
+.upcoming h3 { font-size: clamp(1.3rem, 2.4vw, 1.5rem); margin: 0 0 10px; }
+.upcoming__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; }
+@media (max-width: 760px) { .upcoming__list { grid-template-columns: 1fr; } }
+.upcoming__list li { display: flex; gap: 12px; align-items: baseline; padding: 9px 0; border-top: 1px dashed var(--line); margin: 0; }
+.upcoming__date { flex: none; min-width: 74px; font-weight: 700; color: var(--navy); font-size: .95rem; }
+.upcoming__text { color: var(--muted); }
+.upcoming__text b { color: var(--ink); font-weight: 650; }
+.upcoming__list li.is-feast .upcoming__text b { color: var(--gold-text); }
+.upcoming__feast { margin: 12px 0 0; padding-top: 10px; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+.upcoming__feast b { color: var(--navy); }
+@media (max-width: 600px) { .upcoming__date { min-width: 64px; font-size: .9rem; } .upcoming__list li { font-size: .97rem; } }
+@media print { .upcoming { box-shadow: none; border: 0; padding: 0; } }
+
+/* Wyszukiwarka ulic */
+.street-search { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; margin: 4px 0 22px; box-shadow: var(--shadow); max-width: 640px; }
+.street-search label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-size: 1.05rem; }
+.street-search input { width: 100%; font: inherit; font-size: 1.05rem; padding: 12px 14px; min-height: 48px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); }
+.street-search input:focus { outline: 3px solid var(--focus); outline-offset: 1px; }
+.street-search__result { margin: 10px 0 0; min-height: 1.2em; }
+.street-search__result.is-yes { color: #24522a; }
+.street-search__result.is-no { color: #7a1c12; }
+.streets li.is-match { color: var(--navy); font-weight: 700; background: var(--gold-soft); border-radius: 4px; padding: 0 4px; margin-left: -4px; }
