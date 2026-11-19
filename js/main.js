@@ -328,6 +328,119 @@
   }
   window.ParafiaKalendarz && (window.ParafiaKalendarz.devotionsOn = devotionsOn, window.ParafiaKalendarz.trinitySunday = trinitySunday, window.ParafiaKalendarz.adventStart = adventStart);
 
+  /* ---------- Dziś w liturgii ----------
+     1) wspomnienia i święta z punktu „Liturgia tygodnia” w ogłoszeniach (dane od parafii),
+     2) najważniejsze uroczystości i święta (stałe i ruchome, kalendarz ogólny i polski),
+     3) w pozostałe dni – nazwa dnia okresu liturgicznego, np. „Czwartek XXXIII tygodnia zwykłego”. */
+  var ROMAN = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX',
+    'XXI', 'XXII', 'XXIII', 'XXIV', 'XXV', 'XXVI', 'XXVII', 'XXVIII', 'XXIX', 'XXX', 'XXXI', 'XXXII', 'XXXIII', 'XXXIV'];
+  var FIXED = {
+    '01-01': 'Uroczystość Świętej Bożej Rodzicielki Maryi', '01-06': 'Uroczystość Objawienia Pańskiego',
+    '02-02': 'Święto Ofiarowania Pańskiego', '03-19': 'Uroczystość św. Józefa, Oblubieńca NMP',
+    '03-25': 'Uroczystość Zwiastowania Pańskiego', '04-23': 'Uroczystość św. Wojciecha, biskupa i męczennika, patrona Polski',
+    '05-03': 'Uroczystość Najświętszej Maryi Panny, Królowej Polski', '05-08': 'Uroczystość św. Stanisława, biskupa i męczennika, patrona Polski',
+    '06-24': 'Uroczystość Narodzenia św. Jana Chrzciciela', '06-29': 'Uroczystość św. Apostołów Piotra i Pawła',
+    '08-06': 'Święto Przemienienia Pańskiego', '08-15': 'Uroczystość Wniebowzięcia Najświętszej Maryi Panny',
+    '08-26': 'Uroczystość Najświętszej Maryi Panny Częstochowskiej', '09-14': 'Święto Podwyższenia Krzyża Świętego',
+    '11-01': 'Uroczystość Wszystkich Świętych', '11-02': 'Wspomnienie wszystkich wiernych zmarłych',
+    '12-08': 'Uroczystość Niepokalanego Poczęcia Najświętszej Maryi Panny', '12-25': 'Uroczystość Narodzenia Pańskiego',
+    '12-26': 'Święto św. Szczepana, pierwszego męczennika'
+  };
+  function sundayOnOrBefore(d) { return addDays(d, -d.getDay()); }
+  function weeksBetween(a, b) { return Math.round((b - a) / (7 * 864e5)); }
+  function baptismOfLord(y) { var j6 = new Date(y, 0, 6); return j6.getDay() === 0 ? new Date(y, 0, 7) : addDays(j6, 7 - j6.getDay()); }
+  function holyFamily(y) { // niedziela w oktawie Narodzenia Pańskiego, a gdy jej brak – 30 grudnia
+    for (var i = 26; i <= 31; i++) { var x = new Date(y, 11, i); if (x.getDay() === 0) return x; }
+    return new Date(y, 11, 30);
+  }
+  function movableName(d) {
+    var y = d.getFullYear(), e = easter(y), k = function (n) { return sameDay(d, addDays(e, n)); };
+    if (k(-46)) return 'Środa Popielcowa';
+    if (k(-7)) return 'Niedziela Palmowa, czyli Męki Pańskiej';
+    if (k(-3)) return 'Wielki Czwartek';
+    if (k(-2)) return 'Wielki Piątek Męki Pańskiej';
+    if (k(-1)) return 'Wielka Sobota';
+    if (k(0)) return 'Niedziela Zmartwychwstania Pańskiego';
+    if (k(7)) return 'II Niedziela Wielkanocna, czyli Miłosierdzia Bożego';
+    if (k(42)) return 'Uroczystość Wniebowstąpienia Pańskiego';
+    if (k(49)) return 'Uroczystość Zesłania Ducha Świętego';
+    if (k(50)) return 'Święto Najświętszej Maryi Panny, Matki Kościoła';
+    if (k(56)) return 'Uroczystość Najświętszej Trójcy – odpust parafialny';
+    if (k(60)) return 'Uroczystość Najświętszego Ciała i Krwi Chrystusa (Boże Ciało)';
+    if (k(68)) return 'Uroczystość Najświętszego Serca Pana Jezusa';
+    if (sameDay(d, addDays(adventStart(y), -7))) return 'Uroczystość Jezusa Chrystusa, Króla Wszechświata';
+    if (sameDay(d, baptismOfLord(y))) return 'Święto Chrztu Pańskiego';
+    if (sameDay(d, holyFamily(y))) return 'Święto Świętej Rodziny: Jezusa, Maryi i Józefa';
+    return null;
+  }
+  function seasonDayName(d) {
+    var y = d.getFullYear(), e = easter(y), ash = addDays(e, -46), pent = addDays(e, 49), adv = adventStart(y);
+    var day = cap(DNI[d.getDay()]), sun = d.getDay() === 0, s = sundayOnOrBefore(d);
+    if (d >= adv && d < new Date(y, 11, 25)) {
+      var na = weeksBetween(adv, s) + 1;
+      return sun ? ROMAN[na] + ' Niedziela Adwentu' : day + ' ' + ROMAN[na] + ' tygodnia Adwentu';
+    }
+    if (d >= new Date(y, 11, 25) || d < baptismOfLord(y)) {
+      if (d >= new Date(y, 11, 25) && d <= new Date(y, 11, 31)) return day + ' w oktawie Narodzenia Pańskiego';
+      return day + ' okresu Narodzenia Pańskiego';
+    }
+    if (d >= ash && d < addDays(e, -7)) {
+      if (d < addDays(ash, 4)) return day + ' po Popielcu';
+      var nl = weeksBetween(addDays(ash, 4), s) + 1;
+      return sun ? ROMAN[nl] + ' Niedziela Wielkiego Postu' : day + ' ' + ROMAN[nl] + ' tygodnia Wielkiego Postu';
+    }
+    if (d > addDays(e, -7) && d < e) return ({ 1: 'Wielki Poniedziałek', 2: 'Wielki Wtorek', 3: 'Wielka Środa' })[d.getDay()] || day + ' Wielkiego Tygodnia';
+    if (d > e && d <= pent) {
+      if (d < addDays(e, 7)) return day + ' w oktawie Wielkanocy';
+      var ne = weeksBetween(e, s) + 1;
+      return sun ? ROMAN[ne] + ' Niedziela Wielkanocna' : day + ' ' + ROMAN[ne] + ' tygodnia wielkanocnego';
+    }
+    // okres zwykły: przed Wielkim Postem liczony od Chrztu Pańskiego, po Zesłaniu Ducha Świętego – wstecz od Chrystusa Króla (XXXIV)
+    var n = d < ash ? weeksBetween(sundayOnOrBefore(baptismOfLord(y)), s) + 1 : 34 - weeksBetween(s, addDays(adv, -7));
+    if (n < 1 || n > 34) return null;
+    return sun ? ROMAN[n] + ' Niedziela zwykła' : day + ' ' + ROMAN[n] + ' tygodnia zwykłego';
+  }
+  // „Liturgia tygodnia” z ogłoszeń: „wtorek – św. Elżbiety Węgierskiej, zakonnicy” → wpis na odpowiedni dzień tygodnia po niedzieli ogłoszeń
+  var WEEKDAY_IDX = { niedziela: 0, poniedzialek: 1, wtorek: 2, sroda: 3, czwartek: 4, piatek: 5, sobota: 6 };
+  function annLiturgyFor(d, ann) {
+    if (!ann || !ann.data) return null;
+    var base = parseDate(ann.data), diff = Math.round((d - base) / 864e5);
+    if (diff < 1 || diff > 7) return null;
+    var p = (ann.punkty || []).filter(function (x) { return x && x.lista && /liturgia tygodnia/i.test(x.tekst || ''); })[0];
+    if (!p) return null;
+    for (var i = 0; i < p.lista.length; i++) {
+      var m = p.lista[i].match(/^\s*([^\s–-]+)\s*[–-]\s*(.+)$/);
+      if (!m) continue;
+      var key = m[1].toLowerCase().replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; }).replace(/\.$/, '');
+      var idx = WEEKDAY_IDX[key];
+      if (idx === undefined) continue;
+      if (idx === d.getDay() && (idx !== 0 || diff === 7)) return m[2].trim();
+    }
+    return null;
+  }
+  function liturgyToday(d, ann) {
+    var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    var fromAnn = annLiturgyFor(d, ann), season = seasonDayName(d);
+    // uroczystość ze stałą datą wypadająca w niedzielę Adwentu, Wielkiego Postu lub okresu wielkanocnego przechodzi na poniedziałek
+    var privileged = function (x) { var s = seasonDayName(x) || ''; return x.getDay() === 0 && /Adwentu|Wielkiego Postu|Wielkanocna/.test(s); };
+    var fixed = FIXED[md] || null;
+    if (fixed && /^Uroczysto/.test(fixed) && privileged(d)) fixed = null;
+    var prev = addDays(d, -1), prevFixed = FIXED[pad(prev.getMonth() + 1) + '-' + pad(prev.getDate())];
+    if (!fixed && d.getDay() === 1 && prevFixed && /^Uroczysto/.test(prevFixed) && privileged(prev)) fixed = prevFixed + ' (przeniesiona z niedzieli)';
+    var big = movableName(d) || fixed;
+    if (big) return big; // uroczystości i święta mają pierwszeństwo przed wspomnieniami
+    return season ? season + (fromAnn ? ' · ' + fromAnn : '') : fromAnn;
+  }
+  window.ParafiaKalendarz && (window.ParafiaKalendarz.liturgyToday = liturgyToday, window.ParafiaKalendarz.seasonDayName = seasonDayName);
+  var elLit = $('#liturgia-dnia');
+  if (elLit) {
+    loadOptional('ogloszenia', null).then(function (ann) {
+      var txt = null;
+      try { txt = liturgyToday(warsawNow(), ann); } catch (err) { txt = null; }
+      if (txt) { $('.liturgy__text', elLit).textContent = txt; elLit.hidden = false; }
+    });
+  }
+
   /* ---------- Czy moja ulica należy do parafii? ---------- */
   var sq = $('#street-q');
   if (sq) {
