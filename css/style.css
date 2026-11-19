@@ -877,3 +877,17 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 #intencje-tabs .tab { min-width: 0; padding: 7px 2px; }
 #intencje-tabs .tab b { font-size: 1.25rem; }
 #intencje-tabs .tab span { font-size: .66rem; letter-spacing: .04em; }
+
+/* Przełącznik EN w górnym pasku i strona po angielsku */
+.topbar__lang { display: inline-flex; align-items: center; margin-left: auto; margin-right: 12px; padding: 3px 10px; border: 1px solid rgba(241,217,153,.55); border-radius: 999px; font-weight: 700; font-size: .8rem; letter-spacing: .04em; color: #f1d999 !important; }
+.topbar__lang:hover { background: rgba(241,217,153,.12); text-decoration: none !important; }
+@media (max-width: 600px) { .topbar__lang-long { display: none; } .topbar__lang { margin-right: 6px; } }
+.en-welcome { display: flex; gap: 22px; align-items: center; }
+.en-welcome h2 { margin: 0 0 .3em; }
+.en-welcome p { margin: 0; }
+.en-english-mass { margin-top: 24px; border-top: 4px solid var(--gold); }
+.en-english-mass .hours { max-width: 460px; }
+.en-small { font-size: .95rem; color: var(--muted); }
+.en-sub { font-size: .55em; color: var(--muted); font-family: var(--sans); font-weight: 500; }
+.mass-card h3 { display: flex; align-items: center; gap: 10px; }
+@media (max-width: 600px) { .en-welcome { flex-direction: column; align-items: flex-start; gap: 12px; } }
