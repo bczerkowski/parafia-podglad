@@ -438,12 +438,42 @@
     if (big) return big; // uroczystości i święta mają pierwszeństwo przed wspomnieniami
     return season ? season + (fromAnn ? ' · ' + fromAnn : '') : fromAnn;
   }
+  // Kolor liturgiczny dnia – liczony z tych samych danych co „Dziś w liturgii”.
+  // Wspomnienia świętych bierzemy z „Liturgii tygodnia” w ogłoszeniach (męczennicy – czerwony, pozostali – biały).
+  var LIT_COLORS = { green: 'zielony', violet: 'fioletowy', white: 'biały', red: 'czerwony', rose: 'różowy' };
+  function liturgyColor(d, ann) {
+    var txt = liturgyToday(d, ann) || '', season = seasonDayName(d) || '', fromAnn = annLiturgyFor(d, ann) || '';
+    var big = txt.indexOf(season) === 0 && season ? '' : txt; // uroczystość/święto zamiast nazwy dnia okresu
+    var RED = /Palmowa|Wielki Piątek|Zesłania Ducha|męczenni|Apostoł|Podwyższenia Krzyża/i;
+    if (big) {
+      if (RED.test(big)) return 'red';
+      if (/zmarłych|Popielcowa|Wielka Sobota/i.test(big)) return 'violet';
+      return 'white';
+    }
+    if (/III Niedziela Adwentu|IV Niedziela Wielkiego Postu/.test(season)) return 'rose';
+    if (/Adwentu|Wielkiego Postu|po Popielcu|Wielki Poniedziałek|Wielki Wtorek|Wielka Środa|Wielkiego Tygodnia/.test(season)) return 'violet';
+    var memorial = d.getDay() !== 0 && fromAnn;
+    if (/Narodzenia|Wielkanoc|wielkanocnego/.test(season)) return memorial && RED.test(fromAnn) ? 'red' : 'white';
+    if (memorial) return RED.test(fromAnn) ? 'red' : 'white';
+    return 'green';
+  }
   window.ParafiaKalendarz && (window.ParafiaKalendarz.liturgyToday = liturgyToday, window.ParafiaKalendarz.seasonDayName = seasonDayName);
+  window.ParafiaKalendarz && (window.ParafiaKalendarz.liturgyColor = liturgyColor);
   var elLit = $('#liturgia-dnia');
   if (elLit) {
     loadOptional('ogloszenia', null).then(function (ann) {
       var txt = null;
       try { txt = liturgyToday(warsawNow(), ann); } catch (err) { txt = null; }
+      var col = null;
+      try { col = liturgyColor(warsawNow(), ann); } catch (err) { col = null; }
+      if (txt && col) {
+        var dot = document.createElement('span');
+        dot.className = 'lit-color lit-color--' + col;
+        dot.title = 'Kolor liturgiczny dnia: ' + LIT_COLORS[col];
+        dot.innerHTML = '<span class="visually-hidden">Kolor liturgiczny: ' + LIT_COLORS[col] + '. </span>';
+        var ic = $('svg', elLit);
+        if (ic) ic.replaceWith(dot); else elLit.insertBefore(dot, elLit.firstChild);
+      }
       if (txt) { $('.liturgy__text', elLit).textContent = txt; elLit.hidden = false; }
     });
   }

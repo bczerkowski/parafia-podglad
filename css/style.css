@@ -899,3 +899,11 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .en-chapel .group__emblem { flex: none; width: 84px; height: 84px; }
 .en-chapel .group__emblem svg { width: 54px; height: 54px; }
 @media (max-width: 600px) { .en-chapel { flex-direction: column; gap: 12px; } .en-chapel .group__emblem { width: 64px; height: 64px; } .en-chapel .group__emblem svg { width: 40px; height: 40px; } }
+
+/* Kolor liturgiczny dnia przy „Dziś w liturgii” */
+.lit-color { flex: none; display: inline-block; width: 15px; height: 15px; margin: 6px 2px 0; border-radius: 50%; box-shadow: 0 0 0 2px var(--surface, #fff), 0 0 0 3px var(--gold, #c9a23f); }
+.lit-color--green { background: #3f7d4a; }
+.lit-color--violet { background: #6b3f8f; }
+.lit-color--white { background: #fffdf6; box-shadow: inset 0 0 0 1px #d9cfb8, 0 0 0 2px var(--surface, #fff), 0 0 0 3px var(--gold, #c9a23f); }
+.lit-color--red { background: #b3262e; }
+.lit-color--rose { background: #e39ab3; }
