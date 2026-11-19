@@ -819,3 +819,9 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 .mass-liturgy__label { font-weight: 700; color: var(--navy); }
 .mass-liturgy__more { white-space: nowrap; margin-left: 4px; font-size: .92rem; }
 .mass-liturgy__more::before { content: "· "; color: var(--muted); }
+
+/* Link do liturgii dnia (Opoka) – dyskretny przycisk zachęcający do kliknięcia */
+.mass-liturgy__more { display: inline-flex; align-items: center; margin: 4px 0 0 6px; padding: 3px 12px; border: 1px solid #d9b867; border-radius: 999px; background: var(--gold-soft); color: var(--navy); font-weight: 650; font-size: .9rem; text-decoration: none; white-space: nowrap; }
+.mass-liturgy__more::before { content: none; }
+.mass-liturgy__more:hover { background: #d9b867; color: var(--navy); }
+@media (max-width: 600px) { .mass-liturgy__more { margin-left: 0; margin-top: 6px; } }
