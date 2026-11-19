@@ -894,3 +894,8 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .stack { display: grid; gap: 24px; align-content: start; }
 .chapel .group__emblem { width: 64px; height: 64px; margin-bottom: 12px; }
 .chapel .group__emblem svg { width: 40px; height: 40px; }
+.en-chapel { margin-top: 24px; display: flex; gap: 22px; align-items: flex-start; border-top: 4px solid var(--gold); }
+.en-chapel h2 { margin: 0 0 .3em; }
+.en-chapel .group__emblem { flex: none; width: 84px; height: 84px; }
+.en-chapel .group__emblem svg { width: 54px; height: 54px; }
+@media (max-width: 600px) { .en-chapel { flex-direction: column; gap: 12px; } .en-chapel .group__emblem { width: 64px; height: 64px; } .en-chapel .group__emblem svg { width: 40px; height: 40px; } }
