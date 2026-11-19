@@ -35,6 +35,33 @@
     <symbol id="e-caritas" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
       <path d="M32 50C17 40 12 30 18 24c4.6-4.2 10.6-2.8 14 1.8 3.4-4.6 9.4-6 14-1.8 6 6 1 16-14 26z"/>
       <path d="M32 28v14M26 34h12M8 46c6 0 10 4 14 8h20c4-4 8-8 14-8"/></symbol>
+    <!-- Emblematy nabożeństw (ten sam styl) -->
+    <symbol id="e-maryja" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 54V26l16 18 16-18v28M12 54h10M42 54h10M32 4v14M26 9h12"/><path d="M24 22h16" opacity=".0"/></symbol>
+    <symbol id="e-monstrancja" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="32" cy="24" r="8"/><path d="M32 20v8M28 24h8"/>
+      <path d="M32 9v4M32 35v4M17 24h4M43 24h4M21.4 13.4l2.8 2.8M39.8 31.8l2.8 2.8M42.6 13.4l-2.8 2.8M24.2 31.8l-2.8 2.8"/>
+      <path d="M32 39v11M26 46h12M22 58h20l-4-8H26z"/></symbol>
+    <symbol id="e-lampion" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M28 10a4 4 0 0 1 8 0M24 18h16l-3-6H27zM24 18v30h16V18zM21 48h22v6H21z"/>
+      <path d="M32 41c-4-3.5-3.5-8 0-12.5 3.5 4.5 4 9 0 12.5z"/></symbol>
+    <symbol id="e-krzyz" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 5v54M18 19h28M24 59h16"/>
+      <path d="M21.5 19a10.5 4.5 0 1 0 21 0 10.5 4.5 0 1 0-21 0"/><path d="M23 15.5l-2-3M29 14l-.5-3.5M35 14l.5-3.5M41 15.5l2-3M23 22.5l-2 3M41 22.5l2 3"/></symbol>
+    <symbol id="e-lilia" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 28c-3-7-2.5-14 0-21 2.5 7 3 14 0 21zM32 28c-5-5-12-6-18-3 4 5 11 7 18 3zM32 28c5-5 12-6 18-3-4 5-11 7-18 3z"/>
+      <path d="M32 28v30M32 48c-6-1-10 1-12.5 5 5.5 1 10 0 12.5-5zM32 42c5-1 8.5 1 10.5 4.5-4.5 1-8.5 0-10.5-4.5z"/></symbol>
+    <symbol id="e-swieca" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 22c-4.5-3.5-4-9 0-15 4 6 4.5 11.5 0 15zM32 22v4M25 26h14v28H25zM19 58h26M25 34h14"/>
+      <path d="M20 12l-3-2M44 12l3-2M18 20h-3M46 20h3" opacity=".7"/></symbol>
+    <symbol id="e-trojca" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="7.2" stroke-linecap="round" stroke-linejoin="round">
+      <g transform="scale(.3333) translate(-4 -4)">
+        <path d="M100 46V11M88 23h24"/>
+        <path d="M128.37 72.31A62.5 62.5 0 1 1 71.63 72.31"/>
+        <path d="M100 47A58.9 58.9 0 0 1 100 149A58.9 58.9 0 0 1 100 47Z"/>
+        <path d="M41.1 149A58.9 58.9 0 0 1 129.45 98A58.9 58.9 0 0 1 41.1 149Z"/>
+        <path d="M158.9 149A58.9 58.9 0 0 1 70.55 98A58.9 58.9 0 0 1 158.9 149Z"/>
+      </g></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 12l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>

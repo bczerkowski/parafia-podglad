@@ -849,3 +849,25 @@ html[data-contrast="high"] .group__emblem { background: #fff3c4; color: #000; }
 @media (max-width: 600px) { .group__emblem { width: 60px; height: 60px; } .group__emblem svg { width: 38px; height: 38px; } }
 
 #rodziny .prose h2 { margin-top: 4px; }
+
+/* Emblematy w „Najbliższych nabożeństwach” */
+.upcoming__list li { align-items: center; }
+.upcoming__em { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-text); box-shadow: 0 0 0 1px var(--line); }
+.upcoming__em svg { width: 26px; height: 26px; }
+.upcoming__text { align-self: center; }
+html[data-contrast="high"] .upcoming__em { background: #fff3c4; color: #000; }
+
+/* Emblematy na stronie Msze i nabożeństwa */
+.devotion .group__emblem { width: 64px; height: 64px; margin-bottom: 12px; }
+.devotion .group__emblem svg { width: 40px; height: 40px; }
+.devotion__title { display: flex; align-items: center; gap: 10px; margin-top: 18px; }
+.devotion__em { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-text); box-shadow: 0 0 0 1px var(--line); }
+.devotion__em svg { width: 24px; height: 24px; }
+html[data-contrast="high"] .devotion__em { background: #fff3c4; color: #000; }
+
+/* Ikony sakramentów w tej samej oprawie co emblematy wspólnot */
+.sacrament__ico { box-shadow: 0 0 0 1px var(--line), 0 0 0 5px var(--surface), 0 0 0 6px var(--line); margin: 6px; }
+.sacrament__ico svg { width: 32px; height: 32px; }
+html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
+.group__links { display: flex; flex-wrap: wrap; gap: 8px; }
+.group__contact { font-size: .95rem; color: var(--muted); }

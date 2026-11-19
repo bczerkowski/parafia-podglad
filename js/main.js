@@ -271,27 +271,27 @@
   function devotionsOn(d) {
     var out = [], dow = d.getDay(), dom = d.getDate(), m = d.getMonth(), sun = dow === 0;
     var e = easter(d.getFullYear()), ash = addDays(e, -46), lent = d >= ash && d < e;
-    if (sameDay(d, trinitySunday(d.getFullYear()))) out.push({ t: 'Odpust parafialny – Uroczystość Najświętszej Trójcy', h: 'porządek niedzielny', feast: true });
-    if (dow === 3) out.push({ t: 'Nabożeństwo do NMP Nieustającej Pomocy', h: 'po Mszy św. o 18:30' });
-    if (dom === 13 && m >= 4 && m <= 9) out.push({ t: 'Nabożeństwo fatimskie', h: sun ? 'godz. 17:00' : 'po Mszy św. o 18:30' });
-    if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30' });
-    if (dom <= 7 && dow === 4) out.push({ t: 'I czwartek, piątek i sobota miesiąca – adoracja Najświętszego Sakramentu i spowiedź', h: '17:00–19:00 (cz–sb)' });
-    if (dom <= 7 && sun) out.push({ t: 'Żywy Różaniec – spotkanie i zmiana tajemnic', h: 'godz. 17:00' });
-    if (lent && dow === 5) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)' });
-    if (lent && sun) out.push({ t: 'Gorzkie Żale', h: 'godz. 17:00' });
+    if (sameDay(d, trinitySunday(d.getFullYear()))) out.push({ t: 'Odpust parafialny – Uroczystość Najświętszej Trójcy', h: 'porządek niedzielny', feast: true, e: 'trojca' });
+    if (dow === 3) out.push({ t: 'Nabożeństwo do NMP Nieustającej Pomocy', h: 'po Mszy św. o 18:30', e: 'maryja' });
+    if (dom === 13 && m >= 4 && m <= 9) out.push({ t: 'Nabożeństwo fatimskie', h: sun ? 'godz. 17:00' : 'po Mszy św. o 18:30', e: 'maryja' });
+    if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30', e: 'roza' });
+    if (dom <= 7 && dow === 4) out.push({ t: 'I czwartek, piątek i sobota miesiąca – adoracja Najświętszego Sakramentu i spowiedź', h: '17:00–19:00 (cz–sb)', e: 'monstrancja' });
+    if (dom <= 7 && sun) out.push({ t: 'Żywy Różaniec – spotkanie i zmiana tajemnic', h: 'godz. 17:00', e: 'rozaniec' });
+    if (lent && dow === 5) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)', e: 'krzyz' });
+    if (lent && sun) out.push({ t: 'Gorzkie Żale', h: 'godz. 17:00', e: 'krzyz' });
     return out;
   }
   // nabożeństwa codzienne w danym okresie: pokazywane jako jedna pozycja („trwa” albo „od …”)
   function seasonsAround(today, horizon) {
     var y = today.getFullYear(), list = [];
     var adv = adventStart(y);
-    list.push({ od: addDays(adv, 1), do: new Date(y, 11, 24), t: 'Roraty (Adwent)', h: 'pn–sb o 6:30 i 18:30 (z udziałem dzieci)' });
-    list.push({ od: new Date(y, 4, 1), do: new Date(y, 4, 31), t: 'Nabożeństwa majowe', h: 'dni powszednie 18:00, niedziele 17:00' });
-    list.push({ od: new Date(y, 5, 1), do: new Date(y, 5, 30), t: 'Nabożeństwa czerwcowe', h: 'dni powszednie 18:00, niedziele 17:00' });
-    list.push({ od: new Date(y, 9, 1), do: new Date(y, 9, 31), t: 'Różaniec październikowy', h: 'dorośli: dni powszednie 18:00, niedziele 17:00; dzieci: pn–śr 17:00' });
+    list.push({ od: addDays(adv, 1), do: new Date(y, 11, 24), t: 'Roraty (Adwent)', h: 'pn–sb o 6:30 i 18:30 (z udziałem dzieci)', e: 'lampion' });
+    list.push({ od: new Date(y, 4, 1), do: new Date(y, 4, 31), t: 'Nabożeństwa majowe', h: 'dni powszednie 18:00, niedziele 17:00', e: 'lilia' });
+    list.push({ od: new Date(y, 5, 1), do: new Date(y, 5, 30), t: 'Nabożeństwa czerwcowe', h: 'dni powszednie 18:00, niedziele 17:00', e: 'serce' });
+    list.push({ od: new Date(y, 9, 1), do: new Date(y, 9, 31), t: 'Różaniec październikowy', h: 'dorośli: dni powszednie 18:00, niedziele 17:00; dzieci: pn–śr 17:00', e: 'rozaniec' });
     var t0 = new Date(today.getFullYear(), today.getMonth(), today.getDate());
     return list.filter(function (s) { return s.do >= t0 && s.od <= horizon; }).map(function (s) {
-      return { d: s.od < t0 ? t0 : s.od, ongoing: s.od <= t0, t: s.t, h: s.h, od: s.od, season: true };
+      return { d: s.od < t0 ? t0 : s.od, ongoing: s.od <= t0, t: s.t, h: s.h, od: s.od, season: true, e: s.e };
     });
   }
   var elUp = $('#najblizsze');
@@ -301,7 +301,7 @@
       var horizon = addDays(t0, 13), items = [];
       for (var i = 0; i < 14; i++) {
         var dd = addDays(t0, i);
-        devotionsOn(dd).forEach(function (x) { items.push({ d: dd, t: x.t, h: x.h, feast: x.feast }); });
+        devotionsOn(dd).forEach(function (x) { items.push({ d: dd, t: x.t, h: x.h, feast: x.feast, e: x.e }); });
       }
       items = seasonsAround(now0, horizon).concat(items)
         .sort(function (a, b) { return a.d - b.d || (b.season ? 1 : 0) - (a.season ? 1 : 0); }).slice(0, 5);
@@ -312,7 +312,7 @@
       };
       if (items.length) {
         $('.upcoming__list', elUp).innerHTML = items.map(function (x) {
-          return '<li' + (x.feast ? ' class="is-feast"' : '') + '><span class="upcoming__date">' + esc(label(x)) + '</span>' +
+          return '<li' + (x.feast ? ' class="is-feast"' : '') + '>' + (x.e ? '<span class="upcoming__em" aria-hidden="true"><svg><use href="' + ICONS + '#e-' + x.e + '"/></svg></span>' : '') + '<span class="upcoming__date">' + esc(label(x)) + '</span>' +
             '<span class="upcoming__text"><b>' + esc(x.t) + '</b> ' + esc(x.h) + '</span></li>';
         }).join('');
       } else {
