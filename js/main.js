@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  var ICONS = 'img/icons.svg';
+  var ICONS = 'img/icons.svg' + (((document.currentScript && document.currentScript.src) || '').match(/\?v=[^#]*/) || [''])[0];
   var DNI = ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota'];
   var DNI_KR = ['nd', 'pn', 'wt', 'śr', 'cz', 'pt', 'sb'];
   var MIES = ['stycznia', 'lutego', 'marca', 'kwietnia', 'maja', 'czerwca', 'lipca', 'sierpnia', 'września', 'października', 'listopada', 'grudnia'];

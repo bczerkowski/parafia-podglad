@@ -841,8 +841,8 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 /* Emblematy wspólnot – jeden styl: złota linia w kremowym kole */
 .group__emblem { display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: var(--gold-soft); color: var(--gold-text); box-shadow: 0 0 0 1px var(--line), 0 0 0 5px var(--surface), 0 0 0 6px var(--line); margin: 0 0 14px; }
 .group__emblem svg { width: 46px; height: 46px; }
-.caritas .group__emblem, #rodziny .group__emblem { width: 84px; height: 84px; }
-.caritas .group__emblem svg, #rodziny .group__emblem svg { width: 54px; height: 54px; }
+.caritas .group__emblem, #rodziny .group__emblem, .lupikowo .group__emblem { width: 84px; height: 84px; }
+.caritas .group__emblem svg, #rodziny .group__emblem svg, .lupikowo .group__emblem svg { width: 54px; height: 54px; }
 html[data-contrast="high"] .group__emblem { background: #fff3c4; color: #000; }
 .group__photo { margin: 14px 0 4px; }
 .group__photo img { width: 100%; border-radius: 10px; aspect-ratio: 3 / 2; object-fit: cover; }
