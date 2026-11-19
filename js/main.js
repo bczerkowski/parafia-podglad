@@ -471,8 +471,10 @@
         dot.className = 'lit-color lit-color--' + col;
         dot.title = 'Kolor liturgiczny dnia: ' + LIT_COLORS[col];
         dot.innerHTML = '<span class="visually-hidden">Kolor liturgiczny: ' + LIT_COLORS[col] + '. </span>';
-        var ic = $('svg', elLit);
-        if (ic) ic.replaceWith(dot); else elLit.insertBefore(dot, elLit.firstChild);
+        // kropka w linii tekstu (wyrównana do napisu), zamiast ikony krzyżyka
+        var ic = $('svg', elLit), host = $('.mass-liturgy__label', elLit);
+        if (ic) ic.remove();
+        if (host) host.parentNode.insertBefore(dot, host); else elLit.insertBefore(dot, elLit.firstChild);
       }
       if (txt) { $('.liturgy__text', elLit).textContent = txt; elLit.hidden = false; }
     });
