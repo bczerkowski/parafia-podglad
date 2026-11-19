@@ -1,6 +1,6 @@
 {
   "_instrukcja": "Godziny kancelarii i dane kontaktowe. 'uwaga' wyświetla się na złotym tle (np. o zmianie godzin) – zostaw pusty tekst, jeśli nie potrzeba.",
-  "uwaga": "Uwaga – zmiana godzin urzędowania.",
+  "uwaga": "",
   "godziny": [
     { "dzien": "Wtorek", "godz": "19:00 – 20:00" },
     { "dzien": "Czwartek", "godz": "16:00 – 18:00", "dopisek": "w czasie ferii i kolędy – nieczynna" },
