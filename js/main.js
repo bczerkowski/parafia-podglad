@@ -441,20 +441,46 @@
   // Kolor liturgiczny dnia – liczony z tych samych danych co „Dziś w liturgii”.
   // Wspomnienia świętych bierzemy z „Liturgii tygodnia” w ogłoszeniach (męczennicy – czerwony, pozostali – biały).
   var LIT_COLORS = { green: 'zielony', violet: 'fioletowy', white: 'biały', red: 'czerwony', rose: 'różowy' };
+  // Święta o stałej dacie z innym kolorem niż okres (apostołowie, ewangeliści, męczennicy; wyjątki białe).
+  // Mają pierwszeństwo przed dniem powszednim (także w Adwencie i okresie wielkanocnym), ale nie przed niedzielą
+  // ani przed Wielkim Tygodniem i oktawą Wielkanocy.
+  var FEAST_COLORS = {
+    '01-25': 'white', // Nawrócenie św. Pawła Apostoła
+    '02-22': 'white', // Katedry św. Piotra Apostoła
+    '04-25': 'red',   // św. Marka Ewangelisty
+    '05-06': 'red',   // św. Apostołów Filipa i Jakuba (w Polsce 6 maja)
+    '05-14': 'red',   // św. Macieja Apostoła
+    '07-03': 'red',   // św. Tomasza Apostoła
+    '07-25': 'red',   // św. Jakuba Apostoła
+    '08-10': 'red',   // św. Wawrzyńca, diakona i męczennika
+    '08-24': 'red',   // św. Bartłomieja Apostoła
+    '08-29': 'red',   // Męczeństwo św. Jana Chrzciciela
+    '09-21': 'red',   // św. Mateusza, Apostoła i Ewangelisty
+    '10-18': 'red',   // św. Łukasza Ewangelisty
+    '10-28': 'red',   // św. Apostołów Szymona i Judy Tadeusza
+    '11-30': 'red',   // św. Andrzeja Apostoła
+    '12-27': 'white', // św. Jana, Apostoła i Ewangelisty
+    '12-28': 'red'    // Świętych Młodzianków, męczenników
+  };
   function liturgyColor(d, ann) {
     var txt = liturgyToday(d, ann) || '', season = seasonDayName(d) || '', fromAnn = annLiturgyFor(d, ann) || '';
     var big = txt.indexOf(season) === 0 && season ? '' : txt; // uroczystość/święto zamiast nazwy dnia okresu
-    var RED = /Palmowa|Wielki Piątek|Zesłania Ducha|męczenni|Apostoł|Podwyższenia Krzyża/i;
+    var RED = /Palmowa|Wielki Piątek|Zesłania Ducha|męczenni|męczeńs|Apostoł|Ewangelist|Podwyższenia Krzyża/i;
+    var WHITE_EXC = /Nawrócenie|Katedry św\. Piotra|Jana,? Apostoła i Ewangelisty/i; // apostołowie w kolorze białym
+    var isRed = function (s) { return RED.test(s) && !WHITE_EXC.test(s); };
     if (big) {
-      if (RED.test(big)) return 'red';
+      if (isRed(big)) return 'red';
       if (/zmarłych|Popielcowa|Wielka Sobota/i.test(big)) return 'violet';
       return 'white';
     }
+    var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+    var holyWeekOrOctave = /Wielki Poniedziałek|Wielki Wtorek|Wielka Środa|Wielkiego Tygodnia|oktawie Wielkanocy/.test(season);
+    if (d.getDay() !== 0 && FEAST_COLORS[md] && !holyWeekOrOctave) return FEAST_COLORS[md];
     if (/III Niedziela Adwentu|IV Niedziela Wielkiego Postu/.test(season)) return 'rose';
     if (/Adwentu|Wielkiego Postu|po Popielcu|Wielki Poniedziałek|Wielki Wtorek|Wielka Środa|Wielkiego Tygodnia/.test(season)) return 'violet';
     var memorial = d.getDay() !== 0 && fromAnn;
-    if (/Narodzenia|Wielkanoc|wielkanocnego/.test(season)) return memorial && RED.test(fromAnn) ? 'red' : 'white';
-    if (memorial) return RED.test(fromAnn) ? 'red' : 'white';
+    if (/Narodzenia|Wielkanoc|wielkanocnego/.test(season)) return memorial && isRed(fromAnn) ? 'red' : 'white';
+    if (memorial) return isRed(fromAnn) ? 'red' : 'white';
     return 'green';
   }
   window.ParafiaKalendarz && (window.ParafiaKalendarz.liturgyToday = liturgyToday, window.ParafiaKalendarz.seasonDayName = seasonDayName);
