@@ -663,7 +663,11 @@
   var elNews = $('#aktualnosci');
   if (elNews) {
     load('aktualnosci').then(function (a) {
-      elNews.innerHTML = a.wpisy.map(function (w) {
+      // wpisy z ostatnich 12 miesięcy na górze, starsze w wyraźnie oddzielonym archiwum
+      var limit = addDays(warsawNow(), -365);
+      var isRecent = function (w) { return w.data && parseDate(w.data) >= limit; };
+      var recent = a.wpisy.filter(isRecent), older = a.wpisy.filter(function (w) { return !isRecent(w); });
+      var card = function (w) {
         return '<article class="card news-entry" id="' + slug(w.tytul) + '">' +
           (w.zdjecie ? '<img class="news-entry__img" src="' + esc(w.zdjecie) + '" alt="" loading="lazy">' : '') +
           '<h2>' + esc(w.tytul) + '</h2>' +
@@ -674,7 +678,9 @@
             ' style="background-image:url(\'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg\')"' +
             ' aria-label="Odtwórz film: ' + esc(w.tytul) + ' (YouTube)">' +
             '<span>' + icon('play') + ' Odtwórz film</span></button></div>' : '') + '</article>';
-      }).join('');
+      };
+      elNews.innerHTML = (recent.length ? recent.map(card).join('') : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
+        (older.length ? '<h2 class="news-archive__title">Archiwum</h2><div class="grid news-archive">' + older.map(card).join('') + '</div>' : '');
     }).catch(function () { fail(elNews, 'aktualności'); });
     elNews.addEventListener('click', function (e) {
       var b = e.target.closest('[data-yt]');

@@ -785,3 +785,26 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 .page-hero .wrap { padding-top: clamp(30px, 5vw, 56px); padding-bottom: clamp(28px, 4.5vw, 48px); }
 .upcoming { margin-top: 18px; }
 .follow { margin-top: 20px; }
+
+/* Logo-napis ma stałą wielkość – nie rośnie razem z przyciskami A+ / A++ (to znak graficzny, nie treść) */
+.wm-top { font-size: 18px; }
+.wm-main { font-size: 39px; }
+.wm-bottom { font-size: 17px; }
+@media (max-width: 480px) { .wm-top { font-size: 13.6px; } .wm-main { font-size: 29px; } .wm-bottom { font-size: 13.3px; } }
+@media (max-width: 400px) { .wm-top { font-size: 11.9px; } .wm-main { font-size: 25px; } .wm-bottom { font-size: 11.6px; } }
+/* Przy największym tekście menu przechodzi w przycisk „Menu” wcześniej, żeby się nie ściskało */
+@media (min-width: 1221px) and (max-width: 1500px) {
+  html[data-font="2"] .nav a, html[data-font="2"] .nav__more { padding: 10px 7px; font-size: .86rem; }
+}
+/* Zakładki dni przy A++ na telefonie: przewijany pasek zamiast 7 ściśniętych kolumn */
+@media (max-width: 600px) {
+  html[data-font="2"] .tabs, html[data-font="1"] .tabs { display: flex; overflow-x: auto; padding-bottom: 10px; }
+  html[data-font="2"] .tab, html[data-font="1"] .tab { min-width: 58px; flex: none; }
+}
+.brand { flex-shrink: 0; }
+@media (max-width: 480px) { .burger { font-size: 16px; padding: 10px 12px; } }
+
+/* Aktualności – archiwum starszych wpisów */
+.news-archive__title { font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 18px 0 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); }
+.news-archive .card { box-shadow: none; background: var(--cream); }
+.news-archive h2 { font-size: 1.45rem; }
