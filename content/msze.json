@@ -14,7 +14,7 @@
     { "godz": "7:30", "bezWakacji": true },
     { "godz": "18:30" }
   ],
-  "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30. W uroczystości 25 i 26 grudnia, 1 i 6 stycznia, 1 listopada oraz w Boże Ciało nie ma Mszy św. o 19:30.",
+  "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30. Nie ma też Mszy o 19:30: 1 i 6 stycznia, w Niedzielę i Poniedziałek Wielkanocny, w Boże Ciało, 1 listopada oraz 25 i 26 grudnia.",
   "uwagaPowszednie": "W wakacje nie ma Mszy św. o 7:30.",
   "uwagaSwieta": "Święta zniesione – według porządku tygodniowego.",
   "spowiedz": [
@@ -25,6 +25,15 @@
   "wakacje": { "od": "07-01", "do": "08-31" },
   "swietaStale": ["01-01", "01-06", "08-15", "11-01", "12-25", "12-26"],
   "dodatkoweSwieta": [],
+  "_instrukcjaBezWieczornej": "Dni, w które nie ma Mszy oznaczonych 'bezSwiat' (19:30). Daty MM-DD albo nazwy świąt ruchomych: wielkanoc, poniedzialek-wielkanocny, boze-cialo.",
+  "bezWieczornej": ["01-01", "01-06", "wielkanoc", "poniedzialek-wielkanocny", "boze-cialo", "11-01", "12-25", "12-26"],
+  "_instrukcjaRegul": "Zmiany powtarzające się co roku – strona sama wylicza je na każdy rok i pokazuje w 'Zmianach w porządku Mszy'. data: MM-DD albo ruchome: 'popielec'; zamien: { stara: nowa godzina }; dodaj: [dodatkowe godziny]; msze: [pełna lista godzin]; zNiedzieliNaPoniedzialek: true – gdy święto wypada w niedzielę, reguła dotyczy poniedziałku.",
+  "regulyRoczne": [
+    { "opis": "Uroczystość Wszystkich Świętych", "data": "11-01", "zamien": { "13:30": "14:00" } },
+    { "opis": "Święto Ofiarowania Pańskiego", "data": "02-02", "dodaj": ["9:00"] },
+    { "opis": "Uroczystość Niepokalanego Poczęcia NMP", "data": "12-08", "dodaj": ["9:00"], "zNiedzieliNaPoniedzialek": true },
+    { "opis": "Środa Popielcowa", "ruchome": "popielec", "msze": ["6:30", "7:30", "9:00", "17:00", "18:30", "19:30"] }
+  ],
   "_instrukcjaZmiany": "Wyjątkowe zmiany godzin w konkretne dni. Przykład: { \"data\": \"2026-12-24\", \"opis\": \"Wigilia Bożego Narodzenia\", \"msze\": [ { \"godz\": \"6:30\" }, { \"godz\": \"24:00\", \"uwaga\": \"Pasterka\" } ] }. Pusta lista msze: [] oznacza, że tego dnia nie ma Mszy. Zamiast listy można podać \"porzadek\": \"niedzielny\" albo \"powszedni\". Zmiany na najbliższe 14 dni wyświetlają się automatycznie przy godzinach Mszy.",
   "zmiany": []
 }

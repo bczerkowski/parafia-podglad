@@ -31,7 +31,7 @@
       cache[name] = fetch('content/' + name + '.json', { cache: 'no-cache' }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
         return r.json();
-      });
+      }).then(function (j) { return name === 'msze' ? expandYearlyRules(j) : j; });
     }
     return cache[name];
   }
@@ -144,11 +144,51 @@
     var e = easter(d.getFullYear()), iso = isoDate(d);
     return iso === isoDate(addDays(e, 1)) || iso === isoDate(addDays(e, 60)); // Poniedziałek Wielkanocny, Boże Ciało
   }
-  // święta, w które nie ma wieczornej Mszy (pole „bezSwiat” w msze.json): święta stałe z listy i Boże Ciało
+  // Dni bez Mszy oznaczonych „bezSwiat” (np. 19:30) – lista „bezWieczornej” w msze.json:
+  // daty MM-DD oraz nazwy świąt ruchomych: wielkanoc, poniedzialek-wielkanocny, boze-cialo.
+  function movableKey(d) {
+    var e = easter(d.getFullYear()), iso = isoDate(d);
+    if (iso === isoDate(e)) return 'wielkanoc';
+    if (iso === isoDate(addDays(e, 1))) return 'poniedzialek-wielkanocny';
+    if (iso === isoDate(addDays(e, 60))) return 'boze-cialo';
+    if (iso === isoDate(addDays(e, -46))) return 'popielec';
+    return null;
+  }
   function noEveningFeast(d, cfg) {
     var md = pad(d.getMonth() + 1) + '-' + pad(d.getDate());
-    if ((cfg.swietaStale || []).indexOf(md) >= 0) return true;
-    return isoDate(d) === isoDate(addDays(easter(d.getFullYear()), 60));
+    var list = cfg.bezWieczornej || (cfg.swietaStale || []).concat(['boze-cialo']);
+    return list.indexOf(md) >= 0 || list.indexOf(movableKey(d)) >= 0;
+  }
+  // Reguły powtarzające się co roku („regulyRoczne” w msze.json) zamieniamy na zwykłe „zmiany” na ten, poprzedni i przyszły rok.
+  // Rodzaje: { data: "MM-DD" lub ruchome: "popielec", opis, zamien: { "13:30": "14:00" } | dodaj: ["9:00"] | msze: ["6:30", ...] }.
+  // Ręcznie wpisana zmiana na konkretny dzień ma pierwszeństwo przed regułą.
+  function expandYearlyRules(cfg) {
+    var rules = cfg.regulyRoczne || [];
+    if (!rules.length) return cfg;
+    var manual = (cfg.zmiany || []).slice(), taken = {}, out = [], y0 = warsawNow().getFullYear();
+    manual.forEach(function (z) { taken[z.data] = true; });
+    var base = { niedziele: cfg.niedziele, powszednie: cfg.powszednie, wakacje: cfg.wakacje, swietaStale: cfg.swietaStale, dodatkoweSwieta: cfg.dodatkoweSwieta, bezWieczornej: cfg.bezWieczornej, zmiany: [] };
+    rules.forEach(function (r) {
+      for (var y = y0 - 1; y <= y0 + 1; y++) {
+        var d = null;
+        if (r.ruchome === 'popielec') d = addDays(easter(y), -46);
+        else if (r.data) { var p = r.data.split('-'); d = new Date(y, +p[0] - 1, +p[1]); if (r.zNiedzieliNaPoniedzialek && d.getDay() === 0) d = addDays(d, 1); }
+        if (!d || taken[isoDate(d)]) continue;
+        var list;
+        if (r.msze) list = r.msze.map(function (g) { return typeof g === 'string' ? { godz: g } : g; });
+        else {
+          list = massesFor(d, base).list.map(function (m) { return { godz: m.godz, uwaga: m.uwaga }; });
+          if (r.zamien) list.forEach(function (m) { if (r.zamien[m.godz]) m.godz = r.zamien[m.godz]; });
+          (r.dodaj || []).forEach(function (g) { if (!list.some(function (m) { return m.godz === g; })) list.push({ godz: g }); });
+        }
+        list.sort(function (a, b) { return toMin(a.godz) - toMin(b.godz); });
+        list.forEach(function (m) { if (!m.uwaga) delete m.uwaga; });
+        out.push({ data: isoDate(d), opis: r.opis || '', msze: list, regula: true });
+        taken[isoDate(d)] = true;
+      }
+    });
+    cfg.zmiany = manual.concat(out);
+    return cfg;
   }
   function isHoliday(d, cfg) {
     if (!cfg.wakacje) return false;
@@ -194,7 +234,7 @@
     return null;
   }
   // do testów logiki „najbliższej Mszy” w konsoli przeglądarki
-  window.ParafiaKalendarz = { massesFor: massesFor, nextMass: nextMass, warsawNow: warsawNow, isFeast: isFeast, relDay: function (n) { return relDay(n); } };
+  window.ParafiaKalendarz = { massesFor: massesFor, nextMass: nextMass, warsawNow: warsawNow, isFeast: isFeast, expandYearlyRules: expandYearlyRules, relDay: function (n) { return relDay(n); } };
   function relDay(n) {
     if (n.offset === 0) return 'dziś';
     if (n.offset === 1) return 'jutro';
