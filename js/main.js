@@ -882,7 +882,7 @@
         .sort(function (x, y) { return x.data < y.data ? 1 : -1; }).slice(0, 3);
       if (!recent.length) return;
       elNewsHome.innerHTML = recent.map(function (w) {
-        var img = newsImage(w), href = w.link || ('aktualnosci.html#' + slug(w.tytul));
+        var img = newsImage(w), href = (w.zdjecia || !w.link) ? ('aktualnosci.html#' + slug(w.tytul)) : w.link;
         return '<article class="news-card">' +
           (img ? '<img src="' + esc(img) + '" alt="" loading="lazy">' : '<div class="tile__ph"><img src="img/triquetra.svg" alt="" width="56" height="56"></div>') +
           '<div class="news-card__body"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time>' +
@@ -899,13 +899,31 @@
       var limit = addDays(warsawNow(), -365);
       var isRecent = function (w) { return w.data && parseDate(w.data) >= limit; };
       var recent = a.wpisy.filter(isRecent), older = a.wpisy.filter(function (w) { return !isRecent(w); });
+      var photos = [];
+      var linkLabel = function (l) {
+        if (/^https?:/.test(l)) return 'Więcej: ' + l.replace(/^https?:\/\/(www\.)?/, '').split('/')[0] + ' →';
+        if (/^ogloszenia/.test(l)) return 'Zobacz ogłoszenia parafialne →';
+        if (/^wspolnoty/.test(l)) return 'Zobacz na stronie Wspólnoty i grupy →';
+        if (/^sakramenty/.test(l)) return 'Zobacz informacje o sakramentach →';
+        return 'Zobacz więcej →';
+      };
+      var gallery = function (w) {
+        if (!w.katalog || !w.zdjecia || !w.zdjecia.length) return '';
+        return '<div class="news-photos">' + w.zdjecia.map(function (f, fi) {
+          var n = photos.length;
+          photos.push({ src: 'img/' + w.katalog + '/' + f, cap: w.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + w.zdjecia.length + (w.foto ? ' (fot. ' + w.foto + ')' : '') });
+          return '<button type="button" class="photo" data-i="' + n + '" aria-label="Powiększ: ' + esc(photos[n].cap) + '">' +
+            '<img src="img/' + esc(w.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
+        }).join('') + '</div>' + (w.foto ? '<p class="news-photos__credit">fot. ' + esc(w.foto) + '</p>' : '');
+      };
       var card = function (w) {
+        var g = gallery(w);
         return '<article class="card news-entry" id="' + slug(w.tytul) + '">' +
-          (w.zdjecie ? '<img class="news-entry__img" src="' + esc(w.zdjecie) + '" alt="" loading="lazy">' : '') +
+          (w.zdjecie && !g ? '<img class="news-entry__img" src="' + esc(w.zdjecie) + '" alt="" loading="lazy">' : '') +
           '<h2>' + esc(w.tytul) + '</h2>' +
           (w.data ? '<p class="day__sub"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time></p>' : '') +
-          w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') +
-          (w.link ? '<p><a href="' + esc(w.link) + '"' + (/^https?:/.test(w.link) ? ' rel="noopener" target="_blank"' : '') + '>' + (/^https?:/.test(w.link) ? 'Pełna relacja →' : 'Zobacz ogłoszenia parafialne →') + '</a></p>' : '') +
+          w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + g +
+          (w.link ? '<p><a href="' + esc(w.link) + '"' + (/^https?:/.test(w.link) ? ' rel="noopener" target="_blank"' : '') + '>' + esc(linkLabel(w.link)) + '</a></p>' : '') +
           (w.youtube ? '<div class="video"><button type="button" class="video__facade" data-yt="' + esc(w.youtube) + '"' +
             ' style="background-image:url(\'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg\')"' +
             ' aria-label="Odtwórz film: ' + esc(w.tytul) + ' (YouTube)">' +
@@ -913,6 +931,9 @@
       };
       elNews.innerHTML = (recent.length ? recent.map(card).join('') : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
         (older.length ? '<h2 class="news-archive__title">Archiwum</h2><div class="grid news-archive">' + older.map(card).join('') + '</div>' : '');
+      if (photos.length) lightbox(photos);
+      var target = location.hash && document.getElementById(location.hash.slice(1));
+      if (target) target.scrollIntoView();
     }).catch(function () { fail(elNews, 'aktualności'); });
     elNews.addEventListener('click', function (e) {
       var b = e.target.closest('[data-yt]');
