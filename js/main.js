@@ -816,7 +816,8 @@
       if (one) {
         var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
         elGal.innerHTML = '<p><a class="news-back" href="galeria.html">← Wszystkie albumy</a></p>' +
-          '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div><div class="photos">' +
+          '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div>' +
+          (one.foto ? '<p class="news-photos__credit">fot. ' + esc(one.foto) + '</p>' : '') + '<div class="photos">' +
           one.zdjecia.map(function (f, fi) {
             return '<button type="button" class="photo" data-i="' + fi + '" aria-label="Powiększ: ' + esc(all[fi].cap) + '">' +
               '<img src="img/' + esc(one.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
