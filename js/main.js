@@ -964,7 +964,15 @@
         return;
       }
       elNews.innerHTML = (recent.length ? '<div class="news-grid">' + recent.map(newsCard).join('') + '</div>' : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
-        (older.length ? '<h2 class="news-archive__title">Archiwum</h2><div class="news-grid news-grid--archive">' + older.map(newsCard).join('') + '</div>' : '');
+        (older.length ? '<h2 class="news-archive__title">Archiwum</h2>' + (function () {
+          // archiwum pogrupowane według lat
+          var years = [];
+          older.forEach(function (w) { var y = (w.data || '').slice(0, 4); if (years.indexOf(y) < 0) years.push(y); });
+          return years.map(function (y) {
+            return '<h3 class="news-year">' + esc(y) + '</h3><div class="news-grid news-grid--archive">' +
+              older.filter(function (w) { return (w.data || '').slice(0, 4) === y; }).map(newsCard).join('') + '</div>';
+          }).join('');
+        })() : '');
     }).catch(function () { fail(elNews, 'aktualności'); });
     elNews.addEventListener('click', function (e) {
       var b = e.target.closest('[data-yt]');

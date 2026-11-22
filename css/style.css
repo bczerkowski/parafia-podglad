@@ -932,3 +932,4 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .news-back { font-weight: 700; text-decoration: none; }
 .news-others__title { font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 40px 0 18px; padding-top: 24px; border-top: 1px solid var(--line); }
 .news-archive__title { margin-bottom: 18px; }
+.news-year { font-size: 1.5rem; margin: 28px 0 14px; color: var(--gold-text); }
