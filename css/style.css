@@ -1127,3 +1127,15 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .nowrap { white-space: nowrap; }
 @media (max-width: 760px) { .help-box { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 18px; } }
 .upcoming__more { margin: 10px 0 0; font-weight: 650; }
+
+/* Hasło znad ołtarza głównego: „Gloria tibi Trinitas” z kłosami */
+.wm-motto { text-transform: uppercase; font-family: "Cormorant SC", var(--serif); font-weight: 600; font-size: .78rem; letter-spacing: .2em; color: var(--gold-text); margin-top: 3px; }
+@media (max-width: 480px) { .wm-motto { display: none; } }
+.motto { margin: 44px 0 0; text-align: center; }
+.motto__line { text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: clamp(10px, 2vw, 18px); margin: 0; font-family: "Cormorant SC", var(--serif); font-weight: 600; font-size: clamp(1.15rem, 2.6vw, 1.6rem); letter-spacing: .16em; color: #e2c47f; }
+.motto__klosy { width: clamp(54px, 9vw, 96px); height: clamp(18px, 3vw, 32px); color: #c9a55a; flex: none; }
+.motto__klosy--r { transform: scaleX(-1); }
+.motto figcaption { margin-top: 6px; font-family: var(--serif); font-style: italic; font-size: .98rem; color: #aeb7c9; }
+.motto + .footer-bottom { margin-top: 28px; }
+.motto__line span { white-space: nowrap; }
+@media (max-width: 480px) { .motto__line { font-size: 1.02rem; letter-spacing: .1em; gap: 8px; } .motto__klosy { width: 40px; height: 14px; } }
