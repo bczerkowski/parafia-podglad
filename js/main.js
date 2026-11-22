@@ -808,22 +808,34 @@
   var elGal = $('#galeria');
   if (elGal) {
     load('galeria').then(function (g) {
-      var all = [];
-      elGal.innerHTML = g.albumy.map(function (a, ai) {
-        var id = 'album-' + ai;
-        return '<section class="album" aria-labelledby="' + id + '"><div class="album__head"><h2 id="' + id + '">' + esc(a.tytul) +
-          '</h2><span class="badge">' + a.zdjecia.length + ' zdjęć</span></div><div class="photos">' +
-          a.zdjecia.map(function (f, fi) {
-            var n = all.length;
-            all.push({ src: 'img/' + a.katalog + '/' + f, cap: a.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + a.zdjecia.length });
-            return '<button type="button" class="photo" data-i="' + n + '" aria-label="Powiększ: ' + esc(all[n].cap) + '">' +
-              '<img src="img/' + esc(a.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
+      // lista albumów jako kompaktowe karty; pojedynczy album: ?album=galeria-triduum-2026 (dawne #… też działa)
+      var key = function (a) { return a.katalog.replace(/\//g, '-'); };
+      var count = function (n) { return n + (n === 1 ? ' zdjęcie' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) ? ' zdjęcia' : ' zdjęć'); };
+      var want = param('album') || (location.hash ? decodeURIComponent(location.hash.slice(1)) : '');
+      var one = want && g.albumy.filter(function (a) { return key(a) === want; })[0];
+      if (one) {
+        var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
+        elGal.innerHTML = '<p><a class="news-back" href="galeria.html">← Wszystkie albumy</a></p>' +
+          '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div><div class="photos">' +
+          one.zdjecia.map(function (f, fi) {
+            return '<button type="button" class="photo" data-i="' + fi + '" aria-label="Powiększ: ' + esc(all[fi].cap) + '">' +
+              '<img src="img/' + esc(one.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
           }).join('') + '</div></section>';
-      }).join('');
-      lightbox(all);
-      var target = location.hash && document.getElementById(location.hash.slice(1));
-      if (target) target.scrollIntoView();
+        document.title = one.tytul + ' – Galeria – Parafia Trójcy Świętej we Wrocławiu';
+        lightbox(all);
+        window.scrollTo(0, 0);
+        return;
+      }
+      elGal.innerHTML = '<div class="news-grid">' + g.albumy.map(function (a) {
+        var href = 'galeria.html?album=' + key(a), cover = a.okladka || a.zdjecia[0];
+        return '<article class="news-card album-card"><a class="news-card__media" href="' + esc(href) + '" tabindex="-1" aria-hidden="true">' +
+          '<img src="img/' + esc(a.katalog) + '/thumb/' + esc(cover) + '" alt="" loading="lazy">' +
+          '<span class="news-card__count">' + icon('image') + a.zdjecia.length + '</span></a>' +
+          '<div class="news-card__body"><h3><a href="' + esc(href) + '">' + esc(a.tytul) + '</a></h3>' +
+          '<p>' + count(a.zdjecia.length) + '</p><a class="news-card__more" href="' + esc(href) + '">Otwórz album →</a></div></article>';
+      }).join('') + '</div>';
     }).catch(function () { fail(elGal, 'galeria'); });
+    window.addEventListener('hashchange', function () { location.reload(); });
   }
   function lightbox(items) {
     var dlg = document.createElement('dialog');
@@ -929,6 +941,7 @@
           '<h2>' + esc(w.tytul) + '</h2>' +
           (w.data ? '<p class="day__sub"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time></p>' : '') +
           w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + g +
+          (w.album ? '<p><a class="btn btn--line btn--sm" href="galeria.html#' + esc(w.album.replace(/\//g, '-')) + '">' + icon('image') + ' Zobacz całą galerię zdjęć →</a></p>' : '') +
           (w.link ? '<p><a href="' + esc(w.link) + '"' + (/^https?:/.test(w.link) ? ' rel="noopener" target="_blank"' : '') + '>' + esc(linkLabel(w.link)) + '</a></p>' : '') +
           (w.youtube ? '<div class="video"><button type="button" class="video__facade" data-yt="' + esc(w.youtube) + '"' +
             ' style="background-image:url(\'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg\')"' +

@@ -1,25 +1,238 @@
 {
-  "_instrukcja": "Albumy zdjęć. Zdjęcia wgraj do img/<katalog>/ (duże, do ok. 1600 px szerokości) oraz miniatury do img/<katalog>/thumb/ (ok. 520 px).",
-  "albumy": [
-    {
-      "tytul": "Rozpoczęcie Adwentu 2020",
-      "katalog": "adwent-2020",
-      "zdjecia": ["43.jpg", "42.jpg", "44.jpg", "45.jpg", "46.jpg", "47.jpg", "48.jpg", "49.jpg"]
-    },
-    {
-      "tytul": "Światowe Dni Młodzieży",
-      "katalog": "sdm",
-      "zdjecia": ["23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg"]
-    },
-    {
-      "tytul": "Droga krzyżowa ulicami 2013",
-      "katalog": "droga-krzyzowa-2013",
-      "zdjecia": ["17.jpg", "16.jpg", "18.jpg", "19.jpg", "21.jpg", "20.jpg", "22.jpg"]
-    },
-    {
-      "tytul": "Historia",
-      "katalog": "historia",
-      "zdjecia": ["10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg"]
-    }
-  ]
+    "_instrukcja":  "Albumy zdjęć. Zdjęcia wgraj do img/\u003ckatalog\u003e/ (duże, do ok. 1600 px szerokości) oraz miniatury do img/\u003ckatalog\u003e/thumb/ (ok. 520 px).",
+    "albumy":  [
+                   {
+                       "tytul": "Triduum Paschalne 2026",
+            "foto": "Mateusz Jędrzejewski",
+                       "katalog":  "galeria/triduum-2026",
+                       "zdjecia":  [
+                                       "1.jpg",
+                                       "2.jpg",
+                                       "3.jpg",
+                                       "4.jpg",
+                                       "5.jpg",
+                                       "6.jpg",
+                                       "7.jpg",
+                                       "8.jpg",
+                                       "9.jpg",
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg",
+                                       "15.jpg",
+                                       "16.jpg",
+                                       "17.jpg",
+                                       "18.jpg",
+                                       "19.jpg",
+                                       "20.jpg",
+                                       "21.jpg",
+                                       "22.jpg",
+                                       "23.jpg",
+                                       "24.jpg",
+                                       "25.jpg",
+                                       "26.jpg",
+                                       "27.jpg",
+                                       "28.jpg",
+                                       "29.jpg",
+                                       "30.jpg",
+                                       "31.jpg",
+                                       "32.jpg",
+                                       "33.jpg",
+                                       "34.jpg",
+                                       "35.jpg",
+                                       "36.jpg",
+                                       "37.jpg",
+                                       "38.jpg",
+                                       "39.jpg",
+                                       "40.jpg",
+                                       "41.jpg",
+                                       "42.jpg",
+                                       "43.jpg",
+                                       "44.jpg",
+                                       "45.jpg",
+                                       "46.jpg",
+                                       "47.jpg",
+                                       "48.jpg",
+                                       "49.jpg",
+                                       "50.jpg",
+                                       "51.jpg",
+                                       "52.jpg",
+                                       "53.jpg",
+                                       "54.jpg",
+                                       "55.jpg",
+                                       "56.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Piesza Pielgrzymka na Jasną Górę 2026",
+                       "katalog":  "galeria/pielgrzymka-2026",
+                       "zdjecia":  [
+                                       "1.jpg",
+                                       "2.jpg",
+                                       "3.jpg",
+                                       "4.jpg",
+                                       "5.jpg",
+                                       "6.jpg",
+                                       "7.jpg",
+                                       "8.jpg",
+                                       "9.jpg",
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg",
+                                       "15.jpg",
+                                       "16.jpg",
+                                       "17.jpg",
+                                       "18.jpg",
+                                       "19.jpg",
+                                       "20.jpg",
+                                       "21.jpg",
+                                       "22.jpg",
+                                       "23.jpg",
+                                       "24.jpg",
+                                       "25.jpg",
+                                       "26.jpg",
+                                       "27.jpg",
+                                       "28.jpg",
+                                       "29.jpg",
+                                       "30.jpg",
+                                       "31.jpg",
+                                       "32.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Młodzież w Tatrach i w Rzymie 2026",
+                       "katalog":  "galeria/mlodziez-tatry-rzym-2026",
+                       "zdjecia":  [
+                                       "1.jpg",
+                                       "2.jpg",
+                                       "3.jpg",
+                                       "4.jpg",
+                                       "5.jpg",
+                                       "6.jpg",
+                                       "7.jpg",
+                                       "8.jpg",
+                                       "9.jpg",
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg",
+                                       "15.jpg",
+                                       "16.jpg",
+                                       "17.jpg",
+                                       "18.jpg",
+                                       "19.jpg",
+                                       "20.jpg",
+                                       "21.jpg",
+                                       "22.jpg",
+                                       "23.jpg",
+                                       "24.jpg",
+                                       "25.jpg",
+                                       "26.jpg",
+                                       "27.jpg",
+                                       "28.jpg",
+                                       "29.jpg",
+                                       "30.jpg",
+                                       "31.jpg",
+                                       "32.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Dzień Jedności 2026",
+                       "katalog":  "galeria/dzien-jednosci-2026",
+                       "zdjecia":  [
+                                       "1.jpg",
+                                       "2.jpg",
+                                       "3.jpg",
+                                       "4.jpg",
+                                       "5.jpg",
+                                       "6.jpg",
+                                       "7.jpg",
+                                       "8.jpg",
+                                       "9.jpg",
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Droga Krzyżowa ulicami parafii 2026",
+                       "katalog":  "galeria/droga-krzyzowa-2026",
+                       "zdjecia":  [
+                                       "1.jpg",
+                                       "2.jpg",
+                                       "3.jpg",
+                                       "4.jpg",
+                                       "5.jpg",
+                                       "6.jpg",
+                                       "7.jpg",
+                                       "8.jpg",
+                                       "9.jpg",
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg",
+                                       "15.jpg",
+                                       "16.jpg",
+                                       "17.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Rozpoczęcie Adwentu 2020",
+                       "katalog":  "adwent-2020",
+                       "zdjecia":  [
+                                       "43.jpg",
+                                       "42.jpg",
+                                       "44.jpg",
+                                       "45.jpg",
+                                       "46.jpg",
+                                       "47.jpg",
+                                       "48.jpg",
+                                       "49.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Światowe Dni Młodzieży",
+                       "katalog":  "sdm",
+                       "zdjecia":  [
+                                       "23.jpg",
+                                       "24.jpg",
+                                       "25.jpg",
+                                       "26.jpg",
+                                       "27.jpg",
+                                       "28.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Droga krzyżowa ulicami 2013",
+                       "katalog":  "droga-krzyzowa-2013",
+                       "zdjecia":  [
+                                       "17.jpg",
+                                       "16.jpg",
+                                       "18.jpg",
+                                       "19.jpg",
+                                       "21.jpg",
+                                       "20.jpg",
+                                       "22.jpg"
+                                   ]
+                   },
+                   {
+                       "tytul":  "Historia",
+                       "katalog":  "historia",
+                       "zdjecia":  [
+                                       "10.jpg",
+                                       "11.jpg",
+                                       "12.jpg",
+                                       "13.jpg",
+                                       "14.jpg",
+                                       "15.jpg"
+                                   ]
+                   }
+               ]
 }
