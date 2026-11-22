@@ -965,3 +965,13 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .mass-card .time.time--next { background: var(--navy); border-color: var(--navy); color: #fff; box-shadow: 0 0 0 2px var(--gold); }
 .mass-card .time.time--next small { color: #f1d999; }
 html[data-contrast="high"] .mass-card .time.time--next { background: #000; color: #fff; }
+
+/* Strona główna: Ogłoszenia i Intencje zawsze tej samej wysokości.
+   Zwinięte ogłoszenia wypełniają wysokość karty intencji (z łagodnym wygaszeniem na dole). */
+@media (min-width: 901px) {
+  #ogloszenia-sekcja .grid--main { align-items: stretch; }
+  #ogloszenia-sekcja .grid--main > .card { display: flex; flex-direction: column; }
+  #ogloszenia-sekcja .announce--collapsed { flex: 1 1 0; min-height: 18rem; max-height: none; }
+  #ogloszenia-sekcja .announce .card-links,
+  #ogloszenia-sekcja aside.card > :last-child { margin-top: auto; padding-top: 12px; }
+}
