@@ -980,8 +980,8 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .announce__meta { color: var(--ink); font-weight: 600; font-size: 1rem; margin-bottom: 24px; }
 .announce__meta time { color: var(--navy-2, var(--navy)); }
 .announce--page .announce__title { margin-bottom: .35em; }
-.announce--page ol > li { font-size: 1.125rem; line-height: 1.75; padding: 20px 0 20px 52px; }
+.announce--page ol > li { font-size: 1.07rem; line-height: 1.75; padding: 18px 0 18px 52px; }
 .announce--page ol > li:first-child { padding-top: 6px; }
-.announce--page ol > li li { font-size: 1.06rem; margin-bottom: 6px; }
+.announce--page ol > li li { font-size: 1rem; margin-bottom: 5px; }
 .announce--page ul { margin: 10px 0 8px; }
 .announce--page .dopisek { margin-top: 10px; }
