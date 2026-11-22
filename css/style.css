@@ -985,3 +985,16 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .announce--page ol > li li { font-size: 1rem; margin-bottom: 5px; }
 .announce--page ul { margin: 10px 0 8px; }
 .announce--page .dopisek { margin-top: 10px; }
+
+/* Historia: zdjęcia z podpisami */
+.photos--captioned figure { margin: 0; }
+.photos--captioned figcaption { font-size: .88rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
+
+/* Sakramenty: nieco większy tekst i wyraźny plik do pobrania */
+.sacrament p, .sacrament li { font-size: 1.06rem; }
+.file-link { display: inline-flex; align-items: center; gap: 14px; margin-top: 14px; padding: 12px 18px 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--cream); text-decoration: none; color: var(--ink); max-width: 100%; }
+.file-link:hover { border-color: var(--gold); background: var(--gold-soft); }
+.file-link svg { width: 34px; height: 34px; flex: none; color: #b3262e; }
+.file-link b { display: block; color: var(--navy); }
+.file-link small { display: block; color: var(--muted); font-size: .88rem; }
+.group__join { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }

@@ -2,8 +2,8 @@
     "_instrukcja":  "Albumy zdjęć. Zdjęcia wgraj do img/\u003ckatalog\u003e/ (duże, do ok. 1600 px szerokości) oraz miniatury do img/\u003ckatalog\u003e/thumb/ (ok. 520 px).",
     "albumy":  [
                    {
-                       "tytul": "Triduum Paschalne 2026",
-            "foto": "Mateusz Jędrzejewski",
+                       "tytul":  "Triduum Paschalne 2026",
+                       "foto":  "Mateusz Jędrzejewski",
                        "katalog":  "galeria/triduum-2026",
                        "zdjecia":  [
                                        "1.jpg",
@@ -223,7 +223,7 @@
                                    ]
                    },
                    {
-                       "tytul":  "Historia",
+                       "tytul":  "Historia parafii (skany z albumów parafialnych)",
                        "katalog":  "historia",
                        "zdjecia":  [
                                        "10.jpg",
@@ -232,6 +232,14 @@
                                        "13.jpg",
                                        "14.jpg",
                                        "15.jpg"
+                                   ],
+                       "podpisy":  [
+                                       "Prezbiterium kościoła górnego i obraz św. Jadwigi Śląskiej",
+                                       "Pierwsza kaplica i ks. Jan Czapliński",
+                                       "Witraże i wnętrze kościoła dolnego",
+                                       "Montaż krzyży na wieży; kościół w 1997 r.",
+                                       "Nawiedzenie Obrazu MB Częstochowskiej (1993) i Figury MB Fatimskiej (1996)",
+                                       "Z życia parafii, lata 2006–2009"
                                    ]
                    }
                ]

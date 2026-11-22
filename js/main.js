@@ -828,7 +828,7 @@
       var want = param('album') || (location.hash ? decodeURIComponent(location.hash.slice(1)) : '');
       var one = want && g.albumy.filter(function (a) { return key(a) === want; })[0];
       if (one) {
-        var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
+        var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: ((one.podpisy && one.podpisy[fi]) ? one.podpisy[fi] + ' – ' : '') + one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
         elGal.innerHTML = '<p><a class="news-back" href="galeria.html">← Wszystkie albumy</a></p>' +
           '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div>' +
           (one.foto ? '<p class="news-photos__credit">fot. ' + esc(one.foto) + '</p>' : '') + '<div class="photos">' +
@@ -851,6 +851,17 @@
       }).join('') + '</div>';
     }).catch(function () { fail(elGal, 'galeria'); });
     window.addEventListener('hashchange', function () { location.reload(); });
+  }
+  // Powiększanie zdjęć na zwykłych podstronach: <div class="photos" data-lightbox> z przyciskami .photo[data-full][data-cap]
+  var lbGroup = $('[data-lightbox]');
+  if (lbGroup && !$('#galeria') && !$('#aktualnosci')) {
+    var lbItems = $$('.photo[data-full]', lbGroup).map(function (b, i) {
+      b.setAttribute('data-i', i);
+      var cap = b.getAttribute('data-cap') || '';
+      b.setAttribute('aria-label', 'Powiększ: ' + cap);
+      return { src: b.getAttribute('data-full'), cap: cap };
+    });
+    if (lbItems.length) lightbox(lbItems);
   }
   function lightbox(items) {
     var dlg = document.createElement('dialog');
