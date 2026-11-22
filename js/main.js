@@ -546,6 +546,44 @@
     });
   }
 
+  /* ---------- Mapa terytorium parafii (Leaflet + content/teren.json z OpenStreetMap) ---------- */
+  var elMap = $('#teren-map');
+  if (elMap) {
+    var startMap = function () {
+      if (!window.L) { setTimeout(startMap, 150); return; }
+      load('teren').then(function (t) {
+        elMap.innerHTML = '';
+        var map = L.map(elMap, { scrollWheelZoom: false }).setView(t.kosciol, 15);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+        var area = L.polygon(t.obszar, { color: '#b8860b', weight: 3, dashArray: '8 6', fillColor: '#c9a23f', fillOpacity: .14 }).addTo(map);
+        var layers = {};
+        t.ulice.forEach(function (u) {
+          if (!u.linie.length) return;
+          layers[u.nazwa] = L.polyline(u.linie, { color: '#1b2942', weight: 5, opacity: .85 })
+            .bindTooltip(u.nazwa, { sticky: true }).addTo(map);
+        });
+        var church = L.circleMarker(t.kosciol, { radius: 9, color: '#fff', weight: 3, fillColor: '#b3262e', fillOpacity: 1 })
+          .bindPopup('<b>Kościół Trójcy Świętej</b><br>ul. Krzycka 42-44').addTo(map);
+        map.fitBounds(area.getBounds(), { padding: [20, 20] });
+        // wyróżnienie ulic znalezionych w wyszukiwarce
+        document.addEventListener('parafia:ulice', function (e) {
+          var names = e.detail || [], hit = [];
+          Object.keys(layers).forEach(function (n) {
+            var on = names.indexOf(n) >= 0;
+            layers[n].setStyle(on ? { color: '#c9a23f', weight: 8, opacity: 1 } : { color: '#1b2942', weight: 5, opacity: names.length ? .35 : .85 });
+            if (on) { layers[n].bringToFront(); hit.push(layers[n]); }
+          });
+          if (hit.length) map.fitBounds(L.featureGroup(hit).getBounds(), { padding: [40, 40], maxZoom: 17 });
+          else if (!names.length) map.fitBounds(area.getBounds(), { padding: [20, 20] });
+        });
+        church.bringToFront();
+      }).catch(function () { fail(elMap, 'mapa'); });
+    };
+    startMap();
+  }
+
   /* ---------- Czy moja ulica należy do parafii? ---------- */
   var sq = $('#street-q');
   if (sq) {
@@ -559,12 +597,13 @@
     sq.addEventListener('input', function () {
       var q = norm(sq.value);
       streetEls.forEach(function (li) { li.classList.remove('is-match'); });
-      if (q.length < 2) { res.textContent = ''; res.className = 'street-search__result'; return; }
+      if (q.length < 2) { res.textContent = ''; res.className = 'street-search__result'; document.dispatchEvent(new CustomEvent('parafia:ulice', { detail: [] })); return; }
       var match = function (qq) { return streets.filter(function (s) { return s.key.indexOf(qq) === 0 || s.key.split(' ').some(function (w) { return w.indexOf(qq) === 0; }); }); };
       var hits = match(q);
       // pełna nazwa z imieniem (np. „Wojciecha Korfantego”) – dopasuj po ostatnim słowie, czyli nazwisku/nazwie
       if (!hits.length && q.indexOf(' ') > 0) { var last = q.split(' ').pop(); if (last.length >= 3) hits = match(last); }
       hits.forEach(function (s) { s.el.classList.add('is-match'); });
+      document.dispatchEvent(new CustomEvent('parafia:ulice', { detail: hits.map(function (s) { return s.name; }) }));
       if (hits.length === 1 || (hits.length && hits.some(function (s) { return s.key === q; }))) {
         var h = hits.filter(function (s) { return s.key === q; })[0] || hits[0];
         res.innerHTML = '<b>Tak</b> – ulica <b>' + esc(h.name) + '</b> należy do naszej parafii.';

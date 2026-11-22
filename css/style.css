@@ -1041,3 +1041,14 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 @media (max-width: 600px) { .photos--captioned { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
 .photo--inline { display: block; width: 100%; aspect-ratio: auto; padding: 0; border: 0; background: none; cursor: zoom-in; }
 .photo--inline img { width: 100%; height: auto; }
+
+/* Terytorium parafii */
+.teren { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 24px; align-items: start; }
+.teren__map { height: 560px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--cream-2); }
+.teren__legend { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 8px; }
+.teren__legend li { display: flex; align-items: center; gap: 10px; margin: 0; }
+.teren__swatch { width: 28px; height: 12px; border-radius: 3px; flex: none; }
+.teren__swatch--street { background: #1b2942; height: 6px; }
+.teren__swatch--area { background: rgba(201, 162, 63, .15); border: 2px dashed #c9a23f; }
+.teren__swatch--church { width: 14px; height: 14px; border-radius: 50%; background: #b3262e; box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--line); }
+@media (max-width: 900px) { .teren { grid-template-columns: minmax(0, 1fr); } .teren__map { height: 420px; } }
