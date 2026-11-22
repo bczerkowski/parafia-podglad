@@ -1126,3 +1126,4 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .help-list small { display: block; color: var(--muted); font-size: .92rem; }
 .nowrap { white-space: nowrap; }
 @media (max-width: 760px) { .help-box { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 18px; } }
+.upcoming__more { margin: 10px 0 0; font-weight: 650; }
