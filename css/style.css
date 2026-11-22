@@ -960,3 +960,8 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 @media (max-width: 760px) { .newcomer-steps { grid-template-columns: minmax(0, 1fr); } .newcomer-welcome { flex-direction: column; align-items: flex-start; gap: 12px; } }
 .newcomer-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between; margin-top: 22px; padding: 18px 22px; border-radius: var(--radius); background: var(--gold-soft); border: 1px solid #e3cf98; }
 .newcomer-cta p { margin: 0; font-size: 1.05rem; }
+
+/* Najbliższa Msza: granatowe wyróżnienie także na karcie niedzielnej (jasne tło kafelków go nadpisywało) */
+.mass-card .time.time--next { background: var(--navy); border-color: var(--navy); color: #fff; box-shadow: 0 0 0 2px var(--gold); }
+.mass-card .time.time--next small { color: #f1d999; }
+html[data-contrast="high"] .mass-card .time.time--next { background: #000; color: #fff; }
