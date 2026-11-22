@@ -998,3 +998,15 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .file-link b { display: block; color: var(--navy); }
 .file-link small { display: block; color: var(--muted); font-size: .88rem; }
 .group__join { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+/* Duszpasterze: zakres posługi */
+.priest__tasks { list-style: none; padding: 0; margin: 8px 0 12px; display: flex; flex-wrap: wrap; gap: 6px; }
+.priest__tasks li { margin: 0; padding: 3px 11px; border-radius: 999px; background: var(--gold-soft); color: var(--navy); font-size: .88rem; font-weight: 600; }
+
+/* Sakramenty: krok po kroku i FAQ */
+.howto { counter-reset: krok; list-style: none; padding: 0; margin: 6px 0 14px; }
+.howto li { counter-increment: krok; position: relative; padding: 6px 0 6px 40px; margin: 0; }
+.howto li::before { content: counter(krok); position: absolute; left: 0; top: 6px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #f1d999; font-weight: 700; font-size: .9rem; }
+.sacr-faq { margin-top: 28px; scroll-margin-top: 100px; }
+.priest__tasks li { white-space: nowrap; }
+@media (max-width: 560px) { .priest { flex-direction: column; } .priest__photo { width: 140px; } }
