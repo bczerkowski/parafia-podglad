@@ -1,32 +1,20 @@
 {
   "_instrukcja": "Ogłoszenia parafialne. Każdy punkt to tekst w cudzysłowie. Punkt z listą: { \"tekst\": \"...\", \"lista\": [\"...\", \"...\"] }. Po zmianie zapisz plik — strona odświeży się sama.",
-  "tytul": "33 Niedziela Zwykła",
-  "data": "2026-11-15",
+  "tytul": "Uroczystość Jezusa Chrystusa Króla Wszechświata",
+  "data": "2026-11-22",
   "punkty": [
+    "Dzisiaj ostatnia niedziela roku kościelnego – Uroczystość Jezusa Chrystusa Króla Wszechświata. Za tydzień I Niedziela Adwentu. Zapraszamy dzisiaj o g. 18.00 na Mszę św. oraz nabożeństwo ku czci św. Rity i św. Jana Pawła II.",
     {
       "tekst": "Liturgia tygodnia:",
       "lista": [
-        "poniedziałek – Rocznica Poświęcenia Katedry Wrocławskiej, święto",
-        "wtorek – św. Elżbiety Węgierskiej, zakonnicy",
-        "środa – bł. Karoliny Kózkówny",
-        "piątek – św. Rafała Kalinowskiego",
-        "sobota – Ofiarowanie Najśw. Maryi Panny"
+        "wtorek – św. Męczenników Andrzeja Dung-Lac, kapłana, i Towarzyszy"
       ]
     },
-    "Za tydzień Uroczystość Jezusa Chrystusa Króla Wszechświata – ostatnia niedziela roku kościelnego.",
-    "Zapraszamy do kawiarenki na kawę i ciasto: dzisiaj dyżur pełni Wspólnota Młodzieżowa Phileō.",
-    "Dzisiaj o g. 13.30 Msza św. i spotkanie dla dzieci i Rodziców przed I Komunią św.",
-    {
-      "tekst": "We wtorek zakończenie modlitw wypominkowych: dziękujemy za wspólną modlitwę za zmarłych oraz złożone ofiary wypominkowe. Wypominki:",
-      "lista": [
-        "poniedz. 16.11 – ul. Sowia, Zimowa, Życzliwa, Tuwima, Upalna, Jesienna, Wiosenna",
-        "wtorek 17.11 – wypominki bez adresu oraz złożone po terminie"
-      ],
-      "dopisek": "Zapraszamy o g. 18.00 na koronkę z wypominkami, a potem na Mszę św. w intencji wymienionych zmarłych."
-    },
-    "Zamontowano nowe organy w górnym kościele. Cena zakupu wynosi 28.500 zł. Bóg zapłać za złożone ofiary na pokrycie kosztów.",
-    "Od piątku od g. 17.00 odbywały się warsztaty Dzieła Muzycznego Synodu Archidiecezji Wrocławskiej. Dziś o g. 12.00 uroczysta suma z koncertem. Mszy św. przewodniczy i słowo Boże wygłosi Kanclerz Kurii Wrocławskiej ks. dr Piotr Żuber. Dziękujemy wszystkim, którzy ofiarowali ciasta i służyli pomocą w przeprowadzeniu Warsztatów.",
-    "Pilnie potrzebna krew – grupy: 0 Rh−, A Rh−, B Rh−. Szczegóły na plakatach.",
-    "Polecamy prasę katolicką: „Gość Niedzielny” oraz „Niedziela”."
+    "LSO oraz schola z Rodzicami zapraszają do kawiarenki na kawę i ciastko. W następną niedzielę, I Adwentu, scholka będzie rozprowadzać lampiony na roraty.",
+    "Dzisiaj o g. 10.30 uroczysta promocja nowych ministrantów – jest to święto patronalne Liturgicznej Służby Ołtarza.",
+    "W przyszłą niedzielę młodzież ze wspólnoty Phileō będzie rozprowadzać wieńce adwentowe, zbierając fundusze na ferie.",
+    "W I niedzielę Adwentu po Mszy św. o g. 19.30 Krzycki Wieczór Uwielbienia wprowadzający w czas Adwentu.",
+    "Od I Niedzieli Adwentu będą rozprowadzane opłatki i świece Wigilijnego Dzieła Pomocy Dzieciom Caritas.",
+    "Polecamy prasę katolicką: „Gość Niedzielny”, „Niedziela” oraz „Mały Gość Niedzielny” z materiałami na roraty."
   ]
 }

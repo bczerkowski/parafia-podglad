@@ -776,7 +776,7 @@
         var feast = '';
         try {
           var lit = liturgyToday(d, null) || '', season = seasonDayName(d) || '';
-          if (lit && !(season && lit.indexOf(season) === 0) && lit.toLowerCase() !== (o.tytul || '').toLowerCase()) feast = lit.replace(/ – odpust parafialny$/, '');
+          if (lit && !(season && lit.indexOf(season) === 0) && lit.toLowerCase().replace(/[^a-ząćęłńóśźż]+/g, '') !== (o.tytul || '').toLowerCase().replace(/[^a-ząćęłńóśźż]+/g, '')) feast = lit.replace(/ – odpust parafialny$/, '');
         } catch (err) { feast = ''; }
         $$('[data-ann-date]').forEach(function (el) { el.textContent = longDate(d) + ' r.' + (feast ? ' · ' + feast : ''); el.setAttribute('datetime', o.data); });
         elAnn.innerHTML = '<ol>' + annItems(o) + '</ol>';
