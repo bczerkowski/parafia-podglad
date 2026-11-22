@@ -933,3 +933,30 @@ html[data-contrast="high"] .sacrament__ico { background: #fff3c4; color: #000; }
 .news-others__title { font-size: clamp(1.5rem, 3vw, 1.9rem); margin: 40px 0 18px; padding-top: 24px; border-top: 1px solid var(--line); }
 .news-archive__title { margin-bottom: 18px; }
 .news-year { font-size: 1.5rem; margin: 28px 0 14px; color: var(--gold-text); }
+
+/* Jestem nowy w parafii */
+.newcomer-welcome { display: flex; gap: 22px; align-items: center; border-top: 4px solid var(--gold); }
+.newcomer-welcome h2 { margin: 0 0 .3em; }
+.newcomer-welcome p { margin: 0; }
+.newcomer-welcome .group__emblem { flex: none; width: 84px; height: 84px; }
+.newcomer-welcome .group__emblem svg { width: 54px; height: 54px; }
+.newcomer-lead { max-width: 720px; }
+.newcomer-small { font-size: .95rem; color: var(--muted); }
+.newcomer-steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.newcomer-steps > li { position: relative; padding-top: 28px; margin: 0; }
+.newcomer-steps h3 { font-size: 1.45rem; margin: 0 0 .5em; }
+.newcomer-steps__no { position: absolute; top: -16px; left: 20px; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--navy); color: #f1d999; font-family: var(--serif); font-size: 1.25rem; font-weight: 700; box-shadow: 0 0 0 4px var(--cream); }
+.newcomer-groups { list-style: none; padding: 0; margin: 0 0 12px; display: grid; gap: 6px; }
+.newcomer-groups li { display: flex; align-items: center; gap: 10px; margin: 0; }
+.newcomer-groups svg { width: 28px; height: 28px; flex: none; color: var(--gold-text); }
+.newcomer-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 14px; }
+.newcomer-links a { display: flex; align-items: center; gap: 14px; padding: 16px 18px; text-decoration: none; color: var(--ink); }
+.newcomer-links a:hover { border-color: var(--gold); }
+.newcomer-links svg { width: 30px; height: 30px; flex: none; color: var(--gold-text); }
+.newcomer-links b { display: block; font-size: 1.05rem; color: var(--navy); }
+.newcomer-links small { display: block; color: var(--muted); font-size: .88rem; }
+.faq details { border-bottom: 1px solid var(--line); padding: 6px 0 10px; }
+.faq summary { font-size: 1.08rem; }
+@media (max-width: 760px) { .newcomer-steps { grid-template-columns: minmax(0, 1fr); } .newcomer-welcome { flex-direction: column; align-items: flex-start; gap: 12px; } }
+.newcomer-cta { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: space-between; margin-top: 22px; padding: 18px 22px; border-radius: var(--radius); background: var(--gold-soft); border: 1px solid #e3cf98; }
+.newcomer-cta p { margin: 0; font-size: 1.05rem; }
