@@ -1146,3 +1146,25 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .motto { margin-top: 40px; }
 .motto__klosy { width: clamp(60px, 9vw, 92px); height: clamp(14px, 2vw, 20px); }
 @media (max-width: 480px) { .motto__klosy { width: 44px; height: 11px; } .wm-bottom::before, .wm-bottom::after { height: 9px; } }
+
+/* Kompaktowy układ: mniejsze odstępy między sekcjami, w kartach i w stopce */
+@media screen {
+  .hero .wrap { padding-top: clamp(40px, 6vw, 76px); padding-bottom: clamp(36px, 5.5vw, 68px); }
+  .page-hero .wrap { padding-top: clamp(24px, 3.6vw, 40px); padding-bottom: clamp(22px, 3.2vw, 36px); }
+  .section { padding: clamp(24px, 3vw, 38px) 0; }
+  .section--tight { padding: clamp(18px, 2.4vw, 28px) 0; }
+  .section__head { margin-bottom: 14px; }
+  .card { padding: clamp(16px, 2.2vw, 24px); }
+  .site-footer { padding-top: clamp(28px, 3.6vw, 44px); }
+  .footer-bottom { margin-top: 24px; padding: 14px 0; }
+  .motto { margin-top: 26px; }
+  .motto + .footer-bottom { margin-top: 20px; }
+  .album { margin-bottom: clamp(24px, 3vw, 36px); }
+}
+@media screen {
+  .announce ol > li { padding-top: 14px; padding-bottom: 14px; }
+  .announce ol > li::before { top: 12px; }
+  .announce ol > li:first-child { padding-top: 4px; }
+  .announce ol > li:first-child::before { top: 2px; }
+  .announce__meta { margin-bottom: 12px; }
+}

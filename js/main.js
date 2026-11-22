@@ -955,11 +955,9 @@
       }
       if (elOffice) {
         var st = officeStatus(), statusHtml = '';
-        if (st) {
-          statusHtml = st.open
-            ? '<p class="office-status office-status--open"><b>Kancelaria jest teraz czynna</b><span>dziś do ' + esc(st.g.godz.split(/[–-]/).pop().trim()) + '</span></p>'
-            : '<p class="office-status"><b>' + (st.today ? 'Dziś dyżur: ' : 'Najbliższy dyżur: ') + esc(st.today ? st.g.godz : (st.offset === 1 ? 'jutro' : st.g.dzien.toLowerCase())) + '</b>' +
-              '<span>' + (st.today ? 'kancelaria będzie czynna w tych godzinach' : esc(st.g.godz)) + '</span></p>';
+        // Tylko komunikat „teraz czynna” – najbliższy dyżur widać w tabeli godzin poniżej
+        if (st && st.open) {
+          statusHtml = '<p class="office-status office-status--open"><b>Kancelaria jest teraz czynna</b><span>dziś do ' + esc(st.g.godz.split(/[–-]/).pop().trim()) + '</span></p>';
         }
         elOffice.innerHTML = (k.uwaga ? '<p class="alert">' + esc(k.uwaga) + '</p>' : '') + statusHtml +
           '<ul class="hours">' + k.godziny.map(function (g) {
