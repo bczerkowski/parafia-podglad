@@ -604,8 +604,21 @@
       function render(o) {
         var d = parseDate(o.data);
         $$('[data-ann-title]').forEach(function (el) { el.textContent = o.tytul; });
-        $$('[data-ann-date]').forEach(function (el) { el.textContent = longDate(d) + ' r.'; el.setAttribute('datetime', o.data); });
+        // przy dacie – nazwa uroczystości/święta tej niedzieli (tylko gdy to coś więcej niż zwykła „Niedziela okresu”)
+        var feast = '';
+        try {
+          var lit = liturgyToday(d, null) || '', season = seasonDayName(d) || '';
+          if (lit && !(season && lit.indexOf(season) === 0) && lit.toLowerCase() !== (o.tytul || '').toLowerCase()) feast = lit.replace(/ – odpust parafialny$/, '');
+        } catch (err) { feast = ''; }
+        $$('[data-ann-date]').forEach(function (el) { el.textContent = longDate(d) + ' r.' + (feast ? ' · ' + feast : ''); el.setAttribute('datetime', o.data); });
         elAnn.innerHTML = '<ol>' + annItems(o) + '</ol>';
+        // ogłoszenia starsze niż 9 dni – uczciwa informacja zamiast „porzuconej” daty
+        var stale = $('#ann-stale');
+        if (stale) {
+          var age = Math.round((warsawNow() - d) / 864e5);
+          stale.hidden = !(o === current && age > 9);
+          if (!stale.hidden) stale.innerHTML = icon('info') + '<span>Nowe ogłoszenia pojawią się wkrótce. Poniżej ostatnie ogłoszenia z dnia ' + esc(longDate(d)) + ' r.</span>';
+        }
         if (note) {
           note.hidden = o === current;
           if (o !== current) note.innerHTML = icon('info') + '<span>To ogłoszenia archiwalne z dnia ' + esc(longDate(d)) + ' r. <a href="ogloszenia.html">Wróć do bieżących ogłoszeń</a></span>';
@@ -613,6 +626,7 @@
       }
       var chosen = weeks.filter(function (w) { return w.data === param('tydzien'); })[0] || current;
       render(chosen);
+      if (param('druk')) setTimeout(function () { window.print(); }, 400); // link „Drukuj / zapisz jako PDF” ze strony głównej
       if (sel) {
         sel.innerHTML = weeks.map(function (w) {
           return '<option value="' + esc(w.data) + '"' + (w === chosen ? ' selected' : '') + '>' +
