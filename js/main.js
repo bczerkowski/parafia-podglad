@@ -839,6 +839,7 @@
       if (one) {
         var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: ((one.podpisy && one.podpisy[fi]) ? one.podpisy[fi] + ' – ' : '') + one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
         elGal.innerHTML = '<p><a class="news-back" href="galeria.html">← Wszystkie albumy</a></p>' +
+          '<p class="news-photos__credit">Kliknij zdjęcie, aby je powiększyć. Strzałki lub przesunięcie palcem – kolejne zdjęcia.</p>' +
           '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div>' +
           (one.foto ? '<p class="news-photos__credit">fot. ' + esc(one.foto) + '</p>' : '') + '<div class="photos">' +
           one.zdjecia.map(function (f, fi) {
@@ -857,20 +858,32 @@
           '<span class="news-card__count">' + icon('image') + a.zdjecia.length + '</span></a>' +
           '<div class="news-card__body"><h3><a href="' + esc(href) + '">' + esc(a.tytul) + '</a></h3>' +
           '<p>' + count(a.zdjecia.length) + '</p><a class="news-card__more" href="' + esc(href) + '">Otwórz album →</a></div></article>';
-      }).join('') + '</div>';
+      }).join('') + '</div>' + '<p class="news-more-years"><a class="btn btn--line" href="aktualnosci.html?rok=2025">Więcej fotorelacji z lat 2024–2026 znajdziesz w Aktualnościach →</a></p>';
     }).catch(function () { fail(elGal, 'galeria'); });
     window.addEventListener('hashchange', function () { location.reload(); });
   }
   // Powiększanie zdjęć na zwykłych podstronach: <div class="photos" data-lightbox> z przyciskami .photo[data-full][data-cap]
-  var lbGroup = $('[data-lightbox]');
-  if (lbGroup && !$('#galeria') && !$('#aktualnosci')) {
-    var lbItems = $$('.photo[data-full]', lbGroup).map(function (b, i) {
-      b.setAttribute('data-i', i);
-      var cap = b.getAttribute('data-cap') || '';
-      b.setAttribute('aria-label', 'Powiększ: ' + cap);
-      return { src: b.getAttribute('data-full'), cap: cap };
+  // oraz pojedyncze obrazy z atrybutem data-zoom (np. zdjęcie z lotu ptaka w Historii)
+  if (!$('#galeria') && !$('#aktualnosci')) {
+    var lbItems = [];
+    $$('img[data-zoom]').forEach(function (im) {
+      var n = lbItems.length, cap = im.getAttribute('data-cap') || im.alt || '';
+      lbItems.push({ src: im.getAttribute('data-zoom'), cap: cap });
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'photo photo--inline'; b.setAttribute('data-i', n); b.setAttribute('aria-label', 'Powiększ: ' + cap);
+      im.parentNode.insertBefore(b, im); b.appendChild(im);
+    });
+    $$('[data-lightbox] .photo[data-full]').forEach(function (b) {
+      var n = lbItems.length, cap = b.getAttribute('data-cap') || '';
+      b.setAttribute('data-i', n); b.setAttribute('aria-label', 'Powiększ: ' + cap);
+      lbItems.push({ src: b.getAttribute('data-full'), cap: cap });
     });
     if (lbItems.length) lightbox(lbItems);
+  }
+  // wersja angielska: przełącznik w górnym pasku prowadzi z powrotem do polskiej
+  if (/\/en\.html$/.test(location.pathname)) {
+    var langA = $('.topbar__lang');
+    if (langA) { langA.href = 'index.html'; langA.lang = 'pl'; langA.hreflang = 'pl'; langA.innerHTML = 'PL<span class="topbar__lang-long"> · Polski</span>'; }
   }
   function lightbox(items) {
     var dlg = document.createElement('dialog');

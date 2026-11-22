@@ -1034,3 +1034,10 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .news-years a.is-active small { color: #f1d999; }
 .news-more-years { text-align: center; margin-top: 28px; }
 #aktualnosci { scroll-margin-top: 90px; }
+/* Kancelaria: konto bez wypychania na dół karty */
+.office .account { margin-top: 18px; }
+/* Historia: zdjęcia 3×2, większe skany; obraz z lotu ptaka powiększany */
+.photos--captioned { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+@media (max-width: 600px) { .photos--captioned { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } }
+.photo--inline { display: block; width: 100%; aspect-ratio: auto; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.photo--inline img { width: 100%; height: auto; }

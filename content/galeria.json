@@ -199,6 +199,7 @@
                    },
                    {
                        "tytul":  "Światowe Dni Młodzieży",
+                       "okladka":  "26.jpg",
                        "katalog":  "sdm",
                        "zdjecia":  [
                                        "23.jpg",
@@ -210,7 +211,7 @@
                                    ]
                    },
                    {
-                       "tytul":  "Droga krzyżowa ulicami 2013",
+                       "tytul":  "Droga Krzyżowa ulicami parafii 2013",
                        "katalog":  "droga-krzyzowa-2013",
                        "zdjecia":  [
                                        "17.jpg",
@@ -223,7 +224,7 @@
                                    ]
                    },
                    {
-                       "tytul":  "Historia parafii (skany z albumów parafialnych)",
+                       "tytul":  "Historia parafii – skany z albumów",
                        "katalog":  "historia",
                        "zdjecia":  [
                                        "10.jpg",
