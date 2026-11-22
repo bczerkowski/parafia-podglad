@@ -873,6 +873,19 @@
     if (w.youtube) return 'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg';
     return null;
   }
+  // kompaktowa karta wpisu – ta sama na stronie głównej i na liście aktualności
+  function newsHref(w) { return 'aktualnosci.html?wpis=' + slug(w.tytul); }
+  function newsCard(w) {
+    var img = newsImage(w), href = newsHref(w), n = (w.zdjecia || []).length;
+    return '<article class="news-card">' +
+      '<a class="news-card__media" href="' + esc(href) + '" tabindex="-1" aria-hidden="true">' +
+      (img ? '<img src="' + esc(img) + '" alt="" loading="lazy">' : '<div class="tile__ph"><img src="img/triquetra.svg" alt="" width="56" height="56"></div>') +
+      (n ? '<span class="news-card__count">' + icon('image') + n + '</span>' : '') +
+      (w.youtube ? '<span class="news-card__count">' + icon('play') + 'film</span>' : '') + '</a>' +
+      '<div class="news-card__body"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time>' +
+      '<h3><a href="' + esc(href) + '">' + esc(w.tytul) + '</a></h3><p>' + esc(w.opis || w.tresc[0] || '') + '</p>' +
+      '<a class="news-card__more" href="' + esc(href) + '">' + (n ? 'Relacja i zdjęcia →' : 'Czytaj więcej →') + '</a></div></article>';
+  }
   // strona główna: maks. 3 wpisy z ostatnich 12 miesięcy; bez takich wpisów sekcja pozostaje ukryta
   var elNewsHome = $('#aktualnosci-home');
   if (elNewsHome) {
@@ -881,14 +894,7 @@
       var recent = a.wpisy.filter(function (w) { return w.data && parseDate(w.data) >= limit; })
         .sort(function (x, y) { return x.data < y.data ? 1 : -1; }).slice(0, 3);
       if (!recent.length) return;
-      elNewsHome.innerHTML = recent.map(function (w) {
-        var img = newsImage(w), href = (w.zdjecia || !w.link) ? ('aktualnosci.html#' + slug(w.tytul)) : w.link;
-        return '<article class="news-card">' +
-          (img ? '<img src="' + esc(img) + '" alt="" loading="lazy">' : '<div class="tile__ph"><img src="img/triquetra.svg" alt="" width="56" height="56"></div>') +
-          '<div class="news-card__body"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time>' +
-          '<h3>' + esc(w.tytul) + '</h3><p>' + esc(w.opis || w.tresc[0] || '') + '</p>' +
-          '<a href="' + esc(href) + '"' + (/^https?:/.test(href) ? ' rel="noopener" target="_blank"' : '') + '>Pełna relacja →</a></div></article>';
-      }).join('');
+      elNewsHome.innerHTML = recent.map(function (w) { return newsCard(w); }).join('');
       $('#aktualnosci-sekcja').hidden = false;
     }).catch(function () { /* sekcja opcjonalna */ });
   }
@@ -929,11 +935,22 @@
             ' aria-label="Odtwórz film: ' + esc(w.tytul) + ' (YouTube)">' +
             '<span>' + icon('play') + ' Odtwórz film</span></button></div>' : '') + '</article>';
       };
-      elNews.innerHTML = (recent.length ? recent.map(card).join('') : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
-        (older.length ? '<h2 class="news-archive__title">Archiwum</h2><div class="grid news-archive">' + older.map(card).join('') + '</div>' : '');
-      if (photos.length) lightbox(photos);
-      var target = location.hash && document.getElementById(location.hash.slice(1));
-      if (target) target.scrollIntoView();
+      // pojedynczy wpis: ?wpis=slug (dawne linki #slug też działają)
+      var want = param('wpis') || (location.hash ? decodeURIComponent(location.hash.slice(1)) : '');
+      var one = want && a.wpisy.filter(function (w) { return slug(w.tytul) === want; })[0];
+      if (one) {
+        var others = a.wpisy.filter(function (w) { return w !== one && isRecent(w); }).slice(0, 3);
+        elNews.innerHTML = '<div class="news-single">' +
+          '<p><a class="news-back" href="aktualnosci.html">← Wszystkie aktualności</a></p>' + card(one) + '</div>' +
+          (others.length ? '<h2 class="news-others__title">Inne wydarzenia</h2><div class="news-grid">' + others.map(newsCard).join('') + '</div>' : '');
+        document.title = one.tytul + ' – Aktualności – Parafia Trójcy Świętej we Wrocławiu';
+        var h1 = $('.page-hero h1'); if (h1) h1.textContent = 'Aktualności';
+        if (photos.length) lightbox(photos);
+        window.scrollTo(0, 0);
+        return;
+      }
+      elNews.innerHTML = (recent.length ? '<div class="news-grid">' + recent.map(newsCard).join('') + '</div>' : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
+        (older.length ? '<h2 class="news-archive__title">Archiwum</h2><div class="news-grid news-grid--archive">' + older.map(newsCard).join('') + '</div>' : '');
     }).catch(function () { fail(elNews, 'aktualności'); });
     elNews.addEventListener('click', function (e) {
       var b = e.target.closest('[data-yt]');
