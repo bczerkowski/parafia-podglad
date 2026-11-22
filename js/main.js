@@ -740,6 +740,15 @@
             '<h2 class="day__title">' + esc(h.title) + (today ? ' <span class="badge">dziś</span>' : '') + '</h2>' +
             (h.sub ? '<p class="day__sub">' + esc(h.sub) + '</p>' : '') + intentionsList(day) + '</article>';
         }).join('');
+        // pasek skrótów dni (Nd | Pn | … | Sb) – szybkie przejście do dnia, dzisiejszy wyróżniony
+        var jumpBar = $('#day-jump');
+        if (jumpBar) {
+          jumpBar.innerHTML = data.dni.map(function (day) {
+            var dd = parseDate(day.data);
+            return '<li><a href="#d-' + day.data + '"' + (day.data === todayIso ? ' class="is-today" aria-current="date"' : '') + '>' +
+              DNI_KR[dd.getDay()] + ' ' + dd.getDate() + '</a></li>';
+          }).join('');
+        }
         if (prev) { prev.disabled = pos === 0; prev.title = pos === 0 ? 'Brak wcześniejszych tygodni w archiwum' : ''; }
         if (next) next.disabled = pos === weeks.length - 1;
         if (now) now.hidden = isCur;
@@ -988,16 +997,32 @@
         window.scrollTo(0, 0);
         return;
       }
-      elNews.innerHTML = (recent.length ? '<div class="news-grid">' + recent.map(newsCard).join('') + '</div>' : '<p class="note">Brak nowych wpisów – bieżące informacje znajdziesz w <a href="ogloszenia.html">ogłoszeniach parafialnych</a>.</p>') +
-        (older.length ? '<h2 class="news-archive__title">Archiwum</h2>' + (function () {
-          // archiwum pogrupowane według lat
-          var years = [];
-          older.forEach(function (w) { var y = (w.data || '').slice(0, 4); if (years.indexOf(y) < 0) years.push(y); });
-          return years.map(function (y) {
-            return '<h3 class="news-year">' + esc(y) + '</h3><div class="news-grid news-grid--archive">' +
-              older.filter(function (w) { return (w.data || '').slice(0, 4) === y; }).map(newsCard).join('') + '</div>';
-          }).join('');
-        })() : '');
+      // lista według lat kalendarzowych: zakładki lat u góry, domyślnie najnowszy rok (?rok=2025 lub ?rok=wszystkie)
+      var all = a.wpisy.slice().sort(function (x, y) { return (x.data || '') < (y.data || '') ? 1 : -1; });
+      var years = [];
+      all.forEach(function (w) { var y = (w.data || '').slice(0, 4); if (y && years.indexOf(y) < 0) years.push(y); });
+      var byYear = function (y) { return all.filter(function (w) { return (w.data || '').slice(0, 4) === y; }); };
+      function show(sel) {
+        var tabs = '<ul class="toc news-years" aria-label="Wybierz rok">' + years.concat(['wszystkie']).map(function (y) {
+          return '<li><a href="?rok=' + y + '"' + (y === sel ? ' aria-current="page" class="is-active"' : '') + ' data-rok="' + y + '">' + (y === 'wszystkie' ? 'Wszystkie' : y) + ' <small>' + (y === 'wszystkie' ? all.length : byYear(y).length) + '</small></a></li>';
+        }).join('') + '</ul>';
+        var body = sel === 'wszystkie'
+          ? years.map(function (y) { return '<h2 class="news-year">' + y + '</h2><div class="news-grid">' + byYear(y).map(newsCard).join('') + '</div>'; }).join('')
+          : '<div class="news-grid">' + byYear(sel).map(newsCard).join('') + '</div>';
+        var idx = years.indexOf(sel), older = idx >= 0 && idx < years.length - 1 ? years[idx + 1] : null;
+        elNews.innerHTML = tabs + body + (older ? '<p class="news-more-years"><a class="btn btn--line" href="?rok=' + older + '" data-rok="' + older + '">Pokaż starsze wpisy (' + older + ') →</a></p>' : '');
+      }
+      var startYear = param('rok') && (years.indexOf(param('rok')) >= 0 || param('rok') === 'wszystkie') ? param('rok') : years[0];
+      show(startYear);
+      elNews.addEventListener('click', function (e) {
+        var t = e.target.closest('[data-rok]');
+        if (!t) return;
+        e.preventDefault();
+        var y = t.getAttribute('data-rok');
+        setParam('rok', y === years[0] ? null : y);
+        show(y);
+        elNews.scrollIntoView({ block: 'start' });
+      });
     }).catch(function () { fail(elNews, 'aktualności'); });
     elNews.addEventListener('click', function (e) {
       var b = e.target.closest('[data-yt]');

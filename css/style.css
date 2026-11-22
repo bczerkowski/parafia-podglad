@@ -1010,3 +1010,27 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .sacr-faq { margin-top: 28px; scroll-margin-top: 100px; }
 .priest__tasks li { white-space: nowrap; }
 @media (max-width: 560px) { .priest { flex-direction: column; } .priest__photo { width: 140px; } }
+
+/* Intencje: pasek dni */
+.day-jump { position: sticky; top: 72px; z-index: 5; background: var(--cream); padding: 8px 0; margin-bottom: 14px; }
+.day-jump a { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); text-decoration: none; color: var(--navy); font-weight: 650; font-size: .92rem; }
+.day-jump a:hover { border-color: var(--gold); }
+.day-jump a.is-today { background: var(--navy); color: #fff; border-color: var(--navy); box-shadow: 0 0 0 2px var(--gold); }
+.week-day { scroll-margin-top: 140px; }
+/* Jestem nowy: spokojniejsza karta konta */
+.account--light { background: var(--cream) !important; color: var(--ink) !important; border: 1px solid var(--line); }
+.account--light * { color: inherit; }
+.account--light button, .account--light .btn { color: var(--navy) !important; }
+/* Duszpasterze: plakietki jako linki */
+.priest__tasks a { color: inherit; text-decoration: none; }
+.priest__tasks a:hover { text-decoration: underline; }
+.priest__contact small { color: var(--muted); }
+
+/* Aktualności: zakładki lat */
+.news-years { margin-bottom: 22px; }
+.news-years a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); text-decoration: none; color: var(--navy); font-weight: 650; }
+.news-years a small { color: var(--muted); font-weight: 600; }
+.news-years a.is-active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.news-years a.is-active small { color: #f1d999; }
+.news-more-years { text-align: center; margin-top: 28px; }
+#aktualnosci { scroll-margin-top: 90px; }
