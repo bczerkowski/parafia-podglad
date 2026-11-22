@@ -546,6 +546,135 @@
     });
   }
 
+  /* ---------- Kalendarz parafialny (z kalendarza liturgicznego, nabożeństw, zmian Mszy i stałych spotkań wspólnot) ---------- */
+  var elCal = $('#kalendarz');
+  if (elCal) {
+    var CATS = [
+      { id: 'liturgia', name: 'Liturgia' },
+      { id: 'nabozenstwa', name: 'Nabożeństwa' },
+      { id: 'msze', name: 'Zmiany w porządku Mszy' },
+      { id: 'wspolnoty', name: 'Spotkania wspólnot' }
+    ];
+    var MIES_M = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+    // stałe spotkania wspólnot (zgodnie ze stroną Wspólnoty i grupy)
+    var groupsOn = function (d) {
+      var out = [], dow = d.getDay(), dom = d.getDate();
+      if (dow === 4) out.push({ t: 'Wspólnota Młodzieżowa Phileō', h: 'godz. 19:15', href: 'wspolnoty.html#mlodziez' });
+      if (dow === 3) out.push({ t: 'Schola młodzieżowa Cordis – próba', h: 'godz. 19:00, salka parafialna', href: 'wspolnoty.html#cordis' });
+      if (dom <= 7 && dow === 4) out.push({ t: 'Stowarzyszenie Krwi Chrystusa', h: 'godz. 17:00, dolny kościół', href: 'wspolnoty.html#krew' });
+      if (dom <= 7 && dow === 5) out.push({ t: 'Straż Honorowa NSPJ – czuwanie i adoracja', h: 'godz. 17:00', href: 'wspolnoty.html#straz' });
+      return out;
+    };
+    var seasonsOf = function (y) {
+      var adv = adventStart(y), e = easter(y);
+      return [
+        { od: addDays(adv, 1), do: new Date(y, 11, 24), t: 'Roraty – pn–sb o 6:30 i 18:30 (z udziałem dzieci)' },
+        { od: addDays(e, -46), do: addDays(e, -3), t: 'Wielki Post – Droga Krzyżowa w piątki (17:00, 18:00, 19:30), Gorzkie Żale w niedziele o 17:00' },
+        { od: new Date(y, 4, 1), do: new Date(y, 4, 31), t: 'Nabożeństwa majowe – dni powszednie 18:00, niedziele 17:00' },
+        { od: new Date(y, 5, 1), do: new Date(y, 5, 30), t: 'Nabożeństwa czerwcowe – dni powszednie 18:00, niedziele 17:00' },
+        { od: new Date(y, 9, 1), do: new Date(y, 9, 31), t: 'Różaniec październikowy – dorośli: dni powszednie 18:00, niedziele 17:00; dzieci: pn–śr 17:00' }
+      ];
+    };
+    Promise.all([load('msze'), loadOptional('ogloszenia', null)]).then(function (res) {
+      var cfg = res[0], ann = res[1];
+      var today = warsawNow(); today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+      var view = new Date(today.getFullYear(), today.getMonth(), 1), selected = today;
+      var active = {}; CATS.forEach(function (c) { active[c.id] = true; });
+      var eventsOn = function (d) {
+        var ev = [], lit = '', season = '';
+        try { lit = liturgyToday(d, ann) || ''; season = seasonDayName(d) || ''; } catch (e) {}
+        var big = lit && !(season && lit.indexOf(season) === 0);
+        if (big || d.getDay() === 0) {
+          var col = ''; try { col = liturgyColor(d, ann); } catch (e) {}
+          ev.push({ c: 'liturgia', t: lit.split(' · ')[0], h: big ? 'uroczystość / święto' : 'niedziela', col: col });
+        }
+        devotionsOn(d).forEach(function (x) { ev.push({ c: 'nabozenstwa', t: x.t, h: x.h, href: 'msze.html' }); });
+        (cfg.zmiany || []).filter(function (z) { return z.data === isoDate(d); }).forEach(function (z) {
+          ev.push({ c: 'msze', t: (z.opis ? z.opis + ' – ' : '') + 'zmieniony porządek Mszy', h: (z.msze || []).length ? 'Msze: ' + z.msze.map(function (m) { return m.godz; }).join(', ') : 'brak Mszy świętych', href: 'msze.html' });
+        });
+        groupsOn(d).forEach(function (x) { ev.push({ c: 'wspolnoty', t: x.t, h: x.h, href: x.href }); });
+        return ev.filter(function (x) { return active[x.c]; });
+      };
+      var dayLabel = function (d) { return cap(DNI[d.getDay()]) + ', ' + d.getDate() + ' ' + MIES[d.getMonth()]; };
+      var evList = function (ev) {
+        return '<ul class="cal-list">' + ev.map(function (x) {
+          return '<li class="cal-ev cal-ev--' + x.c + '">' + (x.col ? '<span class="lit-color lit-color--' + x.col + '" title="Kolor liturgiczny"></span>' : '<span class="cal-dot" aria-hidden="true"></span>') +
+            '<span><b>' + (x.href ? '<a href="' + x.href + '">' + esc(x.t) + '</a>' : esc(x.t)) + '</b>' + (x.h ? ' <small>' + esc(x.h) + '</small>' : '') + '</span></li>';
+        }).join('') + '</ul>';
+      };
+      function render() {
+        var y = view.getFullYear(), m = view.getMonth();
+        var first = new Date(y, m, 1), lead = (first.getDay() + 6) % 7, days = new Date(y, m + 1, 0).getDate();
+        var cells = '';
+        for (var i = 0; i < lead; i++) cells += '<span class="cal-cell cal-cell--empty" aria-hidden="true"></span>';
+        for (var dn = 1; dn <= days; dn++) {
+          var d = new Date(y, m, dn), ev = eventsOn(d), cats = [];
+          ev.forEach(function (x) { if (cats.indexOf(x.c) < 0) cats.push(x.c); });
+          var cls = 'cal-cell' + (sameDay(d, today) ? ' is-today' : '') + (sameDay(d, selected) ? ' is-selected' : '') + (d.getDay() === 0 ? ' is-sunday' : '');
+          cells += '<button type="button" class="' + cls + '" data-day="' + dn + '" aria-label="' + esc(dayLabel(d)) + (ev.length ? ', wydarzenia: ' + ev.length : '') + '"' + (sameDay(d, selected) ? ' aria-pressed="true"' : '') + '>' +
+            '<span class="cal-num">' + dn + '</span><span class="cal-dots">' + cats.map(function (c) { return '<i class="cal-dot cal-dot--' + c + '"></i>'; }).join('') + '</span></button>';
+        }
+        var seas = seasonsOf(y).filter(function (s) { return s.od <= new Date(y, m + 1, 0) && s.do >= first; });
+        // lista: wybrany dzień + najbliższe wydarzenia w miesiącu
+        var selEv = eventsOn(selected);
+        var upcoming = '', count = 0;
+        for (var k = 1; k <= days && count < 12; k++) {
+          var dd = new Date(y, m, k);
+          if (dd < today && !(y < today.getFullYear() || (y === today.getFullYear() && m < today.getMonth()))) continue;
+          if (sameDay(dd, selected)) continue;
+          var e2 = eventsOn(dd);
+          if (!e2.length) continue;
+          upcoming += '<div class="cal-day"><h4>' + esc(dayLabel(dd)) + '</h4>' + evList(e2) + '</div>'; count++;
+        }
+        elCal.innerHTML =
+          '<div class="cal-toolbar">' +
+            '<div class="cal-nav"><button type="button" class="btn btn--line btn--sm" data-nav="-1" aria-label="Poprzedni miesiąc">' + icon('left') + '</button>' +
+            '<h2 class="cal-title">' + MIES_M[m] + ' ' + y + '</h2>' +
+            '<button type="button" class="btn btn--line btn--sm" data-nav="1" aria-label="Następny miesiąc">' + icon('right') + '</button>' +
+            (y !== today.getFullYear() || m !== today.getMonth() ? '<button type="button" class="btn btn--gold btn--sm" data-nav="0">Dziś</button>' : '') + '</div>' +
+            '<div class="cal-filters" role="group" aria-label="Pokaż kategorie">' + CATS.map(function (c) {
+              return '<button type="button" class="cal-filter cal-filter--' + c.id + (active[c.id] ? ' is-on' : '') + '" data-cat="' + c.id + '" aria-pressed="' + active[c.id] + '"><i class="cal-dot cal-dot--' + c.id + '"></i>' + c.name + '</button>';
+            }).join('') + '</div>' +
+          '</div>' +
+          (seas.length ? '<div class="cal-seasons">' + seas.map(function (s) { return '<p>' + icon('calendar') + '<span><b>W tym miesiącu:</b> ' + esc(s.t) + ' <small>(' + s.od.getDate() + ' ' + MIES[s.od.getMonth()] + ' – ' + s.do.getDate() + ' ' + MIES[s.do.getMonth()] + ')</small>' + '</span></p>'; }).join('') + '</div>' : '') +
+          '<div class="cal-layout"><div class="card cal-grid-card"><div class="cal-week" aria-hidden="true"><span>Pn</span><span>Wt</span><span>Śr</span><span>Cz</span><span>Pt</span><span>So</span><span>Nd</span></div>' +
+          '<div class="cal-grid">' + cells + '</div></div>' +
+          '<div class="card cal-side"><h3>' + esc(dayLabel(selected)) + (sameDay(selected, today) ? ' <span class="badge">dziś</span>' : '') + '</h3>' +
+            (selEv.length ? evList(selEv) : '<p class="newcomer-small">Brak wydarzeń w wybranych kategoriach. Msze święte – według <a href="msze.html">stałego porządku</a>.</p>') +
+            (upcoming ? '<h3 class="cal-next">Dalej w tym miesiącu</h3>' + upcoming : '') + '</div></div>';
+      }
+      elCal.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-day],[data-nav],[data-cat]');
+        if (!b) return;
+        if (b.hasAttribute('data-day')) { selected = new Date(view.getFullYear(), view.getMonth(), +b.getAttribute('data-day')); }
+        else if (b.hasAttribute('data-nav')) {
+          var n = +b.getAttribute('data-nav');
+          view = n === 0 ? new Date(today.getFullYear(), today.getMonth(), 1) : new Date(view.getFullYear(), view.getMonth() + n, 1);
+          selected = n === 0 ? today : (view.getFullYear() === today.getFullYear() && view.getMonth() === today.getMonth() ? today : new Date(view));
+        } else { var c = b.getAttribute('data-cat'); active[c] = !active[c]; }
+        render();
+      });
+      render();
+    }).catch(function () { fail(elCal, 'kalendarz'); });
+  }
+
+  /* ---------- Zamówienie intencji: przygotowanie wiadomości e-mail do kancelarii (bez wysyłania danych przez stronę) ---------- */
+  var intForm = $('#intention-form');
+  if (intForm) {
+    intForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var f = intForm.elements, err = $('#intention-error');
+      var missing = ['rodzaj', 'data', 'tresc', 'imie', 'tel'].filter(function (n) { return !f[n].value.trim(); });
+      if (missing.length) { err.textContent = 'Uzupełnij wymagane pola: rodzaj, dzień, treść intencji, imię i nazwisko oraz telefon.'; err.hidden = false; f[missing[0]].focus(); return; }
+      err.hidden = true;
+      var body = 'Szczęść Boże,\n\nproszę o przyjęcie intencji mszalnej:\n\n' +
+        'Rodzaj: ' + f.rodzaj.value + '\nProponowany dzień: ' + f.data.value + '\nProponowana godzina: ' + f.godz.value +
+        '\nTreść intencji: ' + f.tresc.value.trim() + '\n\nZamawiający: ' + f.imie.value.trim() + '\nTelefon: ' + f.tel.value.trim() +
+        (f.email.value.trim() ? '\nE-mail: ' + f.email.value.trim() : '') + '\n\nProszę o potwierdzenie terminu.\n';
+      location.href = 'mailto:proboszczswtrojca@gmail.com?subject=' + encodeURIComponent('Zamówienie intencji mszalnej – ' + f.data.value) + '&body=' + encodeURIComponent(body);
+    });
+  }
+
   /* ---------- Mapa terytorium parafii (Leaflet + content/teren.json z OpenStreetMap) ---------- */
   var elMap = $('#teren-map');
   if (elMap) {

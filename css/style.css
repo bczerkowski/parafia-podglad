@@ -1052,3 +1052,62 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .teren__swatch--area { background: rgba(201, 162, 63, .15); border: 2px dashed #c9a23f; }
 .teren__swatch--church { width: 14px; height: 14px; border-radius: 50%; background: #b3262e; box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--line); }
 @media (max-width: 900px) { .teren { grid-template-columns: minmax(0, 1fr); } .teren__map { height: 420px; } }
+
+/* Kalendarz parafialny */
+.cal-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
+.cal-nav { display: flex; align-items: center; gap: 10px; }
+.cal-nav .btn svg { width: 18px; height: 18px; }
+.cal-title { margin: 0 6px; font-size: clamp(1.5rem, 3vw, 2rem); min-width: 9ch; text-align: center; }
+.cal-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.cal-filter { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: inherit; font-size: .9rem; font-weight: 650; cursor: pointer; }
+.cal-filter.is-on { color: var(--navy); border-color: var(--gold); background: var(--gold-soft); }
+.cal-filter:not(.is-on) .cal-dot { opacity: .35; }
+.cal-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--muted); flex: none; }
+.cal-dot--liturgia { background: #6b3f8f; }
+.cal-dot--nabozenstwa { background: #c9a23f; }
+.cal-dot--msze { background: #b3262e; }
+.cal-dot--wspolnoty { background: #2f7d6d; }
+.cal-seasons p { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 8px; padding: 10px 14px; border-radius: 12px; background: var(--gold-soft); }
+.cal-seasons svg { width: 18px; height: 18px; color: var(--gold-text); flex: none; margin-top: 3px; }
+.cal-layout { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 20px; align-items: start; margin-top: 8px; }
+.cal-week, .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.cal-week span { text-align: center; font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; padding-bottom: 6px; }
+.cal-cell { aspect-ratio: 1 / .9; border: 1px solid transparent; border-radius: 10px; background: var(--cream); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font: inherit; cursor: pointer; color: var(--ink); padding: 2px; }
+.cal-cell--empty { background: none; cursor: default; }
+.cal-cell:hover { border-color: var(--gold); }
+.cal-cell.is-sunday .cal-num { color: #b3262e; }
+.cal-cell.is-today { box-shadow: inset 0 0 0 2px var(--gold); }
+.cal-cell.is-selected { background: var(--navy); color: #fff; }
+.cal-cell.is-selected .cal-num { color: #fff; }
+.cal-num { font-family: var(--serif); font-size: 1.15rem; font-weight: 700; line-height: 1; }
+.cal-dots { display: flex; gap: 3px; min-height: 7px; }
+.cal-dots .cal-dot { width: 7px; height: 7px; }
+.cal-side h3 { font-size: 1.3rem; margin: 0 0 10px; }
+.cal-next { margin-top: 22px !important; padding-top: 14px; border-top: 1px solid var(--line); font-size: 1.1rem !important; }
+.cal-day h4 { font-family: var(--sans); font-size: .9rem; margin: 12px 0 4px; color: var(--gold-text); text-transform: uppercase; letter-spacing: .05em; }
+.cal-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.cal-ev { display: flex; gap: 10px; align-items: flex-start; margin: 0; }
+.cal-ev .cal-dot, .cal-ev .lit-color { margin-top: 6px; }
+.cal-ev--nabozenstwa .cal-dot { background: #c9a23f; } .cal-ev--msze .cal-dot { background: #b3262e; } .cal-ev--wspolnoty .cal-dot { background: #2f7d6d; }
+.cal-ev small { display: block; color: var(--muted); font-size: .88rem; }
+.cal-ev a { color: inherit; }
+@media (max-width: 900px) { .cal-layout { grid-template-columns: minmax(0, 1fr); } .cal-num { font-size: 1rem; } .cal-cell { aspect-ratio: 1 / 1; border-radius: 8px; } }
+
+/* Zamówienie intencji */
+.intention-order { margin-top: 28px; border-top: 4px solid var(--gold); }
+.intention-order__head { display: flex; gap: 18px; align-items: center; }
+.intention-order__head h2 { margin: 0 0 .3em; font-size: clamp(1.4rem, 3vw, 1.8rem); }
+.intention-order__head p { margin: 0; }
+.intention-order__head .group__emblem { flex: none; width: 64px; height: 64px; margin: 0; }
+.intention-order__head .group__emblem svg { width: 40px; height: 40px; }
+.intention-order__form { margin-top: 16px; }
+.intention-order__form > summary { list-style: none; display: inline-flex; cursor: pointer; }
+.intention-order__form > summary::-webkit-details-marker { display: none; }
+.intention-order__form[open] > summary { display: none; }
+.form-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 14px; }
+.form-grid label { display: grid; gap: 5px; font-weight: 650; font-size: .95rem; color: var(--navy); }
+.form-grid .form-wide { grid-column: 1 / -1; }
+.form-grid input, .form-grid select, .form-grid textarea { font: inherit; font-weight: 400; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: var(--ink); width: 100%; box-sizing: border-box; }
+.form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus { outline: 2px solid var(--gold); border-color: var(--gold); }
+.form-error { color: #b3262e; font-weight: 650; }
+@media (max-width: 760px) { .form-grid { grid-template-columns: minmax(0, 1fr); } .intention-order__head { flex-direction: column; align-items: flex-start; } }
