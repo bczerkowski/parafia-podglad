@@ -1171,8 +1171,10 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 
 /* Ilustracje wspólnot – jeden standard: kwadrat 560×560 (przezroczysty), na stronie ten sam rozmiar;
    tekst opływa kontur grafiki (shape-outside) */
-.group__art { float: right; width: min(170px, 34%); height: auto; margin: 0 -4px 6px 12px;
+.group__art { float: right; width: min(170px, 34%); height: auto; margin: 2px -6px 8px 10px;
   shape-image-threshold: .3; shape-margin: 8px; }
+/* ramki z terminem, przyciski i kontakt – zawsze pełna szerokość, pod ilustracją (zamiast zwężać się obok niej) */
+.group__art ~ .group__when, .group__art ~ .group__links, .group__art ~ .caritas__links, .group__art ~ .group__join, .group__art ~ .group__contact { clear: right; }
 /* jednakowa „waga” wizualna: szerokie grafiki szersze (ta sama powierzchnia co kwadrat 170×170) */
 .group__art[src*="krag"] { width: min(220px, 42%); }
 .group__art[src*="lso"] { width: min(193px, 38%); }
