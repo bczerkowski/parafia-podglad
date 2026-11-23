@@ -1203,3 +1203,4 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 /* Szensztat: cienki napis w łuku – nieco większe logo, żeby było czytelne */
 .group__art[src*="szensztat"] { width: min(200px, 38%); }
 .grid--2 .group .prose > h2 { margin-bottom: 10px; }
+.grid--2 .group .grid--main { gap: 4px; } .grid--2 .group aside .timeline { margin-top: 12px; }
