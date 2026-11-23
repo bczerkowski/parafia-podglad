@@ -1206,24 +1206,6 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 /* długi tytuł Straży Honorowej – odrobinę mniejsza czcionka */
 #straz .group__head h3 { font-size: clamp(1.25rem, 2vw, 1.42rem); }
 
-/* Strona główna – kancelaria w wersji zwartej (pełne informacje na stronie Kancelaria) */
-#kancelaria .office__card { padding: 18px 20px; }
-#kancelaria .office__card h3 { margin-bottom: 8px; font-size: 1.35rem; }
-#kancelaria .hours { margin-bottom: 8px; }
-#kancelaria .hours li { padding: 6px 0; }
-#kancelaria .office-status { margin-bottom: 8px; padding: 8px 12px; }
-#kancelaria .contact-main { padding-bottom: 6px; margin-bottom: 2px; }
-#kancelaria .contact-main__tel { font-size: 1.45rem; }
-#kancelaria .contact-list li { padding: 3px 0; }
-#kancelaria .office__card .contact-main + .contact-list { margin-bottom: 8px; }
-#kancelaria .account { padding: 12px 14px; margin-top: 10px; }
-#kancelaria .account__nr { font-size: 1rem; margin: 4px 0 2px; }
-#kancelaria .account__to { font-size: .78rem; margin-bottom: 8px; line-height: 1.4; }
-#kancelaria .account .btn { padding: 6px 12px; font-size: .85rem; }
-#kancelaria .office__address { margin-bottom: 8px; }
-#kancelaria .office .map { height: 190px !important; min-height: 0 !important; }
-#kancelaria .office__card--map .btn { display: none; }  /* trasa jest już w przyciskach „Zadzwoń / E-mail / Trasa” */
-
 /* Strona główna – spowiedź pod godzinami Mszy */
 .confession { margin-top: 18px; display: grid; grid-template-columns: auto 1fr; gap: 6px 26px; align-items: start;
   background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); padding: 14px 20px; box-shadow: var(--shadow); }
