@@ -1171,8 +1171,13 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 
 /* Ilustracje wspólnot – jeden standard: kwadrat 560×560 (przezroczysty), na stronie ten sam rozmiar;
    tekst opływa kontur grafiki (shape-outside) */
-.group__art { float: right; width: min(170px, 36%); height: auto; margin: -4px -4px 4px 14px;
-  shape-image-threshold: .3; shape-margin: 10px; }
+.group__art { float: right; width: min(170px, 34%); height: auto; margin: 0 -4px 6px 12px;
+  shape-image-threshold: .3; shape-margin: 8px; }
+/* jednakowa „waga” wizualna: szerokie grafiki szersze (ta sama powierzchnia co kwadrat 170×170) */
+.group__art[src*="krag"] { width: min(220px, 42%); }
+.group__art[src*="lso"] { width: min(193px, 38%); }
+/* Rita – przy tekście opisu, większa */
+.group__art[src*="rita"] { width: min(235px, 42%); margin: -6px -10px 4px 4px; shape-margin: 4px; }
 .group__art[src*="rita"] { shape-outside: url("../img/wspolnoty/rita.webp"); }
 .group__art[src*="caritas"] { shape-outside: url("../img/wspolnoty/caritas.webp"); }
 .group__art[src*="rozaniec"] { shape-outside: url("../img/wspolnoty/rozaniec.webp"); }
@@ -1186,4 +1191,4 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .group__art[src*="cordis"] { shape-outside: url("../img/wspolnoty/cordis.webp"); }
 .group__art[src*="lupikowo"] { shape-outside: url("../img/wspolnoty/lupikowo.webp"); }
 .group::after, .group .prose::after { content: ""; display: block; clear: both; }
-@media (max-width: 560px) { .group__art { width: 34%; margin: 0 -2px 4px 10px; shape-margin: 6px; } }
+@media (max-width: 560px) { .group__art { width: 30%; margin: 0 -2px 4px 10px; shape-margin: 6px; } .group__art[src*="krag"] { width: 40%; } .group__art[src*="lso"] { width: 34%; } .group__art[src*="rita"] { width: 40%; } }
