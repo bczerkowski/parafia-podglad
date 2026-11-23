@@ -266,7 +266,15 @@
       if (elWeek) elWeek.innerHTML = renderTimes(cfg.powszednie, cfg, !today.sunday, nextToday) +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaPowszednie) + '</span></p>' +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaSwieta) + '</span></p>';
-      if (elConf) elConf.innerHTML = '<ul class="checklist">' + cfg.spowiedz.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul>';
+      if (elConf) {
+        // na stronie głównej (wąski pasek) – skrócone nazwy dni, żeby pasek nie puchł
+        var short = !!elConf.closest('.confession');
+        elConf.innerHTML = '<ul class="checklist">' + cfg.spowiedz.map(function (s) {
+          if (short) s = s.replace(/pierwszy czwartek, piątek i sobotę/i, 'pierwszy czw., pt. i sb.')
+            .replace(/podczas adoracji Najświętszego Sakramentu od (\d{1,2}:\d{2}) do (\d{1,2}:\d{2})/i, 'adoracja, $1–$2');
+          return '<li>' + esc(s) + '</li>';
+        }).join('') + '</ul>';
+      }
       // legenda: co oznacza granatowe wyróżnienie godziny
       var leg = $('#msze-legenda');
       if (leg && nextToday) {

@@ -1229,6 +1229,6 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
   background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); padding: 14px 20px; box-shadow: var(--shadow); }
 .confession h3 { display: flex; align-items: center; gap: 10px; margin: 0; font-size: 1.35rem; white-space: nowrap; padding-top: 2px; }
 .confession h3 svg { width: 24px; height: 24px; color: var(--gold); }
-.confession .checklist { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px 24px; margin: 0; }
+.confession .checklist { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr); gap: 4px 24px; margin: 0; }
 .confession .checklist li { margin: 0; font-size: .95rem; line-height: 1.45; }
 @media (max-width: 900px) { .confession { grid-template-columns: 1fr; } .confession .checklist { grid-template-columns: 1fr; } }
