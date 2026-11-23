@@ -758,7 +758,7 @@
     return o.punkty.map(function (p) {
       if (typeof p === 'string') return '<li><p>' + esc(p) + '</p></li>';
       return '<li><p>' + esc(p.tekst) + '</p>' +
-        (p.lista ? '<ul>' + p.lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
+        (p.lista && p.lista.length ? '<ul>' + p.lista.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>' : '') +
         (p.dopisek ? '<p class="dopisek">' + esc(p.dopisek) + '</p>' : '') + '</li>';
     }).join('');
   }
@@ -766,7 +766,8 @@
   if (elAnn) {
     Promise.all([load('ogloszenia'), loadOptional('ogloszenia-archiwum', { tygodnie: [] })]).then(function (res) {
       var current = res[0];
-      var weeks = [current].concat((res[1].tygodnie || []).filter(function (w) { return w.data !== current.data; }))
+      var seenAnn = {}; seenAnn[current.data] = 1;
+      var weeks = [current].concat((current.archiwum || []).concat(res[1].tygodnie || []).filter(function (w) { if (!w.data || seenAnn[w.data]) return false; seenAnn[w.data] = 1; return true; }))
         .sort(function (a, b) { return a.data < b.data ? 1 : -1; });
       var sel = $('#ann-week'), note = $('#ann-archive-note');
       function render(o) {
@@ -844,7 +845,8 @@
     return Promise.all([load('intencje'), loadOptional('intencje-archiwum', { tygodnie: [] })]).then(function (res) {
       var file = res[0], todayIso = isoDate(warsawNow());
       var first = function (w) { return w.dni[0].data; }, last = function (w) { return w.dni[w.dni.length - 1].data; };
-      var weeks = [file].concat((res[1].tygodnie || []).filter(function (w) { return w.dni && w.dni.length && first(w) !== first(file); }))
+      var seenInt = {}; seenInt[first(file)] = 1;
+      var weeks = [file].concat((file.archiwum || []).concat(res[1].tygodnie || []).filter(function (w) { if (!w.dni || !w.dni.length || seenInt[first(w)]) return false; seenInt[first(w)] = 1; return true; }))
         .sort(function (a, b) { return first(a) < first(b) ? -1 : 1; });
       var current = weeks.filter(function (w) { return first(w) <= todayIso && todayIso <= last(w); })[0];
       if (!current && last(file) < todayIso) {
@@ -994,23 +996,30 @@
   }
 
   /* ---------- Galeria ---------- */
+  // f = „12.jpg” (folder img/<katalog>/ + miniatura w thumb/) albo pełna ścieżka „img/kokpit/zdjecie.jpg” (zdjęcie wgrane w kokpicie)
+  function pic(katalog, f, thumb) {
+    f = rel(f);
+    var base = katalog ? 'img/' + katalog + '/' : null;
+    if (base && f.indexOf(base) === 0) f = f.slice(base.length);          // „img/<katalog>/12.jpg” → „12.jpg”
+    return f.indexOf('/') >= 0 ? f : base + (thumb ? 'thumb/' : '') + f;  // wgrane w kokpicie: pełna ścieżka, bez miniatury
+  }
   var elGal = $('#galeria');
   if (elGal) {
     load('galeria').then(function (g) {
       // lista albumów jako kompaktowe karty; pojedynczy album: ?album=galeria-triduum-2026 (dawne #… też działa)
-      var key = function (a) { return a.katalog.replace(/\//g, '-'); };
+      var key = function (a) { return a.katalog ? a.katalog.replace(/\//g, '-') : slug(a.tytul); };
       var count = function (n) { return n + (n === 1 ? ' zdjęcie' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) ? ' zdjęcia' : ' zdjęć'); };
       var want = param('album') || (location.hash ? decodeURIComponent(location.hash.slice(1)) : '');
       var one = want && g.albumy.filter(function (a) { return key(a) === want; })[0];
       if (one) {
-        var all = one.zdjecia.map(function (f, fi) { return { src: 'img/' + one.katalog + '/' + f, cap: ((one.podpisy && one.podpisy[fi]) ? one.podpisy[fi] + ' – ' : '') + one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
+        var all = one.zdjecia.map(function (f, fi) { return { src: pic(one.katalog, f), cap: ((one.podpisy && one.podpisy[fi]) ? one.podpisy[fi] + ' – ' : '') + one.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + one.zdjecia.length + (one.foto ? ' (fot. ' + one.foto + ')' : '') }; });
         elGal.innerHTML = '<p><a class="news-back" href="galeria.html">← Wszystkie albumy</a></p>' +
           '<p class="news-photos__credit">Kliknij zdjęcie, aby je powiększyć. Strzałki lub przesunięcie palcem – kolejne zdjęcia.</p>' +
           '<section class="album" id="' + esc(key(one)) + '"><div class="album__head"><h2>' + esc(one.tytul) + '</h2><span class="badge">' + count(one.zdjecia.length) + '</span></div>' +
           (one.foto ? '<p class="news-photos__credit">fot. ' + esc(one.foto) + '</p>' : '') + '<div class="photos">' +
           one.zdjecia.map(function (f, fi) {
             return '<button type="button" class="photo" data-i="' + fi + '" aria-label="Powiększ: ' + esc(all[fi].cap) + '">' +
-              '<img src="img/' + esc(one.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
+              '<img src="' + esc(pic(one.katalog, f, true)) + '" alt="" loading="lazy" decoding="async"></button>';
           }).join('') + '</div></section>';
         document.title = one.tytul + ' – Galeria – Parafia Trójcy Świętej we Wrocławiu';
         lightbox(all);
@@ -1020,7 +1029,7 @@
       elGal.innerHTML = '<div class="news-grid">' + g.albumy.map(function (a) {
         var href = 'galeria.html?album=' + key(a), cover = a.okladka || a.zdjecia[0];
         return '<article class="news-card album-card"><a class="news-card__media" href="' + esc(href) + '" tabindex="-1" aria-hidden="true">' +
-          '<img src="img/' + esc(a.katalog) + '/thumb/' + esc(cover) + '" alt="" loading="lazy">' +
+          '<img src="' + esc(pic(a.katalog, cover, true)) + '" alt="" loading="lazy">' +
           '<span class="news-card__count">' + icon('image') + a.zdjecia.length + '</span></a>' +
           '<div class="news-card__body"><h3><a href="' + esc(href) + '">' + esc(a.tytul) + '</a></h3>' +
           '<p>' + count(a.zdjecia.length) + '</p><a class="news-card__more" href="' + esc(href) + '">Otwórz album →</a></div></article>';
@@ -1094,8 +1103,10 @@
     return String(s).toLowerCase().replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; })
       .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   }
+  // kokpit zapisuje ścieżki zdjęć od „/” (/img/…) – na stronie liczone od jej folderu (działa też w podfolderze)
+  function rel(p) { return p && p.charAt(0) === '/' ? p.slice(1) : p; }
   function newsImage(w) {
-    if (w.zdjecie) return w.zdjecie;
+    if (w.zdjecie) return rel(w.zdjecie);
     if (w.youtube) return 'https://i.ytimg.com/vi/' + encodeURIComponent(w.youtube) + '/hqdefault.jpg';
     return null;
   }
@@ -1140,18 +1151,18 @@
         return 'Zobacz więcej →';
       };
       var gallery = function (w) {
-        if (!w.katalog || !w.zdjecia || !w.zdjecia.length) return '';
+        if (!w.zdjecia || !w.zdjecia.length) return '';
         return '<div class="news-photos">' + w.zdjecia.map(function (f, fi) {
           var n = photos.length;
-          photos.push({ src: 'img/' + w.katalog + '/' + f, cap: w.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + w.zdjecia.length + (w.foto ? ' (fot. ' + w.foto + ')' : '') });
+          photos.push({ src: pic(w.katalog, f), cap: w.tytul + ' – zdjęcie ' + (fi + 1) + ' z ' + w.zdjecia.length + (w.foto ? ' (fot. ' + w.foto + ')' : '') });
           return '<button type="button" class="photo" data-i="' + n + '" aria-label="Powiększ: ' + esc(photos[n].cap) + '">' +
-            '<img src="img/' + esc(w.katalog) + '/thumb/' + esc(f) + '" alt="" loading="lazy" decoding="async"></button>';
+            '<img src="' + esc(pic(w.katalog, f, true)) + '" alt="" loading="lazy" decoding="async"></button>';
         }).join('') + '</div>' + (w.foto ? '<p class="news-photos__credit">fot. ' + esc(w.foto) + '</p>' : '');
       };
       var card = function (w) {
         var g = gallery(w);
         return '<article class="card news-entry" id="' + slug(w.tytul) + '">' +
-          (w.zdjecie && !g ? '<img class="news-entry__img" src="' + esc(w.zdjecie) + '" alt="" loading="lazy">' : '') +
+          (w.zdjecie && !g ? '<img class="news-entry__img" src="' + esc(rel(w.zdjecie)) + '" alt="" loading="lazy">' : '') +
           '<h2>' + esc(w.tytul) + '</h2>' +
           (w.data ? '<p class="day__sub"><time datetime="' + esc(w.data) + '">' + longDate(parseDate(w.data)) + ' r.</time></p>' : '') +
           w.tresc.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('') + g +

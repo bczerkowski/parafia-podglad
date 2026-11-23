@@ -1,1009 +1,1009 @@
 {
-    "_instrukcja":  "Aktualności i wydarzenia – najnowsze na górze. Pola: tytul, data (RRRR-MM-DD), opis (1–2 zdania na stronę główną), tresc (lista akapitów), zdjecie (zdjęcie na kartę, np. img/aktualnosci/pielgrzymka/thumb/1.jpg – opcjonalnie), katalog + zdjecia (fotorelacja: folder w img/ z dużymi zdjęciami i podfolderem thumb/, np. \"katalog\": \"aktualnosci/pielgrzymka\", \"zdjecia\": [\"1.jpg\", \"2.jpg\"] – opcjonalnie), foto (autor zdjęć – opcjonalnie), link (adres pełnej relacji – opcjonalnie), youtube (identyfikator filmu – opcjonalnie). Wpisy z ostatnich 12 miesięcy pokazują się automatycznie na stronie głównej (maks. 3).",
-    "wpisy":  [
-                  {
-                      "tytul":  "Zakończenie modlitw wypominkowych",
-                      "data":  "2026-11-17",
-                      "opis":  "We wtorek zakończyliśmy modlitwy wypominkowe za zmarłych. Dziękujemy za wspólną modlitwę i złożone ofiary.",
-                      "tresc":  [
-                                    "We wtorek zakończyliśmy modlitwy wypominkowe. Dziękujemy za wspólną modlitwę za zmarłych oraz złożone ofiary wypominkowe.",
-                                    "Modlitwa obejmowała koronkę z wypominkami o godz. 18.00, a następnie Mszę św. w intencji wymienionych zmarłych."
-                                ],
-                      "zdjecie":  "img/adwent-2020/thumb/48.jpg",
-                      "link":  "ogloszenia.html"
-                  },
-                  {
-                      "tytul":  "Warsztaty Synodalnego Dzieła Muzycznego i uroczysta suma z koncertem",
-                      "data":  "2026-11-15",
-                      "opis":  "W naszej parafii odbyły się warsztaty Synodalnego Dzieła Muzycznego Archidiecezji Wrocławskiej, zakończone uroczystą sumą z koncertem.",
-                      "tresc":  [
-                                    "W miniony weekend w naszej parafii odbywały się warsztaty Synodalnego Dzieła Muzycznego Archidiecezji Wrocławskiej. W niedzielę 15 listopada o godz. 12.00 odprawiona została uroczysta suma z koncertem, której przewodniczył i słowo Boże wygłosił Kanclerz Kurii Wrocławskiej ks. dr Piotr Żuber.",
-                                    "Bardzo się cieszymy, że warsztaty odbyły się właśnie u nas. Dziękujemy wszystkim, którzy wzięli w nich udział, pomogli je zorganizować i wsparli przygotowanie poczęstunku."
-                                ],
-                      "zdjecie":  "img/aktualnosci/warsztaty-muzyczne-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/warsztaty-muzyczne-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nowe organy w górnym kościele",
-                      "data":  "2026-11-15",
-                      "opis":  "W górnym kościele zamontowano nowe organy. Cena zakupu wynosi 28.500 zł – Bóg zapłać za złożone ofiary na pokrycie kosztów.",
-                      "tresc":  [
-                                    "W górnym kościele zamontowano nowe organy. Cena zakupu wynosi 28.500 zł.",
-                                    "Bóg zapłać za złożone ofiary na pokrycie kosztów."
-                                ],
-                      "zdjecie":  "img/adwent-2020/thumb/45.jpg",
-                      "link":  "ogloszenia.html"
-                  },
-                  {
-                      "tytul":  "Porządkowanie cmentarza przy ul. Krzyckiej",
-                      "data":  "2026-10-31",
-                      "opis":  "Harcerki, Skautki, Skauci Europy oraz Liturgiczna Służba Ołtarza porządkowali cmentarz przy ulicy Krzyckiej.",
-                      "tresc":  [
-                                    "Przed uroczystością Wszystkich Świętych Harcerki, Skautki, Skauci Europy oraz Liturgiczna Służba Ołtarza porządkowali cmentarz przy ulicy Krzyckiej.",
-                                    "Bardzo dziękujemy wszystkim za pomoc!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/porzadki-cmentarz-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/porzadki-cmentarz-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "20 lat Katolickiego Przedszkola Lupikowo",
-                      "data":  "2026-10-04",
-                      "opis":  "Lupikowo obchodziło 20. urodziny – Mszą św. z błogosławieństwem dla dzieci, spektaklem i spotkaniem przy kawie.",
-                      "tresc":  [
-                                    "Katolickie Przedszkole i Żłobek Lupikowo obchodziło swoje 20. urodziny. Podczas Mszy św. o godz. 10.30 dziękowaliśmy Bogu za wszystkich przyjaciół, sympatyków, rodziny i dzieci, które współtworzyły i nadal tworzą społeczność Lupikowa.",
-                                    "Po Mszy św. odbyły się interaktywne warsztaty teatralne „Muppety i Spółka”, a na gości czekały ciasto i kawa. Można było odwiedzić także salę wspomnień z kroniką i kolażami z wcześniejszych uroczystości.",
-                                    "Lupikowo dziękuje Księdzu Proboszczowi, ks. Jakubowi i ks. Pawłowi za obecność, modlitwę i towarzyszenie w służbie drugiemu człowiekowi."
-                                ],
-                      "zdjecie":  "img/aktualnosci/lupikowo-20-lat/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lupikowo-20-lat",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "Lupikowo",
-                      "link":  "wspolnoty.html#lupikowo"
-                  },
-                  {
-                      "tytul":  "Piesza Pielgrzymka Wrocławska na Jasną Górę",
-                      "data":  "2026-08-19",
-                      "opis":  "Około 35 osób z naszej wspólnoty szło w Grupie 20 Pieszej Pielgrzymki Wrocławskiej. Po drodze pątników wsparł Parafialny Zespół Caritas.",
-                      "tresc":  [
-                                    "Dotarliśmy do Mamy! W tegorocznej Pieszej Pielgrzymce Wrocławskiej na Jasną Górę w Grupie 20 szło około 35 osób z naszej wspólnoty. Przez 8 dni pielgrzymowaliśmy razem w modlitwie, integrując się jednocześnie ze sobą.",
-                                    "W połowie drogi Parafialny Zespół Caritas przy naszej parafii dostarczył pątnikom poczęstunek – dziękujemy za to serdecznie, także wszystkim, którzy przekazali ciasta.",
-                                    "Bogu dzięki za ten wspaniały czas – już odliczamy do przyszłorocznej wspólnej drogi!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/pielgrzymka-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/pielgrzymka-2026",
-                      "album":  "galeria/pielgrzymka-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg",
-                                      "6.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Wakacje młodzieży: Tatry i Rzym",
-                      "data":  "2026-07-24",
-                      "opis":  "Nasza młodzież rozpoczęła wakacje w Tatrach, a potem przez 6 dni poznawała Rzym – z modlitwą „Anioł Pański” z papieżem Leonem XIV.",
-                      "tresc":  [
-                                    "Początek wakacji nasza młodzież spędziła w Tatrach, a następnie wyruszyła do Rzymu – miasta zachwycającego historią, pięknem i duchowym dziedzictwem.",
-                                    "Przez 6 dni młodzi odkrywali miejsca ważne dla Kościoła i kultury, odwiedzając m.in. Bazylikę św. Jana na Lateranie, katakumby, Koloseum, Castel Gandolfo oraz Watykan, gdzie uczestniczyli we Mszy przy grobie św. Jana Pawła II.",
-                                    "Jednym z najbardziej poruszających momentów był udział w modlitwie „Anioł Pański” z papieżem Leonem XIV – wyjątkowe doświadczenie wiary i jedności. Nie zabrakło też czasu na włoską pizzę, odpoczynek na plaży i wspólne tworzenie pięknych wspomnień."
-                                ],
-                      "zdjecie":  "img/aktualnosci/mlodziez-tatry-rzym-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/mlodziez-tatry-rzym-2026",
-                      "album":  "galeria/mlodziez-tatry-rzym-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg",
-                                      "6.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#mlodziez"
-                  },
-                  {
-                      "tytul":  "Letnie obozy Skautów Europy",
-                      "data":  "2026-07-19",
-                      "opis":  "Skauci, Skautki i Wilczki z Federacji Skautingu Europejskiego, którzy formują się przy naszej parafii, przeżywali letnie obozy.",
-                      "tresc":  [
-                                    "Skauci, Skautki i Wilczki z Federacji Skautingu Europejskiego, którzy formują się przy naszej parafii, przeżywali swoje letnie obozy."
-                                ],
-                      "zdjecie":  "img/aktualnosci/skauci-obozy-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skauci-obozy-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Kolonia ministrantów i scholi w Dąbkach",
-                      "data":  "2026-07-04",
-                      "opis":  "W Dąbkach nad morzem odbyła się kolonia ministrantów i scholi naszej parafii.",
-                      "tresc":  [
-                                    "Na początku wakacji ministranci i schola naszej parafii wypoczywali na kolonii w Dąbkach nad morzem."
-                                ],
-                      "zdjecie":  "img/aktualnosci/kolonia-dabki-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/kolonia-dabki-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nowi lektorzy w naszej parafii",
-                      "data":  "2026-06-15",
-                      "opis":  "Ośmiu chłopców zostało pobłogosławionych przez Księdza Proboszcza do funkcji lektora.",
-                      "tresc":  [
-                                    "Dzielimy się radością, że 14 czerwca ośmiu chłopców zostało pobłogosławionych przez Księdza Proboszcza do funkcji lektora. Michałowi, Tomkowi, Szymonowi, Adamowi, Marcelowi, Karolowi, Antkowi i Stanisławowi gratulujemy i życzymy, by pięknie służyli przy ołtarzu i proklamowali Słowo Boże.",
-                                    "Księdzu Pawłowi dziękujemy za duszpasterską troskę o Liturgiczną Służbę Ołtarza."
-                                ],
-                      "zdjecie":  "img/aktualnosci/lektorzy-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lektorzy-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lso"
-                  },
-                  {
-                      "tytul":  "Dzień Jedności naszej parafii",
-                      "data":  "2026-05-31",
-                      "opis":  "W sobotę przed odpustem parafialnym grupy i wspólnoty spotkały się na Dniu Jedności. Dziękujemy za organizację i obecność!",
-                      "tresc":  [
-                                    "W sobotę przed Uroczystością Najświętszej Trójcy – naszym odpustem parafialnym – odbył się Dzień Jedności naszej parafii. Zaproszeni byli nie tylko członkowie grup i wspólnot, ale wszyscy parafianie.",
-                                    "Dziękujemy za organizację i obecność!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-jednosci-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-jednosci-2026",
-                      "album":  "galeria/dzien-jednosci-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Bp Jacek Kiciński na turnieju ping-ponga młodzieży",
-                      "data":  "2026-05-24",
-                      "opis":  "Na finał turnieju ping-ponga Wspólnoty Phileō przyjechał bp Jacek Kiciński, który wcześniej przewodniczył Mszy kończącej Biały Tydzień.",
-                      "tresc":  [
-                                    "Młodzież ze Wspólnoty Młodzieżowej Phileō rozgrywała wewnętrzny turniej w ping-ponga. Na finał przyjechał biskup Jacek Kiciński CMF, który zagrał mecz ze zwycięzcą turnieju.",
-                                    "Wcześniej biskup Jacek przewodniczył Mszy świętej kończącej Biały Tydzień."
-                                ],
-                      "zdjecie":  "img/aktualnosci/biskup-turniej-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/biskup-turniej-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "Wspólnota Młodzieżowa Phileō",
-                      "link":  "https://www.niedziela.pl/artykul/124376/Biskup-z-rakietka"
-                  },
-                  {
-                      "tytul":  "Zakończenie przygotowania do bierzmowania",
-                      "data":  "2026-05-19",
-                      "opis":  "Piękne i radosne zakończenie tegorocznego przygotowania do sakramentu bierzmowania.",
-                      "tresc":  [
-                                    "Piękne i radosne zakończenie tegorocznego przygotowania do sakramentu bierzmowania. Dziękujemy Wspólnocie Młodzieżowej Phileō!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/bierzmowanie-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/bierzmowanie-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "link":  "sakramenty.html"
-                  },
-                  {
-                      "tytul":  "Triduum Paschalne 2026",
-                      "data":  "2026-04-05",
-                      "opis":  "Fotorelacja z Wielkiego Czwartku, Wielkiego Piątku i Wigilii Paschalnej w naszym kościele. Chrystus Zmartwychwstał!",
-                      "tresc":  [
-                                    "Fotorelacja z Triduum Paschalnego w naszym kościele: Msza Wieczerzy Pańskiej w Wielki Czwartek, Liturgia Męki Pańskiej w Wielki Piątek oraz Liturgia Wigilii Paschalnej w Wielką Sobotę.",
-                                    "Chrystus Zmartwychwstał – prawdziwie zmartwychwstał!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/triduum-2026/thumb/7.jpg",
-                      "katalog":  "aktualnosci/triduum-2026",
-                      "album":  "galeria/triduum-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg",
-                                      "6.jpg",
-                                      "7.jpg"
-                                  ],
-                      "foto":  "Mateusz Jędrzejewski"
-                  },
-                  {
-                      "tytul":  "Droga Krzyżowa ulicami naszej parafii",
-                      "data":  "2026-03-28",
-                      "opis":  "Przed Niedzielą Palmową modliliśmy się na Drodze Krzyżowej ulicami parafii. Dziękujemy wszystkim za udział i przygotowanie.",
-                      "tresc":  [
-                                    "Przed Niedzielą Palmową przeszliśmy z krzyżem ulicami naszej parafii, rozważając stacje Drogi Krzyżowej.",
-                                    "Dziękujemy wszystkim, którzy wzięli udział w tym modlitewnym wydarzeniu oraz zaangażowali się w jego przygotowanie."
-                                ],
-                      "zdjecie":  "img/aktualnosci/droga-krzyzowa-2026/thumb/2.jpg",
-                      "katalog":  "aktualnosci/droga-krzyzowa-2026",
-                      "album":  "galeria/droga-krzyzowa-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Dekanalny Dzień Skupienia dla Młodzieży",
-                      "data":  "2026-03-07",
-                      "opis":  "Już po raz kolejny nasza parafia i Wspólnota Phileō zaprosiły młodzież z dekanatu Wrocław-Krzyki na dzień skupienia.",
-                      "tresc":  [
-                                    "Już po raz kolejny nasza parafia i Wspólnota Młodzieżowa Phileō zaprosiły na Dekanalny Dzień Skupienia dla Młodzieży.",
-                                    "Młodzi wysłuchali konferencji s. Gaudii Skass ze Zgromadzenia Sióstr Matki Bożej Miłosierdzia o pragnieniu bycia poznanym i pokochanym oraz o lęku przed odrzuceniem. Siostra przybliżyła im także obraz Jezusa Miłosiernego, na którym Bóg daje się poznać człowiekowi.",
-                                    "Młodzież z dekanatu miała też okazję do adoracji Najświętszego Sakramentu, spowiedzi, Eucharystii i wspólnej integracji."
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-skupienia-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-skupienia-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "Wspólnota Młodzieżowa Phileō"
-                  },
-                  {
-                      "tytul":  "Ministranci na kręglach",
-                      "data":  "2026-03-05",
-                      "opis":  "Ks. Paweł zabrał ministrantów na kręgle – w podziękowaniu za całoroczną służbę przy ołtarzu.",
-                      "tresc":  [
-                                    "W sobotę ks. Paweł wybrał się z ministrantami na kręgle. Dziękujemy im za całoroczną służbę i bardzo się nimi cieszymy!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/ministranci-kregle-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/ministranci-kregle-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lso"
-                  },
-                  {
-                      "tytul":  "Spotkanie opłatkowe LSO i scholi dziecięcej",
-                      "data":  "2026-01-12",
-                      "opis":  "Ministranci, schola dziecięca i ich rodzice spotkali się przy opłatku i kolędach.",
-                      "tresc":  [
-                                    "W niedzielę 11 stycznia odbyło się spotkanie opłatkowe Liturgicznej Służby Ołtarza, scholi dziecięcej i ich rodziców. Była to doskonała okazja, by pokolędować, spędzić ze sobą czas i podziękować za całoroczną służbę na rzecz parafii.",
-                                    "Dziękujemy też Księdzu Pawłowi za duszpasterską troskę o te grupy."
-                                ],
-                      "zdjecie":  "img/aktualnosci/oplatek-lso-2026/thumb/1.jpg",
-                      "katalog":  "aktualnosci/oplatek-lso-2026",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Adwent w parafii: rekolekcje i spotkania opłatkowe",
-                      "data":  "2025-12-20",
-                      "opis":  "Rekolekcje adwentowe głosił o. Faustyn Zatoka, a w salkach parafialnych spotkania opłatkowe miały nasze wspólnoty.",
-                      "tresc":  [
-                                    "W Adwencie wiele działo się w naszej parafii. Rekolekcje adwentowe głosił o. Faustyn Zatoka, a swój dzień skupienia przeżywali Skauci i Skautki Europy z 3. i 6. Drużyny Wrocławskiej.",
-                                    "W salkach parafialnych spotkania opłatkowe mieli młodzi ze Wspólnoty Młodzieżowej Phileō, 14 Wrocławska Drużyna Harcerek „Połonina” im. Józefy Kantor oraz Skauci. Oczywiście były też roraty i śniadania po nich.",
-                                    "Cieszy, gdy parafia tak tętni życiem!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/adwent-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/adwent-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Roraty i śniadania",
-                      "data":  "2025-12-13",
-                      "opis":  "Po roratach wspólne śniadania – dziękujemy Paniom za przygotowanie, a wszystkim za obecność i budowanie wspólnoty.",
-                      "tresc":  [
-                                    "Adwent rozpoczęty, a razem z roratami wróciły nasze śniadania po Mszy św.",
-                                    "Dziękujemy wszystkim, którzy włączają się w ich organizację i budują wspólnotę nie tylko przy ołtarzu, ale i przy stole."
-                                ],
-                      "zdjecie":  "img/aktualnosci/roraty-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/roraty-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Listopadowy wypad 3. Drużyny Skautów Europy",
-                      "data":  "2025-12-07",
-                      "opis":  "3. Drużyna Wrocławska Skautów Europy, działająca przy naszej parafii, przeżyła swój listopadowy wypad.",
-                      "tresc":  [
-                                    "3. Drużyna Wrocławska Skautów Europy, która działa przy naszej parafii, przeżyła swój listopadowy wypad."
-                                ],
-                      "zdjecie":  "img/aktualnosci/skauci-wypad-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skauci-wypad-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nowi ministranci w Uroczystość Chrystusa Króla",
-                      "data":  "2025-11-25",
-                      "opis":  "Dziewięciu chłopców zostało pobłogosławionych do służby przy ołtarzu jako ministranci.",
-                      "tresc":  [
-                                    "W Uroczystość Chrystusa Króla dziewięciu chłopców zostało pobłogosławionych do służby przy ołtarzu jako ministranci. Bardzo się nimi cieszymy i gratulujemy im i ich bliskim!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/ministranci-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/ministranci-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lso"
-                  },
-                  {
-                      "tytul":  "Bal Wszystkich Świętych 2025",
-                      "data":  "2025-10-31",
-                      "opis":  "Był bal, Msza święta i korowód świętych wokół kościoła.",
-                      "tresc":  [
-                                    "W wigilię uroczystości Wszystkich Świętych w naszej parafii odbył się Bal Wszystkich Świętych. Był bal, Msza święta i korowód świętych wokół kościoła."
-                                ],
-                      "zdjecie":  "img/aktualnosci/bal-wszystkich-swietych-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/bal-wszystkich-swietych-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "ks. Paweł Jędrzejski"
-                  },
-                  {
-                      "tytul":  "Święto Aniołów Stróżów z Lupikowem i błogosławieństwo pojazdów",
-                      "data":  "2025-10-05",
-                      "opis":  "Na Mszy o 10.30 świętowaliśmy z Lupikowem wspomnienie jego patronów – świętych Aniołów Stróżów.",
-                      "tresc":  [
-                                    "W pierwszą niedzielę października podczas Mszy św. o 10.30 świętowaliśmy wraz z Lupikowem wspomnienie jego patronów – świętych Aniołów Stróżów.",
-                                    "Po Mszy pobłogosławione zostały rowerki, rolki, hulajnogi i deskorolki, a dzieci pierwszokomunijne otrzymały poświęcone różańce. Na koniec każdy dostał od Lupikowa słodką krówkę."
-                                ],
-                      "zdjecie":  "img/aktualnosci/lupikowo-aniolowie-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lupikowo-aniolowie-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lupikowo"
-                  },
-                  {
-                      "tytul":  "Wilczki rozpoczęły nowy rok formacji",
-                      "data":  "2025-09-29",
-                      "opis":  "Wilczki z 6. Gromady Wrocławskiej rozpoczęły kolejny rok formacji przy naszej parafii.",
-                      "tresc":  [
-                                    "Wilczki z 6. Gromady Wrocławskiej rozpoczęły kolejny rok formacji przy naszej parafii."
-                                ],
-                      "zdjecie":  "img/aktualnosci/wilczki-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/wilczki-2025",
-                      "zdjecia":  [
-                                      "1.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Skauci Europy rozpoczęli nowy rok",
-                      "data":  "2025-09-02",
-                      "opis":  "3. Szczep Wrocławski Skautów Europy rozpoczął kolejny rok formacji – zachęcamy do wstąpienia w ich szeregi.",
-                      "tresc":  [
-                                    "3. Szczep Wrocławski Skautów Europy rozpoczął kolejny rok formacji. Zachęcamy do wstąpienia w ich szeregi!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/skauci-rok-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skauci-rok-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Dzień Ojca w górach",
-                      "data":  "2025-06-22",
-                      "opis":  "Młodzież razem z rodzicami świętowała Dzień Ojca wyprawą na Kalenicę i ogniskiem przy Zygmuntówce.",
-                      "tresc":  [
-                                    "Korzystając z pięknej pogody, młodzi razem z rodzicami wybrali się w góry, aby wspólnie świętować Dzień Ojca.",
-                                    "Po wejściu na Kalenicę i spacerze do Zygmuntówki był czas na pieczenie kiełbasek przy ognisku i integrację na łonie natury."
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-ojca-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-ojca-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Uroczystość Bożego Ciała 2025",
-                      "data":  "2025-06-19",
-                      "opis":  "Procesja Bożego Ciała ulicami naszej parafii.",
-                      "tresc":  [
-                                    "Fotorelacja z uroczystości Najświętszego Ciała i Krwi Chrystusa i procesji eucharystycznej ulicami naszej parafii."
-                                ],
-                      "zdjecie":  "img/aktualnosci/boze-cialo-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/boze-cialo-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nowe dziewczynki w scholi dziecięcej",
-                      "data":  "2025-06-15",
-                      "opis":  "13 dziewczynek zostało pobłogosławionych przez Księdza Proboszcza i włączonych do scholi dziecięcej.",
-                      "tresc":  [
-                                    "13 dziewczynek zostało przez Księdza Proboszcza pobłogosławionych i włączonych w szeregi scholi dziecięcej. Bardzo się cieszymy i gratulujemy dziewczynkom i ich rodzicom!",
-                                    "Dziękujemy też Paniom i Panom, którzy pomagają i prowadzą naszą scholę."
-                                ],
-                      "zdjecie":  "img/aktualnosci/schola-dziecieca-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/schola-dziecieca-2025",
-                      "zdjecia":  [
-                                      "1.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nowi lektorzy i ceremoniarze",
-                      "data":  "2025-06-14",
-                      "opis":  "Liczna grupa przedstawicieli LSO naszej parafii została promowana przez Księdza Arcybiskupa na lektorów i ceremoniarzy.",
-                      "tresc":  [
-                                    "Liczna grupa przedstawicieli Liturgicznej Służby Ołtarza naszej parafii została promowana przez Księdza Arcybiskupa na lektorów i ceremoniarzy. Gratulacje, Panowie!",
-                                    "Dziękujemy Księdzu Pawłowi za całoroczny trud opieki nad LSO."
-                                ],
-                      "zdjecie":  "img/aktualnosci/lso-promocja-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lso-promocja-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lso"
-                  },
-                  {
-                      "tytul":  "I Dzień Jedności Wspólnot",
-                      "data":  "2025-06-01",
-                      "opis":  "Pierwszy Dzień Jedności Wspólnot – piękne, potrzebne i radosne wydarzenie.",
-                      "tresc":  [
-                                    "Za nami I Dzień Jedności Wspólnot naszej parafii – piękne wydarzenie, bardzo potrzebne i radosne. Z pewnością powtórzymy je za rok!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-jednosci-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-jednosci-2025",
-                      "zdjecia":  [
-                                      "1.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Triduum Paschalne 2025",
-                      "data":  "2025-04-20",
-                      "opis":  "Fotorelacja z Wielkiego Czwartku, Wielkiego Piątku i Wigilii Paschalnej. Alleluja! Chrystus Zmartwychwstał!",
-                      "tresc":  [
-                                    "Fotorelacja z Triduum Paschalnego: Msza Wieczerzy Pańskiej w Wielki Czwartek, Liturgia Męki Pańskiej w Wielki Piątek i Liturgia Wigilii Paschalnej w Wielką Sobotę.",
-                                    "Alleluja! Chrystus Zmartwychwstał!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/triduum-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/triduum-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg",
-                                      "6.jpg"
-                                  ],
-                      "foto":  "Mateusz Jędrzejewski"
-                  },
-                  {
-                      "tytul":  "Niedziela Palmowa 2025",
-                      "data":  "2025-04-13",
-                      "opis":  "Na Mszy o 10.30 dzieci przeszły w procesji z palmami, a młodzież Phileō rozprowadzała palmy.",
-                      "tresc":  [
-                                    "W Niedzielę Palmową na Mszy o 10.30 licznie zgromadzone dzieci przeszły w procesji z palmami. Uczestniczyły w niej także Skautki i Wilczki z 6. Szczepu Wrocławskiego Skautów Europy.",
-                                    "Przez cały dzień młodzież ze Wspólnoty Phileō rozprowadzała palmy, zbierając fundusze na wakacyjne rekolekcje."
-                                ],
-                      "zdjecie":  "img/aktualnosci/niedziela-palmowa-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/niedziela-palmowa-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Bierzmowanie 2025",
-                      "data":  "2025-04-09",
-                      "opis":  "Bp Jacek Kiciński udzielił sakramentu bierzmowania młodzieży naszej parafii.",
-                      "tresc":  [
-                                    "W środę 9 kwietnia o. bp Jacek Kiciński CMF udzielił sakramentu bierzmowania młodzieży naszej parafii."
-                                ],
-                      "zdjecie":  "img/aktualnosci/bierzmowanie-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/bierzmowanie-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "link":  "sakramenty.html"
-                  },
-                  {
-                      "tytul":  "Wizytacja kanoniczna bp. Macieja Małygi",
-                      "data":  "2025-03-29",
-                      "opis":  "Biskup spotkał się z grupami parafialnymi i powiedział: „Wasza wspólnota jawi się jako znak nadziei”.",
-                      "tresc":  [
-                                    "Naszą parafię wizytował bp Maciej Małyga. Od przedpołudnia spotykał się z grupami działającymi przy parafii: Liturgiczną Służbą Ołtarza, scholką dziecięcą, Wspólnotą Phileō, zespołem Cordis, Skautami i Skautkami Europy, Zespołem Synodalnym, Wspólnotą Rodzin św. Rity, Parafialnym Zespołem Caritas, szafarzami, Radą Parafialną, Strażą Honorową, Stowarzyszeniem Krwi Chrystusa, Apostolstwem Dobrej Śmierci i Żywym Różańcem.",
-                                    "Zwieńczeniem wizytacji była uroczysta Eucharystia, podczas której Biskup Maciej pokrzepił nas słowem i docenił, mówiąc: „z perspektywy diecezji Wasza wspólnota jawi się jako znak nadziei”. Wszystkim zaangażowanym z serca dziękujemy!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/wizytacja-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/wizytacja-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Droga Krzyżowa ulicami parafii 2025",
-                      "data":  "2025-03-28",
-                      "opis":  "Kilkaset osób, w tym wielu młodych, przeszło z krzyżem i pochodniami ulicami Krzyków.",
-                      "tresc":  [
-                                    "Kilkaset osób, w tym wielu młodych ludzi, przeszło ulicami Krzyków w parafialnej Drodze Krzyżowej, niosąc krzyż wśród pochodni i modląc się.",
-                                    "Dziękujemy Scholi Cordis za śpiew, Skautom i Skautkom Europy za niesienie pochodni, Liturgicznej Służbie Ołtarza oraz Wspólnocie Phileō za organizację i wszelką pomoc. Jak co roku mogliśmy poczuć się piękną wspólnotą i przekonać się o żywotności naszej parafii."
-                                ],
-                      "zdjecie":  "img/aktualnosci/droga-krzyzowa-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/droga-krzyzowa-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "link":  "https://wroclaw.gosc.pl/"
-                  },
-                  {
-                      "tytul":  "Dekanalny Dzień Skupienia dla Młodzieży 2025",
-                      "data":  "2025-03-15",
-                      "opis":  "Młodzież z dekanatu spotkała się w naszej parafii na dniu skupienia.",
-                      "tresc":  [
-                                    "W naszej parafii odbył się Dekanalny Dzień Skupienia dla młodzieży z dekanatu Wrocław-Krzyki."
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-skupienia-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-skupienia-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "Wspólnota Młodzieżowa Phileō"
-                  },
-                  {
-                      "tytul":  "Warsztaty pieśni wielkopostnych",
-                      "data":  "2025-03-09",
-                      "opis":  "Schola Cordis i młodzież Phileō przez trzy dni uczyły się pieśni wielkopostnych.",
-                      "tresc":  [
-                                    "Od 7 do 9 marca w naszej parafii odbywały się warsztaty pieśni wielkopostnych. Uczestniczyli w nich młodzi ze Scholi Cordis (śpiewającej podczas Mszy o 19.30) oraz śpiewający ze Wspólnoty Phileō.",
-                                    "Owocem warsztatów był śpiew podczas Mszy św. o 12.00 i krótki koncert po Mszy. Warsztaty poprowadzili Zuzia Korczak i Grzegorz Sus – dziękujemy im z całego serca!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/warsztaty-wielkopostne-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/warsztaty-wielkopostne-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Rekolekcje kandydatów do bierzmowania w Krzydlinie Małej",
-                      "data":  "2025-01-19",
-                      "opis":  "Młodzież przygotowująca się do bierzmowania przeżywała weekendowe rekolekcje z ks. Jakubem i bp. Jackiem Kicińskim.",
-                      "tresc":  [
-                                    "Młodzież przygotowująca się do bierzmowania formowała się na weekendowych rekolekcjach w Krzydlinie Małej.",
-                                    "„Powiedzcie w szkole, że byliście z ks. Jakubem na cudownych rekolekcjach” – mówił do nich bp Jacek Kiciński CMF."
-                                ],
-                      "zdjecie":  "img/aktualnosci/rekolekcje-bierzmowanie-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/rekolekcje-bierzmowanie-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ],
-                      "foto":  "Gość Wrocławski",
-                      "link":  "https://wroclaw.gosc.pl/"
-                  },
-                  {
-                      "tytul":  "Opłatek LSO i scholi dziecięcej 2025",
-                      "data":  "2025-01-13",
-                      "opis":  "Spotkanie opłatkowe ministrantów, scholi dziecięcej i ich rodziców.",
-                      "tresc":  [
-                                    "Odbyło się spotkanie opłatkowe dla członków Liturgicznej Służby Ołtarza i scholi dziecięcej oraz ich rodziców. Dziękujemy im za całoroczne zaangażowanie, a Księdzu Pawłowi za duszpasterską troskę."
-                                ],
-                      "zdjecie":  "img/aktualnosci/oplatek-lso-2025/thumb/1.jpg",
-                      "katalog":  "aktualnosci/oplatek-lso-2025",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Roraty, śniadania i dekorowanie kościoła",
-                      "data":  "2024-12-23",
-                      "opis":  "Roraty ze śpiewem i asystą młodzieży Phileō, wspólne śniadania i dekorowanie kościoła przed świętami.",
-                      "tresc":  [
-                                    "W Adwencie po roratach o 6.30 parafianie przygotowywali śniadania dla uczestników – z jaką frekwencją! Dziękujemy za tę inicjatywę.",
-                                    "Przed świętami roraty ze śpiewem i asystą prowadziła Wspólnota Phileō, potem było wspólne śniadanie i dekorowanie kościoła."
-                                ],
-                      "zdjecie":  "img/aktualnosci/roraty-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/roraty-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Nabożeństwo wprowadzające w Adwent",
-                      "data":  "2024-12-01",
-                      "opis":  "Piękne nabożeństwo wprowadzające w czas Adwentu z oprawą zespołu Cordis.",
-                      "tresc":  [
-                                    "Za nami piękne nabożeństwo wprowadzające w czas Adwentu. Dziękujemy zespołowi Cordis oraz lektorom i ceremoniarzom za oprawę.",
-                                    "Cieszymy się z tak licznej obecności i zapraszamy na roraty."
-                                ],
-                      "zdjecie":  "img/aktualnosci/nabozenstwo-adwentowe-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/nabozenstwo-adwentowe-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "foto":  "Szymon Chmurzyński"
-                  },
-                  {
-                      "tytul":  "VIII Światowy Dzień Ubogich",
-                      "data":  "2024-11-17",
-                      "opis":  "Nasza młodzież w piękny sposób włączyła się w przeżywanie Światowego Dnia Ubogich.",
-                      "tresc":  [
-                                    "Przeżywaliśmy VIII Światowy Dzień Ubogich. Nasza młodzież w piękny sposób włączyła się w to wydarzenie."
-                                ],
-                      "zdjecie":  "img/aktualnosci/dzien-ubogich-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/dzien-ubogich-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "I Parafialny Bal Wszystkich Świętych",
-                      "data":  "2024-10-31",
-                      "opis":  "Pierwszy parafialny Bal Wszystkich Świętych – dziękujemy dzieciom, rodzicom i organizatorom.",
-                      "tresc":  [
-                                    "Za nami I Parafialny Bal Wszystkich Świętych. Bardzo dziękujemy za obecność wszystkim dzieciom i ich rodzicom oraz wszystkim zaangażowanym w przygotowanie – szczególnie Paniom Małgosi i Oli."
-                                ],
-                      "zdjecie":  "img/aktualnosci/bal-wszystkich-swietych-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/bal-wszystkich-swietych-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "10-lecie 6. Szczepu Wrocławskiego Skautek Europy",
-                      "data":  "2024-10-27",
-                      "opis":  "Na Mszy o 9.00 świętowaliśmy jubileusz 10-lecia Szczepu Skautek, które od dwóch lat formują się przy naszej parafii.",
-                      "tresc":  [
-                                    "Na Mszy świętej o 9.00 przeżywaliśmy jubileusz 10-lecia 6. Szczepu Wrocławskiego Skautek Europy, które drugi rok formują się przy naszej parafii."
-                                ],
-                      "zdjecie":  "img/aktualnosci/skautki-10-lecie-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skautki-10-lecie-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Porządkowanie cmentarza przy ul. Krzyckiej 2024",
-                      "data":  "2024-10-26",
-                      "opis":  "Skauci i Skautki Europy, LSO, młodzież i parafianie porządkowali cmentarz przy ulicy Krzyckiej.",
-                      "tresc":  [
-                                    "Skauci i Skautki Europy, Liturgiczna Służba Ołtarza, młodzież i parafianie porządkowali cmentarz przy ulicy Krzyckiej. Wielkie Bóg zapłać za Waszą dobroć i zaangażowanie!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/porzadki-cmentarz-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/porzadki-cmentarz-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Piesza Pielgrzymka do grobu św. Jadwigi w Trzebnicy",
-                      "data":  "2024-10-12",
-                      "opis":  "Nasi parafianie licznie wzięli udział w pielgrzymce do Trzebnicy, szczególnie w Grupach 7 i 20.",
-                      "tresc":  [
-                                    "Odbyła się Piesza Pielgrzymka Wrocławska do grobu św. Jadwigi w Trzebnicy. Licznie wzięli w niej udział nasi parafianie, szczególnie w Grupach 7 i 20."
-                                ],
-                      "zdjecie":  "img/aktualnosci/pielgrzymka-trzebnica-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/pielgrzymka-trzebnica-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Aniołowie Stróżowie i błogosławieństwo pojazdów 2024",
-                      "data":  "2024-10-06",
-                      "opis":  "Co roku w okolicy wspomnienia Aniołów Stróżów modlimy się z Lupikowem i błogosławimy dziecięce pojazdy.",
-                      "tresc":  [
-                                    "Co roku w okolicy wspomnienia Aniołów Stróżów modlimy się wraz z Lupikowem oraz błogosławimy dzieciom hulajnogi, rowerki, rolki i inne pojazdy. Ile było w tym radości!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/lupikowo-aniolowie-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lupikowo-aniolowie-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lupikowo"
-                  },
-                  {
-                      "tytul":  "Pomoc dla powodzian w Kotlinie Kłodzkiej",
-                      "data":  "2024-09-21",
-                      "opis":  "Ponad 60 osób – młodzież Phileō i parafianie – pojechało pomagać poszkodowanym przez powódź.",
-                      "tresc":  [
-                                    "Młodzież ze Wspólnoty Phileō oraz wielu parafian – ponad 60 osób! – pojechało w Kotlinę Kłodzką pomóc poszkodowanym przez powódź. Jesteśmy zbudowani Waszą postawą.",
-                                    "Dziękujemy też wszystkim, którzy wspierali zbiórki prowadzone przez harcerzy, Parafialny Zespół Caritas, młodzież oraz Skautów i Skautki Europy."
-                                ],
-                      "zdjecie":  "img/aktualnosci/pomoc-powodzianom-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/pomoc-powodzianom-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Pierwszy wieczór uwielbienia",
-                      "data":  "2024-09-09",
-                      "opis":  "Pierwszy wieczór uwielbienia z posługą muzyczną scholi Cordis.",
-                      "tresc":  [
-                                    "Za nami pierwszy wieczór uwielbienia. Dziękujemy scholi Cordis za posługę muzyczną i cieszymy się z licznej obecności wiernych."
-                                ],
-                      "zdjecie":  "img/aktualnosci/wieczor-uwielbienia-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/wieczor-uwielbienia-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "foto":  "Szymon Chmurzyński"
-                  },
-                  {
-                      "tytul":  "Rozpoczęcie roku harcerskiego Skautów Europy",
-                      "data":  "2024-09-03",
-                      "opis":  "Msza na rozpoczęcie roku 1. Hufca Wrocławskiego Skautów Europy. Od września przy parafii działa też Szczep męski.",
-                      "tresc":  [
-                                    "W naszej parafii odbyła się Msza święta na rozpoczęcie roku harcerskiego 1. Hufca Wrocławskiego Skautów Europy, a następnie apel w Parku Południowym.",
-                                    "Od września oprócz Szczepu żeńskiego działa u nas także Szczep męski. Do jednego i drugiego serdecznie zapraszamy – więcej informacji u duszpasterza, ks. Jakuba Deperasa."
-                                ],
-                      "zdjecie":  "img/aktualnosci/skauci-rok-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skauci-rok-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Piesza Pielgrzymka na Jasną Górę 2024",
-                      "data":  "2024-08-13",
-                      "opis":  "Z naszej parafii szło kilkadziesiąt osób, w tym 40 młodych ze Wspólnoty Phileō.",
-                      "tresc":  [
-                                    "Wielka radość, że z naszej parafii w Pieszej Pielgrzymce Wrocławskiej na Jasną Górę szło kilkadziesiąt osób, w tym 40 młodych ze Wspólnoty Phileō."
-                                ],
-                      "zdjecie":  "img/aktualnosci/pielgrzymka-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/pielgrzymka-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Letnie obozy Skautek i Wilczków",
-                      "data":  "2024-07-17",
-                      "opis":  "Skautki z 6. Drużyny Wrocławskiej obozowały pod Lublińcem, a Wilczki w Pokoju.",
-                      "tresc":  [
-                                    "Od 8 do 24 lipca w lesie pod Lublińcem trwał obóz Skautek Europy z 6. Drużyny Wrocławskiej, działającej przy naszej parafii. Harcerki zdobywały sprawności i pogłębiały relacje z Bogiem i między sobą.",
-                                    "Wcześniej na obozie w Pokoju były Wilczki – skautki, które działają w naszej parafii od września."
-                                ],
-                      "zdjecie":  "img/aktualnosci/skautki-oboz-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/skautki-oboz-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Kolonia „Wakacje z Bogiem” w Smołdzińskim Lesie",
-                      "data":  "2024-06-30",
-                      "opis":  "Ministranci, lektorzy i schola spędzili tydzień nad morzem w Słowińskim Parku Narodowym.",
-                      "tresc":  [
-                                    "Od 22 do 30 czerwca ministranci, lektorzy i dzieci ze scholki byli na kolonii „Wakacje z Bogiem” w ośrodku w Smołdzińskim Lesie, w Słowińskim Parku Narodowym.",
-                                    "Były zajęcia sportowe, morze, wycieczki do Ustki i Doliny Charlotty, wędrówki po ruchomych wydmach i widok z latarni Czołpino. Na zakończenie spotkaliśmy się przy ognisku. Bogu niech będą dzięki za ten czas – za codzienną Eucharystię, modlitwę i piękno przyrody."
-                                ],
-                      "zdjecie":  "img/aktualnosci/kolonia-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/kolonia-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "foto":  "ks. Paweł Jędrzejski i Anna Kudzia"
-                  },
-                  {
-                      "tytul":  "Nowi lektorzy i turniej LSO",
-                      "data":  "2024-06-15",
-                      "opis":  "Dwóch lektorów przyjęło błogosławieństwo arcybiskupa, a nasze drużyny zajęły dwa drugie miejsca w turnieju LSO.",
-                      "tresc":  [
-                                    "Maciej Nykiel i Grzegorz Tański w archikatedrze wrocławskiej przyjęli funkcję lektorów i błogosławieństwo Księdza Arcybiskupa.",
-                                    "Tego samego dnia w Brzegu odbył się turniej LSO w piłce nożnej. Naszą parafię reprezentowały trzy drużyny, które zdobyły II miejsce w kategorii ministrant i II miejsce w kategorii lektor młodszy. Gratulujemy!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/lso-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/lso-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "link":  "wspolnoty.html#lso"
-                  },
-                  {
-                      "tytul":  "Festyn odpustowy w ogrodzie parafialnym",
-                      "data":  "2024-05-26",
-                      "opis":  "W dniu odpustu ogród parafialny wypełnił się modlitwą, występami, konkursami i zabawą.",
-                      "tresc":  [
-                                    "W dniu odpustu zorganizowaliśmy festyn w ogrodzie parafialnym. Była wspólna modlitwa, występy scholi dziecięcej i młodzieżowej Cordis, tańce, konkurs biblijny, zabawy dla dzieci i dorosłych oraz bogata oferta gastronomiczna.",
-                                    "Dziękujemy wszystkim, którzy włączyli się w przygotowanie festynu – szczególnie Wspólnocie Phileō, Parafialnemu Zespołowi Caritas, Wspólnocie Rodzin św. Rity oraz Skautkom Europy."
-                                ],
-                      "zdjecie":  "img/aktualnosci/festyn-odpustowy-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/festyn-odpustowy-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Świętowanie po bierzmowaniu",
-                      "data":  "2024-05-02",
-                      "opis":  "Bierzmowani razem z młodzieżą ze wspólnoty świętowali przy grillu w ogrodzie parafialnym.",
-                      "tresc":  [
-                                    "Bierzmowani razem z młodzieżą ze wspólnoty radośnie spędzili wieczór przy grillu, tańcach, grach i rozmowach. Raduje nas widok ogrodu parafialnego tętniącego życiem!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/grill-bierzmowanych-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/grill-bierzmowanych-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Bierzmowanie 2024",
-                      "data":  "2024-04-10",
-                      "opis":  "Bp Jacek Kiciński udzielił sakramentu bierzmowania 54 młodym ludziom.",
-                      "tresc":  [
-                                    "O. bp Jacek Kiciński CMF udzielił w naszej parafii sakramentu bierzmowania 54 młodym ludziom. Niech Duch Święty prowadzi ich i niech rozwijają w sobie otrzymane dary."
-                                ],
-                      "zdjecie":  "img/aktualnosci/bierzmowanie-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/bierzmowanie-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg"
-                                  ],
-                      "link":  "sakramenty.html"
-                  },
-                  {
-                      "tytul":  "Triduum Paschalne 2024",
-                      "data":  "2024-03-31",
-                      "opis":  "Msza Wieczerzy Pańskiej, Liturgia Męki Pańskiej i Wigilia Paschalna – szczyt roku liturgicznego.",
-                      "tresc":  [
-                                    "Mszą Wieczerzy Pańskiej rozpoczęliśmy Triduum Paschalne, w drugim dniu przeżywaliśmy Liturgię Męki Pańskiej, a jego szczytem była Wigilia Paschalna – najważniejsza liturgia roku.",
-                                    "Chrystus Zmartwychwstał!"
-                                ],
-                      "zdjecie":  "img/aktualnosci/triduum-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/triduum-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg",
-                                      "4.jpg",
-                                      "5.jpg",
-                                      "6.jpg",
-                                      "7.jpg",
-                                      "8.jpg",
-                                      "9.jpg"
-                                  ],
-                      "foto":  "Mateusz Jędrzejewski"
-                  },
-                  {
-                      "tytul":  "Niedziela Palmowa 2024",
-                      "data":  "2024-03-24",
-                      "opis":  "Na Sumie procesja z palmami i Pasja w wykonaniu chóru i solistów.",
-                      "tresc":  [
-                                    "Niedzielą Palmową rozpoczęliśmy Wielki Tydzień. Na Sumie uczestniczyliśmy w procesji z palmami i wysłuchaliśmy Pasji w wykonaniu chóru i solistów."
-                                ],
-                      "zdjecie":  "img/aktualnosci/niedziela-palmowa-2024/thumb/1.jpg",
-                      "katalog":  "aktualnosci/niedziela-palmowa-2024",
-                      "zdjecia":  [
-                                      "1.jpg",
-                                      "2.jpg",
-                                      "3.jpg"
-                                  ]
-                  },
-                  {
-                      "tytul":  "Spektakl bożonarodzeniowy 2020",
-                      "data":  "2020-01-26",
-                      "tresc":  [
-                                    "Na początku 2021 r., ze względu na pandemię, nie udało nam się zrealizować jasełek, dlatego zachęcamy do obejrzenia filmu z jasełek z 2020 r., które przygotowała schola dziecięca, ministranci oraz rodziny naszej parafii, a także zaproszeni goście.",
-                                    "Premiera spektaklu odbyła się 26 stycznia 2020 r.",
-                                    "Realizacja dźwięku – Wojciech Głuch i Marek Żółkowski. Realizacja obrazu oraz montaż – Studio VTV."
-                                ],
-                      "youtube":  "BuGpsD0p6_w"
-                  }
-              ]
+  "_instrukcja": "Aktualności i wydarzenia – najnowsze na górze. Pola: tytul, data (RRRR-MM-DD), opis (1–2 zdania na stronę główną), tresc (lista akapitów), zdjecie (zdjęcie na kartę, np. img/aktualnosci/pielgrzymka/thumb/1.jpg – opcjonalnie), katalog + zdjecia (fotorelacja: folder w img/ z dużymi zdjęciami i podfolderem thumb/, np. \"katalog\": \"aktualnosci/pielgrzymka\", \"zdjecia\": [\"1.jpg\", \"2.jpg\"] – opcjonalnie), foto (autor zdjęć – opcjonalnie), link (adres pełnej relacji – opcjonalnie), youtube (identyfikator filmu – opcjonalnie). Wpisy z ostatnich 12 miesięcy pokazują się automatycznie na stronie głównej (maks. 3).",
+  "wpisy": [
+    {
+      "tytul": "Zakończenie modlitw wypominkowych",
+      "data": "2026-11-17",
+      "opis": "We wtorek zakończyliśmy modlitwy wypominkowe za zmarłych. Dziękujemy za wspólną modlitwę i złożone ofiary.",
+      "tresc": [
+        "We wtorek zakończyliśmy modlitwy wypominkowe. Dziękujemy za wspólną modlitwę za zmarłych oraz złożone ofiary wypominkowe.",
+        "Modlitwa obejmowała koronkę z wypominkami o godz. 18.00, a następnie Mszę św. w intencji wymienionych zmarłych."
+      ],
+      "zdjecie": "/img/adwent-2020/thumb/48.jpg",
+      "link": "ogloszenia.html"
+    },
+    {
+      "tytul": "Warsztaty Synodalnego Dzieła Muzycznego i uroczysta suma z koncertem",
+      "data": "2026-11-15",
+      "opis": "W naszej parafii odbyły się warsztaty Synodalnego Dzieła Muzycznego Archidiecezji Wrocławskiej, zakończone uroczystą sumą z koncertem.",
+      "tresc": [
+        "W miniony weekend w naszej parafii odbywały się warsztaty Synodalnego Dzieła Muzycznego Archidiecezji Wrocławskiej. W niedzielę 15 listopada o godz. 12.00 odprawiona została uroczysta suma z koncertem, której przewodniczył i słowo Boże wygłosił Kanclerz Kurii Wrocławskiej ks. dr Piotr Żuber.",
+        "Bardzo się cieszymy, że warsztaty odbyły się właśnie u nas. Dziękujemy wszystkim, którzy wzięli w nich udział, pomogli je zorganizować i wsparli przygotowanie poczęstunku."
+      ],
+      "zdjecie": "/img/aktualnosci/warsztaty-muzyczne-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/warsztaty-muzyczne-2026",
+      "zdjecia": [
+        "/img/aktualnosci/warsztaty-muzyczne-2026/1.jpg",
+        "/img/aktualnosci/warsztaty-muzyczne-2026/2.jpg",
+        "/img/aktualnosci/warsztaty-muzyczne-2026/3.jpg",
+        "/img/aktualnosci/warsztaty-muzyczne-2026/4.jpg",
+        "/img/aktualnosci/warsztaty-muzyczne-2026/5.jpg"
+      ]
+    },
+    {
+      "tytul": "Nowe organy w górnym kościele",
+      "data": "2026-11-15",
+      "opis": "W górnym kościele zamontowano nowe organy. Cena zakupu wynosi 28.500 zł – Bóg zapłać za złożone ofiary na pokrycie kosztów.",
+      "tresc": [
+        "W górnym kościele zamontowano nowe organy. Cena zakupu wynosi 28.500 zł.",
+        "Bóg zapłać za złożone ofiary na pokrycie kosztów."
+      ],
+      "zdjecie": "/img/adwent-2020/thumb/45.jpg",
+      "link": "ogloszenia.html"
+    },
+    {
+      "tytul": "Porządkowanie cmentarza przy ul. Krzyckiej",
+      "data": "2026-10-31",
+      "opis": "Harcerki, Skautki, Skauci Europy oraz Liturgiczna Służba Ołtarza porządkowali cmentarz przy ulicy Krzyckiej.",
+      "tresc": [
+        "Przed uroczystością Wszystkich Świętych Harcerki, Skautki, Skauci Europy oraz Liturgiczna Służba Ołtarza porządkowali cmentarz przy ulicy Krzyckiej.",
+        "Bardzo dziękujemy wszystkim za pomoc!"
+      ],
+      "zdjecie": "/img/aktualnosci/porzadki-cmentarz-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/porzadki-cmentarz-2026",
+      "zdjecia": [
+        "/img/aktualnosci/porzadki-cmentarz-2026/1.jpg",
+        "/img/aktualnosci/porzadki-cmentarz-2026/2.jpg",
+        "/img/aktualnosci/porzadki-cmentarz-2026/3.jpg",
+        "/img/aktualnosci/porzadki-cmentarz-2026/4.jpg"
+      ]
+    },
+    {
+      "tytul": "20 lat Katolickiego Przedszkola Lupikowo",
+      "data": "2026-10-04",
+      "opis": "Lupikowo obchodziło 20. urodziny – Mszą św. z błogosławieństwem dla dzieci, spektaklem i spotkaniem przy kawie.",
+      "tresc": [
+        "Katolickie Przedszkole i Żłobek Lupikowo obchodziło swoje 20. urodziny. Podczas Mszy św. o godz. 10.30 dziękowaliśmy Bogu za wszystkich przyjaciół, sympatyków, rodziny i dzieci, które współtworzyły i nadal tworzą społeczność Lupikowa.",
+        "Po Mszy św. odbyły się interaktywne warsztaty teatralne „Muppety i Spółka”, a na gości czekały ciasto i kawa. Można było odwiedzić także salę wspomnień z kroniką i kolażami z wcześniejszych uroczystości.",
+        "Lupikowo dziękuje Księdzu Proboszczowi, ks. Jakubowi i ks. Pawłowi za obecność, modlitwę i towarzyszenie w służbie drugiemu człowiekowi."
+      ],
+      "zdjecie": "/img/aktualnosci/lupikowo-20-lat/thumb/1.jpg",
+      "katalog": "aktualnosci/lupikowo-20-lat",
+      "zdjecia": [
+        "/img/aktualnosci/lupikowo-20-lat/1.jpg",
+        "/img/aktualnosci/lupikowo-20-lat/2.jpg",
+        "/img/aktualnosci/lupikowo-20-lat/3.jpg"
+      ],
+      "foto": "Lupikowo",
+      "link": "wspolnoty.html#lupikowo"
+    },
+    {
+      "tytul": "Piesza Pielgrzymka Wrocławska na Jasną Górę",
+      "data": "2026-08-19",
+      "opis": "Około 35 osób z naszej wspólnoty szło w Grupie 20 Pieszej Pielgrzymki Wrocławskiej. Po drodze pątników wsparł Parafialny Zespół Caritas.",
+      "tresc": [
+        "Dotarliśmy do Mamy! W tegorocznej Pieszej Pielgrzymce Wrocławskiej na Jasną Górę w Grupie 20 szło około 35 osób z naszej wspólnoty. Przez 8 dni pielgrzymowaliśmy razem w modlitwie, integrując się jednocześnie ze sobą.",
+        "W połowie drogi Parafialny Zespół Caritas przy naszej parafii dostarczył pątnikom poczęstunek – dziękujemy za to serdecznie, także wszystkim, którzy przekazali ciasta.",
+        "Bogu dzięki za ten wspaniały czas – już odliczamy do przyszłorocznej wspólnej drogi!"
+      ],
+      "zdjecie": "/img/aktualnosci/pielgrzymka-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/pielgrzymka-2026",
+      "album": "galeria/pielgrzymka-2026",
+      "zdjecia": [
+        "/img/aktualnosci/pielgrzymka-2026/1.jpg",
+        "/img/aktualnosci/pielgrzymka-2026/2.jpg",
+        "/img/aktualnosci/pielgrzymka-2026/3.jpg",
+        "/img/aktualnosci/pielgrzymka-2026/4.jpg",
+        "/img/aktualnosci/pielgrzymka-2026/5.jpg",
+        "/img/aktualnosci/pielgrzymka-2026/6.jpg"
+      ]
+    },
+    {
+      "tytul": "Wakacje młodzieży: Tatry i Rzym",
+      "data": "2026-07-24",
+      "opis": "Nasza młodzież rozpoczęła wakacje w Tatrach, a potem przez 6 dni poznawała Rzym – z modlitwą „Anioł Pański” z papieżem Leonem XIV.",
+      "tresc": [
+        "Początek wakacji nasza młodzież spędziła w Tatrach, a następnie wyruszyła do Rzymu – miasta zachwycającego historią, pięknem i duchowym dziedzictwem.",
+        "Przez 6 dni młodzi odkrywali miejsca ważne dla Kościoła i kultury, odwiedzając m.in. Bazylikę św. Jana na Lateranie, katakumby, Koloseum, Castel Gandolfo oraz Watykan, gdzie uczestniczyli we Mszy przy grobie św. Jana Pawła II.",
+        "Jednym z najbardziej poruszających momentów był udział w modlitwie „Anioł Pański” z papieżem Leonem XIV – wyjątkowe doświadczenie wiary i jedności. Nie zabrakło też czasu na włoską pizzę, odpoczynek na plaży i wspólne tworzenie pięknych wspomnień."
+      ],
+      "zdjecie": "/img/aktualnosci/mlodziez-tatry-rzym-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/mlodziez-tatry-rzym-2026",
+      "album": "galeria/mlodziez-tatry-rzym-2026",
+      "zdjecia": [
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/1.jpg",
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/2.jpg",
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/3.jpg",
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/4.jpg",
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/5.jpg",
+        "/img/aktualnosci/mlodziez-tatry-rzym-2026/6.jpg"
+      ],
+      "link": "wspolnoty.html#mlodziez"
+    },
+    {
+      "tytul": "Letnie obozy Skautów Europy",
+      "data": "2026-07-19",
+      "opis": "Skauci, Skautki i Wilczki z Federacji Skautingu Europejskiego, którzy formują się przy naszej parafii, przeżywali letnie obozy.",
+      "tresc": [
+        "Skauci, Skautki i Wilczki z Federacji Skautingu Europejskiego, którzy formują się przy naszej parafii, przeżywali swoje letnie obozy."
+      ],
+      "zdjecie": "/img/aktualnosci/skauci-obozy-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/skauci-obozy-2026",
+      "zdjecia": [
+        "/img/aktualnosci/skauci-obozy-2026/1.jpg",
+        "/img/aktualnosci/skauci-obozy-2026/2.jpg",
+        "/img/aktualnosci/skauci-obozy-2026/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Kolonia ministrantów i scholi w Dąbkach",
+      "data": "2026-07-04",
+      "opis": "W Dąbkach nad morzem odbyła się kolonia ministrantów i scholi naszej parafii.",
+      "tresc": [
+        "Na początku wakacji ministranci i schola naszej parafii wypoczywali na kolonii w Dąbkach nad morzem."
+      ],
+      "zdjecie": "/img/aktualnosci/kolonia-dabki-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/kolonia-dabki-2026",
+      "zdjecia": [
+        "/img/aktualnosci/kolonia-dabki-2026/1.jpg",
+        "/img/aktualnosci/kolonia-dabki-2026/2.jpg",
+        "/img/aktualnosci/kolonia-dabki-2026/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Nowi lektorzy w naszej parafii",
+      "data": "2026-06-15",
+      "opis": "Ośmiu chłopców zostało pobłogosławionych przez Księdza Proboszcza do funkcji lektora.",
+      "tresc": [
+        "Dzielimy się radością, że 14 czerwca ośmiu chłopców zostało pobłogosławionych przez Księdza Proboszcza do funkcji lektora. Michałowi, Tomkowi, Szymonowi, Adamowi, Marcelowi, Karolowi, Antkowi i Stanisławowi gratulujemy i życzymy, by pięknie służyli przy ołtarzu i proklamowali Słowo Boże.",
+        "Księdzu Pawłowi dziękujemy za duszpasterską troskę o Liturgiczną Służbę Ołtarza."
+      ],
+      "zdjecie": "/img/aktualnosci/lektorzy-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/lektorzy-2026",
+      "zdjecia": [
+        "/img/aktualnosci/lektorzy-2026/1.jpg",
+        "/img/aktualnosci/lektorzy-2026/2.jpg",
+        "/img/aktualnosci/lektorzy-2026/3.jpg"
+      ],
+      "link": "wspolnoty.html#lso"
+    },
+    {
+      "tytul": "Dzień Jedności naszej parafii",
+      "data": "2026-05-31",
+      "opis": "W sobotę przed odpustem parafialnym grupy i wspólnoty spotkały się na Dniu Jedności. Dziękujemy za organizację i obecność!",
+      "tresc": [
+        "W sobotę przed Uroczystością Najświętszej Trójcy – naszym odpustem parafialnym – odbył się Dzień Jedności naszej parafii. Zaproszeni byli nie tylko członkowie grup i wspólnot, ale wszyscy parafianie.",
+        "Dziękujemy za organizację i obecność!"
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-jednosci-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-jednosci-2026",
+      "album": "galeria/dzien-jednosci-2026",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-jednosci-2026/1.jpg",
+        "/img/aktualnosci/dzien-jednosci-2026/2.jpg",
+        "/img/aktualnosci/dzien-jednosci-2026/3.jpg",
+        "/img/aktualnosci/dzien-jednosci-2026/4.jpg"
+      ]
+    },
+    {
+      "tytul": "Bp Jacek Kiciński na turnieju ping-ponga młodzieży",
+      "data": "2026-05-24",
+      "opis": "Na finał turnieju ping-ponga Wspólnoty Phileō przyjechał bp Jacek Kiciński, który wcześniej przewodniczył Mszy kończącej Biały Tydzień.",
+      "tresc": [
+        "Młodzież ze Wspólnoty Młodzieżowej Phileō rozgrywała wewnętrzny turniej w ping-ponga. Na finał przyjechał biskup Jacek Kiciński CMF, który zagrał mecz ze zwycięzcą turnieju.",
+        "Wcześniej biskup Jacek przewodniczył Mszy świętej kończącej Biały Tydzień."
+      ],
+      "zdjecie": "/img/aktualnosci/biskup-turniej-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/biskup-turniej-2026",
+      "zdjecia": [
+        "/img/aktualnosci/biskup-turniej-2026/1.jpg",
+        "/img/aktualnosci/biskup-turniej-2026/2.jpg",
+        "/img/aktualnosci/biskup-turniej-2026/3.jpg"
+      ],
+      "foto": "Wspólnota Młodzieżowa Phileō",
+      "link": "https://www.niedziela.pl/artykul/124376/Biskup-z-rakietka"
+    },
+    {
+      "tytul": "Zakończenie przygotowania do bierzmowania",
+      "data": "2026-05-19",
+      "opis": "Piękne i radosne zakończenie tegorocznego przygotowania do sakramentu bierzmowania.",
+      "tresc": [
+        "Piękne i radosne zakończenie tegorocznego przygotowania do sakramentu bierzmowania. Dziękujemy Wspólnocie Młodzieżowej Phileō!"
+      ],
+      "zdjecie": "/img/aktualnosci/bierzmowanie-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/bierzmowanie-2026",
+      "zdjecia": [
+        "/img/aktualnosci/bierzmowanie-2026/1.jpg",
+        "/img/aktualnosci/bierzmowanie-2026/2.jpg",
+        "/img/aktualnosci/bierzmowanie-2026/3.jpg"
+      ],
+      "link": "sakramenty.html"
+    },
+    {
+      "tytul": "Triduum Paschalne 2026",
+      "data": "2026-04-05",
+      "opis": "Fotorelacja z Wielkiego Czwartku, Wielkiego Piątku i Wigilii Paschalnej w naszym kościele. Chrystus Zmartwychwstał!",
+      "tresc": [
+        "Fotorelacja z Triduum Paschalnego w naszym kościele: Msza Wieczerzy Pańskiej w Wielki Czwartek, Liturgia Męki Pańskiej w Wielki Piątek oraz Liturgia Wigilii Paschalnej w Wielką Sobotę.",
+        "Chrystus Zmartwychwstał – prawdziwie zmartwychwstał!"
+      ],
+      "zdjecie": "/img/aktualnosci/triduum-2026/thumb/7.jpg",
+      "katalog": "aktualnosci/triduum-2026",
+      "album": "galeria/triduum-2026",
+      "zdjecia": [
+        "/img/aktualnosci/triduum-2026/1.jpg",
+        "/img/aktualnosci/triduum-2026/2.jpg",
+        "/img/aktualnosci/triduum-2026/3.jpg",
+        "/img/aktualnosci/triduum-2026/4.jpg",
+        "/img/aktualnosci/triduum-2026/5.jpg",
+        "/img/aktualnosci/triduum-2026/6.jpg",
+        "/img/aktualnosci/triduum-2026/7.jpg"
+      ],
+      "foto": "Mateusz Jędrzejewski"
+    },
+    {
+      "tytul": "Droga Krzyżowa ulicami naszej parafii",
+      "data": "2026-03-28",
+      "opis": "Przed Niedzielą Palmową modliliśmy się na Drodze Krzyżowej ulicami parafii. Dziękujemy wszystkim za udział i przygotowanie.",
+      "tresc": [
+        "Przed Niedzielą Palmową przeszliśmy z krzyżem ulicami naszej parafii, rozważając stacje Drogi Krzyżowej.",
+        "Dziękujemy wszystkim, którzy wzięli udział w tym modlitewnym wydarzeniu oraz zaangażowali się w jego przygotowanie."
+      ],
+      "zdjecie": "/img/aktualnosci/droga-krzyzowa-2026/thumb/2.jpg",
+      "katalog": "aktualnosci/droga-krzyzowa-2026",
+      "album": "galeria/droga-krzyzowa-2026",
+      "zdjecia": [
+        "/img/aktualnosci/droga-krzyzowa-2026/1.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2026/2.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2026/3.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2026/4.jpg"
+      ]
+    },
+    {
+      "tytul": "Dekanalny Dzień Skupienia dla Młodzieży",
+      "data": "2026-03-07",
+      "opis": "Już po raz kolejny nasza parafia i Wspólnota Phileō zaprosiły młodzież z dekanatu Wrocław-Krzyki na dzień skupienia.",
+      "tresc": [
+        "Już po raz kolejny nasza parafia i Wspólnota Młodzieżowa Phileō zaprosiły na Dekanalny Dzień Skupienia dla Młodzieży.",
+        "Młodzi wysłuchali konferencji s. Gaudii Skass ze Zgromadzenia Sióstr Matki Bożej Miłosierdzia o pragnieniu bycia poznanym i pokochanym oraz o lęku przed odrzuceniem. Siostra przybliżyła im także obraz Jezusa Miłosiernego, na którym Bóg daje się poznać człowiekowi.",
+        "Młodzież z dekanatu miała też okazję do adoracji Najświętszego Sakramentu, spowiedzi, Eucharystii i wspólnej integracji."
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-skupienia-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-skupienia-2026",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-skupienia-2026/1.jpg",
+        "/img/aktualnosci/dzien-skupienia-2026/2.jpg",
+        "/img/aktualnosci/dzien-skupienia-2026/3.jpg"
+      ],
+      "foto": "Wspólnota Młodzieżowa Phileō"
+    },
+    {
+      "tytul": "Ministranci na kręglach",
+      "data": "2026-03-05",
+      "opis": "Ks. Paweł zabrał ministrantów na kręgle – w podziękowaniu za całoroczną służbę przy ołtarzu.",
+      "tresc": [
+        "W sobotę ks. Paweł wybrał się z ministrantami na kręgle. Dziękujemy im za całoroczną służbę i bardzo się nimi cieszymy!"
+      ],
+      "zdjecie": "/img/aktualnosci/ministranci-kregle-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/ministranci-kregle-2026",
+      "zdjecia": [
+        "/img/aktualnosci/ministranci-kregle-2026/1.jpg",
+        "/img/aktualnosci/ministranci-kregle-2026/2.jpg"
+      ],
+      "link": "wspolnoty.html#lso"
+    },
+    {
+      "tytul": "Spotkanie opłatkowe LSO i scholi dziecięcej",
+      "data": "2026-01-12",
+      "opis": "Ministranci, schola dziecięca i ich rodzice spotkali się przy opłatku i kolędach.",
+      "tresc": [
+        "W niedzielę 11 stycznia odbyło się spotkanie opłatkowe Liturgicznej Służby Ołtarza, scholi dziecięcej i ich rodziców. Była to doskonała okazja, by pokolędować, spędzić ze sobą czas i podziękować za całoroczną służbę na rzecz parafii.",
+        "Dziękujemy też Księdzu Pawłowi za duszpasterską troskę o te grupy."
+      ],
+      "zdjecie": "/img/aktualnosci/oplatek-lso-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/oplatek-lso-2026",
+      "zdjecia": [
+        "/img/aktualnosci/oplatek-lso-2026/1.jpg",
+        "/img/aktualnosci/oplatek-lso-2026/2.jpg",
+        "/img/aktualnosci/oplatek-lso-2026/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Adwent w parafii: rekolekcje i spotkania opłatkowe",
+      "data": "2025-12-20",
+      "opis": "Rekolekcje adwentowe głosił o. Faustyn Zatoka, a w salkach parafialnych spotkania opłatkowe miały nasze wspólnoty.",
+      "tresc": [
+        "W Adwencie wiele działo się w naszej parafii. Rekolekcje adwentowe głosił o. Faustyn Zatoka, a swój dzień skupienia przeżywali Skauci i Skautki Europy z 3. i 6. Drużyny Wrocławskiej.",
+        "W salkach parafialnych spotkania opłatkowe mieli młodzi ze Wspólnoty Młodzieżowej Phileō, 14 Wrocławska Drużyna Harcerek „Połonina” im. Józefy Kantor oraz Skauci. Oczywiście były też roraty i śniadania po nich.",
+        "Cieszy, gdy parafia tak tętni życiem!"
+      ],
+      "zdjecie": "/img/aktualnosci/adwent-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/adwent-2025",
+      "zdjecia": [
+        "/img/aktualnosci/adwent-2025/1.jpg",
+        "/img/aktualnosci/adwent-2025/2.jpg",
+        "/img/aktualnosci/adwent-2025/3.jpg",
+        "/img/aktualnosci/adwent-2025/4.jpg"
+      ]
+    },
+    {
+      "tytul": "Roraty i śniadania",
+      "data": "2025-12-13",
+      "opis": "Po roratach wspólne śniadania – dziękujemy Paniom za przygotowanie, a wszystkim za obecność i budowanie wspólnoty.",
+      "tresc": [
+        "Adwent rozpoczęty, a razem z roratami wróciły nasze śniadania po Mszy św.",
+        "Dziękujemy wszystkim, którzy włączają się w ich organizację i budują wspólnotę nie tylko przy ołtarzu, ale i przy stole."
+      ],
+      "zdjecie": "/img/aktualnosci/roraty-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/roraty-2025",
+      "zdjecia": [
+        "/img/aktualnosci/roraty-2025/1.jpg",
+        "/img/aktualnosci/roraty-2025/2.jpg",
+        "/img/aktualnosci/roraty-2025/3.jpg",
+        "/img/aktualnosci/roraty-2025/4.jpg",
+        "/img/aktualnosci/roraty-2025/5.jpg"
+      ]
+    },
+    {
+      "tytul": "Listopadowy wypad 3. Drużyny Skautów Europy",
+      "data": "2025-12-07",
+      "opis": "3. Drużyna Wrocławska Skautów Europy, działająca przy naszej parafii, przeżyła swój listopadowy wypad.",
+      "tresc": [
+        "3. Drużyna Wrocławska Skautów Europy, która działa przy naszej parafii, przeżyła swój listopadowy wypad."
+      ],
+      "zdjecie": "/img/aktualnosci/skauci-wypad-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/skauci-wypad-2025",
+      "zdjecia": [
+        "/img/aktualnosci/skauci-wypad-2025/1.jpg",
+        "/img/aktualnosci/skauci-wypad-2025/2.jpg",
+        "/img/aktualnosci/skauci-wypad-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Nowi ministranci w Uroczystość Chrystusa Króla",
+      "data": "2025-11-25",
+      "opis": "Dziewięciu chłopców zostało pobłogosławionych do służby przy ołtarzu jako ministranci.",
+      "tresc": [
+        "W Uroczystość Chrystusa Króla dziewięciu chłopców zostało pobłogosławionych do służby przy ołtarzu jako ministranci. Bardzo się nimi cieszymy i gratulujemy im i ich bliskim!"
+      ],
+      "zdjecie": "/img/aktualnosci/ministranci-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/ministranci-2025",
+      "zdjecia": [
+        "/img/aktualnosci/ministranci-2025/1.jpg",
+        "/img/aktualnosci/ministranci-2025/2.jpg",
+        "/img/aktualnosci/ministranci-2025/3.jpg"
+      ],
+      "link": "wspolnoty.html#lso"
+    },
+    {
+      "tytul": "Bal Wszystkich Świętych 2025",
+      "data": "2025-10-31",
+      "opis": "Był bal, Msza święta i korowód świętych wokół kościoła.",
+      "tresc": [
+        "W wigilię uroczystości Wszystkich Świętych w naszej parafii odbył się Bal Wszystkich Świętych. Był bal, Msza święta i korowód świętych wokół kościoła."
+      ],
+      "zdjecie": "/img/aktualnosci/bal-wszystkich-swietych-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/bal-wszystkich-swietych-2025",
+      "zdjecia": [
+        "/img/aktualnosci/bal-wszystkich-swietych-2025/1.jpg",
+        "/img/aktualnosci/bal-wszystkich-swietych-2025/2.jpg",
+        "/img/aktualnosci/bal-wszystkich-swietych-2025/3.jpg"
+      ],
+      "foto": "ks. Paweł Jędrzejski"
+    },
+    {
+      "tytul": "Święto Aniołów Stróżów z Lupikowem i błogosławieństwo pojazdów",
+      "data": "2025-10-05",
+      "opis": "Na Mszy o 10.30 świętowaliśmy z Lupikowem wspomnienie jego patronów – świętych Aniołów Stróżów.",
+      "tresc": [
+        "W pierwszą niedzielę października podczas Mszy św. o 10.30 świętowaliśmy wraz z Lupikowem wspomnienie jego patronów – świętych Aniołów Stróżów.",
+        "Po Mszy pobłogosławione zostały rowerki, rolki, hulajnogi i deskorolki, a dzieci pierwszokomunijne otrzymały poświęcone różańce. Na koniec każdy dostał od Lupikowa słodką krówkę."
+      ],
+      "zdjecie": "/img/aktualnosci/lupikowo-aniolowie-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/lupikowo-aniolowie-2025",
+      "zdjecia": [
+        "/img/aktualnosci/lupikowo-aniolowie-2025/1.jpg",
+        "/img/aktualnosci/lupikowo-aniolowie-2025/2.jpg"
+      ],
+      "link": "wspolnoty.html#lupikowo"
+    },
+    {
+      "tytul": "Wilczki rozpoczęły nowy rok formacji",
+      "data": "2025-09-29",
+      "opis": "Wilczki z 6. Gromady Wrocławskiej rozpoczęły kolejny rok formacji przy naszej parafii.",
+      "tresc": [
+        "Wilczki z 6. Gromady Wrocławskiej rozpoczęły kolejny rok formacji przy naszej parafii."
+      ],
+      "zdjecie": "/img/aktualnosci/wilczki-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/wilczki-2025",
+      "zdjecia": [
+        "/img/aktualnosci/wilczki-2025/1.jpg"
+      ]
+    },
+    {
+      "tytul": "Skauci Europy rozpoczęli nowy rok",
+      "data": "2025-09-02",
+      "opis": "3. Szczep Wrocławski Skautów Europy rozpoczął kolejny rok formacji – zachęcamy do wstąpienia w ich szeregi.",
+      "tresc": [
+        "3. Szczep Wrocławski Skautów Europy rozpoczął kolejny rok formacji. Zachęcamy do wstąpienia w ich szeregi!"
+      ],
+      "zdjecie": "/img/aktualnosci/skauci-rok-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/skauci-rok-2025",
+      "zdjecia": [
+        "/img/aktualnosci/skauci-rok-2025/1.jpg",
+        "/img/aktualnosci/skauci-rok-2025/2.jpg",
+        "/img/aktualnosci/skauci-rok-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Dzień Ojca w górach",
+      "data": "2025-06-22",
+      "opis": "Młodzież razem z rodzicami świętowała Dzień Ojca wyprawą na Kalenicę i ogniskiem przy Zygmuntówce.",
+      "tresc": [
+        "Korzystając z pięknej pogody, młodzi razem z rodzicami wybrali się w góry, aby wspólnie świętować Dzień Ojca.",
+        "Po wejściu na Kalenicę i spacerze do Zygmuntówki był czas na pieczenie kiełbasek przy ognisku i integrację na łonie natury."
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-ojca-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-ojca-2025",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-ojca-2025/1.jpg",
+        "/img/aktualnosci/dzien-ojca-2025/2.jpg",
+        "/img/aktualnosci/dzien-ojca-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Uroczystość Bożego Ciała 2025",
+      "data": "2025-06-19",
+      "opis": "Procesja Bożego Ciała ulicami naszej parafii.",
+      "tresc": [
+        "Fotorelacja z uroczystości Najświętszego Ciała i Krwi Chrystusa i procesji eucharystycznej ulicami naszej parafii."
+      ],
+      "zdjecie": "/img/aktualnosci/boze-cialo-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/boze-cialo-2025",
+      "zdjecia": [
+        "/img/aktualnosci/boze-cialo-2025/1.jpg",
+        "/img/aktualnosci/boze-cialo-2025/2.jpg",
+        "/img/aktualnosci/boze-cialo-2025/3.jpg",
+        "/img/aktualnosci/boze-cialo-2025/4.jpg"
+      ]
+    },
+    {
+      "tytul": "Nowe dziewczynki w scholi dziecięcej",
+      "data": "2025-06-15",
+      "opis": "13 dziewczynek zostało pobłogosławionych przez Księdza Proboszcza i włączonych do scholi dziecięcej.",
+      "tresc": [
+        "13 dziewczynek zostało przez Księdza Proboszcza pobłogosławionych i włączonych w szeregi scholi dziecięcej. Bardzo się cieszymy i gratulujemy dziewczynkom i ich rodzicom!",
+        "Dziękujemy też Paniom i Panom, którzy pomagają i prowadzą naszą scholę."
+      ],
+      "zdjecie": "/img/aktualnosci/schola-dziecieca-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/schola-dziecieca-2025",
+      "zdjecia": [
+        "/img/aktualnosci/schola-dziecieca-2025/1.jpg"
+      ]
+    },
+    {
+      "tytul": "Nowi lektorzy i ceremoniarze",
+      "data": "2025-06-14",
+      "opis": "Liczna grupa przedstawicieli LSO naszej parafii została promowana przez Księdza Arcybiskupa na lektorów i ceremoniarzy.",
+      "tresc": [
+        "Liczna grupa przedstawicieli Liturgicznej Służby Ołtarza naszej parafii została promowana przez Księdza Arcybiskupa na lektorów i ceremoniarzy. Gratulacje, Panowie!",
+        "Dziękujemy Księdzu Pawłowi za całoroczny trud opieki nad LSO."
+      ],
+      "zdjecie": "/img/aktualnosci/lso-promocja-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/lso-promocja-2025",
+      "zdjecia": [
+        "/img/aktualnosci/lso-promocja-2025/1.jpg",
+        "/img/aktualnosci/lso-promocja-2025/2.jpg",
+        "/img/aktualnosci/lso-promocja-2025/3.jpg"
+      ],
+      "link": "wspolnoty.html#lso"
+    },
+    {
+      "tytul": "I Dzień Jedności Wspólnot",
+      "data": "2025-06-01",
+      "opis": "Pierwszy Dzień Jedności Wspólnot – piękne, potrzebne i radosne wydarzenie.",
+      "tresc": [
+        "Za nami I Dzień Jedności Wspólnot naszej parafii – piękne wydarzenie, bardzo potrzebne i radosne. Z pewnością powtórzymy je za rok!"
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-jednosci-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-jednosci-2025",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-jednosci-2025/1.jpg"
+      ]
+    },
+    {
+      "tytul": "Triduum Paschalne 2025",
+      "data": "2025-04-20",
+      "opis": "Fotorelacja z Wielkiego Czwartku, Wielkiego Piątku i Wigilii Paschalnej. Alleluja! Chrystus Zmartwychwstał!",
+      "tresc": [
+        "Fotorelacja z Triduum Paschalnego: Msza Wieczerzy Pańskiej w Wielki Czwartek, Liturgia Męki Pańskiej w Wielki Piątek i Liturgia Wigilii Paschalnej w Wielką Sobotę.",
+        "Alleluja! Chrystus Zmartwychwstał!"
+      ],
+      "zdjecie": "/img/aktualnosci/triduum-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/triduum-2025",
+      "zdjecia": [
+        "/img/aktualnosci/triduum-2025/1.jpg",
+        "/img/aktualnosci/triduum-2025/2.jpg",
+        "/img/aktualnosci/triduum-2025/3.jpg",
+        "/img/aktualnosci/triduum-2025/4.jpg",
+        "/img/aktualnosci/triduum-2025/5.jpg",
+        "/img/aktualnosci/triduum-2025/6.jpg"
+      ],
+      "foto": "Mateusz Jędrzejewski"
+    },
+    {
+      "tytul": "Niedziela Palmowa 2025",
+      "data": "2025-04-13",
+      "opis": "Na Mszy o 10.30 dzieci przeszły w procesji z palmami, a młodzież Phileō rozprowadzała palmy.",
+      "tresc": [
+        "W Niedzielę Palmową na Mszy o 10.30 licznie zgromadzone dzieci przeszły w procesji z palmami. Uczestniczyły w niej także Skautki i Wilczki z 6. Szczepu Wrocławskiego Skautów Europy.",
+        "Przez cały dzień młodzież ze Wspólnoty Phileō rozprowadzała palmy, zbierając fundusze na wakacyjne rekolekcje."
+      ],
+      "zdjecie": "/img/aktualnosci/niedziela-palmowa-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/niedziela-palmowa-2025",
+      "zdjecia": [
+        "/img/aktualnosci/niedziela-palmowa-2025/1.jpg",
+        "/img/aktualnosci/niedziela-palmowa-2025/2.jpg",
+        "/img/aktualnosci/niedziela-palmowa-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Bierzmowanie 2025",
+      "data": "2025-04-09",
+      "opis": "Bp Jacek Kiciński udzielił sakramentu bierzmowania młodzieży naszej parafii.",
+      "tresc": [
+        "W środę 9 kwietnia o. bp Jacek Kiciński CMF udzielił sakramentu bierzmowania młodzieży naszej parafii."
+      ],
+      "zdjecie": "/img/aktualnosci/bierzmowanie-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/bierzmowanie-2025",
+      "zdjecia": [
+        "/img/aktualnosci/bierzmowanie-2025/1.jpg",
+        "/img/aktualnosci/bierzmowanie-2025/2.jpg",
+        "/img/aktualnosci/bierzmowanie-2025/3.jpg",
+        "/img/aktualnosci/bierzmowanie-2025/4.jpg"
+      ],
+      "link": "sakramenty.html"
+    },
+    {
+      "tytul": "Wizytacja kanoniczna bp. Macieja Małygi",
+      "data": "2025-03-29",
+      "opis": "Biskup spotkał się z grupami parafialnymi i powiedział: „Wasza wspólnota jawi się jako znak nadziei”.",
+      "tresc": [
+        "Naszą parafię wizytował bp Maciej Małyga. Od przedpołudnia spotykał się z grupami działającymi przy parafii: Liturgiczną Służbą Ołtarza, scholką dziecięcą, Wspólnotą Phileō, zespołem Cordis, Skautami i Skautkami Europy, Zespołem Synodalnym, Wspólnotą Rodzin św. Rity, Parafialnym Zespołem Caritas, szafarzami, Radą Parafialną, Strażą Honorową, Stowarzyszeniem Krwi Chrystusa, Apostolstwem Dobrej Śmierci i Żywym Różańcem.",
+        "Zwieńczeniem wizytacji była uroczysta Eucharystia, podczas której Biskup Maciej pokrzepił nas słowem i docenił, mówiąc: „z perspektywy diecezji Wasza wspólnota jawi się jako znak nadziei”. Wszystkim zaangażowanym z serca dziękujemy!"
+      ],
+      "zdjecie": "/img/aktualnosci/wizytacja-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/wizytacja-2025",
+      "zdjecia": [
+        "/img/aktualnosci/wizytacja-2025/1.jpg",
+        "/img/aktualnosci/wizytacja-2025/2.jpg",
+        "/img/aktualnosci/wizytacja-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Droga Krzyżowa ulicami parafii 2025",
+      "data": "2025-03-28",
+      "opis": "Kilkaset osób, w tym wielu młodych, przeszło z krzyżem i pochodniami ulicami Krzyków.",
+      "tresc": [
+        "Kilkaset osób, w tym wielu młodych ludzi, przeszło ulicami Krzyków w parafialnej Drodze Krzyżowej, niosąc krzyż wśród pochodni i modląc się.",
+        "Dziękujemy Scholi Cordis za śpiew, Skautom i Skautkom Europy za niesienie pochodni, Liturgicznej Służbie Ołtarza oraz Wspólnocie Phileō za organizację i wszelką pomoc. Jak co roku mogliśmy poczuć się piękną wspólnotą i przekonać się o żywotności naszej parafii."
+      ],
+      "zdjecie": "/img/aktualnosci/droga-krzyzowa-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/droga-krzyzowa-2025",
+      "zdjecia": [
+        "/img/aktualnosci/droga-krzyzowa-2025/1.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2025/2.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2025/3.jpg",
+        "/img/aktualnosci/droga-krzyzowa-2025/4.jpg"
+      ],
+      "link": "https://wroclaw.gosc.pl/"
+    },
+    {
+      "tytul": "Dekanalny Dzień Skupienia dla Młodzieży 2025",
+      "data": "2025-03-15",
+      "opis": "Młodzież z dekanatu spotkała się w naszej parafii na dniu skupienia.",
+      "tresc": [
+        "W naszej parafii odbył się Dekanalny Dzień Skupienia dla młodzieży z dekanatu Wrocław-Krzyki."
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-skupienia-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-skupienia-2025",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-skupienia-2025/1.jpg",
+        "/img/aktualnosci/dzien-skupienia-2025/2.jpg",
+        "/img/aktualnosci/dzien-skupienia-2025/3.jpg"
+      ],
+      "foto": "Wspólnota Młodzieżowa Phileō"
+    },
+    {
+      "tytul": "Warsztaty pieśni wielkopostnych",
+      "data": "2025-03-09",
+      "opis": "Schola Cordis i młodzież Phileō przez trzy dni uczyły się pieśni wielkopostnych.",
+      "tresc": [
+        "Od 7 do 9 marca w naszej parafii odbywały się warsztaty pieśni wielkopostnych. Uczestniczyli w nich młodzi ze Scholi Cordis (śpiewającej podczas Mszy o 19.30) oraz śpiewający ze Wspólnoty Phileō.",
+        "Owocem warsztatów był śpiew podczas Mszy św. o 12.00 i krótki koncert po Mszy. Warsztaty poprowadzili Zuzia Korczak i Grzegorz Sus – dziękujemy im z całego serca!"
+      ],
+      "zdjecie": "/img/aktualnosci/warsztaty-wielkopostne-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/warsztaty-wielkopostne-2025",
+      "zdjecia": [
+        "/img/aktualnosci/warsztaty-wielkopostne-2025/1.jpg",
+        "/img/aktualnosci/warsztaty-wielkopostne-2025/2.jpg",
+        "/img/aktualnosci/warsztaty-wielkopostne-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Rekolekcje kandydatów do bierzmowania w Krzydlinie Małej",
+      "data": "2025-01-19",
+      "opis": "Młodzież przygotowująca się do bierzmowania przeżywała weekendowe rekolekcje z ks. Jakubem i bp. Jackiem Kicińskim.",
+      "tresc": [
+        "Młodzież przygotowująca się do bierzmowania formowała się na weekendowych rekolekcjach w Krzydlinie Małej.",
+        "„Powiedzcie w szkole, że byliście z ks. Jakubem na cudownych rekolekcjach” – mówił do nich bp Jacek Kiciński CMF."
+      ],
+      "zdjecie": "/img/aktualnosci/rekolekcje-bierzmowanie-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/rekolekcje-bierzmowanie-2025",
+      "zdjecia": [
+        "/img/aktualnosci/rekolekcje-bierzmowanie-2025/1.jpg",
+        "/img/aktualnosci/rekolekcje-bierzmowanie-2025/2.jpg",
+        "/img/aktualnosci/rekolekcje-bierzmowanie-2025/3.jpg"
+      ],
+      "foto": "Gość Wrocławski",
+      "link": "https://wroclaw.gosc.pl/"
+    },
+    {
+      "tytul": "Opłatek LSO i scholi dziecięcej 2025",
+      "data": "2025-01-13",
+      "opis": "Spotkanie opłatkowe ministrantów, scholi dziecięcej i ich rodziców.",
+      "tresc": [
+        "Odbyło się spotkanie opłatkowe dla członków Liturgicznej Służby Ołtarza i scholi dziecięcej oraz ich rodziców. Dziękujemy im za całoroczne zaangażowanie, a Księdzu Pawłowi za duszpasterską troskę."
+      ],
+      "zdjecie": "/img/aktualnosci/oplatek-lso-2025/thumb/1.jpg",
+      "katalog": "aktualnosci/oplatek-lso-2025",
+      "zdjecia": [
+        "/img/aktualnosci/oplatek-lso-2025/1.jpg",
+        "/img/aktualnosci/oplatek-lso-2025/2.jpg",
+        "/img/aktualnosci/oplatek-lso-2025/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Roraty, śniadania i dekorowanie kościoła",
+      "data": "2024-12-23",
+      "opis": "Roraty ze śpiewem i asystą młodzieży Phileō, wspólne śniadania i dekorowanie kościoła przed świętami.",
+      "tresc": [
+        "W Adwencie po roratach o 6.30 parafianie przygotowywali śniadania dla uczestników – z jaką frekwencją! Dziękujemy za tę inicjatywę.",
+        "Przed świętami roraty ze śpiewem i asystą prowadziła Wspólnota Phileō, potem było wspólne śniadanie i dekorowanie kościoła."
+      ],
+      "zdjecie": "/img/aktualnosci/roraty-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/roraty-2024",
+      "zdjecia": [
+        "/img/aktualnosci/roraty-2024/1.jpg",
+        "/img/aktualnosci/roraty-2024/2.jpg",
+        "/img/aktualnosci/roraty-2024/3.jpg",
+        "/img/aktualnosci/roraty-2024/4.jpg",
+        "/img/aktualnosci/roraty-2024/5.jpg"
+      ]
+    },
+    {
+      "tytul": "Nabożeństwo wprowadzające w Adwent",
+      "data": "2024-12-01",
+      "opis": "Piękne nabożeństwo wprowadzające w czas Adwentu z oprawą zespołu Cordis.",
+      "tresc": [
+        "Za nami piękne nabożeństwo wprowadzające w czas Adwentu. Dziękujemy zespołowi Cordis oraz lektorom i ceremoniarzom za oprawę.",
+        "Cieszymy się z tak licznej obecności i zapraszamy na roraty."
+      ],
+      "zdjecie": "/img/aktualnosci/nabozenstwo-adwentowe-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/nabozenstwo-adwentowe-2024",
+      "zdjecia": [
+        "/img/aktualnosci/nabozenstwo-adwentowe-2024/1.jpg",
+        "/img/aktualnosci/nabozenstwo-adwentowe-2024/2.jpg",
+        "/img/aktualnosci/nabozenstwo-adwentowe-2024/3.jpg",
+        "/img/aktualnosci/nabozenstwo-adwentowe-2024/4.jpg"
+      ],
+      "foto": "Szymon Chmurzyński"
+    },
+    {
+      "tytul": "VIII Światowy Dzień Ubogich",
+      "data": "2024-11-17",
+      "opis": "Nasza młodzież w piękny sposób włączyła się w przeżywanie Światowego Dnia Ubogich.",
+      "tresc": [
+        "Przeżywaliśmy VIII Światowy Dzień Ubogich. Nasza młodzież w piękny sposób włączyła się w to wydarzenie."
+      ],
+      "zdjecie": "/img/aktualnosci/dzien-ubogich-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/dzien-ubogich-2024",
+      "zdjecia": [
+        "/img/aktualnosci/dzien-ubogich-2024/1.jpg",
+        "/img/aktualnosci/dzien-ubogich-2024/2.jpg",
+        "/img/aktualnosci/dzien-ubogich-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "I Parafialny Bal Wszystkich Świętych",
+      "data": "2024-10-31",
+      "opis": "Pierwszy parafialny Bal Wszystkich Świętych – dziękujemy dzieciom, rodzicom i organizatorom.",
+      "tresc": [
+        "Za nami I Parafialny Bal Wszystkich Świętych. Bardzo dziękujemy za obecność wszystkim dzieciom i ich rodzicom oraz wszystkim zaangażowanym w przygotowanie – szczególnie Paniom Małgosi i Oli."
+      ],
+      "zdjecie": "/img/aktualnosci/bal-wszystkich-swietych-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/bal-wszystkich-swietych-2024",
+      "zdjecia": [
+        "/img/aktualnosci/bal-wszystkich-swietych-2024/1.jpg",
+        "/img/aktualnosci/bal-wszystkich-swietych-2024/2.jpg",
+        "/img/aktualnosci/bal-wszystkich-swietych-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "10-lecie 6. Szczepu Wrocławskiego Skautek Europy",
+      "data": "2024-10-27",
+      "opis": "Na Mszy o 9.00 świętowaliśmy jubileusz 10-lecia Szczepu Skautek, które od dwóch lat formują się przy naszej parafii.",
+      "tresc": [
+        "Na Mszy świętej o 9.00 przeżywaliśmy jubileusz 10-lecia 6. Szczepu Wrocławskiego Skautek Europy, które drugi rok formują się przy naszej parafii."
+      ],
+      "zdjecie": "/img/aktualnosci/skautki-10-lecie-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/skautki-10-lecie-2024",
+      "zdjecia": [
+        "/img/aktualnosci/skautki-10-lecie-2024/1.jpg",
+        "/img/aktualnosci/skautki-10-lecie-2024/2.jpg"
+      ]
+    },
+    {
+      "tytul": "Porządkowanie cmentarza przy ul. Krzyckiej 2024",
+      "data": "2024-10-26",
+      "opis": "Skauci i Skautki Europy, LSO, młodzież i parafianie porządkowali cmentarz przy ulicy Krzyckiej.",
+      "tresc": [
+        "Skauci i Skautki Europy, Liturgiczna Służba Ołtarza, młodzież i parafianie porządkowali cmentarz przy ulicy Krzyckiej. Wielkie Bóg zapłać za Waszą dobroć i zaangażowanie!"
+      ],
+      "zdjecie": "/img/aktualnosci/porzadki-cmentarz-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/porzadki-cmentarz-2024",
+      "zdjecia": [
+        "/img/aktualnosci/porzadki-cmentarz-2024/1.jpg",
+        "/img/aktualnosci/porzadki-cmentarz-2024/2.jpg",
+        "/img/aktualnosci/porzadki-cmentarz-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Piesza Pielgrzymka do grobu św. Jadwigi w Trzebnicy",
+      "data": "2024-10-12",
+      "opis": "Nasi parafianie licznie wzięli udział w pielgrzymce do Trzebnicy, szczególnie w Grupach 7 i 20.",
+      "tresc": [
+        "Odbyła się Piesza Pielgrzymka Wrocławska do grobu św. Jadwigi w Trzebnicy. Licznie wzięli w niej udział nasi parafianie, szczególnie w Grupach 7 i 20."
+      ],
+      "zdjecie": "/img/aktualnosci/pielgrzymka-trzebnica-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/pielgrzymka-trzebnica-2024",
+      "zdjecia": [
+        "/img/aktualnosci/pielgrzymka-trzebnica-2024/1.jpg",
+        "/img/aktualnosci/pielgrzymka-trzebnica-2024/2.jpg",
+        "/img/aktualnosci/pielgrzymka-trzebnica-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Aniołowie Stróżowie i błogosławieństwo pojazdów 2024",
+      "data": "2024-10-06",
+      "opis": "Co roku w okolicy wspomnienia Aniołów Stróżów modlimy się z Lupikowem i błogosławimy dziecięce pojazdy.",
+      "tresc": [
+        "Co roku w okolicy wspomnienia Aniołów Stróżów modlimy się wraz z Lupikowem oraz błogosławimy dzieciom hulajnogi, rowerki, rolki i inne pojazdy. Ile było w tym radości!"
+      ],
+      "zdjecie": "/img/aktualnosci/lupikowo-aniolowie-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/lupikowo-aniolowie-2024",
+      "zdjecia": [
+        "/img/aktualnosci/lupikowo-aniolowie-2024/1.jpg",
+        "/img/aktualnosci/lupikowo-aniolowie-2024/2.jpg"
+      ],
+      "link": "wspolnoty.html#lupikowo"
+    },
+    {
+      "tytul": "Pomoc dla powodzian w Kotlinie Kłodzkiej",
+      "data": "2024-09-21",
+      "opis": "Ponad 60 osób – młodzież Phileō i parafianie – pojechało pomagać poszkodowanym przez powódź.",
+      "tresc": [
+        "Młodzież ze Wspólnoty Phileō oraz wielu parafian – ponad 60 osób! – pojechało w Kotlinę Kłodzką pomóc poszkodowanym przez powódź. Jesteśmy zbudowani Waszą postawą.",
+        "Dziękujemy też wszystkim, którzy wspierali zbiórki prowadzone przez harcerzy, Parafialny Zespół Caritas, młodzież oraz Skautów i Skautki Europy."
+      ],
+      "zdjecie": "/img/aktualnosci/pomoc-powodzianom-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/pomoc-powodzianom-2024",
+      "zdjecia": [
+        "/img/aktualnosci/pomoc-powodzianom-2024/1.jpg",
+        "/img/aktualnosci/pomoc-powodzianom-2024/2.jpg",
+        "/img/aktualnosci/pomoc-powodzianom-2024/3.jpg",
+        "/img/aktualnosci/pomoc-powodzianom-2024/4.jpg",
+        "/img/aktualnosci/pomoc-powodzianom-2024/5.jpg"
+      ]
+    },
+    {
+      "tytul": "Pierwszy wieczór uwielbienia",
+      "data": "2024-09-09",
+      "opis": "Pierwszy wieczór uwielbienia z posługą muzyczną scholi Cordis.",
+      "tresc": [
+        "Za nami pierwszy wieczór uwielbienia. Dziękujemy scholi Cordis za posługę muzyczną i cieszymy się z licznej obecności wiernych."
+      ],
+      "zdjecie": "/img/aktualnosci/wieczor-uwielbienia-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/wieczor-uwielbienia-2024",
+      "zdjecia": [
+        "/img/aktualnosci/wieczor-uwielbienia-2024/1.jpg",
+        "/img/aktualnosci/wieczor-uwielbienia-2024/2.jpg",
+        "/img/aktualnosci/wieczor-uwielbienia-2024/3.jpg",
+        "/img/aktualnosci/wieczor-uwielbienia-2024/4.jpg"
+      ],
+      "foto": "Szymon Chmurzyński"
+    },
+    {
+      "tytul": "Rozpoczęcie roku harcerskiego Skautów Europy",
+      "data": "2024-09-03",
+      "opis": "Msza na rozpoczęcie roku 1. Hufca Wrocławskiego Skautów Europy. Od września przy parafii działa też Szczep męski.",
+      "tresc": [
+        "W naszej parafii odbyła się Msza święta na rozpoczęcie roku harcerskiego 1. Hufca Wrocławskiego Skautów Europy, a następnie apel w Parku Południowym.",
+        "Od września oprócz Szczepu żeńskiego działa u nas także Szczep męski. Do jednego i drugiego serdecznie zapraszamy – więcej informacji u duszpasterza, ks. Jakuba Deperasa."
+      ],
+      "zdjecie": "/img/aktualnosci/skauci-rok-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/skauci-rok-2024",
+      "zdjecia": [
+        "/img/aktualnosci/skauci-rok-2024/1.jpg",
+        "/img/aktualnosci/skauci-rok-2024/2.jpg",
+        "/img/aktualnosci/skauci-rok-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Piesza Pielgrzymka na Jasną Górę 2024",
+      "data": "2024-08-13",
+      "opis": "Z naszej parafii szło kilkadziesiąt osób, w tym 40 młodych ze Wspólnoty Phileō.",
+      "tresc": [
+        "Wielka radość, że z naszej parafii w Pieszej Pielgrzymce Wrocławskiej na Jasną Górę szło kilkadziesiąt osób, w tym 40 młodych ze Wspólnoty Phileō."
+      ],
+      "zdjecie": "/img/aktualnosci/pielgrzymka-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/pielgrzymka-2024",
+      "zdjecia": [
+        "/img/aktualnosci/pielgrzymka-2024/1.jpg",
+        "/img/aktualnosci/pielgrzymka-2024/2.jpg",
+        "/img/aktualnosci/pielgrzymka-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Letnie obozy Skautek i Wilczków",
+      "data": "2024-07-17",
+      "opis": "Skautki z 6. Drużyny Wrocławskiej obozowały pod Lublińcem, a Wilczki w Pokoju.",
+      "tresc": [
+        "Od 8 do 24 lipca w lesie pod Lublińcem trwał obóz Skautek Europy z 6. Drużyny Wrocławskiej, działającej przy naszej parafii. Harcerki zdobywały sprawności i pogłębiały relacje z Bogiem i między sobą.",
+        "Wcześniej na obozie w Pokoju były Wilczki – skautki, które działają w naszej parafii od września."
+      ],
+      "zdjecie": "/img/aktualnosci/skautki-oboz-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/skautki-oboz-2024",
+      "zdjecia": [
+        "/img/aktualnosci/skautki-oboz-2024/1.jpg",
+        "/img/aktualnosci/skautki-oboz-2024/2.jpg",
+        "/img/aktualnosci/skautki-oboz-2024/3.jpg",
+        "/img/aktualnosci/skautki-oboz-2024/4.jpg",
+        "/img/aktualnosci/skautki-oboz-2024/5.jpg"
+      ]
+    },
+    {
+      "tytul": "Kolonia „Wakacje z Bogiem” w Smołdzińskim Lesie",
+      "data": "2024-06-30",
+      "opis": "Ministranci, lektorzy i schola spędzili tydzień nad morzem w Słowińskim Parku Narodowym.",
+      "tresc": [
+        "Od 22 do 30 czerwca ministranci, lektorzy i dzieci ze scholki byli na kolonii „Wakacje z Bogiem” w ośrodku w Smołdzińskim Lesie, w Słowińskim Parku Narodowym.",
+        "Były zajęcia sportowe, morze, wycieczki do Ustki i Doliny Charlotty, wędrówki po ruchomych wydmach i widok z latarni Czołpino. Na zakończenie spotkaliśmy się przy ognisku. Bogu niech będą dzięki za ten czas – za codzienną Eucharystię, modlitwę i piękno przyrody."
+      ],
+      "zdjecie": "/img/aktualnosci/kolonia-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/kolonia-2024",
+      "zdjecia": [
+        "/img/aktualnosci/kolonia-2024/1.jpg",
+        "/img/aktualnosci/kolonia-2024/2.jpg",
+        "/img/aktualnosci/kolonia-2024/3.jpg",
+        "/img/aktualnosci/kolonia-2024/4.jpg"
+      ],
+      "foto": "ks. Paweł Jędrzejski i Anna Kudzia"
+    },
+    {
+      "tytul": "Nowi lektorzy i turniej LSO",
+      "data": "2024-06-15",
+      "opis": "Dwóch lektorów przyjęło błogosławieństwo arcybiskupa, a nasze drużyny zajęły dwa drugie miejsca w turnieju LSO.",
+      "tresc": [
+        "Maciej Nykiel i Grzegorz Tański w archikatedrze wrocławskiej przyjęli funkcję lektorów i błogosławieństwo Księdza Arcybiskupa.",
+        "Tego samego dnia w Brzegu odbył się turniej LSO w piłce nożnej. Naszą parafię reprezentowały trzy drużyny, które zdobyły II miejsce w kategorii ministrant i II miejsce w kategorii lektor młodszy. Gratulujemy!"
+      ],
+      "zdjecie": "/img/aktualnosci/lso-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/lso-2024",
+      "zdjecia": [
+        "/img/aktualnosci/lso-2024/1.jpg",
+        "/img/aktualnosci/lso-2024/2.jpg",
+        "/img/aktualnosci/lso-2024/3.jpg",
+        "/img/aktualnosci/lso-2024/4.jpg"
+      ],
+      "link": "wspolnoty.html#lso"
+    },
+    {
+      "tytul": "Festyn odpustowy w ogrodzie parafialnym",
+      "data": "2024-05-26",
+      "opis": "W dniu odpustu ogród parafialny wypełnił się modlitwą, występami, konkursami i zabawą.",
+      "tresc": [
+        "W dniu odpustu zorganizowaliśmy festyn w ogrodzie parafialnym. Była wspólna modlitwa, występy scholi dziecięcej i młodzieżowej Cordis, tańce, konkurs biblijny, zabawy dla dzieci i dorosłych oraz bogata oferta gastronomiczna.",
+        "Dziękujemy wszystkim, którzy włączyli się w przygotowanie festynu – szczególnie Wspólnocie Phileō, Parafialnemu Zespołowi Caritas, Wspólnocie Rodzin św. Rity oraz Skautkom Europy."
+      ],
+      "zdjecie": "/img/aktualnosci/festyn-odpustowy-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/festyn-odpustowy-2024",
+      "zdjecia": [
+        "/img/aktualnosci/festyn-odpustowy-2024/1.jpg",
+        "/img/aktualnosci/festyn-odpustowy-2024/2.jpg",
+        "/img/aktualnosci/festyn-odpustowy-2024/3.jpg",
+        "/img/aktualnosci/festyn-odpustowy-2024/4.jpg"
+      ]
+    },
+    {
+      "tytul": "Świętowanie po bierzmowaniu",
+      "data": "2024-05-02",
+      "opis": "Bierzmowani razem z młodzieżą ze wspólnoty świętowali przy grillu w ogrodzie parafialnym.",
+      "tresc": [
+        "Bierzmowani razem z młodzieżą ze wspólnoty radośnie spędzili wieczór przy grillu, tańcach, grach i rozmowach. Raduje nas widok ogrodu parafialnego tętniącego życiem!"
+      ],
+      "zdjecie": "/img/aktualnosci/grill-bierzmowanych-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/grill-bierzmowanych-2024",
+      "zdjecia": [
+        "/img/aktualnosci/grill-bierzmowanych-2024/1.jpg",
+        "/img/aktualnosci/grill-bierzmowanych-2024/2.jpg",
+        "/img/aktualnosci/grill-bierzmowanych-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Bierzmowanie 2024",
+      "data": "2024-04-10",
+      "opis": "Bp Jacek Kiciński udzielił sakramentu bierzmowania 54 młodym ludziom.",
+      "tresc": [
+        "O. bp Jacek Kiciński CMF udzielił w naszej parafii sakramentu bierzmowania 54 młodym ludziom. Niech Duch Święty prowadzi ich i niech rozwijają w sobie otrzymane dary."
+      ],
+      "zdjecie": "/img/aktualnosci/bierzmowanie-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/bierzmowanie-2024",
+      "zdjecia": [
+        "/img/aktualnosci/bierzmowanie-2024/1.jpg",
+        "/img/aktualnosci/bierzmowanie-2024/2.jpg",
+        "/img/aktualnosci/bierzmowanie-2024/3.jpg",
+        "/img/aktualnosci/bierzmowanie-2024/4.jpg"
+      ],
+      "link": "sakramenty.html"
+    },
+    {
+      "tytul": "Triduum Paschalne 2024",
+      "data": "2024-03-31",
+      "opis": "Msza Wieczerzy Pańskiej, Liturgia Męki Pańskiej i Wigilia Paschalna – szczyt roku liturgicznego.",
+      "tresc": [
+        "Mszą Wieczerzy Pańskiej rozpoczęliśmy Triduum Paschalne, w drugim dniu przeżywaliśmy Liturgię Męki Pańskiej, a jego szczytem była Wigilia Paschalna – najważniejsza liturgia roku.",
+        "Chrystus Zmartwychwstał!"
+      ],
+      "zdjecie": "/img/aktualnosci/triduum-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/triduum-2024",
+      "zdjecia": [
+        "/img/aktualnosci/triduum-2024/1.jpg",
+        "/img/aktualnosci/triduum-2024/2.jpg",
+        "/img/aktualnosci/triduum-2024/3.jpg",
+        "/img/aktualnosci/triduum-2024/4.jpg",
+        "/img/aktualnosci/triduum-2024/5.jpg",
+        "/img/aktualnosci/triduum-2024/6.jpg",
+        "/img/aktualnosci/triduum-2024/7.jpg",
+        "/img/aktualnosci/triduum-2024/8.jpg",
+        "/img/aktualnosci/triduum-2024/9.jpg"
+      ],
+      "foto": "Mateusz Jędrzejewski"
+    },
+    {
+      "tytul": "Niedziela Palmowa 2024",
+      "data": "2024-03-24",
+      "opis": "Na Sumie procesja z palmami i Pasja w wykonaniu chóru i solistów.",
+      "tresc": [
+        "Niedzielą Palmową rozpoczęliśmy Wielki Tydzień. Na Sumie uczestniczyliśmy w procesji z palmami i wysłuchaliśmy Pasji w wykonaniu chóru i solistów."
+      ],
+      "zdjecie": "/img/aktualnosci/niedziela-palmowa-2024/thumb/1.jpg",
+      "katalog": "aktualnosci/niedziela-palmowa-2024",
+      "zdjecia": [
+        "/img/aktualnosci/niedziela-palmowa-2024/1.jpg",
+        "/img/aktualnosci/niedziela-palmowa-2024/2.jpg",
+        "/img/aktualnosci/niedziela-palmowa-2024/3.jpg"
+      ]
+    },
+    {
+      "tytul": "Spektakl bożonarodzeniowy 2020",
+      "data": "2020-01-26",
+      "tresc": [
+        "Na początku 2021 r., ze względu na pandemię, nie udało nam się zrealizować jasełek, dlatego zachęcamy do obejrzenia filmu z jasełek z 2020 r., które przygotowała schola dziecięca, ministranci oraz rodziny naszej parafii, a także zaproszeni goście.",
+        "Premiera spektaklu odbyła się 26 stycznia 2020 r.",
+        "Realizacja dźwięku – Wojciech Głuch i Marek Żółkowski. Realizacja obrazu oraz montaż – Studio VTV."
+      ],
+      "youtube": "BuGpsD0p6_w"
+    }
+  ]
 }

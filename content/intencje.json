@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Intencje mszalne na bieżący tydzień. Każdy dzień: data (RRRR-MM-DD), nazwa (opis dnia), msze: lista { godz, intencje: [ ... ] }. Kilka intencji w jednej Mszy = kilka tekstów w liście.",
+  "_instrukcja": "Intencje mszalne – najwygodniej edytować w kokpicie (/admin). Każdy dzień: data (RRRR-MM-DD), nazwa (opis dnia), msze: lista { godz, naglowek (opcjonalnie), intencje: [ ... ] }. Pole \"archiwum\" = inne tygodnie (poprzednie i wpisane z wyprzedzeniem) – strona sama pokazuje tydzień z dzisiejszą datą.",
   "tydzien": "22–28 listopada 2026",
   "dni": [
     {
@@ -194,6 +194,209 @@
           "godz": "18:30",
           "intencje": [
             "++ Bronisława Hofman 2 r. śm., + Waldemar, ++ z R. Hofmanów, Latkiewiczów i Koncurów"
+          ]
+        }
+      ]
+    }
+  ],
+  "archiwum": [
+    {
+      "tydzien": "15–21 listopada 2026",
+      "dni": [
+        {
+          "data": "2026-11-15",
+          "nazwa": "33 Niedziela Zwykła",
+          "msze": [
+            {
+              "godz": "7:00",
+              "intencje": [
+                "++ Władysława, Ludwik, ++ z R. Zubrzyckich, Kudybów i Kogutów"
+              ]
+            },
+            {
+              "godz": "9:00",
+              "intencje": [
+                "+ Grzegorz Wysota – od syna Tomasza z żoną Natalią",
+                "+ Józef Kremis 11 r. śm., ++ z Rodziny"
+              ]
+            },
+            {
+              "godz": "10:30",
+              "intencje": [
+                "+ Anna Ukleja 22 r. śm."
+              ]
+            },
+            {
+              "godz": "12:00",
+              "intencje": [
+                "++ Eugeniusz i Irena Soberka – oboje 6 r. śm."
+              ]
+            },
+            {
+              "godz": "13:30",
+              "intencje": [
+                "++ Marianna i Stanisław Pisowaccy, ++ z Rodziny"
+              ]
+            },
+            {
+              "godz": "18:00",
+              "intencje": [
+                "++ Małgorzata Turowicz 3 r. śm., Bogumiła Turowicz"
+              ]
+            },
+            {
+              "godz": "19:30",
+              "intencje": [
+                "++ z R. Wybraniec, Hocaniuk, Bezeliuk, Milewski, Wierzbicki, Toporowski, Winiarski"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-16",
+          "nazwa": "Rocznica Poświęcenia Katedry Wrocławskiej, święto",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "+ Alicja w r. śm., + ks. Kard. H. Gulbinowicz"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "ADS: Za wstaw. Matki Bożej Ostrobramskiej o pokój i pojednanie w Ojczyźnie i Wschodniej Europie"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "Wypominkowa – ulica Sowia, Zimowa, Życzliwa, Tuwima, Upalna, Jesienna, Wiosenna"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-17",
+          "nazwa": "",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "++ Anna, Jerzy, Jan Tabisz"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "W intencji Małgorzaty i Haliny – urodzinowe"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "Wypominki bez adresu i złożone po terminie"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-18",
+          "nazwa": "",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "Apostolat Matki Bożej z Szensztatu"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "+ Julian Szmigiel i ++ z Rodziny"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "naglowek": "Nowenna do Matki Bożej Nieustającej Pomocy:",
+              "intencje": [
+                "W intencji Ojczyzny",
+                "O uzdrowienie z choroby nowotworowej dla Marka",
+                "O szczęśliwe rozwiązanie dla Anny"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-19",
+          "nazwa": "",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "++ Józef, Marianna Rudko, Jan, Helena, Alicja, Maciej Roda"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "+ Edward Ganicz"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Stanisława Chądzyńska 22 r. śm., Witold Chądzyński 28 r. śm., Eugeniusz, Franciszek Wilk"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-20",
+          "nazwa": "",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "++ Anna i Stanisław"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "W intencji Bogu wiadomej"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Elżbieta, Zofia, Aleksander Zawodniak"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-21",
+          "nazwa": "",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "W intencji Rodziny o Boże prowadzenie i opiekę Matki Najśw."
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "++ Przyjaciół i Dobrodziejów"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Jadwiga Świeżyńska 28 r. śm., ++ z Rodziny"
+              ]
+            }
           ]
         }
       ]
