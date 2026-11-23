@@ -1183,5 +1183,7 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .group__art[src*="skauci"] { shape-outside: url("../img/wspolnoty/skauci.webp"); }
 .group__art[src*="krag"] { shape-outside: url("../img/wspolnoty/krag.webp"); }
 .group__art[src*="mlodziez"] { shape-outside: url("../img/wspolnoty/mlodziez.webp"); }
+.group__art[src*="cordis"] { shape-outside: url("../img/wspolnoty/cordis.webp"); }
+.group__art[src*="lupikowo"] { shape-outside: url("../img/wspolnoty/lupikowo.webp"); }
 .group::after, .group .prose::after { content: ""; display: block; clear: both; }
 @media (max-width: 560px) { .group__art { width: 34%; margin: 0 -2px 4px 10px; shape-margin: 6px; } }
