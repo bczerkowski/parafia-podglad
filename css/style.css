@@ -1176,11 +1176,11 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 /* ramki z terminem, przyciski i kontakt – zawsze pełna szerokość, pod ilustracją (zamiast zwężać się obok niej) */
 .group__art ~ .group__when, .group__art ~ .group__links, .group__art ~ .caritas__links, .group__art ~ .group__join, .group__art ~ .group__contact { clear: right; }
 /* jednakowa „waga” wizualna: szerokie grafiki szersze (ta sama powierzchnia co kwadrat 170×170) */
-.group__art[src*="krag"] { width: min(220px, 42%); }
+.group__art[src*="caritas"] { width: min(140px, 28%); }  /* znak wypełnia cały kwadrat – mniejszy, żeby ważył tyle co pozostałe */
 .group__art[src*="lso"] { width: min(193px, 38%); }
 /* Rita – przy tekście opisu, większa */
-.group__art[src*="rita"] { width: min(235px, 42%); margin: -6px -10px 4px 4px; shape-margin: 4px; }
-.group__art[src*="rita"] { shape-outside: url("../img/wspolnoty/rita.webp"); }
+.group__art[src$="/rita.webp"] { width: min(235px, 42%); margin: -6px -10px 4px 4px; shape-margin: 4px; }
+.group__art[src$="/rita.webp"] { shape-outside: url("../img/wspolnoty/rita.webp"); }
 .group__art[src*="caritas"] { shape-outside: url("../img/wspolnoty/caritas.webp"); }
 .group__art[src*="rozaniec"] { shape-outside: url("../img/wspolnoty/rozaniec.webp"); }
 .group__art[src*="straz"] { shape-outside: url("../img/wspolnoty/straz.webp"); }
@@ -1193,4 +1193,4 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .group__art[src*="cordis"] { shape-outside: url("../img/wspolnoty/cordis.webp"); }
 .group__art[src*="lupikowo"] { shape-outside: url("../img/wspolnoty/lupikowo.webp"); }
 .group::after, .group .prose::after { content: ""; display: block; clear: both; }
-@media (max-width: 560px) { .group__art { width: 30%; margin: 0 -2px 4px 10px; shape-margin: 6px; } .group__art[src*="krag"] { width: 40%; } .group__art[src*="lso"] { width: 34%; } .group__art[src*="rita"] { width: 40%; } }
+@media (max-width: 560px) { .group__art { width: 30%; margin: 0 -2px 4px 10px; shape-margin: 6px; } .group__art[src*="caritas"] { width: 25%; } .group__art[src*="lso"] { width: 34%; } .group__art[src$="/rita.webp"] { width: 40%; } }
