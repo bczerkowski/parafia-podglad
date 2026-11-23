@@ -1,0 +1,90 @@
+{
+  "_instrukcja": "Duszpasterze – edycja w kokpicie (/admin → Strony → Duszpasterze). Kolejność na liście = kolejność na stronie.",
+  "ksieza": [
+    {
+      "funkcja": "Proboszcz",
+      "imie": "Ks. kan. Andrzej Szyc RM",
+      "zdjecie": "/img/duszpasterze/szyc.jpg",
+      "od": "W parafii od 2002 r.",
+      "zadania": [
+        {
+          "tekst": "kieruje parafią"
+        },
+        {
+          "tekst": "Rada Parafialna",
+          "link": "wspolnoty.html#inne"
+        },
+        {
+          "tekst": "Parafialny Zespół Caritas",
+          "link": "wspolnoty.html#caritas"
+        },
+        {
+          "tekst": "Żywy Różaniec",
+          "link": "wspolnoty.html#rozaniec"
+        },
+        {
+          "tekst": "sprawy w kancelarii parafialnej",
+          "link": "kancelaria.html"
+        }
+      ],
+      "kontakt": "<a href=\"mailto:proboszcz@swtrojca.pl\">proboszcz@swtrojca.pl</a> · <a href=\"mailto:proboszczswtrojca@gmail.com\">proboszczswtrojca@gmail.com</a><br>tel. <a href=\"tel:+48694453433\">694 453 433</a>, kancelaria <a href=\"tel:+48713628254\">71 362 82 54</a>"
+    },
+    {
+      "funkcja": "Wikariusz",
+      "imie": "Ks. mgr Jakub Deperas",
+      "zdjecie": "/img/duszpasterze/deperas.jpg",
+      "od": "W parafii od 2020 r.",
+      "zadania": [
+        {
+          "tekst": "przygotowanie do bierzmowania",
+          "link": "sakramenty.html#bierzmowanie"
+        },
+        {
+          "tekst": "Wspólnota Młodzieżowa Phileō",
+          "link": "wspolnoty.html#mlodziez"
+        },
+        {
+          "tekst": "schola młodzieżowa Cordis",
+          "link": "wspolnoty.html#cordis"
+        },
+        {
+          "tekst": "Skauci Europy",
+          "link": "wspolnoty.html#skauci"
+        },
+        {
+          "tekst": "Stowarzyszenie Krwi Chrystusa",
+          "link": "wspolnoty.html#krew"
+        }
+      ],
+      "kontakt": "<a href=\"mailto:jakub.deperas3@gmail.com\">jakub.deperas3@gmail.com</a> · tel. <a href=\"tel:+48713628162\">71 362 81 62</a> <small>(wspólny numer wikariuszy)</small>"
+    },
+    {
+      "funkcja": "Wikariusz",
+      "imie": "Ks. mgr lic. Paweł Jędrzejski",
+      "zdjecie": "/img/duszpasterze/jedrzejski.jpg",
+      "od": "W parafii od 2023 r.",
+      "zadania": [
+        {
+          "tekst": "Liturgiczna Służba Ołtarza",
+          "link": "wspolnoty.html#lso"
+        },
+        {
+          "tekst": "schola dziecięca",
+          "link": "wspolnoty.html#inne"
+        },
+        {
+          "tekst": "Straż Honorowa NSPJ",
+          "link": "wspolnoty.html#straz"
+        },
+        {
+          "tekst": "Krąg Biblijny",
+          "link": "wspolnoty.html#krag"
+        },
+        {
+          "tekst": "kolonie dla dzieci"
+        }
+      ],
+      "kontakt": "tel. <a href=\"tel:+48713628162\">71 362 81 62</a> <small>(wspólny numer wikariuszy)</small>"
+    }
+  ]
+}

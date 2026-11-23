@@ -1,0 +1,10 @@
+{
+  "_instrukcja": "Teksty strony aktualnosci.html – edycja w kokpicie (/admin → Strony). Każdy blok to jedna sekcja strony (HTML). Strona składa się z tych bloków przy budowaniu (tool/build.dart).",
+  "bloki": [
+    {
+      "klucz": "aktualnosci-1",
+      "nazwa": "Nagłówek strony (tytuł i podtytuł)",
+      "html": "<section class=\"page-hero\">\n  <div class=\"wrap\">\n    <nav class=\"breadcrumb\" aria-label=\"Okruszki\"><a href=\"index.html\">Start</a> / Aktualności</nav>\n    <h1>Aktualności</h1>\n    <p>Bieżące wiadomości znajdziesz także w <a href=\"ogloszenia.html\" style=\"color:#f1d999\">ogłoszeniach</a> i na <a href=\"https://www.facebook.com/swtrojcakrzyki/\" rel=\"noopener\" target=\"_blank\" style=\"color:#f1d999\">Facebooku parafii</a>.</p>\n  </div>\n</section>"
+    }
+  ]
+}

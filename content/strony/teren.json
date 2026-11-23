@@ -1,0 +1,10 @@
+{
+  "_instrukcja": "Teksty strony teren.html – edycja w kokpicie (/admin → Strony). Każdy blok to jedna sekcja strony (HTML). Strona składa się z tych bloków przy budowaniu (tool/build.dart).",
+  "bloki": [
+    {
+      "klucz": "teren-1",
+      "nazwa": "Nagłówek strony (tytuł i podtytuł)",
+      "html": "<section class=\"page-hero\">\n  <div class=\"wrap\">\n    <nav class=\"breadcrumb\" aria-label=\"Okruszki\"><a href=\"index.html\">Start</a> / Terytorium parafii</nav>\n    <h1>Terytorium parafii</h1>\n    <p>Do parafii należą mieszkańcy ulic zaznaczonych na mapie. Wpisz swoją ulicę, aby od razu ją zobaczyć.</p>\n  </div>\n</section>"
+    }
+  ]
+}

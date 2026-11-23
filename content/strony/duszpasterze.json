@@ -1,0 +1,10 @@
+{
+  "_instrukcja": "Teksty strony duszpasterze.html – edycja w kokpicie (/admin → Strony). Każdy blok to jedna sekcja strony (HTML). Strona składa się z tych bloków przy budowaniu (tool/build.dart).",
+  "bloki": [
+    {
+      "klucz": "duszpasterze-1",
+      "nazwa": "Nagłówek strony (tytuł i podtytuł)",
+      "html": "<section class=\"page-hero\">\n  <div class=\"wrap\">\n    <nav class=\"breadcrumb\" aria-label=\"Okruszki\"><a href=\"index.html\">Start</a> / Duszpasterze</nav>\n    <h1>Duszpasterze</h1>\n    <p>Kapłani posługujący w naszej parafii</p>\n  </div>\n</section>"
+    }
+  ]
+}

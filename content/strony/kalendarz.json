@@ -1,0 +1,10 @@
+{
+  "_instrukcja": "Teksty strony kalendarz.html – edycja w kokpicie (/admin → Strony). Każdy blok to jedna sekcja strony (HTML). Strona składa się z tych bloków przy budowaniu (tool/build.dart).",
+  "bloki": [
+    {
+      "klucz": "kalendarz-1",
+      "nazwa": "Nagłówek strony (tytuł i podtytuł)",
+      "html": "<section class=\"page-hero\">\n  <div class=\"wrap\">\n    <nav class=\"breadcrumb\" aria-label=\"Okruszki\"><a href=\"index.html\">Start</a> / Kalendarz parafialny</nav>\n    <h1>Kalendarz parafialny</h1>\n    <p>Uroczystości, nabożeństwa, zmiany w porządku Mszy i spotkania wspólnot – w jednym miejscu. Szczegółowe informacje podajemy też w <a href=\"ogloszenia.html\" style=\"color:#f1d999\">ogłoszeniach</a>.</p>\n  </div>\n</section>"
+    }
+  ]
+}
