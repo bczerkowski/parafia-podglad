@@ -2,6 +2,35 @@
   "_instrukcja": "Aktualności i wydarzenia – najnowsze na górze. Pola: tytul, data (RRRR-MM-DD), opis (1–2 zdania na stronę główną), tresc (lista akapitów), zdjecie (zdjęcie na kartę, np. img/aktualnosci/pielgrzymka/thumb/1.jpg – opcjonalnie), katalog + zdjecia (fotorelacja: folder w img/ z dużymi zdjęciami i podfolderem thumb/, np. \"katalog\": \"aktualnosci/pielgrzymka\", \"zdjecia\": [\"1.jpg\", \"2.jpg\"] – opcjonalnie), foto (autor zdjęć – opcjonalnie), link (adres pełnej relacji – opcjonalnie), youtube (identyfikator filmu – opcjonalnie). Wpisy z ostatnich 12 miesięcy pokazują się automatycznie na stronie głównej (maks. 3).",
   "wpisy": [
     {
+      "tytul": "Ośmiu nowych ministrantów w uroczystość Chrystusa Króla",
+      "data": "2026-11-22",
+      "opis": "W Uroczystość Jezusa Chrystusa Króla Wszechświata – patronalne święto Liturgicznej Służby Ołtarza – ośmiu chłopców zostało włączonych do grona ministrantów.",
+      "tresc": [
+        "W Uroczystość Jezusa Chrystusa Króla Wszechświata, patronalne święto Liturgicznej Służby Ołtarza, podczas Mszy św. o godz. 10.30 ośmiu chłopców zostało włączonych do grona ministrantów.",
+        "Chłopcom i ich Rodzicom gratulujemy i otaczamy naszą modlitwą całą Liturgiczną Służbę Ołtarza wraz z jej opiekunem, ks. Pawłem."
+      ],
+      "zdjecie": "/img/aktualnosci/promocja-lso-2026/thumb/1.jpg",
+      "katalog": "aktualnosci/promocja-lso-2026",
+      "zdjecia": [
+        "/img/aktualnosci/promocja-lso-2026/1.jpg",
+        "/img/aktualnosci/promocja-lso-2026/2.jpg",
+        "/img/aktualnosci/promocja-lso-2026/3.jpg",
+        "/img/aktualnosci/promocja-lso-2026/4.jpg",
+        "/img/aktualnosci/promocja-lso-2026/5.jpg",
+        "/img/aktualnosci/promocja-lso-2026/6.jpg",
+        "/img/aktualnosci/promocja-lso-2026/7.jpg",
+        "/img/aktualnosci/promocja-lso-2026/8.jpg",
+        "/img/aktualnosci/promocja-lso-2026/9.jpg",
+        "/img/aktualnosci/promocja-lso-2026/10.jpg",
+        "/img/aktualnosci/promocja-lso-2026/11.jpg",
+        "/img/aktualnosci/promocja-lso-2026/12.jpg",
+        "/img/aktualnosci/promocja-lso-2026/13.jpg",
+        "/img/aktualnosci/promocja-lso-2026/14.jpg"
+      ],
+      "foto": "Mateusz Jędrzejewski",
+      "link": "wspolnoty.html#lso"
+    },
+    {
       "tytul": "Zakończenie modlitw wypominkowych",
       "data": "2026-11-17",
       "opis": "We wtorek zakończyliśmy modlitwy wypominkowe za zmarłych. Dziękujemy za wspólną modlitwę i złożone ofiary.",
