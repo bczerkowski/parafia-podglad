@@ -1168,3 +1168,11 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
   .announce ol > li:first-child::before { top: 2px; }
   .announce__meta { margin-bottom: 12px; }
 }
+
+/* Ilustracja w karcie wspólnoty – tekst opływa sylwetkę (Wspólnota Rodzin św. Rity) */
+.group__art { float: right; width: clamp(150px, 34%, 285px); height: auto; margin: -6px -6px 6px 18px;
+  shape-outside: url("../img/wspolnoty/rita.webp"); shape-image-threshold: .35; shape-margin: 14px; }
+.group__art--rita { filter: drop-shadow(0 10px 18px rgba(60, 45, 10, .10)); }
+.group .prose::after { content: ""; display: block; clear: both; }
+@media (max-width: 560px) { .group__art { width: 38%; margin: 0 -4px 4px 10px; shape-margin: 8px; } }
+html[data-contrast="high"] .group__art { filter: none; }
