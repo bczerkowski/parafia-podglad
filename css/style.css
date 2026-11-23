@@ -1171,15 +1171,17 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 
 /* Ilustracje wspólnot – jeden standard: kwadrat 560×560 (przezroczysty), na stronie ten sam rozmiar;
    tekst opływa kontur grafiki (shape-outside) */
-.group__art { float: right; width: min(170px, 34%); height: auto; margin: 2px -6px 8px 10px;
-  shape-image-threshold: .3; shape-margin: 8px; }
+.group__art { float: right; width: min(170px, 34%); height: auto; margin: -4px -10px 6px 6px;
+  shape-image-threshold: .3; shape-margin: 5px; }
 /* ramki z terminem, przyciski i kontakt – zawsze pełna szerokość, pod ilustracją (zamiast zwężać się obok niej) */
 .group__art ~ .group__when, .group__art ~ .group__links, .group__art ~ .caritas__links, .group__art ~ .group__join, .group__art ~ .group__contact { clear: right; }
 /* jednakowa „waga” wizualna: szerokie grafiki szersze (ta sama powierzchnia co kwadrat 170×170) */
 .group__art[src*="caritas"] { width: min(140px, 28%); }  /* znak wypełnia cały kwadrat – mniejszy, żeby ważył tyle co pozostałe */
 .group__art[src*="lso"] { width: min(193px, 38%); }
 /* Rita – przy tekście opisu, większa */
-.group__art[src$="/rita.webp"] { width: min(235px, 42%); margin: -6px -10px 4px 4px; shape-margin: 4px; }
+.group__art[src$="/rita.webp"] { width: min(215px, 42%); margin: -6px -10px 4px 4px; shape-margin: 4px; }
+/* wspólnota z osią dat (Rita) w wąskiej karcie – oś dat pod opisem */
+.grid--2 .group .grid--main { grid-template-columns: minmax(0, 1fr); gap: 18px; }
 .group__art[src$="/rita.webp"] { shape-outside: url("../img/wspolnoty/rita.webp"); }
 .group__art[src*="caritas"] { shape-outside: url("../img/wspolnoty/caritas.webp"); }
 .group__art[src*="rozaniec"] { shape-outside: url("../img/wspolnoty/rozaniec.webp"); }
@@ -1194,3 +1196,10 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .group__art[src*="lupikowo"] { shape-outside: url("../img/wspolnoty/lupikowo.webp"); }
 .group::after, .group .prose::after { content: ""; display: block; clear: both; }
 @media (max-width: 560px) { .group__art { width: 30%; margin: 0 -2px 4px 10px; shape-margin: 6px; } .group__art[src*="caritas"] { width: 25%; } .group__art[src*="lso"] { width: 34%; } .group__art[src$="/rita.webp"] { width: 40%; } }
+/* karty w parach: tytuły jednakowej wielkości (Rita, Caritas, Lupikowo miały duże tytuły z szerokich kart) */
+.grid--2 .group h2 { font-size: 1.65rem !important; margin: 0; line-height: 1.2; }
+.grid--2 .group .group__emblem { width: 72px; height: 72px; }
+.grid--2 .group .group__emblem svg { width: 46px; height: 46px; }
+/* Szensztat: cienki napis w łuku – nieco większe logo, żeby było czytelne */
+.group__art[src*="szensztat"] { width: min(200px, 38%); }
+.grid--2 .group .prose > h2 { margin-bottom: 10px; }
