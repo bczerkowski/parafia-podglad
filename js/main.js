@@ -1223,4 +1223,35 @@
       b.replaceWith(f);
     });
   }
+
+  /* ---------- Wspólnoty: logo w kartach obok siebie na tej samej wysokości ---------- */
+  // tytuły mają różną długość, więc logo (za tytułem) zaczynają się na różnej wysokości;
+  // w każdym rzędzie kart przesuwamy wyżej stojące logo do poziomu najniższego
+  function alignGroupArt() {
+    $$('.grid--2').forEach(function (grid) {
+      var arts = [].slice.call(grid.querySelectorAll('.group .group__art'));
+      arts.forEach(function (a) { a.style.marginTop = ''; });
+      var rows = {};
+      arts.forEach(function (a) {
+        var card = a.closest('.group'), key = Math.round(card.getBoundingClientRect().top + window.scrollY);
+        (rows[key] = rows[key] || []).push({ a: a, off: a.getBoundingClientRect().top - card.getBoundingClientRect().top });
+      });
+      Object.keys(rows).forEach(function (k) {
+        var r = rows[k];
+        if (r.length < 2) return;
+        var max = Math.max.apply(null, r.map(function (x) { return x.off; }));
+        r.forEach(function (x) {
+          var d = max - x.off;
+          if (d > 1) x.a.style.marginTop = (parseFloat(getComputedStyle(x.a).marginTop) + d) + 'px';
+        });
+      });
+    });
+  }
+  if ($('.group__art')) {
+    var alignTimer;
+    window.addEventListener('load', alignGroupArt);
+    window.addEventListener('resize', function () { clearTimeout(alignTimer); alignTimer = setTimeout(alignGroupArt, 150); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignGroupArt);
+    alignGroupArt();
+  }
 })();
