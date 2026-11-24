@@ -197,7 +197,21 @@
   }
   /* Aktualny czas w Polsce (Europe/Warsaw) – niezależnie od strefy ustawionej w urządzeniu.
      Zwracamy „lokalną” datę z polskimi wartościami, żeby dalsze obliczenia były proste. */
+  // Symulacja dowolnego dnia: ?data=2027-03-28 (opcjonalnie &godz=10:00) – cała strona zachowuje się jak w tym dniu
+  var simDay = (function () {
+    var m = /[?&]data=(\d{4})-(\d{2})-(\d{2})/.exec(location.search), h = /[?&]godz=(\d{1,2}):(\d{2})/.exec(location.search);
+    return m ? new Date(+m[1], +m[2] - 1, +m[3], h ? +h[1] : 9, h ? +h[2] : 0) : null;
+  })();
+  if (simDay) {
+    document.addEventListener('DOMContentLoaded', function () {
+      var bar = document.createElement('div');
+      bar.style.cssText = 'position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:9999;background:#7f6119;color:#fff;padding:8px 16px;border-radius:999px;font:600 14px/1.3 system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.3)';
+      bar.textContent = 'Symulacja: ' + simDay.toLocaleDateString('pl-PL', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+      document.body.appendChild(bar);
+    });
+  }
   function warsawNow() {
+    if (simDay) return new Date(simDay);
     try {
       var parts = {};
       new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Warsaw', year: 'numeric', month: '2-digit', day: '2-digit',

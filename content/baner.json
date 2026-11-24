@@ -240,11 +240,11 @@
       "pozycja": "50% 35%"
     },
     {
-      "nazwa": "Adwent – roraty (od I niedzieli Adwentu do 23 grudnia)",
+      "nazwa": "Roraty – pierwszy tydzień Adwentu (od I niedzieli Adwentu do soboty)",
       "rodzaj": "adwent",
       "dni": 0,
       "przed": 0,
-      "po": 26,
+      "po": 6,
       "zdjecie": "/img/baner/roraty.jpg",
       "opis": "Lampion roratni w śniegu pod gwiazdą",
       "pozycja": "62% 60%"
