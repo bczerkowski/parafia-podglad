@@ -434,6 +434,28 @@
       "podpisDnia": "Święto Świętych Archaniołów Michała, Gabriela i Rafała"
     },
     {
+      "nazwa": "Św. Andrzeja Boboli, prezbitera i męczennika – patrona Polski",
+      "rodzaj": "stala",
+      "od": "05-16",
+      "do": "05-16",
+      "zdjecie": "/img/baner/sw-andrzej-bobola-a68ca1.jpg",
+      "opis": "Św. Andrzej Bobola z laską pielgrzyma",
+      "pozycja": "100% 20%",
+      "podpis": "Św. Andrzeja Boboli, prezbitera i męczennika – patrona Polski",
+      "podpisDnia": "Święto św. Andrzeja Boboli, prezbitera i męczennika – patrona Polski"
+    },
+    {
+      "nazwa": "Św. Faustyny Kowalskiej, dziewicy",
+      "rodzaj": "stala",
+      "od": "10-05",
+      "do": "10-05",
+      "zdjecie": "/img/baner/sw-faustyna-1a8d11.jpg",
+      "opis": "Św. siostra Faustyna Kowalska – apostołka Bożego Miłosierdzia",
+      "pozycja": "100% 25%",
+      "podpis": "Św. Faustyny Kowalskiej, dziewicy",
+      "podpisDnia": "Wspomnienie św. Faustyny Kowalskiej, dziewicy"
+    },
+    {
       "nazwa": "Chrystusa Króla Wszechświata (ostatnia niedziela roku liturgicznego)",
       "rodzaj": "adwent",
       "dni": -7,
