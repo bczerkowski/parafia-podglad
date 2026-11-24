@@ -186,10 +186,10 @@
       "podpisDnia": "Święto Jezusa Chrystusa, Najwyższego i Wiecznego Kapłana"
     },
     {
-      "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny",
+      "nazwa": "Najświętsza Trójca – sam dzień odpustu (pierwszeństwo przed św. Ritą)",
       "rodzaj": "wielkanoc",
       "dni": 56,
-      "przed": 3,
+      "przed": 0,
       "po": 0,
       "zdjecie": "/img/baner/trojca.jpg",
       "opis": "Trójca Święta – fresk",
@@ -208,6 +208,29 @@
       "pozycja": "35% 45%",
       "podpis": "Oktawa Bożego Ciała",
       "podpisDnia": "Uroczystość Najświętszego Ciała i Krwi Chrystusa – Boże Ciało"
+    },
+    {
+      "nazwa": "Św. Rity z Cascii – patronki Wspólnoty Rodzin",
+      "rodzaj": "stala",
+      "od": "05-22",
+      "do": "05-22",
+      "zdjecie": "/img/baner/sw-rita.jpg",
+      "opis": "Św. Rita z różami",
+      "pozycja": "50% 30%",
+      "podpis": "Św. Rita z Cascii",
+      "podpisDnia": "Wspomnienie św. Rity z Cascii"
+    },
+    {
+      "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny",
+      "rodzaj": "wielkanoc",
+      "dni": 56,
+      "przed": 3,
+      "po": 0,
+      "zdjecie": "/img/baner/trojca.jpg",
+      "opis": "Trójca Święta – fresk",
+      "pozycja": "50% 30%",
+      "podpis": "Odpust parafialny – Uroczystość Najświętszej Trójcy",
+      "podpisDnia": "Uroczystość Najświętszej Trójcy – odpust parafialny"
     },
     {
       "nazwa": "Najświętszego Serca Pana Jezusa (piątek po Bożym Ciele)",
@@ -243,17 +266,6 @@
       "pozycja": "62% 35%",
       "podpis": "NMP Królowej Polski",
       "podpisDnia": "Uroczystość NMP Królowej Polski"
-    },
-    {
-      "nazwa": "Św. Rity z Cascii – patronki Wspólnoty Rodzin",
-      "rodzaj": "stala",
-      "od": "05-22",
-      "do": "05-22",
-      "zdjecie": "/img/baner/sw-rita.jpg",
-      "opis": "Św. Rita z różami",
-      "pozycja": "50% 30%",
-      "podpis": "Św. Rita z Cascii",
-      "podpisDnia": "Wspomnienie św. Rity z Cascii"
     },
     {
       "nazwa": "Wniebowzięcie Najświętszej Maryi Panny",
