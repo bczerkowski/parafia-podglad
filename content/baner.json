@@ -29,6 +29,15 @@
       "pozycja": "70% 35%"
     },
     {
+      "nazwa": "Uroczystość św. Józefa",
+      "rodzaj": "stala",
+      "od": "03-19",
+      "do": "03-19",
+      "zdjecie": "/img/baner/sw-jozef.jpg",
+      "opis": "Święty z krzyżem",
+      "pozycja": "75% 40%"
+    },
+    {
       "nazwa": "Wielki Post (od Środy Popielcowej do soboty przed Niedzielą Palmową)",
       "rodzaj": "wielkanoc",
       "dni": -46,
@@ -139,6 +148,34 @@
       "pozycja": "50% 30%"
     },
     {
+      "nazwa": "Niepokalane Serce Najświętszej Maryi Panny (sobota po NSPJ)",
+      "rodzaj": "wielkanoc",
+      "dni": 69,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/serce-maryi.jpg",
+      "opis": "Niepokalane Serce Maryi z Dzieciątkiem",
+      "pozycja": "55% 35%"
+    },
+    {
+      "nazwa": "NMP Królowej Polski",
+      "rodzaj": "stala",
+      "od": "05-03",
+      "do": "05-03",
+      "zdjecie": "/img/baner/krolowa-polski.jpg",
+      "opis": "Matka Boża w koronie – Królowa Polski",
+      "pozycja": "80% 30%"
+    },
+    {
+      "nazwa": "Św. Rity z Cascii – patronki Wspólnoty Rodzin",
+      "rodzaj": "stala",
+      "od": "05-22",
+      "do": "05-22",
+      "zdjecie": "/img/baner/sw-rita.jpg",
+      "opis": "Św. Rita z różami",
+      "pozycja": "50% 30%"
+    },
+    {
       "nazwa": "Wniebowzięcie Najświętszej Maryi Panny",
       "rodzaj": "stala",
       "od": "08-15",
@@ -155,6 +192,24 @@
       "zdjecie": "/img/baner/mb-czestochowska.jpg",
       "opis": "Obraz Matki Bożej Częstochowskiej w ołtarzu",
       "pozycja": "50% 40%"
+    },
+    {
+      "nazwa": "NMP Różańcowej",
+      "rodzaj": "stala",
+      "od": "10-07",
+      "do": "10-07",
+      "zdjecie": "/img/baner/rozancowa.jpg",
+      "opis": "Różaniec",
+      "pozycja": "50% 45%"
+    },
+    {
+      "nazwa": "Św. Jana Pawła II",
+      "rodzaj": "stala",
+      "od": "10-22",
+      "do": "10-22",
+      "zdjecie": "/img/baner/jan-pawel.jpg",
+      "opis": "Św. Jan Paweł II z pastorałem",
+      "pozycja": "45% 30%"
     },
     {
       "nazwa": "Wszystkich Świętych i Dzień Zaduszny",
