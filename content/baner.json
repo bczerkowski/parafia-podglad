@@ -115,16 +115,28 @@
       "podpisDnia": "Wielka Sobota Świętego Triduum Paschalnego"
     },
     {
-      "nazwa": "Zmartwychwstanie Pańskie (Niedziela i Poniedziałek Wielkanocny)",
+      "nazwa": "Zmartwychwstanie Pańskie (Niedziela Wielkanocna)",
       "rodzaj": "wielkanoc",
       "dni": 0,
       "przed": 0,
-      "po": 1,
+      "po": 0,
       "zdjecie": "/img/baner/zmartwychwstanie-d33b10.jpg",
       "opis": "Pusty grób w blasku poranka – Zmartwychwstanie",
       "pozycja": "65% 40%",
-      "podpis": "Poniedziałek Wielkanocny",
+      "podpis": "Uroczystość Zmartwychwstania Pańskiego",
       "podpisDnia": "Uroczystość Zmartwychwstania Pańskiego"
+    },
+    {
+      "nazwa": "Poniedziałek Wielkanocny",
+      "rodzaj": "wielkanoc",
+      "dni": 1,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/poniedzialek-wielkanocny-531311.jpg",
+      "opis": "Zmartwychwstanie Chrystusa – Chrystus z chorągwią wychodzi z grobu, przerażeni strażnicy (A. Mantegna)",
+      "pozycja": "100% 40%",
+      "podpis": "Poniedziałek Wielkanocny",
+      "podpisDnia": "Poniedziałek Wielkanocny"
     },
     {
       "nazwa": "Oktawa Wielkanocy (wtorek – sobota)",
