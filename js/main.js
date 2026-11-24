@@ -1336,7 +1336,7 @@
       if (o.opis) heroBg.setAttribute('aria-label', o.opis);
       heroBg.classList.add('hero__bg--swieto');
       // delikatny podpis święta w prawym dolnym rogu banera (krótka nazwa bez dopisków w nawiasie)
-      var podpis = o.podpis || String(o.nazwa || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+–\s+(pierwszy|odpust).*$/i, '');
+      var podpis = o.podpis || String(o.nazwa || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+–\s+pierwszy.*$/i, '');
       if (podpis) {
         var cap = document.createElement('p');
         cap.className = 'hero__swieto';
