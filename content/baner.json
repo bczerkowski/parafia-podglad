@@ -7,10 +7,10 @@
       "od": "01-06",
       "do": "01-06",
       "zdjecie": "/img/baner/trzech-kroli.jpg",
-      "opis": "Trzej Królowie podążający za gwiazdą – witraż",
-      "pozycja": "60% 45%",
-      "podpis": "Objawienie Pańskie",
-      "podpisDnia": "Uroczystość Objawienia Pańskiego"
+      "opis": "Trzej Królowie na wielbłądach podążający za gwiazdą betlejemską",
+      "pozycja": "72% 40%",
+      "podpis": "Objawienie Pańskie – Święto Trzech Króli",
+      "podpisDnia": "Uroczystość Objawienia Pańskiego – Święto Trzech Króli"
     },
     {
       "nazwa": "Święta Rodzina (niedziela w oktawie Bożego Narodzenia, a gdy jej nie ma – 30 grudnia)",
@@ -156,8 +156,8 @@
       "przed": 0,
       "po": 0,
       "zdjecie": "/img/baner/wniebowstapienie.jpg",
-      "opis": "Wniebowstąpienie Pańskie",
-      "pozycja": "50% 25%",
+      "opis": "Wniebowstąpienie Pańskie – Chrystus wstępuje do nieba wśród aniołów",
+      "pozycja": "52% 20%",
       "podpis": "Wniebowstąpienie Pańskie",
       "podpisDnia": "Uroczystość Wniebowstąpienia Pańskiego"
     },
@@ -464,9 +464,9 @@
       "przed": 0,
       "po": 38,
       "dzienTygodnia": 0,
-      "zdjecie": "/img/baner/popielec.jpg",
-      "opis": "Krzyż z popiołu – Wielki Post",
-      "pozycja": "40% 50%",
+      "zdjecie": "/img/baner/gorzkie-zale.jpg",
+      "opis": "Szymon z Cyreny pomaga Panu Jezusowi nieść krzyż – rozważanie Męki Pańskiej",
+      "pozycja": "50% 30%",
       "podpis": "Gorzkie Żale o 17:00",
       "podpisDnia": "Gorzkie Żale o 17:00"
     },
