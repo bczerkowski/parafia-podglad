@@ -1232,6 +1232,37 @@
     });
   }
 
+  /* ---------- Baner strony głównej: zdjęcie na wielkie święta (content/baner.json) ---------- */
+  // napis i cytat w banerze zostają – zmienia się tylko zdjęcie w tle; podgląd: ?swieto=1, 2, …
+  var heroBg = $('.hero__bg');
+  if (heroBg) {
+    loadOptional('baner', { okresy: [] }).then(function (cfg) {
+      var okresy = cfg.okresy || [], today = warsawNow(), y = today.getFullYear();
+      var t = new Date(y, today.getMonth(), today.getDate());
+      function md(s, year) { var p = String(s || '').split('-'); return p.length === 2 ? new Date(year, +p[0] - 1, +p[1]) : null; }
+      function active(o) {
+        if (o.rodzaj === 'wielkanoc' || o.rodzaj === 'trojca') {
+          for (var yy = y - 1; yy <= y; yy++) {
+            var base = easter(yy); if (o.rodzaj === 'trojca') base = addDays(base, 56);
+            if (t >= addDays(base, -(+o.przed || 0)) && t <= addDays(base, +o.po || 0)) return true;
+          }
+          return false;
+        }
+        var od = md(o.od, y), dd = md(o.do, y);
+        if (!od || !dd) return false;
+        return od <= dd ? (t >= od && t <= dd) : (t >= od || t <= dd);   // okres przez Nowy Rok
+      }
+      var forced = parseInt(param('swieto'), 10), o = null;
+      if (forced > 0) o = okresy[forced - 1];
+      else o = okresy.filter(function (x) { return x.zdjecie && active(x); })[0];
+      if (!o || !o.zdjecie) return;
+      heroBg.style.setProperty('background-image', 'url("' + rel(o.zdjecie) + '")');
+      heroBg.style.setProperty('background-position', o.pozycja || '50% 40%');
+      if (o.opis) heroBg.setAttribute('aria-label', o.opis);
+      heroBg.classList.add('hero__bg--swieto');
+    });
+  }
+
   /* ---------- Wspólnoty: logo w kartach obok siebie na tej samej wysokości ---------- */
   // tytuły mają różną długość, więc logo (za tytułem) zaczynają się na różnej wysokości;
   // w każdym rzędzie kart przesuwamy wyżej stojące logo do poziomu najniższego
