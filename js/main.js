@@ -1243,7 +1243,8 @@
       function active(o) {
         if (o.rodzaj === 'wielkanoc' || o.rodzaj === 'trojca') {
           for (var yy = y - 1; yy <= y; yy++) {
-            var base = easter(yy); if (o.rodzaj === 'trojca') base = addDays(base, 56);
+            // dni = przesunięcie względem Niedzieli Zmartwychwstania (np. 56 = Trójca Święta, 60 = Boże Ciało)
+            var base = addDays(easter(yy), o.rodzaj === 'trojca' ? 56 : (+o.dni || 0));
             if (t >= addDays(base, -(+o.przed || 0)) && t <= addDays(base, +o.po || 0)) return true;
           }
           return false;
