@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
+  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok), pierwszy (pierwszy piątek/sobota miesiąca: dzienTygodnia 5 = piątek, 6 = sobota) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
   "okresy": [
     {
       "nazwa": "Objawienie Pańskie (Trzech Króli)",
@@ -18,8 +18,8 @@
       "od": "12-24",
       "do": "01-05",
       "zdjecie": "/img/baner/boze-narodzenie.jpg",
-      "opis": "Narodzenie Pańskie – Święta Rodzina w stajence",
-      "pozycja": "88% 60%",
+      "opis": "Narodzenie Pańskie – Maryja z Dzieciątkiem i św. Józef w stajence betlejemskiej",
+      "pozycja": "75% 62%",
       "podpis": "Okres Bożego Narodzenia",
       "podpisDnia": "Uroczystość Narodzenia Pańskiego",
       "glowny": "12-25"
@@ -45,18 +45,6 @@
       "pozycja": "75% 40%",
       "podpis": "Uroczystość św. Józefa",
       "podpisDnia": "Uroczystość św. Józefa, Oblubieńca NMP"
-    },
-    {
-      "nazwa": "Wielki Post (od Środy Popielcowej do soboty przed Niedzielą Palmową)",
-      "rodzaj": "wielkanoc",
-      "dni": -46,
-      "przed": 0,
-      "po": 38,
-      "zdjecie": "/img/baner/popielec.jpg",
-      "opis": "Krzyż z popiołu – Środa Popielcowa i Wielki Post",
-      "pozycja": "40% 50%",
-      "podpis": "Wielki Post",
-      "podpisDnia": "Środa Popielcowa"
     },
     {
       "nazwa": "Wielki Tydzień (od Niedzieli Palmowej do Wielkiej Środy)",
@@ -299,6 +287,38 @@
       "opis": "Lampion roratni w śniegu pod gwiazdą",
       "pozycja": "62% 60%",
       "podpis": "Zapraszamy na Roraty pn–sb o 6:30 i 18:30 (z udziałem dzieci)"
+    },
+    {
+      "nazwa": "Pierwszy piątek miesiąca – Najświętsze Serce Pana Jezusa",
+      "rodzaj": "pierwszy",
+      "dzienTygodnia": 5,
+      "zdjecie": "/img/baner/pierwszy-piatek.jpg",
+      "opis": "Najświętsze Serce Pana Jezusa",
+      "pozycja": "50% 30%",
+      "podpis": "Pierwszy Piątek Miesiąca",
+      "podpisDnia": "Pierwszy Piątek Miesiąca"
+    },
+    {
+      "nazwa": "Pierwsza sobota miesiąca – Niepokalane Serce Maryi",
+      "rodzaj": "pierwszy",
+      "dzienTygodnia": 6,
+      "zdjecie": "/img/baner/pierwsza-sobota.jpg",
+      "opis": "Matka Boża z Dzieciątkiem – Niepokalane Serce Maryi",
+      "pozycja": "55% 35%",
+      "podpis": "Pierwsza Sobota Miesiąca",
+      "podpisDnia": "Pierwsza Sobota Miesiąca"
+    },
+    {
+      "nazwa": "Wielki Post (od Środy Popielcowej do soboty przed Niedzielą Palmową)",
+      "rodzaj": "wielkanoc",
+      "dni": -46,
+      "przed": 0,
+      "po": 38,
+      "zdjecie": "/img/baner/popielec.jpg",
+      "opis": "Krzyż z popiołu – Środa Popielcowa i Wielki Post",
+      "pozycja": "40% 50%",
+      "podpis": "Wielki Post",
+      "podpisDnia": "Środa Popielcowa"
     }
   ]
 }

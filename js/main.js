@@ -1339,6 +1339,8 @@
       var t = new Date(y, today.getMonth(), today.getDate());
       function md(s, year) { var p = String(s || '').split('-'); return p.length === 2 ? new Date(year, +p[0] - 1, +p[1]) : null; }
       function active(o) {
+        // pierwszy piątek / pierwsza sobota miesiąca (dzienTygodnia: 5 = piątek, 6 = sobota)
+        if (o.rodzaj === 'pierwszy') return t.getDay() === (+o.dzienTygodnia || 5) && t.getDate() <= 7;
         if (o.rodzaj === 'adwent') {
           // dni = przesunięcie względem I niedzieli Adwentu (niedziela 27.11–3.12; -7 = Chrystusa Króla)
           for (var ay = y - 1; ay <= y; ay++) {
@@ -1360,9 +1362,10 @@
         if (!od || !dd) return false;
         return od <= dd ? (t >= od && t <= dd) : (t >= od || t <= dd);   // okres przez Nowy Rok
       }
-      // główny dzień okresu (sama uroczystość) – do napisu „Dziś: …”
+      // główny dzień okresu (sama uroczystość) – do napisu „Dziś …”
       function mainDay(o) {
         if (o.rodzaj === 'stala') return md(o.glowny || o.od, y);
+        if (o.rodzaj === 'pierwszy') return active(o) ? t : null;
         for (var my = y - 1; my <= y; my++) {
           var b;
           if (o.rodzaj === 'adwent') { var x = new Date(my, 11, 25); b = addDays(addDays(x, -((x.getDay() + 6) % 7 + 1) - 21), +o.dni || 0); }
@@ -1380,9 +1383,9 @@
       if (o.opis) heroBg.setAttribute('aria-label', o.opis);
       heroBg.classList.add('hero__bg--swieto');
       // delikatny podpis święta w prawym dolnym rogu banera (krótka nazwa bez dopisków w nawiasie)
-      // w sam dzień uroczystości: „Dziś: Uroczystość …”; w pozostałe dni okresu: nazwa okresu
+      // w sam dzień uroczystości: „Dziś Uroczystość …”; w pozostałe dni okresu: nazwa okresu
       var glowny = mainDay(o), wDzien = glowny && isoDate(glowny) === isoDate(t) && o.podpisDnia;
-      var podpis = wDzien ? 'Dziś: ' + o.podpisDnia
+      var podpis = wDzien ? 'Dziś ' + o.podpisDnia
         : (o.podpis || String(o.nazwa || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+–\s+pierwszy.*$/i, ''));
       if (podpis) {
         var cap = document.createElement('p');
