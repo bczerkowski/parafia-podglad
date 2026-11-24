@@ -172,6 +172,7 @@
       for (var y = y0 - 1; y <= y0 + 1; y++) {
         var d = null;
         if (r.ruchome === 'popielec') d = addDays(easter(y), -46);
+        else if (r.ruchome === 'wielkanoc') d = addDays(easter(y), +r.dni || 0);
         else if (r.data) { var p = r.data.split('-'); d = new Date(y, +p[0] - 1, +p[1]); if (r.zNiedzieliNaPoniedzialek && d.getDay() === 0) d = addDays(d, 1); }
         if (!d || taken[isoDate(d)]) continue;
         var list;
@@ -346,10 +347,17 @@
     if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30', e: 'roza' });
     if (dom <= 7 && dow === 4) out.push({ t: 'I czwartek, piątek i sobota miesiąca – adoracja Najświętszego Sakramentu i spowiedź', h: '17:00–19:00 (cz–sb)', e: 'monstrancja' });
     if (dom <= 7 && sun) out.push({ t: 'Żywy Różaniec – spotkanie i zmiana tajemnic', h: 'godz. 17:00', e: 'rozaniec' });
-    if (lent && dow === 5) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)', e: 'krzyz' });
+    if (lent && dow === 5 && d < addDays(e, -2)) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)', e: 'krzyz' });
     if (lent && sun) out.push({ t: 'Gorzkie Żale', h: 'godz. 17:00', e: 'krzyz' });
+    // z msze.json: pojedyncze wydarzenia (np. śniadania po Roratach) i nabożeństwa Triduum liczone od Wielkanocy
+    if (EXTRA_CFG) {
+      var di = isoDate(d), off = Math.round((new Date(d.getFullYear(), d.getMonth(), d.getDate()) - e) / 864e5);
+      (EXTRA_CFG.wydarzenia || []).forEach(function (w) { if (w.data === di) out.push({ t: w.tytul, h: w.godz || '', e: 'lampion' }); });
+      (EXTRA_CFG.nabozenstwaWielkanocne || []).forEach(function (n) { if (+n.dni === off) out.push({ t: n.tytul, h: n.godz || '', e: 'krzyz' }); });
+    }
     return out;
   }
+  var EXTRA_CFG = null;
   // nabożeństwa codzienne w danym okresie: pokazywane jako jedna pozycja („trwa” albo „od …”)
   function seasonsAround(today, horizon) {
     var y = today.getFullYear(), list = [];
@@ -364,7 +372,8 @@
     });
   }
   var elUp = $('#najblizsze');
-  if (elUp) {
+  if (elUp) loadOptional('msze', {}).then(function (mc) {
+    EXTRA_CFG = mc;
     try {
       var now0 = warsawNow(), t0 = new Date(now0.getFullYear(), now0.getMonth(), now0.getDate());
       var horizon = addDays(t0, 13), items = [];
@@ -394,7 +403,7 @@
       if (elF) elF.innerHTML = 'Odpust parafialny – Uroczystość Najświętszej Trójcy: <b>niedziela, ' + feast.getDate() + ' ' + MIES[feast.getMonth()] + ' ' + feast.getFullYear() + ' r.</b>';
       elUp.hidden = false;
     } catch (err) { /* sekcja pomocnicza – przy błędzie po prostu się nie pokazuje */ }
-  }
+  });
   window.ParafiaKalendarz && (window.ParafiaKalendarz.devotionsOn = devotionsOn, window.ParafiaKalendarz.trinitySunday = trinitySunday, window.ParafiaKalendarz.adventStart = adventStart);
 
   /* ---------- Dziś w liturgii ----------
@@ -599,6 +608,7 @@
     };
     Promise.all([load('msze'), loadOptional('ogloszenia', null)]).then(function (res) {
       var cfg = res[0], ann = res[1];
+      EXTRA_CFG = cfg;
       var today = warsawNow(); today = new Date(today.getFullYear(), today.getMonth(), today.getDate());
       var view = new Date(today.getFullYear(), today.getMonth(), 1), selected = today;
       var active = {}; CATS.forEach(function (c) { active[c.id] = true; });
@@ -1316,6 +1326,10 @@
           (d.uwaga ? '<p class="koleda-dzien__uwaga">' + esc(d.uwaga) + '</p>' : '') + '</li>';
       }).join('') + '</ol>';
       if (k.uwagi && k.uwagi.length) html += '<ul class="checklist" style="margin-top:22px">' + k.uwagi.map(function (u) { return '<li>' + esc(u) + '</li>'; }).join('') + '</ul>';
+      var forms = (k.formularze || []).filter(function (f) { return f.url && /^https:\/\//.test(f.url); });
+      if (forms.length) html += '<div class="koleda-formularze">' + forms.map(function (f) {
+        return '<a class="btn btn--gold" href="' + esc(f.url) + '" target="_blank" rel="noopener">' + esc(f.tekst || 'Formularz') + ' ↗</a>';
+      }).join('') + '</div>';
       elKol.innerHTML = html;
       var q = $('#koleda-q'), wynik = $('#koleda-wynik');
       q.addEventListener('input', function () {

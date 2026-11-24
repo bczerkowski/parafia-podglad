@@ -1,18 +1,43 @@
 {
   "_instrukcja": "Stały porządek Mszy świętych. 'bezWakacji': true = tej Mszy nie ma w wakacje. 'bezSwiat': true = tej Mszy nie ma w święta stałe z listy 'swietaStale' ani w Boże Ciało. 'wakacje' to okres letni (MM-DD). 'swietaStale' = dni (MM-DD) z porządkiem niedzielnym co roku; Poniedziałek Wielkanocny i Boże Ciało liczone są automatycznie. 'dodatkoweSwieta' = pojedyncze daty (RRRR-MM-DD) z porządkiem niedzielnym.",
   "niedziele": [
-    { "godz": "7:00" },
-    { "godz": "9:00" },
-    { "godz": "10:30", "uwaga": "z udziałem dzieci" },
-    { "godz": "12:00" },
-    { "godz": "13:30", "bezWakacji": true },
-    { "godz": "18:00" },
-    { "godz": "19:30", "bezWakacji": true, "bezSwiat": true }
+    {
+      "godz": "7:00"
+    },
+    {
+      "godz": "9:00"
+    },
+    {
+      "godz": "10:30",
+      "uwaga": "z udziałem dzieci"
+    },
+    {
+      "godz": "12:00"
+    },
+    {
+      "godz": "13:30",
+      "bezWakacji": true
+    },
+    {
+      "godz": "18:00"
+    },
+    {
+      "godz": "19:30",
+      "bezWakacji": true,
+      "bezSwiat": true
+    }
   ],
   "powszednie": [
-    { "godz": "6:30" },
-    { "godz": "7:30", "bezWakacji": true },
-    { "godz": "18:30" }
+    {
+      "godz": "6:30"
+    },
+    {
+      "godz": "7:30",
+      "bezWakacji": true
+    },
+    {
+      "godz": "18:30"
+    }
   ],
   "uwagaNiedziele": "W wakacje nie ma Mszy św. o 13:30 i 19:30. Nie ma też Mszy o 19:30: 1 i 6 stycznia, w Niedzielę i Poniedziałek Wielkanocny, w Boże Ciało, 1 listopada oraz 25 i 26 grudnia. 1 listopada Msza o 13:30 jest przeniesiona na 14:00.",
   "uwagaPowszednie": "W wakacje nie ma Mszy św. o 7:30.",
@@ -22,18 +47,248 @@
     "W pierwszy czwartek, piątek i sobotę miesiąca – podczas adoracji Najświętszego Sakramentu od 17:00 do 19:00.",
     "W czasie wakacji – 15 minut przed Mszą św."
   ],
-  "wakacje": { "od": "07-01", "do": "08-31" },
-  "swietaStale": ["01-01", "01-06", "08-15", "11-01", "12-25", "12-26"],
+  "wakacje": {
+    "od": "07-01",
+    "do": "08-31"
+  },
+  "swietaStale": [
+    "01-01",
+    "01-06",
+    "08-15",
+    "11-01",
+    "12-25",
+    "12-26"
+  ],
   "dodatkoweSwieta": [],
   "_instrukcjaBezWieczornej": "Dni, w które nie ma Mszy oznaczonych 'bezSwiat' (19:30). Daty MM-DD albo nazwy świąt ruchomych: wielkanoc, poniedzialek-wielkanocny, boze-cialo.",
-  "bezWieczornej": ["01-01", "01-06", "wielkanoc", "poniedzialek-wielkanocny", "boze-cialo", "11-01", "12-25", "12-26"],
-  "_instrukcjaRegul": "Zmiany powtarzające się co roku – strona sama wylicza je na każdy rok i pokazuje w 'Zmianach w porządku Mszy'. data: MM-DD albo ruchome: 'popielec'; zamien: { stara: nowa godzina }; dodaj: [dodatkowe godziny]; msze: [pełna lista godzin]; zNiedzieliNaPoniedzialek: true – gdy święto wypada w niedzielę, reguła dotyczy poniedziałku.",
+  "bezWieczornej": [
+    "01-01",
+    "01-06",
+    "wielkanoc",
+    "poniedzialek-wielkanocny",
+    "boze-cialo",
+    "11-01",
+    "12-25",
+    "12-26"
+  ],
+  "_instrukcjaRegul": "Zmiany powtarzające się co roku – strona sama wylicza je na każdy rok i pokazuje w 'Zmianach w porządku Mszy'. data: MM-DD albo ruchome: 'popielec' albo 'wielkanoc' z polem dni (przesunięcie od Niedzieli Wielkanocnej, np. -3 Wielki Czwartek); zamien: { stara: nowa godzina }; dodaj: [dodatkowe godziny]; msze: [pełna lista godzin]; zNiedzieliNaPoniedzialek: true – gdy święto wypada w niedzielę, reguła dotyczy poniedziałku.",
   "regulyRoczne": [
-    { "opis": "Uroczystość Wszystkich Świętych", "data": "11-01", "zamien": { "13:30": "14:00" } },
-    { "opis": "Święto Ofiarowania Pańskiego", "data": "02-02", "dodaj": ["9:00"] },
-    { "opis": "Uroczystość Niepokalanego Poczęcia NMP", "data": "12-08", "dodaj": ["9:00"], "zNiedzieliNaPoniedzialek": true },
-    { "opis": "Środa Popielcowa", "ruchome": "popielec", "msze": ["6:30", "7:30", "9:00", "17:00", "18:30", "19:30"] }
+    {
+      "opis": "Uroczystość Wszystkich Świętych",
+      "data": "11-01",
+      "zamien": {
+        "13:30": "14:00"
+      }
+    },
+    {
+      "opis": "Święto Ofiarowania Pańskiego",
+      "data": "02-02",
+      "dodaj": [
+        "9:00"
+      ]
+    },
+    {
+      "opis": "Uroczystość Niepokalanego Poczęcia NMP",
+      "data": "12-08",
+      "dodaj": [
+        "9:00"
+      ],
+      "zNiedzieliNaPoniedzialek": true
+    },
+    {
+      "opis": "Środa Popielcowa",
+      "ruchome": "popielec",
+      "msze": [
+        "6:30",
+        "7:30",
+        "9:00",
+        "17:00",
+        "18:30",
+        "19:30"
+      ]
+    },
+    {
+      "opis": "Wielki Czwartek",
+      "ruchome": "wielkanoc",
+      "dni": -3,
+      "msze": [
+        {
+          "godz": "18:30",
+          "uwaga": "Liturgia Wieczerzy Pańskiej"
+        }
+      ]
+    },
+    {
+      "opis": "Wielki Piątek – Liturgia Męki Pańskiej o 18:30",
+      "ruchome": "wielkanoc",
+      "dni": -2,
+      "msze": []
+    },
+    {
+      "opis": "Wielka Sobota",
+      "ruchome": "wielkanoc",
+      "dni": -1,
+      "msze": [
+        {
+          "godz": "20:30",
+          "uwaga": "Liturgia Wigilii Paschalnej"
+        }
+      ]
+    },
+    {
+      "opis": "Niedziela Wielkanocna",
+      "ruchome": "wielkanoc",
+      "dni": 0,
+      "msze": [
+        "8:00",
+        "9:00",
+        "10:30",
+        "12:00",
+        "13:30",
+        "18:00"
+      ]
+    },
+    {
+      "opis": "Poniedziałek Wielkanocny",
+      "ruchome": "wielkanoc",
+      "dni": 1,
+      "msze": [
+        "6:30",
+        "8:00",
+        "9:00",
+        "10:30",
+        "12:00",
+        "13:30",
+        "18:00"
+      ]
+    }
   ],
   "_instrukcjaZmiany": "Wyjątkowe zmiany godzin w konkretne dni. Przykład: { \"data\": \"2026-12-24\", \"opis\": \"Wigilia Bożego Narodzenia\", \"msze\": [ { \"godz\": \"6:30\" }, { \"godz\": \"24:00\", \"uwaga\": \"Pasterka\" } ] }. Pusta lista msze: [] oznacza, że tego dnia nie ma Mszy. Zamiast listy można podać \"porzadek\": \"niedzielny\" albo \"powszedni\". Zmiany na najbliższe 14 dni wyświetlają się automatycznie przy godzinach Mszy.",
-  "zmiany": []
+  "zmiany": [],
+  "_instrukcjaWydarzen": "Pojedyncze wydarzenia w konkretne dni (pokazują się w „Najbliższych nabożeństwach” i w kalendarzu): data RRRR-MM-DD, tytul, godz.",
+  "wydarzenia": [
+    {
+      "data": "2026-11-30",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-02",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-04",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-05",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-09",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-10",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-12",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-15",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-16",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-17",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-18",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-19",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-22",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    },
+    {
+      "data": "2026-12-23",
+      "tytul": "Śniadanie w salce po Roratach",
+      "godz": "po Mszy św. o 6:30"
+    }
+  ],
+  "_instrukcjaTriduum": "Nabożeństwa liczone co roku od Wielkanocy (dni: -3 Wielki Czwartek, -2 Wielki Piątek, -1 Wielka Sobota, 0 Niedziela Wielkanocna): tytul, godz.",
+  "nabozenstwaWielkanocne": [
+    {
+      "dni": -3,
+      "tytul": "Liturgia Wieczerzy Pańskiej",
+      "godz": "18:30, po niej adoracja w ciemnicy do 22:00"
+    },
+    {
+      "dni": -3,
+      "tytul": "Spowiedź",
+      "godz": "21:00–22:00"
+    },
+    {
+      "dni": -2,
+      "tytul": "Droga Krzyżowa z Koronką i Nowenną do Bożego Miłosierdzia",
+      "godz": "15:00"
+    },
+    {
+      "dni": -2,
+      "tytul": "Liturgia Męki Pańskiej",
+      "godz": "18:30, adoracja przy grobie do północy"
+    },
+    {
+      "dni": -2,
+      "tytul": "Spowiedź",
+      "godz": "20:00–24:00"
+    },
+    {
+      "dni": -1,
+      "tytul": "Ciemna Jutrznia",
+      "godz": "8:00"
+    },
+    {
+      "dni": -1,
+      "tytul": "Święcenie pokarmów",
+      "godz": "9:00–15:00 co pół godziny (można złożyć dary dla potrzebujących; wydawanie darów 15:30–16:30)"
+    },
+    {
+      "dni": -1,
+      "tytul": "Spowiedź",
+      "godz": "9:00–15:00"
+    },
+    {
+      "dni": -1,
+      "tytul": "Koronka do Bożego Miłosierdzia",
+      "godz": "15:00"
+    },
+    {
+      "dni": -1,
+      "tytul": "Liturgia Wigilii Paschalnej",
+      "godz": "20:30, z procesją rezurekcyjną po zakończeniu"
+    }
+  ]
 }

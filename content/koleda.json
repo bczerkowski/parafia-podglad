@@ -1,12 +1,228 @@
 {
-  "_instrukcja": "Kolęda (wizyta duszpasterska). Każdy dzień: data (RRRR-MM-DD), godz (np. „od 16:00”), ksiadz (opcjonalnie), ulice (lista: ulica z numerami, np. „Krzycka 1–20”), uwaga (opcjonalnie). Pasek na stronie głównej i pozycja „Kolęda” w menu są widoczne co roku od pasekOd do pasekDo (MM-DD, np. 11-22 i 02-02). Rok w tytule zmienia się sam; dni z poprzedniego sezonu są pomijane.",
+  "_instrukcja": "Kolęda (wizyta duszpasterska). Każdy dzień: data (RRRR-MM-DD), godz (np. „od 16:00”), ksiadz (opcjonalnie), ulice (lista: ulica z numerami, np. „Krzycka 1–20”), uwaga (opcjonalnie). Pasek na stronie głównej i pozycja „Kolęda” w menu są widoczne co roku od pasekOd do pasekDo (MM-DD, np. 11-22 i 02-02). Rok w tytule zmienia się sam; dni z poprzedniego sezonu są pomijane. formularze: przyciski z linkami (tekst, url) pod planem.",
   "tytul": "Kolęda 2026/2027",
   "pasekOd": "11-22",
   "pasekDo": "02-02",
   "wstep": "Duszpasterze odwiedzą rodziny naszej parafii z błogosławieństwem na nowy rok. Prosimy o przygotowanie stołu przykrytego białym obrusem, krzyża, świec, wody święconej i kropidła.",
   "uwagi": [
-    "Odwiedziny rozpoczynają się zwykle po południu – godzinę podajemy przy każdym dniu.",
-    "Jeśli kolęda w Twoim terminie nie jest możliwa, zgłoś to w kancelarii – ustalimy dodatkowy termin."
+    "Wizytę kolędową rozpoczynamy od poniedziałku do piątku o 16:00, w sobotę o 12:00.",
+    "Ministranci dzień wcześniej zapowiadają odwiedziny duszpasterza, podając przybliżony czas przybycia.",
+    "Jeżeli w planie kolędy brakuje jakiegoś adresu, prosimy o informację. Pominięte adresy odwiedzimy ostatniego dnia kolędy (30 stycznia)."
   ],
-  "dni": []
+  "dni": [
+    {
+      "data": "2027-01-02",
+      "godz": "od 12:00",
+      "ulice": [
+        "Wietrzna 2–20b, 42–46, 3–137 (cała nieparzysta)"
+      ]
+    },
+    {
+      "data": "2027-01-04",
+      "godz": "od 16:00",
+      "ulice": [
+        "Gradowa",
+        "Róży Wiatrów 2–6, 1–13",
+        "Wietrzna 22–40"
+      ]
+    },
+    {
+      "data": "2027-01-05",
+      "godz": "od 16:00",
+      "ulice": [
+        "Róży Wiatrów 12–26, 17–29"
+      ]
+    },
+    {
+      "data": "2027-01-07",
+      "godz": "od 16:00",
+      "ulice": [
+        "Poranna"
+      ]
+    },
+    {
+      "data": "2027-01-08",
+      "godz": "od 16:00",
+      "ulice": [
+        "Zefirowa",
+        "Skarbowców 14–36, 23–45"
+      ]
+    },
+    {
+      "data": "2027-01-09",
+      "godz": "od 12:00",
+      "ulice": [
+        "Sowia",
+        "Jesienna",
+        "Karkonoska 21–39a",
+        "Skarbowców 47–87, 64–80a"
+      ]
+    },
+    {
+      "data": "2027-01-11",
+      "godz": "od 16:00",
+      "ulice": [
+        "Skarbowców 82–122, 89–123"
+      ]
+    },
+    {
+      "data": "2027-01-12",
+      "godz": "od 16:00",
+      "ulice": [
+        "Wichrowa",
+        "Racławicka 94–100"
+      ],
+      "uwaga": "W tym dniu kolęda odbywa się na zaproszenie."
+    },
+    {
+      "data": "2027-01-13",
+      "godz": "od 16:00",
+      "ulice": [
+        "Burzowa",
+        "Wieczorna",
+        "Wawrzyniaka",
+        "Chłodna",
+        "Szarugi"
+      ]
+    },
+    {
+      "data": "2027-01-14",
+      "godz": "od 16:00",
+      "ulice": [
+        "Krzycka 4a–92d (cała parzysta), 3–43"
+      ]
+    },
+    {
+      "data": "2027-01-15",
+      "godz": "od 16:00",
+      "ulice": [
+        "Krzycka 47–83c"
+      ]
+    },
+    {
+      "data": "2027-01-16",
+      "godz": "od 12:00",
+      "ulice": [
+        "Babiego Lata",
+        "Mglista"
+      ],
+      "uwaga": "W tym dniu kolęda dla mieszkańców ul. Mglistej 22–38 (nowe bloki) odbywa się na zaproszenie."
+    },
+    {
+      "data": "2027-01-18",
+      "godz": "od 16:00",
+      "ulice": [
+        "Krzycka 85–107"
+      ]
+    },
+    {
+      "data": "2027-01-19",
+      "godz": "od 16:00",
+      "ulice": [
+        "Szronowa",
+        "Tuwima",
+        "Korfantego",
+        "Kusztelana"
+      ]
+    },
+    {
+      "data": "2027-01-20",
+      "godz": "od 16:00",
+      "ulice": [
+        "Deszczowa",
+        "Rapackiego"
+      ]
+    },
+    {
+      "data": "2027-01-21",
+      "godz": "od 16:00",
+      "ulice": [
+        "Letnia",
+        "Polarna",
+        "Zimowa",
+        "Wiosenna",
+        "Sąsiedzka",
+        "Siostrzana"
+      ]
+    },
+    {
+      "data": "2027-01-22",
+      "godz": "od 16:00",
+      "ulice": [
+        "Życzliwa",
+        "Południowa",
+        "Upalna",
+        "Słotna",
+        "Braterska"
+      ],
+      "uwaga": "W tym dniu kolęda dla mieszkańców ul. Braterskiej 2–4d (nowe bloki) odbywa się na zaproszenie."
+    },
+    {
+      "data": "2027-01-23",
+      "godz": "od 12:00",
+      "ulice": [
+        "Rodzinna",
+        "Pogodna",
+        "Powiewna",
+        "Przyjaźni 16–66"
+      ]
+    },
+    {
+      "data": "2027-01-25",
+      "godz": "od 16:00",
+      "ulice": [
+        "Przyjaźni 43–59"
+      ]
+    },
+    {
+      "data": "2027-01-26",
+      "godz": "od 16:00",
+      "ulice": [
+        "Przyjaźni 61–85"
+      ]
+    },
+    {
+      "data": "2027-01-27",
+      "godz": "od 16:00",
+      "ulice": [
+        "Przyjaźni 87–103 (bez 103a, 103b)"
+      ]
+    },
+    {
+      "data": "2027-01-28",
+      "godz": "od 16:00",
+      "ulice": [
+        "Przyjaźni 103a–113",
+        "Jeździecka",
+        "Partynicka 9–15"
+      ],
+      "uwaga": "W tym dniu kolęda dla mieszkańców ul. Jeździeckiej 1–19b (cała nieparzysta) i Partynickiej 9–15 (nowe bloki) odbywa się na zaproszenie."
+    },
+    {
+      "data": "2027-01-29",
+      "godz": "od 16:00",
+      "ulice": [
+        "Przyjaźni 2d–14"
+      ]
+    },
+    {
+      "data": "2027-01-30",
+      "godz": "od 12:00",
+      "ulice": [
+        "Skrajna",
+        "Partynicka 10–66 (cała parzysta), 3–7e, 25–45"
+      ],
+      "uwaga": "Kolęda uzupełniająca – odbywa się na zaproszenie (także dla adresów pominiętych w planie)."
+    }
+  ],
+  "formularze": [
+    {
+      "tekst": "Zgłoś kolędę dodatkową",
+      "url": "https://forms.gle/VAYPEj9i1ApsXo5t5"
+    },
+    {
+      "tekst": "Kolęda dla nowych bloków – zgłoszenie",
+      "url": "https://forms.gle/pd7vvHSxmtoH9LBP6"
+    }
+  ]
 }
