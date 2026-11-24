@@ -27,8 +27,8 @@
       "od": "12-26",
       "do": "12-26",
       "zdjecie": "/img/baner/sw-szczepan.jpg",
-      "opis": "Kamienowanie św. Szczepana",
-      "pozycja": "45% 85%",
+      "opis": "Kamienowanie św. Szczepana – anioł niesie palmę i wieniec męczeństwa",
+      "pozycja": "45% 80%",
       "podpis": "Święto św. Szczepana, pierwszego męczennika",
       "podpisDnia": "Święto św. Szczepana, pierwszego męczennika"
     },
@@ -133,8 +133,8 @@
       "przed": 0,
       "po": 4,
       "zdjecie": "/img/baner/wielkanoc.jpg",
-      "opis": "Pusty grób i krzyż w blasku poranka – Zmartwychwstanie",
-      "pozycja": "50% 50%",
+      "opis": "Zmartwychwstały Chrystus z krzyżem wśród aniołów",
+      "pozycja": "50% 25%",
       "podpis": "Oktawa Wielkanocy"
     },
     {
@@ -144,8 +144,8 @@
       "przed": 0,
       "po": 0,
       "zdjecie": "/img/baner/milosierdzie.jpg",
-      "opis": "Jezu, ufam Tobie – obraz Miłosierdzia Bożego",
-      "pozycja": "50% 30%",
+      "opis": "Jezus Miłosierny – „Jezu, ufam Tobie”",
+      "pozycja": "55% 20%",
       "podpis": "Niedziela Miłosierdzia Bożego",
       "podpisDnia": "Niedziela Miłosierdzia Bożego"
     },
@@ -283,8 +283,8 @@
       "od": "10-07",
       "do": "10-07",
       "zdjecie": "/img/baner/rozancowa.jpg",
-      "opis": "Matka Boża Różańcowa z Dzieciątkiem, aniołowie z różańcem",
-      "pozycja": "55% 25%",
+      "opis": "Matka Boża Różańcowa z Dzieciątkiem, aniołowie z różańcem i róże",
+      "pozycja": "55% 15%",
       "podpis": "NMP Różańcowa",
       "podpisDnia": "Wspomnienie NMP Różańcowej"
     },
