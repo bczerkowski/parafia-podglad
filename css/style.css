@@ -1272,3 +1272,21 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
   .hero__swieto { position: relative; right: auto; bottom: auto; max-width: none; padding: 0 16px 14px; font-size: .92rem; }
 }
 .koleda-formularze { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+/* pasek Kolędy – jedna cienka linia (bez zawijania tekstu) */
+.koleda-pasek .wrap { flex-wrap: nowrap; gap: 16px; padding-top: 9px; padding-bottom: 9px; }
+.koleda-pasek__tekst { flex: 1 1 auto; min-width: 0; display: flex; align-items: baseline; gap: 14px; }
+.koleda-pasek h2 { margin: 0; font-size: 1.3rem; white-space: nowrap; flex: none; }
+.koleda-pasek__tekst p { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .98rem; }
+.koleda-pasek__szukaj { flex: 0 0 auto; position: relative; }
+.koleda-pasek__szukaj > div { flex-direction: row !important; gap: 8px; }
+.koleda-pasek__szukaj input { width: 250px; flex: none; font-size: .95rem; padding: 6px 10px; border-radius: 6px; }
+.koleda-pasek__wynik:empty { display: none; }
+.koleda-pasek__wynik { position: absolute; right: 0; top: calc(100% + 8px); z-index: 20; width: min(420px, 90vw); margin: 0 !important;
+  background: #fff; color: var(--ink, #1d2433); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 8px; padding: 10px 12px; box-shadow: var(--shadow); font-size: .95rem; }
+.koleda-pasek__wynik b { color: var(--navy) !important; }
+@media (max-width: 760px) {
+  .koleda-pasek .wrap { flex-wrap: wrap; gap: 6px 12px; }
+  .koleda-pasek__tekst { flex-basis: 100%; }
+  .koleda-pasek__szukaj { flex: 1 1 100%; }
+  .koleda-pasek__szukaj input { width: auto; flex: 1; min-width: 0; }
+}

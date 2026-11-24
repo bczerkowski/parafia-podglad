@@ -1290,9 +1290,10 @@
           : nast ? 'Najbliższa kolęda: ' + esc(etykieta(nast)) + ' – ' + esc((nast.ulice || []).join(', '))
           : 'Dziękujemy za przyjęcie duszpasterzy w Waszych domach.';
         elKolPasek.innerHTML = '<section class="koleda-pasek" aria-label="Kolęda"><div class="wrap">' +
-          '<div class="koleda-pasek__tekst"><h2>' + esc(tytulK) + '</h2><p>' + info + '</p></div>' +
-          (dni.length ? '<form class="koleda-pasek__szukaj" role="search" action="koleda.html"><label for="koleda-pq">Kiedy kolęda na mojej ulicy?</label>' +
-            '<div><input id="koleda-pq" name="ulica" type="search" autocomplete="off" placeholder="Wpisz ulicę, np. Krzycka">' +
+          // jedna cienka linia: tytuł, skrócona informacja (pełna w podpowiedzi), wyszukiwarka; wynik wyszukiwania w rozwijanym okienku
+          '<div class="koleda-pasek__tekst"><h2>' + esc(tytulK) + '</h2><p title="' + info.replace(/"/g, '&quot;') + '">' + info + '</p></div>' +
+          (dni.length ? '<form class="koleda-pasek__szukaj" role="search" action="koleda.html"><label class="visually-hidden" for="koleda-pq">Kiedy kolęda na mojej ulicy?</label>' +
+            '<div><input id="koleda-pq" name="ulica" type="search" autocomplete="off" placeholder="Kiedy kolęda na mojej ulicy?">' +
             '<a class="btn btn--gold btn--sm" href="koleda.html">Cały plan →</a></div><p class="koleda-pasek__wynik" aria-live="polite"></p></form>'
             : '<a class="btn btn--gold btn--sm" href="koleda.html">Więcej o kolędzie →</a>') +
           '</div></section>';
