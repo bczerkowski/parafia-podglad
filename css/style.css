@@ -1262,3 +1262,7 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .koleda-pasek .btn { white-space: nowrap; }
 .nav__koleda a { color: var(--gold-text) !important; font-weight: 700; }
 @media (max-width: 560px) { .koleda-pasek__szukaj > div { flex-direction: column; } }
+/* odpust i link do kalendarza w jednej linii */
+.upcoming__foot { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
+.upcoming__foot .upcoming__feast { margin: 0; padding: 0; border: 0; }
+.upcoming__foot .upcoming__more { margin: 0; white-space: nowrap; }

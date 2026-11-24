@@ -1272,7 +1272,7 @@
       if (elKolPasek && sezon) {
         var dzisiaj = dni.filter(function (d) { return d.data === dzis; })[0];
         var nast = dni.filter(function (d) { return d.data > dzis; })[0];
-        var info = !dni.length ? 'Plan odwiedzin duszpasterskich opublikujemy wkrótce – właśnie tutaj.'
+        var info = !dni.length ? 'Plan odwiedzin duszpasterskich opublikujemy wkrótce.'
           : dzisiaj ? 'Dziś ksiądz odwiedza: ' + esc((dzisiaj.ulice || []).join(', ')) + (dzisiaj.godz ? ' (' + esc(dzisiaj.godz) + ')' : '')
           : nast ? 'Najbliższa kolęda: ' + esc(etykieta(nast)) + ' – ' + esc((nast.ulice || []).join(', '))
           : 'Dziękujemy za przyjęcie duszpasterzy w Waszych domach.';
