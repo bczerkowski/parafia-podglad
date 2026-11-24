@@ -8,7 +8,9 @@
       "do": "01-06",
       "zdjecie": "/img/baner/trzech-kroli.jpg",
       "opis": "Trzej Królowie podążający za gwiazdą – witraż",
-      "pozycja": "60% 45%"
+      "pozycja": "60% 45%",
+      "podpis": "Objawienie Pańskie",
+      "podpisDnia": "Uroczystość Objawienia Pańskiego"
     },
     {
       "nazwa": "Boże Narodzenie (od Wigilii do 5 stycznia)",
@@ -17,7 +19,10 @@
       "do": "01-05",
       "zdjecie": "/img/baner/boze-narodzenie.jpg",
       "opis": "Narodzenie Pańskie – Święta Rodzina w stajence",
-      "pozycja": "88% 60%"
+      "pozycja": "88% 60%",
+      "podpis": "Okres Bożego Narodzenia",
+      "podpisDnia": "Uroczystość Narodzenia Pańskiego",
+      "glowny": "12-25"
     },
     {
       "nazwa": "Ofiarowanie Pańskie (Matki Bożej Gromnicznej)",
@@ -26,7 +31,9 @@
       "do": "02-02",
       "zdjecie": "/img/baner/ofiarowanie.jpg",
       "opis": "Ofiarowanie Pańskie – ikona",
-      "pozycja": "70% 35%"
+      "pozycja": "70% 35%",
+      "podpis": "Ofiarowanie Pańskie",
+      "podpisDnia": "Święto Ofiarowania Pańskiego"
     },
     {
       "nazwa": "Uroczystość św. Józefa",
@@ -35,7 +42,9 @@
       "do": "03-19",
       "zdjecie": "/img/baner/sw-jozef.jpg",
       "opis": "Święty z krzyżem",
-      "pozycja": "75% 40%"
+      "pozycja": "75% 40%",
+      "podpis": "Uroczystość św. Józefa",
+      "podpisDnia": "Uroczystość św. Józefa, Oblubieńca NMP"
     },
     {
       "nazwa": "Wielki Post (od Środy Popielcowej do soboty przed Niedzielą Palmową)",
@@ -45,7 +54,9 @@
       "po": 38,
       "zdjecie": "/img/baner/popielec.jpg",
       "opis": "Krzyż z popiołu – Środa Popielcowa i Wielki Post",
-      "pozycja": "40% 50%"
+      "pozycja": "40% 50%",
+      "podpis": "Wielki Post",
+      "podpisDnia": "Środa Popielcowa"
     },
     {
       "nazwa": "Wielki Tydzień (od Niedzieli Palmowej do Wielkiej Środy)",
@@ -55,7 +66,9 @@
       "po": 3,
       "zdjecie": "/img/baner/palmowa.jpg",
       "opis": "Chrystus z palmą – Niedziela Palmowa",
-      "pozycja": "60% 30%"
+      "pozycja": "60% 30%",
+      "podpis": "Wielki Tydzień",
+      "podpisDnia": "Niedziela Palmowa, czyli Męki Pańskiej"
     },
     {
       "nazwa": "Triduum Paschalne (Wielki Czwartek – Wielka Sobota)",
@@ -65,7 +78,8 @@
       "po": 2,
       "zdjecie": "/img/baner/wielki-piatek.jpg",
       "opis": "Korona cierniowa i gwoździe – Męka Pańska",
-      "pozycja": "45% 55%"
+      "pozycja": "45% 55%",
+      "podpis": "Triduum Paschalne"
     },
     {
       "nazwa": "Zmartwychwstanie Pańskie (Niedziela i Poniedziałek Wielkanocny)",
@@ -75,7 +89,9 @@
       "po": 1,
       "zdjecie": "/img/baner/zmartwychwstanie.jpg",
       "opis": "Pusty grób w blasku poranka – Zmartwychwstanie",
-      "pozycja": "65% 40%"
+      "pozycja": "65% 40%",
+      "podpis": "Poniedziałek Wielkanocny",
+      "podpisDnia": "Uroczystość Zmartwychwstania Pańskiego"
     },
     {
       "nazwa": "Oktawa Wielkanocy (wtorek – sobota)",
@@ -85,7 +101,8 @@
       "po": 4,
       "zdjecie": "/img/baner/wielkanoc.jpg",
       "opis": "Pusty grób i krzyż w blasku poranka – Zmartwychwstanie",
-      "pozycja": "50% 50%"
+      "pozycja": "50% 50%",
+      "podpis": "Oktawa Wielkanocy"
     },
     {
       "nazwa": "Niedziela Miłosierdzia Bożego",
@@ -95,7 +112,9 @@
       "po": 0,
       "zdjecie": "/img/baner/milosierdzie.jpg",
       "opis": "Jezu, ufam Tobie – obraz Miłosierdzia Bożego",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Niedziela Miłosierdzia Bożego",
+      "podpisDnia": "Niedziela Miłosierdzia Bożego"
     },
     {
       "nazwa": "Wniebowstąpienie Pańskie",
@@ -105,7 +124,9 @@
       "po": 0,
       "zdjecie": "/img/baner/wniebowstapienie.jpg",
       "opis": "Wniebowstąpienie Pańskie",
-      "pozycja": "50% 25%"
+      "pozycja": "50% 25%",
+      "podpis": "Wniebowstąpienie Pańskie",
+      "podpisDnia": "Uroczystość Wniebowstąpienia Pańskiego"
     },
     {
       "nazwa": "Zesłanie Ducha Świętego",
@@ -115,7 +136,9 @@
       "po": 0,
       "zdjecie": "/img/baner/zeslanie.jpg",
       "opis": "Gołębica – Duch Święty",
-      "pozycja": "55% 45%"
+      "pozycja": "55% 45%",
+      "podpis": "Zesłanie Ducha Świętego",
+      "podpisDnia": "Uroczystość Zesłania Ducha Świętego"
     },
     {
       "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny",
@@ -125,7 +148,9 @@
       "po": 0,
       "zdjecie": "/img/baner/trojca.jpg",
       "opis": "Trójca Święta – fresk",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Odpust parafialny – Uroczystość Najświętszej Trójcy",
+      "podpisDnia": "Uroczystość Najświętszej Trójcy – odpust parafialny"
     },
     {
       "nazwa": "Boże Ciało (do niedzieli po uroczystości)",
@@ -135,7 +160,9 @@
       "po": 3,
       "zdjecie": "/img/baner/boze-cialo.jpg",
       "opis": "Monstrancja z Najświętszym Sakramentem na ołtarzu",
-      "pozycja": "35% 45%"
+      "pozycja": "35% 45%",
+      "podpis": "Oktawa Bożego Ciała",
+      "podpisDnia": "Uroczystość Najświętszego Ciała i Krwi Chrystusa"
     },
     {
       "nazwa": "Najświętszego Serca Pana Jezusa (piątek po Bożym Ciele)",
@@ -145,7 +172,9 @@
       "po": 0,
       "zdjecie": "/img/baner/serce-jezusa.jpg",
       "opis": "Najświętsze Serce Pana Jezusa",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Najświętsze Serce Pana Jezusa",
+      "podpisDnia": "Uroczystość Najświętszego Serca Pana Jezusa"
     },
     {
       "nazwa": "Niepokalane Serce Najświętszej Maryi Panny (sobota po NSPJ)",
@@ -155,7 +184,9 @@
       "po": 0,
       "zdjecie": "/img/baner/serce-maryi.jpg",
       "opis": "Niepokalane Serce Maryi z Dzieciątkiem",
-      "pozycja": "55% 35%"
+      "pozycja": "55% 35%",
+      "podpis": "Niepokalane Serce Maryi",
+      "podpisDnia": "Wspomnienie Niepokalanego Serca NMP"
     },
     {
       "nazwa": "NMP Królowej Polski",
@@ -164,7 +195,9 @@
       "do": "05-03",
       "zdjecie": "/img/baner/krolowa-polski.jpg",
       "opis": "Matka Boża w koronie – Królowa Polski",
-      "pozycja": "80% 30%"
+      "pozycja": "80% 30%",
+      "podpis": "NMP Królowej Polski",
+      "podpisDnia": "Uroczystość NMP Królowej Polski"
     },
     {
       "nazwa": "Św. Rity z Cascii – patronki Wspólnoty Rodzin",
@@ -173,7 +206,9 @@
       "do": "05-22",
       "zdjecie": "/img/baner/sw-rita.jpg",
       "opis": "Św. Rita z różami",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Św. Rita z Cascii",
+      "podpisDnia": "Wspomnienie św. Rity z Cascii"
     },
     {
       "nazwa": "Wniebowzięcie Najświętszej Maryi Panny",
@@ -182,7 +217,9 @@
       "do": "08-15",
       "zdjecie": "/img/baner/wniebowziecie.jpg",
       "opis": "Wniebowzięcie Najświętszej Maryi Panny",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Wniebowzięcie NMP",
+      "podpisDnia": "Uroczystość Wniebowzięcia NMP"
     },
     {
       "nazwa": "Najświętsza Maryja Panna Częstochowska",
@@ -191,7 +228,9 @@
       "do": "08-26",
       "zdjecie": "/img/baner/mb-czestochowska.jpg",
       "opis": "Obraz Matki Bożej Częstochowskiej w ołtarzu",
-      "pozycja": "50% 40%"
+      "pozycja": "50% 40%",
+      "podpis": "NMP Częstochowska",
+      "podpisDnia": "Uroczystość NMP Częstochowskiej"
     },
     {
       "nazwa": "NMP Różańcowej",
@@ -200,7 +239,9 @@
       "do": "10-07",
       "zdjecie": "/img/baner/rozancowa.jpg",
       "opis": "Różaniec",
-      "pozycja": "50% 45%"
+      "pozycja": "50% 45%",
+      "podpis": "NMP Różańcowa",
+      "podpisDnia": "Wspomnienie NMP Różańcowej"
     },
     {
       "nazwa": "Św. Jana Pawła II",
@@ -209,7 +250,9 @@
       "do": "10-22",
       "zdjecie": "/img/baner/jan-pawel.jpg",
       "opis": "Św. Jan Paweł II z pastorałem",
-      "pozycja": "45% 30%"
+      "pozycja": "45% 30%",
+      "podpis": "Św. Jan Paweł II",
+      "podpisDnia": "Wspomnienie św. Jana Pawła II"
     },
     {
       "nazwa": "Wszystkich Świętych i Dzień Zaduszny",
@@ -218,7 +261,10 @@
       "do": "11-02",
       "zdjecie": "/img/baner/wszystkich-swietych.jpg",
       "opis": "Wszyscy Święci – witraż",
-      "pozycja": "50% 40%"
+      "pozycja": "50% 40%",
+      "podpis": "Wspomnienie wszystkich wiernych zmarłych",
+      "podpisDnia": "Uroczystość Wszystkich Świętych",
+      "glowny": "11-01"
     },
     {
       "nazwa": "Niepokalane Poczęcie Najświętszej Maryi Panny",
@@ -227,7 +273,9 @@
       "do": "12-08",
       "zdjecie": "/img/baner/niepokalane.jpg",
       "opis": "Niepokalane Poczęcie Najświętszej Maryi Panny – obraz",
-      "pozycja": "50% 30%"
+      "pozycja": "50% 30%",
+      "podpis": "Niepokalane Poczęcie NMP",
+      "podpisDnia": "Uroczystość Niepokalanego Poczęcia NMP"
     },
     {
       "nazwa": "Chrystusa Króla Wszechświata (ostatnia niedziela roku liturgicznego)",
@@ -237,7 +285,9 @@
       "po": 0,
       "zdjecie": "/img/baner/chrystus-krol.jpg",
       "opis": "Chrystus Król na tronie wśród aniołów",
-      "pozycja": "50% 35%"
+      "pozycja": "50% 35%",
+      "podpis": "Chrystus Król Wszechświata",
+      "podpisDnia": "Uroczystość Jezusa Chrystusa, Króla Wszechświata"
     },
     {
       "nazwa": "Roraty – pierwszy tydzień Adwentu (od I niedzieli Adwentu do soboty)",
@@ -247,7 +297,8 @@
       "po": 6,
       "zdjecie": "/img/baner/roraty.jpg",
       "opis": "Lampion roratni w śniegu pod gwiazdą",
-      "pozycja": "62% 60%"
+      "pozycja": "62% 60%",
+      "podpis": "Zapraszamy na Roraty"
     }
   ]
 }

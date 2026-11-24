@@ -1327,6 +1327,17 @@
         if (!od || !dd) return false;
         return od <= dd ? (t >= od && t <= dd) : (t >= od || t <= dd);   // okres przez Nowy Rok
       }
+      // główny dzień okresu (sama uroczystość) – do napisu „Dziś: …”
+      function mainDay(o) {
+        if (o.rodzaj === 'stala') return md(o.glowny || o.od, y);
+        for (var my = y - 1; my <= y; my++) {
+          var b;
+          if (o.rodzaj === 'adwent') { var x = new Date(my, 11, 25); b = addDays(addDays(x, -((x.getDay() + 6) % 7 + 1) - 21), +o.dni || 0); }
+          else b = addDays(easter(my), o.rodzaj === 'trojca' ? 56 : (+o.dni || 0));
+          if (t >= addDays(b, -(+o.przed || 0)) && t <= addDays(b, +o.po || 0)) return b;
+        }
+        return null;
+      }
       var forced = parseInt(param('swieto'), 10), o = null;
       if (forced > 0) o = okresy[forced - 1];
       else o = okresy.filter(function (x) { return x.zdjecie && active(x); })[0];
@@ -1336,7 +1347,10 @@
       if (o.opis) heroBg.setAttribute('aria-label', o.opis);
       heroBg.classList.add('hero__bg--swieto');
       // delikatny podpis święta w prawym dolnym rogu banera (krótka nazwa bez dopisków w nawiasie)
-      var podpis = o.podpis || String(o.nazwa || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+–\s+pierwszy.*$/i, '');
+      // w sam dzień uroczystości: „Dziś: Uroczystość …”; w pozostałe dni okresu: nazwa okresu
+      var glowny = mainDay(o), wDzien = glowny && isoDate(glowny) === isoDate(t) && o.podpisDnia;
+      var podpis = wDzien ? 'Dziś: ' + o.podpisDnia
+        : (o.podpis || String(o.nazwa || '').replace(/\s*\(.*\)\s*$/, '').replace(/\s+–\s+pierwszy.*$/i, ''));
       if (podpis) {
         var cap = document.createElement('p');
         cap.className = 'hero__swieto';
