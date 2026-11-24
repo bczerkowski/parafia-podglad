@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok), pierwszy (pierwszy piątek/sobota miesiąca: dzienTygodnia 5 = piątek, 6 = sobota) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
+  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok), pierwszy (pierwszy piątek/sobota miesiąca: dzienTygodnia 5 = piątek, 6 = sobota) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy). dzienTygodnia (0 = niedziela … 5 = piątek, 6 = sobota) przy okresie od Wielkanocy/Adwentu zawęża go do tego dnia tygodnia (np. piątki Wielkiego Postu).",
   "okresy": [
     {
       "nazwa": "Objawienie Pańskie (Trzech Króli)",
@@ -59,15 +59,27 @@
       "podpisDnia": "Niedziela Palmowa, czyli Męki Pańskiej"
     },
     {
-      "nazwa": "Triduum Paschalne (Wielki Czwartek – Wielka Sobota)",
+      "nazwa": "Triduum Paschalne (Wielki Czwartek i Wielki Piątek)",
       "rodzaj": "wielkanoc",
       "dni": -3,
       "przed": 0,
-      "po": 2,
+      "po": 1,
       "zdjecie": "/img/baner/wielki-piatek.jpg",
       "opis": "Korona cierniowa i gwoździe – Męka Pańska",
       "pozycja": "45% 55%",
       "podpis": "Triduum Paschalne"
+    },
+    {
+      "nazwa": "Wielka Sobota",
+      "rodzaj": "wielkanoc",
+      "dni": -1,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/wielka-sobota.jpg",
+      "opis": "Pusty grób – krzyż w świetle poranka widziany z wnętrza grobu",
+      "pozycja": "62% 64%",
+      "podpis": "Wielka Sobota",
+      "podpisDnia": "Wielka Sobota"
     },
     {
       "nazwa": "Zmartwychwstanie Pańskie (Niedziela i Poniedziałek Wielkanocny)",
@@ -287,6 +299,32 @@
       "opis": "Lampion roratni w śniegu pod gwiazdą",
       "pozycja": "62% 60%",
       "podpis": "Zapraszamy na Roraty pn–sb o 6:30 i 18:30 (z udziałem dzieci)"
+    },
+    {
+      "nazwa": "Piątki Wielkiego Postu – Droga Krzyżowa",
+      "rodzaj": "wielkanoc",
+      "dni": -46,
+      "przed": 0,
+      "po": 38,
+      "dzienTygodnia": 5,
+      "zdjecie": "/img/baner/droga-krzyzowa.jpg",
+      "opis": "Pan Jezus niesie krzyż – Droga Krzyżowa",
+      "pozycja": "55% 35%",
+      "podpis": "Droga Krzyżowa o 17:00 (z udziałem dzieci), 18:00 i 19:30 (z udziałem młodzieży)",
+      "podpisDnia": "Droga Krzyżowa o 17:00 (z udziałem dzieci), 18:00 i 19:30 (z udziałem młodzieży)"
+    },
+    {
+      "nazwa": "Niedziele Wielkiego Postu – Gorzkie Żale",
+      "rodzaj": "wielkanoc",
+      "dni": -46,
+      "przed": 0,
+      "po": 38,
+      "dzienTygodnia": 0,
+      "zdjecie": "/img/baner/popielec.jpg",
+      "opis": "Krzyż z popiołu – Wielki Post",
+      "pozycja": "40% 50%",
+      "podpis": "Gorzkie Żale o 17:00",
+      "podpisDnia": "Gorzkie Żale o 17:00"
     },
     {
       "nazwa": "Pierwszy piątek miesiąca – Najświętsze Serce Pana Jezusa",

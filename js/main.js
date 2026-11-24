@@ -1339,6 +1339,8 @@
       var t = new Date(y, today.getMonth(), today.getDate());
       function md(s, year) { var p = String(s || '').split('-'); return p.length === 2 ? new Date(year, +p[0] - 1, +p[1]) : null; }
       function active(o) {
+        // dzienTygodnia przy okresie ruchomym: tylko ten dzień tygodnia (np. piątki Wielkiego Postu)
+        if (o.rodzaj !== 'pierwszy' && o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null && t.getDay() !== +o.dzienTygodnia) return false;
         // pierwszy piątek / pierwsza sobota miesiąca (dzienTygodnia: 5 = piątek, 6 = sobota)
         if (o.rodzaj === 'pierwszy') return t.getDay() === (+o.dzienTygodnia || 5) && t.getDate() <= 7;
         if (o.rodzaj === 'adwent') {
@@ -1365,7 +1367,7 @@
       // główny dzień okresu (sama uroczystość) – do napisu „Dziś …”
       function mainDay(o) {
         if (o.rodzaj === 'stala') return md(o.glowny || o.od, y);
-        if (o.rodzaj === 'pierwszy') return active(o) ? t : null;
+        if (o.rodzaj === 'pierwszy' || (o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null)) return active(o) ? t : null;
         for (var my = y - 1; my <= y; my++) {
           var b;
           if (o.rodzaj === 'adwent') { var x = new Date(my, 11, 25); b = addDays(addDays(x, -((x.getDay() + 6) % 7 + 1) - 21), +o.dni || 0); }

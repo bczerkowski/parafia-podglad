@@ -1266,3 +1266,8 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .upcoming__foot { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--line); }
 .upcoming__foot .upcoming__feast { margin: 0; padding: 0; border: 0; }
 .upcoming__foot .upcoming__more { margin: 0; white-space: nowrap; }
+/* długie napisy banera (np. Droga Krzyżowa z godzinami) – nie nachodzą na treść */
+.hero__swieto { max-width: min(46%, 560px); text-align: right; line-height: 1.35; }
+@media (max-width: 760px) {
+  .hero__swieto { position: relative; right: auto; bottom: auto; max-width: none; padding: 0 16px 14px; font-size: .92rem; }
+}
