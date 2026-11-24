@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok), pierwszy (pierwszy piątek/sobota miesiąca: dzienTygodnia 5 = piątek, 6 = sobota) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy). dzienTygodnia (0 = niedziela … 5 = piątek, 6 = sobota) przy okresie od Wielkanocy/Adwentu zawęża go do tego dnia tygodnia (np. piątki Wielkiego Postu).",
+  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok), swietaRodzina (niedziela w oktawie Bożego Narodzenia, a gdy jej nie ma – 30 grudnia), pierwszy (pierwszy piątek/sobota miesiąca: dzienTygodnia 5 = piątek, 6 = sobota) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy). dzienTygodnia (0 = niedziela … 5 = piątek, 6 = sobota) przy okresie od Wielkanocy/Adwentu zawęża go do tego dnia tygodnia (np. piątki Wielkiego Postu).",
   "okresy": [
     {
       "nazwa": "Objawienie Pańskie (Trzech Króli)",
@@ -11,6 +11,26 @@
       "pozycja": "60% 45%",
       "podpis": "Objawienie Pańskie",
       "podpisDnia": "Uroczystość Objawienia Pańskiego"
+    },
+    {
+      "nazwa": "Święta Rodzina (niedziela w oktawie Bożego Narodzenia, a gdy jej nie ma – 30 grudnia)",
+      "rodzaj": "swietaRodzina",
+      "zdjecie": "/img/baner/swieta-rodzina.jpg",
+      "opis": "Święta Rodzina – Maryja, Józef i Dzieciątko Jezus",
+      "pozycja": "85% 30%",
+      "podpis": "Święto Świętej Rodziny: Jezusa, Maryi i Józefa",
+      "podpisDnia": "Święto Świętej Rodziny: Jezusa, Maryi i Józefa"
+    },
+    {
+      "nazwa": "Św. Szczepana, pierwszego męczennika",
+      "rodzaj": "stala",
+      "od": "12-26",
+      "do": "12-26",
+      "zdjecie": "/img/baner/sw-szczepan.jpg",
+      "opis": "Kamienowanie św. Szczepana",
+      "pozycja": "45% 85%",
+      "podpis": "Święto św. Szczepana, pierwszego męczennika",
+      "podpisDnia": "Święto św. Szczepana, pierwszego męczennika"
     },
     {
       "nazwa": "Boże Narodzenie (od Wigilii do 5 stycznia)",
@@ -32,8 +52,8 @@
       "zdjecie": "/img/baner/ofiarowanie.jpg",
       "opis": "Ofiarowanie Pańskie – ikona",
       "pozycja": "70% 35%",
-      "podpis": "Ofiarowanie Pańskie",
-      "podpisDnia": "Święto Ofiarowania Pańskiego"
+      "podpis": "Ofiarowanie Pańskie – Matki Bożej Gromnicznej",
+      "podpisDnia": "Święto Ofiarowania Pańskiego – Matki Bożej Gromnicznej"
     },
     {
       "nazwa": "Uroczystość św. Józefa",
@@ -59,15 +79,28 @@
       "podpisDnia": "Niedziela Palmowa, czyli Męki Pańskiej"
     },
     {
-      "nazwa": "Triduum Paschalne (Wielki Czwartek i Wielki Piątek)",
+      "nazwa": "Wielki Czwartek",
       "rodzaj": "wielkanoc",
       "dni": -3,
       "przed": 0,
-      "po": 1,
+      "po": 0,
       "zdjecie": "/img/baner/wielki-piatek.jpg",
       "opis": "Korona cierniowa i gwoździe – Męka Pańska",
       "pozycja": "45% 55%",
-      "podpis": "Triduum Paschalne"
+      "podpis": "Wielki Czwartek Świętego Triduum Paschalnego",
+      "podpisDnia": "Wielki Czwartek Świętego Triduum Paschalnego"
+    },
+    {
+      "nazwa": "Wielki Piątek",
+      "rodzaj": "wielkanoc",
+      "dni": -2,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/wielki-piatek.jpg",
+      "opis": "Korona cierniowa i gwoździe – Męka Pańska",
+      "pozycja": "45% 55%",
+      "podpis": "Wielki Piątek Świętego Triduum Paschalnego",
+      "podpisDnia": "Wielki Piątek Świętego Triduum Paschalnego"
     },
     {
       "nazwa": "Wielka Sobota",
@@ -78,8 +111,8 @@
       "zdjecie": "/img/baner/wielka-sobota.jpg",
       "opis": "Pusty grób – krzyż w świetle poranka widziany z wnętrza grobu",
       "pozycja": "62% 64%",
-      "podpis": "Wielka Sobota",
-      "podpisDnia": "Wielka Sobota"
+      "podpis": "Wielka Sobota Świętego Triduum Paschalnego",
+      "podpisDnia": "Wielka Sobota Świętego Triduum Paschalnego"
     },
     {
       "nazwa": "Zmartwychwstanie Pańskie (Niedziela i Poniedziałek Wielkanocny)",
@@ -141,6 +174,18 @@
       "podpisDnia": "Uroczystość Zesłania Ducha Świętego"
     },
     {
+      "nazwa": "Jezusa Chrystusa, Najwyższego i Wiecznego Kapłana (czwartek po Zesłaniu Ducha Świętego)",
+      "rodzaj": "wielkanoc",
+      "dni": 53,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/chrystus-kaplan.jpg",
+      "opis": "Chrystus Najwyższy Kapłan z Hostią i kielichem – ikona",
+      "pozycja": "50% 22%",
+      "podpis": "Święto Jezusa Chrystusa, Najwyższego i Wiecznego Kapłana",
+      "podpisDnia": "Święto Jezusa Chrystusa, Najwyższego i Wiecznego Kapłana"
+    },
+    {
       "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny",
       "rodzaj": "wielkanoc",
       "dni": 56,
@@ -162,7 +207,7 @@
       "opis": "Monstrancja z Najświętszym Sakramentem na ołtarzu",
       "pozycja": "35% 45%",
       "podpis": "Oktawa Bożego Ciała",
-      "podpisDnia": "Uroczystość Najświętszego Ciała i Krwi Chrystusa"
+      "podpisDnia": "Uroczystość Najświętszego Ciała i Krwi Chrystusa – Boże Ciało"
     },
     {
       "nazwa": "Najświętszego Serca Pana Jezusa (piątek po Bożym Ciele)",
@@ -238,8 +283,8 @@
       "od": "10-07",
       "do": "10-07",
       "zdjecie": "/img/baner/rozancowa.jpg",
-      "opis": "Różaniec",
-      "pozycja": "50% 45%",
+      "opis": "Matka Boża Różańcowa z Dzieciątkiem, aniołowie z różańcem",
+      "pozycja": "55% 25%",
       "podpis": "NMP Różańcowa",
       "podpisDnia": "Wspomnienie NMP Różańcowej"
     },
@@ -255,16 +300,26 @@
       "podpisDnia": "Wspomnienie św. Jana Pawła II"
     },
     {
-      "nazwa": "Wszystkich Świętych i Dzień Zaduszny",
+      "nazwa": "Wszystkich Świętych",
       "rodzaj": "stala",
       "od": "11-01",
-      "do": "11-02",
+      "do": "11-01",
       "zdjecie": "/img/baner/wszystkich-swietych.jpg",
       "opis": "Wszyscy Święci – witraż",
       "pozycja": "50% 40%",
-      "podpis": "Wspomnienie wszystkich wiernych zmarłych",
-      "podpisDnia": "Uroczystość Wszystkich Świętych",
-      "glowny": "11-01"
+      "podpis": "Uroczystość Wszystkich Świętych",
+      "podpisDnia": "Uroczystość Wszystkich Świętych"
+    },
+    {
+      "nazwa": "Dzień Zaduszny – wspomnienie wszystkich wiernych zmarłych",
+      "rodzaj": "stala",
+      "od": "11-02",
+      "do": "11-02",
+      "zdjecie": "/img/baner/zaduszki.jpg",
+      "opis": "Znicze na grobach w Dzień Zaduszny",
+      "pozycja": "50% 50%",
+      "podpis": "Wspomnienie wszystkich wiernych zmarłych – Dzień Zaduszny",
+      "podpisDnia": "Wspomnienie wszystkich wiernych zmarłych – Dzień Zaduszny"
     },
     {
       "nazwa": "Niepokalane Poczęcie Najświętszej Maryi Panny",
@@ -276,6 +331,83 @@
       "pozycja": "50% 30%",
       "podpis": "Niepokalane Poczęcie NMP",
       "podpisDnia": "Uroczystość Niepokalanego Poczęcia NMP"
+    },
+    {
+      "nazwa": "Zwiastowanie Pańskie",
+      "rodzaj": "stala",
+      "od": "03-25",
+      "do": "03-25",
+      "zdjecie": "/img/baner/zwiastowanie.jpg",
+      "opis": "Zwiastowanie – anioł Gabriel i Maryja",
+      "pozycja": "62% 40%",
+      "podpis": "Zwiastowanie Pańskie",
+      "podpisDnia": "Uroczystość Zwiastowania Pańskiego"
+    },
+    {
+      "nazwa": "Św. Wojciecha, biskupa i męczennika – głównego patrona Polski",
+      "rodzaj": "stala",
+      "od": "04-23",
+      "do": "04-23",
+      "zdjecie": "/img/baner/sw-wojciech.jpg",
+      "opis": "Św. Wojciech, biskup i męczennik",
+      "pozycja": "55% 18%",
+      "podpis": "Św. Wojciecha, biskupa i męczennika – głównego patrona Polski",
+      "podpisDnia": "Uroczystość św. Wojciecha, biskupa i męczennika – głównego patrona Polski"
+    },
+    {
+      "nazwa": "Św. Stanisława, biskupa i męczennika – głównego patrona Polski",
+      "rodzaj": "stala",
+      "od": "05-08",
+      "do": "05-08",
+      "zdjecie": "/img/baner/sw-stanislaw.jpg",
+      "opis": "Św. Stanisław, biskup i męczennik",
+      "pozycja": "50% 18%",
+      "podpis": "Św. Stanisława, biskupa i męczennika – głównego patrona Polski",
+      "podpisDnia": "Uroczystość św. Stanisława, biskupa i męczennika – głównego patrona Polski"
+    },
+    {
+      "nazwa": "Przemienienie Pańskie",
+      "rodzaj": "stala",
+      "od": "08-06",
+      "do": "08-06",
+      "zdjecie": "/img/baner/przemienienie.jpg",
+      "opis": "Przemienienie Pańskie na górze Tabor",
+      "pozycja": "50% 30%",
+      "podpis": "Przemienienie Pańskie",
+      "podpisDnia": "Święto Przemienienia Pańskiego"
+    },
+    {
+      "nazwa": "Podwyższenie Krzyża Świętego",
+      "rodzaj": "stala",
+      "od": "09-14",
+      "do": "09-14",
+      "zdjecie": "/img/baner/podwyzszenie-krzyza.jpg",
+      "opis": "Krzyż z białym płótnem na tle nieba",
+      "pozycja": "100% 30%",
+      "podpis": "Podwyższenie Krzyża Świętego",
+      "podpisDnia": "Święto Podwyższenia Krzyża Świętego"
+    },
+    {
+      "nazwa": "Św. Stanisława Kostki, zakonnika – patrona Polski",
+      "rodzaj": "stala",
+      "od": "09-18",
+      "do": "09-18",
+      "zdjecie": "/img/baner/sw-stanislaw-kostka.jpg",
+      "opis": "Św. Stanisław Kostka z różańcem i liliami",
+      "pozycja": "50% 22%",
+      "podpis": "Św. Stanisława Kostki, zakonnika – patrona Polski",
+      "podpisDnia": "Święto św. Stanisława Kostki, zakonnika – patrona Polski"
+    },
+    {
+      "nazwa": "Świętych Archaniołów Michała, Gabriela i Rafała",
+      "rodzaj": "stala",
+      "od": "09-29",
+      "do": "09-29",
+      "zdjecie": "/img/baner/archaniolowie.jpg",
+      "opis": "Święci Archaniołowie Michał, Gabriel i Rafał – ikona",
+      "pozycja": "50% 40%",
+      "podpis": "Święto Świętych Archaniołów Michała, Gabriela i Rafała",
+      "podpisDnia": "Święto Świętych Archaniołów Michała, Gabriela i Rafała"
     },
     {
       "nazwa": "Chrystusa Króla Wszechświata (ostatnia niedziela roku liturgicznego)",

@@ -1343,6 +1343,8 @@
         if (o.rodzaj !== 'pierwszy' && o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null && t.getDay() !== +o.dzienTygodnia) return false;
         // pierwszy piątek / pierwsza sobota miesiąca (dzienTygodnia: 5 = piątek, 6 = sobota)
         if (o.rodzaj === 'pierwszy') return t.getDay() === (+o.dzienTygodnia || 5) && t.getDate() <= 7;
+        // Święta Rodzina: niedziela 26–31 grudnia; gdy Boże Narodzenie wypada w niedzielę – 30 grudnia
+        if (o.rodzaj === 'swietaRodzina') { if (t.getMonth() !== 11) return false; var xs = new Date(y, 11, 25).getDay(); return xs === 0 ? t.getDate() === 30 : (t.getDay() === 0 && t.getDate() >= 26); }
         if (o.rodzaj === 'adwent') {
           // dni = przesunięcie względem I niedzieli Adwentu (niedziela 27.11–3.12; -7 = Chrystusa Króla)
           for (var ay = y - 1; ay <= y; ay++) {
@@ -1367,7 +1369,7 @@
       // główny dzień okresu (sama uroczystość) – do napisu „Dziś …”
       function mainDay(o) {
         if (o.rodzaj === 'stala') return md(o.glowny || o.od, y);
-        if (o.rodzaj === 'pierwszy' || (o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null)) return active(o) ? t : null;
+        if (o.rodzaj === 'pierwszy' || o.rodzaj === 'swietaRodzina' || (o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null)) return active(o) ? t : null;
         for (var my = y - 1; my <= y; my++) {
           var b;
           if (o.rodzaj === 'adwent') { var x = new Date(my, 11, 25); b = addDays(addDays(x, -((x.getDay() + 6) % 7 + 1) - 21), +o.dni || 0); }
