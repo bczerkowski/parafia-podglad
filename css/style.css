@@ -724,7 +724,7 @@ html[data-contrast="high"] .office .hours li.is-today { background: #fff3c4; box
 .announce ol > li li { font-size: 1.1rem; }
 .announce ol > li::before { top: 22px; }
 .announce ol > li:first-child::before { top: 4px; }
-@media (max-width: 600px) { .announce ol > li { font-size: 1.14rem; padding-top: 20px; padding-bottom: 20px; } .announce ol > li::before { top: 18px; } }
+@media (max-width: 600px) { .announce ol > li { font-size: 1.14rem; padding-top: 14px; padding-bottom: 14px; } .announce ol > li::before { top: 18px; } }
 @media print { .announce ol > li { font-size: 12pt; padding: 7pt 0 7pt 30pt; } .announce ol > li::before { top: 6pt; } .office .hours li.is-today { background: none; box-shadow: none; } }
 
 /* Duszpasterze – jednolite portrety 4:5 */
@@ -1247,3 +1247,18 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .hero__swieto { position: absolute; right: clamp(16px, 3vw, 40px); bottom: clamp(12px, 2vw, 22px); margin: 0; z-index: 1;
   font-family: var(--serif); font-style: italic; font-size: clamp(.95rem, 1.4vw, 1.2rem); letter-spacing: .02em;
   color: rgba(255,255,255,.82); text-shadow: 0 1px 8px rgba(0,0,0,.55); pointer-events: none; }
+/* Kolęda – wyraźny pasek pod banerem strony głównej (w sezonie) */
+.koleda-pasek { background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%); color: #f3ead6; border-bottom: 3px solid var(--gold); }
+.koleda-pasek .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px 32px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+.koleda-pasek__tekst { flex: 1 1 320px; }
+.koleda-pasek h2 { margin: 0 0 4px; font-family: var(--serif); font-size: clamp(1.5rem, 2.6vw, 2rem); color: #e2c57c; font-weight: 600; line-height: 1.1; }
+.koleda-pasek p { margin: 0; font-size: 1.05rem; }
+.koleda-pasek__szukaj { flex: 1 1 360px; margin: 0; }
+.koleda-pasek__szukaj label { display: block; font-weight: 700; margin-bottom: 6px; color: #fff; }
+.koleda-pasek__szukaj > div { display: flex; gap: 10px; }
+.koleda-pasek__szukaj input { flex: 1; min-width: 0; font: inherit; font-size: 1.05rem; padding: 9px 12px; border: 0; border-radius: 8px; }
+.koleda-pasek__wynik { margin-top: 8px !important; }
+.koleda-pasek__wynik b { color: #e2c57c; }
+.koleda-pasek .btn { white-space: nowrap; }
+.nav__koleda a { color: var(--gold-text) !important; font-weight: 700; }
+@media (max-width: 560px) { .koleda-pasek__szukaj > div { flex-direction: column; } }

@@ -1254,14 +1254,46 @@
       var dzis = isoDate(warsawNow());
       function etykieta(d) { var x = parseDate(d.data); return cap(DNI[x.getDay()]) + ', ' + x.getDate() + ' ' + MIES[x.getMonth()]; }
       var norm = function (s) { return String(s).toLowerCase().replace(/^(ul\.|al\.|pl\.|os\.)\s*/, '').replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; }); };
-      if (elKolPasek && dni.length) {
-        var pierwszy = parseDate(dni[0].data), ostatni = dni[dni.length - 1].data, t = warsawNow();
-        if (t >= addDays(pierwszy, -21) && dzis <= ostatni) {
-          var dzisiaj = dni.filter(function (d) { return d.data === dzis; })[0];
-          elKolPasek.innerHTML = '<div class="koleda-pasek"><div class="wrap"><p><b>' + esc(k.tytul || 'Kolęda') + '</b>' +
-            (dzisiaj ? 'Dziś odwiedzamy: ' + esc(dzisiaj.ulice.join(', ')) : 'Sprawdź, kiedy ksiądz odwiedzi Twoją ulicę.') + '</p>' +
-            '<a class="btn btn--gold btn--sm" href="koleda.html">Plan kolędy →</a></div></div>';
-          elKolPasek.hidden = false;
+      // okres widoczności: pasekOd–pasekDo; bez nich – od 3 tygodni przed pierwszym dniem (albo od 1 grudnia) do 2 lutego / ostatniego dnia
+      var rokK = warsawNow().getMonth() < 6 ? warsawNow().getFullYear() - 1 : warsawNow().getFullYear();
+      var odK = k.pasekOd || (dni.length ? isoDate(addDays(parseDate(dni[0].data), -21)) : rokK + '-12-01');
+      var doK = k.pasekDo || (dni.length && dni[dni.length - 1].data > (rokK + 1) + '-02-02' ? dni[dni.length - 1].data : (rokK + 1) + '-02-02');
+      var sezon = dzis >= odK && dzis <= doK;
+      if (sezon) $$('.nav__koleda').forEach(function (e) { e.hidden = false; });
+      function szukaj(v) {
+        var traf = [];
+        v = norm(v);
+        dni.forEach(function (d, i) { (d.ulice || []).forEach(function (u) { if (norm(u).indexOf(v) === 0 || norm(u).indexOf(' ' + v) >= 0) traf.push({ d: d, i: i, u: u }); }); });
+        return traf;
+      }
+      function opisTraf(traf) {
+        return traf.map(function (x) { return '<b>' + esc(x.u) + '</b> – ' + esc(etykieta(x.d)) + (x.d.godz ? ', ' + esc(x.d.godz) : '') + (x.d.data < dzis ? ' (już była)' : ''); }).join('<br>');
+      }
+      if (elKolPasek && sezon) {
+        var dzisiaj = dni.filter(function (d) { return d.data === dzis; })[0];
+        var nast = dni.filter(function (d) { return d.data > dzis; })[0];
+        var info = !dni.length ? 'Plan odwiedzin duszpasterskich opublikujemy wkrótce – właśnie tutaj.'
+          : dzisiaj ? 'Dziś ksiądz odwiedza: ' + esc((dzisiaj.ulice || []).join(', ')) + (dzisiaj.godz ? ' (' + esc(dzisiaj.godz) + ')' : '')
+          : nast ? 'Najbliższa kolęda: ' + esc(etykieta(nast)) + ' – ' + esc((nast.ulice || []).join(', '))
+          : 'Dziękujemy za przyjęcie duszpasterzy w Waszych domach.';
+        elKolPasek.innerHTML = '<section class="koleda-pasek" aria-label="Kolęda"><div class="wrap">' +
+          '<div class="koleda-pasek__tekst"><h2>' + esc(k.tytul || 'Kolęda') + '</h2><p>' + info + '</p></div>' +
+          (dni.length ? '<form class="koleda-pasek__szukaj" role="search" action="koleda.html"><label for="koleda-pq">Kiedy kolęda na mojej ulicy?</label>' +
+            '<div><input id="koleda-pq" name="ulica" type="search" autocomplete="off" placeholder="Wpisz ulicę, np. Krzycka">' +
+            '<a class="btn btn--gold btn--sm" href="koleda.html">Cały plan →</a></div><p class="koleda-pasek__wynik" aria-live="polite"></p></form>'
+            : '<a class="btn btn--gold btn--sm" href="koleda.html">Więcej o kolędzie →</a>') +
+          '</div></section>';
+        elKolPasek.hidden = false;
+        var pq = $('#koleda-pq');
+        if (pq) {
+          var pw = $('.koleda-pasek__wynik');
+          pq.form.addEventListener('submit', function (e) { e.preventDefault(); });
+          pq.addEventListener('input', function () {
+            var v = pq.value.trim();
+            if (v.length < 3) { pw.innerHTML = ''; return; }
+            var traf = szukaj(v);
+            pw.innerHTML = traf.length ? opisTraf(traf) : 'Nie znaleziono tej ulicy w planie – zobacz cały plan albo zadzwoń do kancelarii.';
+          });
         }
       }
       if (!elKol) return;
@@ -1287,13 +1319,14 @@
         var v = norm(q.value.trim());
         $$('.koleda-dzien').forEach(function (li) { li.classList.remove('is-traf'); });
         if (v.length < 3) { wynik.textContent = ''; return; }
-        var traf = [];
-        dni.forEach(function (d, i) { (d.ulice || []).forEach(function (u) { if (norm(u).indexOf(v) === 0 || norm(u).indexOf(' ' + v) >= 0) traf.push({ d: d, i: i, u: u }); }); });
+        var traf = szukaj(q.value.trim());
         if (!traf.length) { wynik.innerHTML = 'Nie znaleziono tej ulicy w planie kolędy. W razie wątpliwości zadzwoń do kancelarii.'; return; }
-        wynik.innerHTML = traf.map(function (x) { return '<b>' + esc(x.u) + '</b> – ' + esc(etykieta(x.d)) + (x.d.godz ? ', ' + esc(x.d.godz) : ''); }).join('<br>');
+        wynik.innerHTML = opisTraf(traf);
         traf.forEach(function (x) { var li = $('.koleda-dzien[data-i="' + x.i + '"]'); if (li) li.classList.add('is-traf'); });
         var first = $('.koleda-dzien[data-i="' + traf[0].i + '"]'); if (first && traf.length === 1) first.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
       });
+      var qs = new URLSearchParams(location.search).get('ulica');
+      if (qs) { q.value = qs; q.dispatchEvent(new Event('input')); }
     });
   }
 
