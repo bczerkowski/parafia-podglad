@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Symulacja banerów – Parafia Trójcy Świętej</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root { --navy: #1b2942; --gold: #b48f3f; --gold-text: #7f6119; --cream: #f4ede0; --line: #e3d6b5; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--cream); color: var(--navy); font: 15px/1.45 "Source Sans 3", system-ui, sans-serif; }
+  header { background: var(--navy); color: #f3ead6; padding: 14px 20px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  header h1 { margin: 0; font: italic 600 1.6rem "Cormorant Garamond", serif; }
+  header p { margin: 0; color: #cfd6e4; font-size: .9rem; }
+  .wrap { display: grid; grid-template-columns: 290px 1fr; gap: 16px; padding: 16px; height: calc(100vh - 62px); }
+  nav { overflow: auto; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+  nav button { display: flex; justify-content: space-between; gap: 8px; width: 100%; text-align: left; border: 0; background: none; padding: 8px 10px; border-radius: 8px; cursor: pointer; font: inherit; color: inherit; }
+  nav button small { color: var(--gold-text); white-space: nowrap; }
+  nav button:hover { background: #f6efdf; }
+  nav button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+  nav button[aria-pressed="true"] small { color: #e2c57c; }
+  .view { display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+  .bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .bar a, .bar button { border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: 6px 12px; font: 600 .85rem inherit; color: var(--navy); text-decoration: none; cursor: pointer; }
+  .bar button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+  .frame { flex: 1; min-height: 0; display: flex; justify-content: center; background: #ddd4c2; border-radius: 12px; overflow: hidden; }
+  iframe { border: 0; width: 100%; height: 100%; background: #fff; transition: width .2s; }
+  .phone iframe { width: 390px; }
+  @media (max-width: 800px) { .wrap { grid-template-columns: 1fr; height: auto; } nav { max-height: 240px; } .frame { height: 70vh; } }
+</style>
+</head>
+<body>
+<header><h1>Symulacja banerów</h1><p>Strona główna tak, jak wyglądałaby w wybranym dniu. Wybierz święto z listy.</p></header>
+<div class="wrap">
+  <nav id="lista" aria-label="Święta"></nav>
+  <div class="view">
+    <div class="bar">
+      <button type="button" id="komp" aria-pressed="true">Komputer</button>
+      <button type="button" id="tel" aria-pressed="false">Telefon</button>
+      <a id="nowa" href="#" target="_blank" rel="noopener">Otwórz w nowej karcie ↗</a>
+    </div>
+    <div class="frame" id="ramka"><iframe id="okno" title="Podgląd strony głównej"></iframe></div>
+  </div>
+</div>
+<script>
+  var dni = [
+    ['2027-01-20', 'Zwykły dzień'], ['2026-11-30', 'Roraty – 1. tydzień Adwentu'], ['2026-12-08', 'Niepokalane Poczęcie'],
+    ['2026-12-25', 'Boże Narodzenie'], ['2027-01-06', 'Trzech Króli'], ['2027-02-02', 'Ofiarowanie Pańskie'],
+    ['2027-03-01', 'Wielki Post'], ['2027-03-19', 'Św. Józef'], ['2027-03-21', 'Niedziela Palmowa'],
+    ['2027-03-26', 'Wielki Piątek'], ['2027-03-28', 'Zmartwychwstanie'], ['2027-03-31', 'Oktawa Wielkanocy'],
+    ['2027-04-04', 'Niedziela Miłosierdzia'], ['2027-05-03', 'NMP Królowej Polski'], ['2027-05-09', 'Wniebowstąpienie'],
+    ['2027-05-16', 'Zesłanie Ducha Świętego'], ['2027-05-23', 'Odpust – Trójca Święta'], ['2027-05-27', 'Boże Ciało'],
+    ['2027-06-04', 'Serce Pana Jezusa'], ['2027-06-05', 'Niepokalane Serce Maryi'], ['2028-05-22', 'Św. Rita'],
+    ['2027-08-15', 'Wniebowzięcie NMP'], ['2027-08-26', 'MB Częstochowska'], ['2027-10-07', 'NMP Różańcowa'],
+    ['2027-10-22', 'Św. Jan Paweł II'], ['2027-11-01', 'Wszystkich Świętych'], ['2027-11-21', 'Chrystus Król']
+  ];
+  var lista = document.getElementById('lista'), okno = document.getElementById('okno'), nowa = document.getElementById('nowa');
+  function pokaz(i) {
+    var url = 'index.html?data=' + dni[i][0];
+    okno.src = url; nowa.href = url;
+    [].forEach.call(lista.children, function (b, j) { b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+  }
+  dni.forEach(function (d, i) {
+    var b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = '<span>' + d[1] + '</span><small>' + d[0].split('-').reverse().join('.') + '</small>';
+    b.onclick = function () { pokaz(i); };
+    lista.appendChild(b);
+  });
+  function tryb(tel) {
+    document.getElementById('ramka').classList.toggle('phone', tel);
+    document.getElementById('tel').setAttribute('aria-pressed', tel); document.getElementById('komp').setAttribute('aria-pressed', !tel);
+  }
+  document.getElementById('tel').onclick = function () { tryb(true); };
+  document.getElementById('komp').onclick = function () { tryb(false); };
+  pokaz(1);
+</script>
+</body>
+</html>
