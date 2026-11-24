@@ -1,5 +1,5 @@
 {
-  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
+  "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: adwent (dni od I niedzieli Adwentu, np. -7 Chrystusa Króla; Boże Narodzenie wyżej na liście kończy Adwent 23.12), stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
   "okresy": [
     {
       "nazwa": "Objawienie Pańskie (Trzech Króli)",
@@ -228,6 +228,26 @@
       "zdjecie": "/img/baner/niepokalane.jpg",
       "opis": "Niepokalane Poczęcie Najświętszej Maryi Panny – obraz",
       "pozycja": "50% 30%"
+    },
+    {
+      "nazwa": "Chrystusa Króla Wszechświata (ostatnia niedziela roku liturgicznego)",
+      "rodzaj": "adwent",
+      "dni": -7,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/chrystus-krol.jpg",
+      "opis": "Chrystus Król na tronie wśród aniołów",
+      "pozycja": "50% 35%"
+    },
+    {
+      "nazwa": "Adwent – roraty (od I niedzieli Adwentu do 23 grudnia)",
+      "rodzaj": "adwent",
+      "dni": 0,
+      "przed": 0,
+      "po": 26,
+      "zdjecie": "/img/baner/roraty.jpg",
+      "opis": "Lampion roratni w śniegu pod gwiazdą",
+      "pozycja": "62% 60%"
     }
   ]
 }

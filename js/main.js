@@ -1241,6 +1241,15 @@
       var t = new Date(y, today.getMonth(), today.getDate());
       function md(s, year) { var p = String(s || '').split('-'); return p.length === 2 ? new Date(year, +p[0] - 1, +p[1]) : null; }
       function active(o) {
+        if (o.rodzaj === 'adwent') {
+          // dni = przesunięcie względem I niedzieli Adwentu (niedziela 27.11–3.12; -7 = Chrystusa Króla)
+          for (var ay = y - 1; ay <= y; ay++) {
+            var xmas = new Date(ay, 11, 25), adv = addDays(xmas, -((xmas.getDay() + 6) % 7 + 1) - 21);
+            var ab = addDays(adv, +o.dni || 0);
+            if (t >= addDays(ab, -(+o.przed || 0)) && t <= addDays(ab, +o.po || 0)) return true;
+          }
+          return false;
+        }
         if (o.rodzaj === 'wielkanoc' || o.rodzaj === 'trojca') {
           for (var yy = y - 1; yy <= y; yy++) {
             // dni = przesunięcie względem Niedzieli Zmartwychwstania (np. 56 = Trójca Święta, 60 = Boże Ciało)
