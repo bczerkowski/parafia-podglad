@@ -46,15 +46,19 @@
 </div>
 <script>
   var dni = [
-    ['2027-01-20', 'Zwykły dzień'], ['2026-11-30', 'Roraty – 1. tydzień Adwentu'], ['2026-12-08', 'Niepokalane Poczęcie'],
-    ['2026-12-25', 'Boże Narodzenie'], ['2027-01-06', 'Trzech Króli'], ['2027-02-02', 'Ofiarowanie Pańskie'], ['2027-02-05', 'Pierwszy Piątek'], ['2027-02-06', 'Pierwsza Sobota'],
-    ['2027-03-01', 'Wielki Post'], ['2027-02-14', 'Gorzkie Żale (niedziela Postu)'], ['2027-02-19', 'Droga Krzyżowa (piątek Postu)'], ['2027-03-19', 'Św. Józef'], ['2027-03-21', 'Niedziela Palmowa'],
-    ['2027-03-26', 'Wielki Piątek'], ['2027-03-27', 'Wielka Sobota'], ['2027-03-28', 'Zmartwychwstanie'], ['2027-03-31', 'Oktawa Wielkanocy'],
-    ['2027-04-04', 'Niedziela Miłosierdzia'], ['2027-05-03', 'NMP Królowej Polski'], ['2027-05-09', 'Wniebowstąpienie'],
-    ['2027-05-16', 'Zesłanie Ducha Świętego'], ['2027-05-23', 'Odpust – Trójca Święta'], ['2027-05-27', 'Boże Ciało'],
-    ['2027-06-04', 'Serce Pana Jezusa'], ['2027-06-05', 'Niepokalane Serce Maryi'], ['2028-05-22', 'Św. Rita'],
-    ['2027-08-15', 'Wniebowzięcie NMP'], ['2027-08-26', 'MB Częstochowska'], ['2027-10-07', 'NMP Różańcowa'],
-    ['2027-10-22', 'Św. Jan Paweł II'], ['2027-11-01', 'Wszystkich Świętych'], ['2027-11-21', 'Chrystus Król']
+    ['2027-01-20', 'Zwykły dzień (bez święta)'],
+    ['2026-11-30', 'Roraty – 1. tydzień Adwentu'], ['2026-12-08', 'Niepokalane Poczęcie NMP'],
+    ['2026-12-24', 'Wigilia – okres Bożego Narodzenia'], ['2026-12-25', 'Boże Narodzenie'], ['2026-12-26', 'Św. Szczepan'], ['2026-12-27', 'Święta Rodzina'],
+    ['2027-01-06', 'Objawienie Pańskie'], ['2027-02-02', 'Ofiarowanie Pańskie'], ['2027-02-05', 'Pierwszy Piątek Miesiąca'], ['2027-02-06', 'Pierwsza Sobota Miesiąca'],
+    ['2027-02-10', 'Środa Popielcowa'], ['2027-02-11', 'Wielki Post (dzień powszedni)'], ['2027-02-12', 'Droga Krzyżowa (piątek Postu)'], ['2027-02-14', 'Gorzkie Żale (niedziela Postu)'],
+    ['2027-03-19', 'Św. Józef'], ['2027-03-21', 'Niedziela Palmowa'], ['2027-03-25', 'Wielki Czwartek'], ['2027-03-26', 'Wielki Piątek'], ['2027-03-27', 'Wielka Sobota'],
+    ['2027-03-28', 'Zmartwychwstanie Pańskie'], ['2027-03-29', 'Poniedziałek Wielkanocny'], ['2027-03-31', 'Oktawa Wielkanocy'], ['2027-04-04', 'Niedziela Miłosierdzia'],
+    ['2027-04-23', 'Św. Wojciech'], ['2027-05-03', 'NMP Królowej Polski'], ['2027-05-08', 'Św. Stanisław'], ['2027-05-09', 'Wniebowstąpienie Pańskie'],
+    ['2027-05-16', 'Zesłanie Ducha Świętego'], ['2027-05-20', 'Chrystus Najwyższy Kapłan'], ['2027-05-21', 'Przed odpustem'], ['2027-05-22', 'Św. Rita'],
+    ['2027-05-23', 'Odpust – Trójca Święta'], ['2027-05-27', 'Boże Ciało'], ['2027-06-04', 'Najświętsze Serce Pana Jezusa'], ['2027-06-05', 'Niepokalane Serce Maryi'],
+    ['2027-08-06', 'Przemienienie Pańskie'], ['2027-08-15', 'Wniebowzięcie NMP'], ['2027-08-26', 'MB Częstochowska'], ['2027-09-14', 'Podwyższenie Krzyża'],
+    ['2027-09-18', 'Św. Stanisław Kostka'], ['2027-09-29', 'Świętych Archaniołów'], ['2027-10-07', 'NMP Różańcowa'], ['2027-10-22', 'Św. Jan Paweł II'],
+    ['2027-11-01', 'Wszystkich Świętych'], ['2027-11-02', 'Dzień Zaduszny'], ['2027-11-21', 'Chrystus Król']
   ];
   var lista = document.getElementById('lista'), okno = document.getElementById('okno'), nowa = document.getElementById('nowa');
   function pokaz(i) {

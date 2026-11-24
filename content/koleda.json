@@ -1,8 +1,8 @@
 {
-  "_instrukcja": "Kolęda (wizyta duszpasterska). Każdy dzień: data (RRRR-MM-DD), godz (np. „od 16:00”), ksiadz (opcjonalnie), ulice (lista: ulica z numerami, np. „Krzycka 1–20”), uwaga (opcjonalnie). Pasek na stronie głównej i pozycja „Kolęda” w menu są widoczne od pasekOd do pasekDo (RRRR-MM-DD).",
+  "_instrukcja": "Kolęda (wizyta duszpasterska). Każdy dzień: data (RRRR-MM-DD), godz (np. „od 16:00”), ksiadz (opcjonalnie), ulice (lista: ulica z numerami, np. „Krzycka 1–20”), uwaga (opcjonalnie). Pasek na stronie głównej i pozycja „Kolęda” w menu są widoczne co roku od pasekOd do pasekDo (MM-DD, np. 11-22 i 02-02). Rok w tytule zmienia się sam; dni z poprzedniego sezonu są pomijane.",
   "tytul": "Kolęda 2026/2027",
-  "pasekOd": "2026-11-22",
-  "pasekDo": "2027-02-02",
+  "pasekOd": "11-22",
+  "pasekDo": "02-02",
   "wstep": "Duszpasterze odwiedzą rodziny naszej parafii z błogosławieństwem na nowy rok. Prosimy o przygotowanie stołu przykrytego białym obrusem, krzyża, świec, wody święconej i kropidła.",
   "uwagi": [
     "Odwiedziny rozpoczynają się zwykle po południu – godzinę podajemy przy każdym dniu.",

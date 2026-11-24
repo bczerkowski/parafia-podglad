@@ -1250,14 +1250,17 @@
   var elKol = $('#koleda'), elKolPasek = $('#koleda-pasek');
   if (elKol || elKolPasek) {
     loadOptional('koleda', { dni: [] }).then(function (k) {
-      var dni = (k.dni || []).filter(function (d) { return d.data; }).sort(function (a, b) { return a.data < b.data ? -1 : 1; });
+      // sezon kolędowy: od sierpnia do lipca (listopad 2026 → sezon 2026/2027); dni z poprzednich sezonów są pomijane
+      var rokK = warsawNow().getMonth() < 6 ? warsawNow().getFullYear() - 1 : warsawNow().getFullYear();
+      var tytulK = String(k.tytul || 'Kolęda').replace(/\d{4}\s*\/\s*\d{4}/, rokK + '/' + (rokK + 1));
+      var dni = (k.dni || []).filter(function (d) { return d.data && d.data >= rokK + '-08-01' && d.data <= (rokK + 1) + '-07-31'; }).sort(function (a, b) { return a.data < b.data ? -1 : 1; });
       var dzis = isoDate(warsawNow());
       function etykieta(d) { var x = parseDate(d.data); return cap(DNI[x.getDay()]) + ', ' + x.getDate() + ' ' + MIES[x.getMonth()]; }
       var norm = function (s) { return String(s).toLowerCase().replace(/^(ul\.|al\.|pl\.|os\.)\s*/, '').replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; }); };
       // okres widoczności: pasekOd–pasekDo; bez nich – od 3 tygodni przed pierwszym dniem (albo od 1 grudnia) do 2 lutego / ostatniego dnia
-      var rokK = warsawNow().getMonth() < 6 ? warsawNow().getFullYear() - 1 : warsawNow().getFullYear();
-      var odK = k.pasekOd || (dni.length ? isoDate(addDays(parseDate(dni[0].data), -21)) : rokK + '-12-01');
-      var doK = k.pasekDo || (dni.length && dni[dni.length - 1].data > (rokK + 1) + '-02-02' ? dni[dni.length - 1].data : (rokK + 1) + '-02-02');
+      function sezonData(v, rok) { return /^\d{2}-\d{2}$/.test(v || '') ? rok + '-' + v : v; }
+      var odK = sezonData(k.pasekOd, rokK) || (dni.length ? isoDate(addDays(parseDate(dni[0].data), -21)) : rokK + '-12-01');
+      var doK = sezonData(k.pasekDo, k.pasekDo && +String(k.pasekDo).slice(0, 2) > 7 && String(k.pasekDo).length === 5 ? rokK : rokK + 1) || (dni.length && dni[dni.length - 1].data > (rokK + 1) + '-02-02' ? dni[dni.length - 1].data : (rokK + 1) + '-02-02');
       var sezon = dzis >= odK && dzis <= doK;
       if (sezon) $$('.nav__koleda').forEach(function (e) { e.hidden = false; });
       function szukaj(v) {
@@ -1277,7 +1280,7 @@
           : nast ? 'Najbliższa kolęda: ' + esc(etykieta(nast)) + ' – ' + esc((nast.ulice || []).join(', '))
           : 'Dziękujemy za przyjęcie duszpasterzy w Waszych domach.';
         elKolPasek.innerHTML = '<section class="koleda-pasek" aria-label="Kolęda"><div class="wrap">' +
-          '<div class="koleda-pasek__tekst"><h2>' + esc(k.tytul || 'Kolęda') + '</h2><p>' + info + '</p></div>' +
+          '<div class="koleda-pasek__tekst"><h2>' + esc(tytulK) + '</h2><p>' + info + '</p></div>' +
           (dni.length ? '<form class="koleda-pasek__szukaj" role="search" action="koleda.html"><label for="koleda-pq">Kiedy kolęda na mojej ulicy?</label>' +
             '<div><input id="koleda-pq" name="ulica" type="search" autocomplete="off" placeholder="Wpisz ulicę, np. Krzycka">' +
             '<a class="btn btn--gold btn--sm" href="koleda.html">Cały plan →</a></div><p class="koleda-pasek__wynik" aria-live="polite"></p></form>'
@@ -1297,7 +1300,7 @@
         }
       }
       if (!elKol) return;
-      $$('[data-koleda-tytul]').forEach(function (e) { e.textContent = k.tytul || 'Kolęda'; });
+      $$('[data-koleda-tytul]').forEach(function (e) { e.textContent = tytulK; });
       var html = (k.wstep ? '<p class="lead koleda-intro">' + esc(k.wstep) + '</p>' : '');
       if (!dni.length) {
         elKol.innerHTML = html + '<p class="note"><span>Plan kolędy opublikujemy wkrótce – będzie też w ogłoszeniach parafialnych.</span></p>';
