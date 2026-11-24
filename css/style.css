@@ -1221,3 +1221,25 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
 .chapel-photos img { width: 100%; height: auto; border-radius: var(--radius-sm, 8px); }
 .chapel-photos figcaption { font-size: .85rem; color: var(--muted); margin-top: 6px; line-height: 1.4; }
 @media (max-width: 560px) { .chapel-photos { grid-template-columns: 1fr; } }
+
+/* Kolęda */
+.koleda-intro { margin-bottom: 18px; }
+.koleda-search { background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: var(--radius); padding: 16px 18px; margin: 0 0 22px; box-shadow: var(--shadow); }
+.koleda-search label { display: block; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.koleda-search input { width: 100%; font: inherit; font-size: 1.1rem; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; }
+.koleda-search__wynik { margin: 10px 0 0; font-size: 1.05rem; }
+.koleda-search__wynik b { color: var(--navy); }
+.koleda-dni { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.koleda-dzien { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; }
+.koleda-dzien__data { font-family: var(--serif); font-size: 1.3rem; color: var(--navy); line-height: 1.15; }
+.koleda-dzien__data small { display: block; font-family: var(--sans); font-size: .85rem; color: var(--gold-text); font-weight: 700; margin-top: 2px; }
+.koleda-dzien ul { margin: 0; padding-left: 18px; }
+.koleda-dzien__uwaga { grid-column: 2; color: var(--muted); font-size: .9rem; margin: 0; }
+.koleda-dzien.is-dzis { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold-soft); }
+.koleda-dzien.is-minione { opacity: .55; }
+.koleda-dzien.is-traf { border-color: var(--navy); box-shadow: 0 0 0 2px var(--navy); }
+@media (max-width: 560px) { .koleda-dzien { grid-template-columns: 1fr; } .koleda-dzien__uwaga { grid-column: 1; } }
+.koleda-pasek { background: var(--navy); color: #f3ead6; }
+.koleda-pasek .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px 20px; flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+.koleda-pasek p { margin: 0; font-size: 1.05rem; }
+.koleda-pasek b { font-family: var(--serif); font-size: 1.35rem; color: #e2c57c; font-weight: 600; margin-right: 6px; }

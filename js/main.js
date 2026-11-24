@@ -1246,6 +1246,57 @@
     });
   }
 
+  /* ---------- Kolęda (content/koleda.json): strona z planem + pasek na stronie głównej ---------- */
+  var elKol = $('#koleda'), elKolPasek = $('#koleda-pasek');
+  if (elKol || elKolPasek) {
+    loadOptional('koleda', { dni: [] }).then(function (k) {
+      var dni = (k.dni || []).filter(function (d) { return d.data; }).sort(function (a, b) { return a.data < b.data ? -1 : 1; });
+      var dzis = isoDate(warsawNow());
+      function etykieta(d) { var x = parseDate(d.data); return cap(DNI[x.getDay()]) + ', ' + x.getDate() + ' ' + MIES[x.getMonth()]; }
+      var norm = function (s) { return String(s).toLowerCase().replace(/^(ul\.|al\.|pl\.|os\.)\s*/, '').replace(/[ąćęłńóśźż]/g, function (c) { return 'acelnoszz'['ąćęłńóśźż'.indexOf(c)]; }); };
+      if (elKolPasek && dni.length) {
+        var pierwszy = parseDate(dni[0].data), ostatni = dni[dni.length - 1].data, t = warsawNow();
+        if (t >= addDays(pierwszy, -21) && dzis <= ostatni) {
+          var dzisiaj = dni.filter(function (d) { return d.data === dzis; })[0];
+          elKolPasek.innerHTML = '<div class="koleda-pasek"><div class="wrap"><p><b>' + esc(k.tytul || 'Kolęda') + '</b>' +
+            (dzisiaj ? 'Dziś odwiedzamy: ' + esc(dzisiaj.ulice.join(', ')) : 'Sprawdź, kiedy ksiądz odwiedzi Twoją ulicę.') + '</p>' +
+            '<a class="btn btn--gold btn--sm" href="koleda.html">Plan kolędy →</a></div></div>';
+          elKolPasek.hidden = false;
+        }
+      }
+      if (!elKol) return;
+      $$('[data-koleda-tytul]').forEach(function (e) { e.textContent = k.tytul || 'Kolęda'; });
+      var html = (k.wstep ? '<p class="lead koleda-intro">' + esc(k.wstep) + '</p>' : '');
+      if (!dni.length) {
+        elKol.innerHTML = html + '<p class="note"><span>Plan kolędy opublikujemy wkrótce – będzie też w ogłoszeniach parafialnych.</span></p>';
+        return;
+      }
+      html += '<div class="koleda-search"><label for="koleda-q">Kiedy kolęda na mojej ulicy?</label>' +
+        '<input id="koleda-q" type="search" autocomplete="off" placeholder="Wpisz nazwę ulicy, np. Krzycka"><p class="koleda-search__wynik" id="koleda-wynik" aria-live="polite"></p></div>';
+      html += '<ol class="koleda-dni">' + dni.map(function (d, i) {
+        var cls = d.data === dzis ? ' is-dzis' : (d.data < dzis ? ' is-minione' : '');
+        return '<li class="koleda-dzien' + cls + '" data-i="' + i + '"><div class="koleda-dzien__data">' + esc(etykieta(d)) +
+          '<small>' + (d.data === dzis ? 'DZIŚ · ' : '') + esc(d.godz || '') + (d.ksiadz ? ' · ' + esc(d.ksiadz) : '') + '</small></div>' +
+          '<ul>' + (d.ulice || []).map(function (u) { return '<li>' + esc(u) + '</li>'; }).join('') + '</ul>' +
+          (d.uwaga ? '<p class="koleda-dzien__uwaga">' + esc(d.uwaga) + '</p>' : '') + '</li>';
+      }).join('') + '</ol>';
+      if (k.uwagi && k.uwagi.length) html += '<ul class="checklist" style="margin-top:22px">' + k.uwagi.map(function (u) { return '<li>' + esc(u) + '</li>'; }).join('') + '</ul>';
+      elKol.innerHTML = html;
+      var q = $('#koleda-q'), wynik = $('#koleda-wynik');
+      q.addEventListener('input', function () {
+        var v = norm(q.value.trim());
+        $$('.koleda-dzien').forEach(function (li) { li.classList.remove('is-traf'); });
+        if (v.length < 3) { wynik.textContent = ''; return; }
+        var traf = [];
+        dni.forEach(function (d, i) { (d.ulice || []).forEach(function (u) { if (norm(u).indexOf(v) === 0 || norm(u).indexOf(' ' + v) >= 0) traf.push({ d: d, i: i, u: u }); }); });
+        if (!traf.length) { wynik.innerHTML = 'Nie znaleziono tej ulicy w planie kolędy. W razie wątpliwości zadzwoń do kancelarii.'; return; }
+        wynik.innerHTML = traf.map(function (x) { return '<b>' + esc(x.u) + '</b> – ' + esc(etykieta(x.d)) + (x.d.godz ? ', ' + esc(x.d.godz) : ''); }).join('<br>');
+        traf.forEach(function (x) { var li = $('.koleda-dzien[data-i="' + x.i + '"]'); if (li) li.classList.add('is-traf'); });
+        var first = $('.koleda-dzien[data-i="' + traf[0].i + '"]'); if (first && traf.length === 1) first.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      });
+    });
+  }
+
   /* ---------- Baner strony głównej: zdjęcie na wielkie święta (content/baner.json) ---------- */
   // napis i cytat w banerze zostają – zmienia się tylko zdjęcie w tle; podgląd: ?swieto=1, 2, …
   var heroBg = $('.hero__bg');
