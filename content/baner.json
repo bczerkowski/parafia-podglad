@@ -1,17 +1,178 @@
 {
   "_instrukcja": "Zdjęcie w banerze strony głównej na wielkie święta. Napis i cytat w banerze zostają, zmienia się tylko zdjęcie w tle. Gdy terminy się pokrywają, wygrywa okres wyżej na liście. rodzaj: stala (od–do w formacie MM-DD, może przechodzić przez Nowy Rok) albo wielkanoc (termin liczony co roku od Wielkanocy: dni = przesunięcie względem Niedzieli Zmartwychwstania, np. 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało; przed/po = ile dni przed i po). Okres bez zdjęcia jest pomijany. Podgląd na dowolny dzień: dopisz do adresu strony ?swieto=1 (numer okresu z listy).",
   "okresy": [
-    { "nazwa": "Objawienie Pańskie (Trzech Króli)", "rodzaj": "stala", "od": "01-06", "do": "01-06", "zdjecie": "/img/baner/trzech-kroli.jpg", "opis": "Trzej Królowie podążający za gwiazdą – witraż", "pozycja": "60% 45%" },
-    { "nazwa": "Boże Narodzenie (od Wigilii do 5 stycznia)", "rodzaj": "stala", "od": "12-24", "do": "01-05", "zdjecie": "/img/baner/boze-narodzenie.jpg", "opis": "Narodzenie Pańskie – Święta Rodzina w stajence", "pozycja": "88% 60%" },
-    { "nazwa": "Ofiarowanie Pańskie (Matki Bożej Gromnicznej)", "rodzaj": "stala", "od": "02-02", "do": "02-02", "zdjecie": "/img/baner/ofiarowanie.jpg", "opis": "Ofiarowanie Pańskie – ikona", "pozycja": "70% 35%" },
-    { "nazwa": "Wielkanoc (od Niedzieli Zmartwychwstania do Niedzieli Miłosierdzia)", "rodzaj": "wielkanoc", "dni": 0, "przed": 0, "po": 7, "zdjecie": "/img/baner/wielkanoc.jpg", "opis": "Pusty grób i krzyż w blasku poranka – Zmartwychwstanie", "pozycja": "50% 50%" },
-    { "nazwa": "Wniebowstąpienie Pańskie", "rodzaj": "wielkanoc", "dni": 42, "przed": 0, "po": 0, "zdjecie": "/img/baner/wniebowstapienie.jpg", "opis": "Wniebowstąpienie Pańskie", "pozycja": "50% 25%" },
-    { "nazwa": "Zesłanie Ducha Świętego", "rodzaj": "wielkanoc", "dni": 49, "przed": 0, "po": 0, "zdjecie": "/img/baner/zeslanie.jpg", "opis": "Gołębica – Duch Święty", "pozycja": "55% 45%" },
-    { "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny", "rodzaj": "wielkanoc", "dni": 56, "przed": 3, "po": 0, "zdjecie": "/img/baner/trojca.jpg", "opis": "Trójca Święta – fresk", "pozycja": "50% 30%" },
-    { "nazwa": "Boże Ciało (do niedzieli po uroczystości)", "rodzaj": "wielkanoc", "dni": 60, "przed": 0, "po": 3, "zdjecie": "/img/baner/boze-cialo.jpg", "opis": "Monstrancja z Najświętszym Sakramentem na ołtarzu", "pozycja": "35% 45%" },
-    { "nazwa": "Wniebowzięcie Najświętszej Maryi Panny", "rodzaj": "stala", "od": "08-15", "do": "08-15", "zdjecie": "/img/baner/wniebowziecie.jpg", "opis": "Wniebowzięcie Najświętszej Maryi Panny", "pozycja": "50% 30%" },
-    { "nazwa": "Najświętsza Maryja Panna Częstochowska", "rodzaj": "stala", "od": "08-26", "do": "08-26", "zdjecie": "/img/baner/mb-czestochowska.jpg", "opis": "Obraz Matki Bożej Częstochowskiej w ołtarzu", "pozycja": "50% 40%" },
-    { "nazwa": "Wszystkich Świętych i Dzień Zaduszny", "rodzaj": "stala", "od": "11-01", "do": "11-02", "zdjecie": "/img/baner/wszystkich-swietych.jpg", "opis": "Wszyscy Święci – witraż", "pozycja": "50% 40%" },
-    { "nazwa": "Niepokalane Poczęcie Najświętszej Maryi Panny", "rodzaj": "stala", "od": "12-08", "do": "12-08", "zdjecie": "/img/baner/niepokalane.jpg", "opis": "Niepokalane Poczęcie Najświętszej Maryi Panny – obraz", "pozycja": "50% 30%" }
+    {
+      "nazwa": "Objawienie Pańskie (Trzech Króli)",
+      "rodzaj": "stala",
+      "od": "01-06",
+      "do": "01-06",
+      "zdjecie": "/img/baner/trzech-kroli.jpg",
+      "opis": "Trzej Królowie podążający za gwiazdą – witraż",
+      "pozycja": "60% 45%"
+    },
+    {
+      "nazwa": "Boże Narodzenie (od Wigilii do 5 stycznia)",
+      "rodzaj": "stala",
+      "od": "12-24",
+      "do": "01-05",
+      "zdjecie": "/img/baner/boze-narodzenie.jpg",
+      "opis": "Narodzenie Pańskie – Święta Rodzina w stajence",
+      "pozycja": "88% 60%"
+    },
+    {
+      "nazwa": "Ofiarowanie Pańskie (Matki Bożej Gromnicznej)",
+      "rodzaj": "stala",
+      "od": "02-02",
+      "do": "02-02",
+      "zdjecie": "/img/baner/ofiarowanie.jpg",
+      "opis": "Ofiarowanie Pańskie – ikona",
+      "pozycja": "70% 35%"
+    },
+    {
+      "nazwa": "Wielki Post (od Środy Popielcowej do soboty przed Niedzielą Palmową)",
+      "rodzaj": "wielkanoc",
+      "dni": -46,
+      "przed": 0,
+      "po": 38,
+      "zdjecie": "/img/baner/popielec.jpg",
+      "opis": "Krzyż z popiołu – Środa Popielcowa i Wielki Post",
+      "pozycja": "40% 50%"
+    },
+    {
+      "nazwa": "Wielki Tydzień (od Niedzieli Palmowej do Wielkiej Środy)",
+      "rodzaj": "wielkanoc",
+      "dni": -7,
+      "przed": 0,
+      "po": 3,
+      "zdjecie": "/img/baner/palmowa.jpg",
+      "opis": "Chrystus z palmą – Niedziela Palmowa",
+      "pozycja": "60% 30%"
+    },
+    {
+      "nazwa": "Triduum Paschalne (Wielki Czwartek – Wielka Sobota)",
+      "rodzaj": "wielkanoc",
+      "dni": -3,
+      "przed": 0,
+      "po": 2,
+      "zdjecie": "/img/baner/wielki-piatek.jpg",
+      "opis": "Korona cierniowa i gwoździe – Męka Pańska",
+      "pozycja": "45% 55%"
+    },
+    {
+      "nazwa": "Zmartwychwstanie Pańskie (Niedziela i Poniedziałek Wielkanocny)",
+      "rodzaj": "wielkanoc",
+      "dni": 0,
+      "przed": 0,
+      "po": 1,
+      "zdjecie": "/img/baner/zmartwychwstanie.jpg",
+      "opis": "Pusty grób w blasku poranka – Zmartwychwstanie",
+      "pozycja": "65% 40%"
+    },
+    {
+      "nazwa": "Oktawa Wielkanocy (wtorek – sobota)",
+      "rodzaj": "wielkanoc",
+      "dni": 2,
+      "przed": 0,
+      "po": 4,
+      "zdjecie": "/img/baner/wielkanoc.jpg",
+      "opis": "Pusty grób i krzyż w blasku poranka – Zmartwychwstanie",
+      "pozycja": "50% 50%"
+    },
+    {
+      "nazwa": "Niedziela Miłosierdzia Bożego",
+      "rodzaj": "wielkanoc",
+      "dni": 7,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/milosierdzie.jpg",
+      "opis": "Jezu, ufam Tobie – obraz Miłosierdzia Bożego",
+      "pozycja": "50% 30%"
+    },
+    {
+      "nazwa": "Wniebowstąpienie Pańskie",
+      "rodzaj": "wielkanoc",
+      "dni": 42,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/wniebowstapienie.jpg",
+      "opis": "Wniebowstąpienie Pańskie",
+      "pozycja": "50% 25%"
+    },
+    {
+      "nazwa": "Zesłanie Ducha Świętego",
+      "rodzaj": "wielkanoc",
+      "dni": 49,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/zeslanie.jpg",
+      "opis": "Gołębica – Duch Święty",
+      "pozycja": "55% 45%"
+    },
+    {
+      "nazwa": "Uroczystość Najświętszej Trójcy – odpust parafialny",
+      "rodzaj": "wielkanoc",
+      "dni": 56,
+      "przed": 3,
+      "po": 0,
+      "zdjecie": "/img/baner/trojca.jpg",
+      "opis": "Trójca Święta – fresk",
+      "pozycja": "50% 30%"
+    },
+    {
+      "nazwa": "Boże Ciało (do niedzieli po uroczystości)",
+      "rodzaj": "wielkanoc",
+      "dni": 60,
+      "przed": 0,
+      "po": 3,
+      "zdjecie": "/img/baner/boze-cialo.jpg",
+      "opis": "Monstrancja z Najświętszym Sakramentem na ołtarzu",
+      "pozycja": "35% 45%"
+    },
+    {
+      "nazwa": "Najświętszego Serca Pana Jezusa (piątek po Bożym Ciele)",
+      "rodzaj": "wielkanoc",
+      "dni": 68,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/serce-jezusa.jpg",
+      "opis": "Najświętsze Serce Pana Jezusa",
+      "pozycja": "50% 30%"
+    },
+    {
+      "nazwa": "Wniebowzięcie Najświętszej Maryi Panny",
+      "rodzaj": "stala",
+      "od": "08-15",
+      "do": "08-15",
+      "zdjecie": "/img/baner/wniebowziecie.jpg",
+      "opis": "Wniebowzięcie Najświętszej Maryi Panny",
+      "pozycja": "50% 30%"
+    },
+    {
+      "nazwa": "Najświętsza Maryja Panna Częstochowska",
+      "rodzaj": "stala",
+      "od": "08-26",
+      "do": "08-26",
+      "zdjecie": "/img/baner/mb-czestochowska.jpg",
+      "opis": "Obraz Matki Bożej Częstochowskiej w ołtarzu",
+      "pozycja": "50% 40%"
+    },
+    {
+      "nazwa": "Wszystkich Świętych i Dzień Zaduszny",
+      "rodzaj": "stala",
+      "od": "11-01",
+      "do": "11-02",
+      "zdjecie": "/img/baner/wszystkich-swietych.jpg",
+      "opis": "Wszyscy Święci – witraż",
+      "pozycja": "50% 40%"
+    },
+    {
+      "nazwa": "Niepokalane Poczęcie Najświętszej Maryi Panny",
+      "rodzaj": "stala",
+      "od": "12-08",
+      "do": "12-08",
+      "zdjecie": "/img/baner/niepokalane.jpg",
+      "opis": "Niepokalane Poczęcie Najświętszej Maryi Panny – obraz",
+      "pozycja": "50% 30%"
+    }
   ]
 }
