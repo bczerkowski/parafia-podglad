@@ -180,6 +180,8 @@
         else {
           list = massesFor(d, base).list.map(function (m) { return { godz: m.godz, uwaga: m.uwaga }; });
           if (r.zamien) list.forEach(function (m) { if (r.zamien[m.godz]) m.godz = r.zamien[m.godz]; });
+          // usun: ["18:30"] – tej Mszy tego dnia nie ma
+          if (r.usun) list = list.filter(function (m) { return r.usun.indexOf(m.godz) < 0; });
           // dodaj: ["9:00"] albo [{ godz: "24:00", uwaga: "Pasterka" }]
           (r.dodaj || []).forEach(function (g) { var o = typeof g === 'string' ? { godz: g } : g; if (!list.some(function (m) { return m.godz === o.godz; })) list.push({ godz: o.godz, uwaga: o.uwaga }); });
         }
