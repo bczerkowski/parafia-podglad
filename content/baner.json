@@ -33,7 +33,18 @@
       "podpisDnia": "Święto św. Szczepana, pierwszego męczennika"
     },
     {
-      "nazwa": "Boże Narodzenie (od Wigilii do 5 stycznia)",
+      "nazwa": "Wigilia Bożego Narodzenia",
+      "rodzaj": "stala",
+      "od": "12-24",
+      "do": "12-24",
+      "zdjecie": "/img/baner/wigilia-1dccd8.jpg",
+      "opis": "Pasterze z owcami pod gwiazdą betlejemską, w dole światła Betlejem",
+      "pozycja": "75% 45%",
+      "podpis": "Wigilia Bożego Narodzenia – zapraszamy na Pasterkę o 24:00",
+      "podpisDnia": "Wigilia Bożego Narodzenia – zapraszamy na Pasterkę o 24:00"
+    },
+    {
+      "nazwa": "Boże Narodzenie (od 25 grudnia do 5 stycznia)",
       "rodzaj": "stala",
       "od": "12-24",
       "do": "01-05",
