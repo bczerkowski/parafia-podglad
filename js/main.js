@@ -347,6 +347,7 @@
     if (dom === 13 && m >= 4 && m <= 9) out.push({ t: 'Nabożeństwo fatimskie', h: sun ? 'godz. 17:00' : 'po Mszy św. o 18:30', e: 'maryja' });
     if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30', e: 'roza' });
     if (dom <= 7 && dow === 4) out.push({ t: 'I czwartek, piątek i sobota miesiąca – adoracja Najświętszego Sakramentu i spowiedź', h: '17:00–19:00 (cz–sb)', e: 'monstrancja' });
+    if (dom <= 7 && dow === 6) out.push({ t: 'I sobota miesiąca – nabożeństwo wynagradzające Niepokalanemu Sercu Maryi', h: '', e: 'serce' });
     if (dom <= 7 && sun) out.push({ t: 'Żywy Różaniec – spotkanie i zmiana tajemnic', h: 'godz. 17:00', e: 'rozaniec' });
     if (lent && dow === 5 && d < addDays(e, -2)) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)', e: 'krzyz' });
     if (lent && sun) out.push({ t: 'Gorzkie Żale', h: 'godz. 17:00', e: 'krzyz' });
