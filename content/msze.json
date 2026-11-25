@@ -74,6 +74,20 @@
   "_instrukcjaRegul": "Zmiany powtarzające się co roku – strona sama wylicza je na każdy rok i pokazuje w 'Zmianach w porządku Mszy'. data: MM-DD albo ruchome: 'popielec' albo 'wielkanoc' z polem dni (przesunięcie od Niedzieli Wielkanocnej, np. -3 Wielki Czwartek); zamien: { stara: nowa godzina }; dodaj: [dodatkowe godziny]; msze: [pełna lista godzin]; zNiedzieliNaPoniedzialek: true – gdy święto wypada w niedzielę, reguła dotyczy poniedziałku.",
   "regulyRoczne": [
     {
+      "opis": "Wigilia Bożego Narodzenia",
+      "data": "12-24",
+      "dodaj": [
+        {
+          "godz": "22:00",
+          "uwaga": "Pasterka dla rodzin z dziećmi"
+        },
+        {
+          "godz": "24:00",
+          "uwaga": "Pasterka"
+        }
+      ]
+    },
+    {
       "opis": "Uroczystość Wszystkich Świętych",
       "data": "11-01",
       "zamien": {

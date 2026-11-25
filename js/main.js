@@ -180,7 +180,8 @@
         else {
           list = massesFor(d, base).list.map(function (m) { return { godz: m.godz, uwaga: m.uwaga }; });
           if (r.zamien) list.forEach(function (m) { if (r.zamien[m.godz]) m.godz = r.zamien[m.godz]; });
-          (r.dodaj || []).forEach(function (g) { if (!list.some(function (m) { return m.godz === g; })) list.push({ godz: g }); });
+          // dodaj: ["9:00"] albo [{ godz: "24:00", uwaga: "Pasterka" }]
+          (r.dodaj || []).forEach(function (g) { var o = typeof g === 'string' ? { godz: g } : g; if (!list.some(function (m) { return m.godz === o.godz; })) list.push({ godz: o.godz, uwaga: o.uwaga }); });
         }
         list.sort(function (a, b) { return toMin(a.godz) - toMin(b.godz); });
         list.forEach(function (m) { if (!m.uwaga) delete m.uwaga; });
