@@ -350,9 +350,9 @@
     if (sameDay(d, trinitySunday(d.getFullYear()))) out.push({ t: 'Odpust parafialny – Uroczystość Najświętszej Trójcy', h: 'porządek niedzielny', feast: true, e: 'trojca' });
     if (dow === 3) out.push({ t: 'Nabożeństwo do NMP Nieustającej Pomocy', h: 'po Mszy św. o 18:30', e: 'maryja' });
     if (dom === 13 && m >= 4 && m <= 9) out.push({ t: 'Nabożeństwo fatimskie', h: sun ? 'godz. 17:00' : 'po Mszy św. o 18:30', e: 'maryja' });
-    if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30', e: 'roza' });
+    if (dom === 22) out.push({ t: 'Nabożeństwo do św. Rity z poświęceniem róż', h: (sun ? 'po Mszy św. o 18:00' : 'po Mszy św. o 18:30') + ', kościół górny', e: 'roza' });
     if (dom <= 7 && dow === 4) out.push({ t: 'I czwartek, piątek i sobota miesiąca – adoracja Najświętszego Sakramentu i spowiedź', h: '17:00–19:00 (cz–sb)', e: 'monstrancja' });
-    if (dom <= 7 && dow === 6) out.push({ t: 'Nabożeństwo wynagradzające Niepokalanemu Sercu Maryi (I sobota miesiąca)', h: 'po Mszy św. o 7:30', e: 'serce' });
+    if (dom <= 7 && dow === 6) out.push({ t: 'Nabożeństwo wynagradzające Niepokalanemu Sercu Maryi (I sobota miesiąca)', h: (m === 6 || m === 7) ? 'w wakacje – podczas adoracji od 17:00' : 'po Mszy św. o 7:30', e: 'serce' });
     if (dom <= 7 && sun) out.push({ t: 'Żywy Różaniec – spotkanie i zmiana tajemnic', h: 'godz. 17:00', e: 'rozaniec' });
     if (lent && dow === 5 && d < addDays(e, -2)) out.push({ t: 'Droga Krzyżowa', h: '17:00 (dzieci), 18:00, 19:30 (młodzież)', e: 'krzyz' });
     if (lent && sun) out.push({ t: 'Gorzkie Żale', h: 'godz. 17:00', e: 'krzyz' });
@@ -1369,6 +1369,8 @@
         // dzienTygodnia przy okresie ruchomym: tylko ten dzień tygodnia (np. piątki Wielkiego Postu)
         if (o.rodzaj !== 'pierwszy' && o.dzienTygodnia !== undefined && o.dzienTygodnia !== '' && o.dzienTygodnia !== null && t.getDay() !== +o.dzienTygodnia) return false;
         // pierwszy piątek / pierwsza sobota miesiąca (dzienTygodnia: 5 = piątek, 6 = sobota)
+        // miesiace: [7, 8] – okres tylko w tych miesiącach (np. pierwsza sobota w wakacje)
+        if (o.miesiace && o.miesiace.length && o.miesiace.indexOf(t.getMonth() + 1) < 0) return false;
         if (o.rodzaj === 'pierwszy') return t.getDay() === (+o.dzienTygodnia || 5) && t.getDate() <= 7;
         // Święta Rodzina: niedziela 26–31 grudnia; gdy Boże Narodzenie wypada w niedzielę – 30 grudnia
         if (o.rodzaj === 'swietaRodzina') { if (t.getMonth() !== 11) return false; var xs = new Date(y, 11, 25).getDay(); return xs === 0 ? t.getDate() === 30 : (t.getDay() === 0 && t.getDate() >= 26); }

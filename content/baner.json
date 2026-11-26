@@ -538,6 +538,20 @@
       "podpisDnia": "Pierwszy Piątek Miesiąca"
     },
     {
+      "nazwa": "Pierwsza sobota miesiąca – wakacje (lipiec, sierpień)",
+      "rodzaj": "pierwszy",
+      "dzienTygodnia": 6,
+      "zdjecie": "/img/baner/pierwsza-sobota-3c56a6.jpg",
+      "opis": "Niepokalane Serce Maryi",
+      "pozycja": "62% 18%",
+      "podpis": "Pierwsza Sobota Miesiąca – zapraszamy na Nabożeństwo wynagradzające Niepokalanemu Sercu Maryi podczas adoracji od godz. 17:00",
+      "podpisDnia": "Pierwsza Sobota Miesiąca – zapraszamy na Nabożeństwo wynagradzające Niepokalanemu Sercu Maryi podczas adoracji od godz. 17:00",
+      "miesiace": [
+        7,
+        8
+      ]
+    },
+    {
       "nazwa": "Pierwsza sobota miesiąca – Niepokalane Serce Maryi",
       "rodzaj": "pierwszy",
       "dzienTygodnia": 6,
