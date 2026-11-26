@@ -1290,3 +1290,4 @@ html[data-contrast="high"] .mass-card .time.time--next { background: #000; color
   .koleda-pasek__szukaj { flex: 1 1 100%; }
   .koleda-pasek__szukaj input { width: auto; flex: 1; min-width: 0; }
 }
+.note--kosciol span { font-weight: 650; color: var(--navy); }

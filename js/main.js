@@ -279,9 +279,12 @@
     load('msze').then(function (cfg) {
       var now = warsawNow(), today = massesFor(now, cfg), next = nextMass(cfg, now);
       var nextToday = next && next.offset === 0 && !today.exception ? next : null;
+      // pierwsza informacja pod godzinami: w którym kościele (dolnym / górnym) są Msze
+      var note = function (t, cls) { return t ? '<p class="note' + (cls ? ' ' + cls : '') + '">' + icon('info') + '<span>' + esc(t) + '</span></p>' : ''; };
       if (elSun) elSun.innerHTML = renderTimes(cfg.niedziele, cfg, today.sunday, nextToday) +
-        '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaNiedziele) + '</span></p>';
+        note(cfg.kosciolNiedziele, 'note--kosciol') + note(cfg.uwagaNiedziele);
       if (elWeek) elWeek.innerHTML = renderTimes(cfg.powszednie, cfg, !today.sunday, nextToday) +
+        note(cfg.kosciolPowszednie, 'note--kosciol') +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaPowszednie) + '</span></p>' +
         '<p class="note">' + icon('info') + '<span>' + esc(cfg.uwagaSwieta) + '</span></p>';
       if (elConf) {
