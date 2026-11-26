@@ -173,6 +173,18 @@
       "podpisDnia": "Niedziela Miłosierdzia Bożego"
     },
     {
+      "nazwa": "Niedziela Dobrego Pasterza (IV Niedziela Wielkanocna)",
+      "rodzaj": "wielkanoc",
+      "dni": 21,
+      "przed": 0,
+      "po": 0,
+      "zdjecie": "/img/baner/dobry-pasterz-71e675.jpg",
+      "opis": "Chrystus Dobry Pasterz idzie górską ścieżką, za Nim owca",
+      "pozycja": "70% 40%",
+      "podpis": "IV Niedziela Wielkanocna – Niedziela Dobrego Pasterza",
+      "podpisDnia": "IV Niedziela Wielkanocna – Niedziela Dobrego Pasterza"
+    },
+    {
       "nazwa": "Wniebowstąpienie Pańskie",
       "rodzaj": "wielkanoc",
       "dni": 42,
