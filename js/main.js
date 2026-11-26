@@ -598,6 +598,8 @@
       if (dow === 3) out.push({ t: 'Schola młodzieżowa Cordis – próba', h: 'godz. 19:00, salka parafialna', href: 'wspolnoty.html#cordis' });
       if (dom <= 7 && dow === 4) out.push({ t: 'Stowarzyszenie Krwi Chrystusa', h: 'godz. 17:00, dolny kościół', href: 'wspolnoty.html#krew' });
       if (dom <= 7 && dow === 5) out.push({ t: 'Straż Honorowa NSPJ – czuwanie i adoracja', h: 'godz. 17:00', href: 'wspolnoty.html#straz' });
+      if (dom === 18) out.push({ t: 'Apostolat z Szensztatu – Msza święta', h: 'godzina w ogłoszeniach', href: 'wspolnoty.html#szensztat' });
+      if (dow === 6) out.push({ t: 'Schola dziecięca – próba', h: 'godz. 10:00 (śpiew na Mszy w niedzielę o 10:30)', href: 'wspolnoty.html#inne' });
       return out;
     };
     var seasonsOf = function (y) {
