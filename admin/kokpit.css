@@ -1,0 +1,27 @@
+/* Wygląd pola „Wklej…” w kokpicie */
+.kp-paste { padding: 14px 16px !important; }
+.kp-paste textarea { width: 100%; box-sizing: border-box; font: 15px/1.5 ui-monospace, Consolas, monospace; padding: 10px 12px; border: 2px solid #dfdfe3; border-radius: 6px; resize: vertical; background: #fff; }
+.kp-paste textarea:focus { outline: none; border-color: #3a69c7; }
+.kp-help { margin: 0 0 10px; color: #444; font-size: 14px; line-height: 1.5; }
+.kp-preview { margin-top: 12px; padding: 12px 14px; border: 1px solid #e3d6b5; background: #fbf7ee; border-radius: 6px; max-height: 420px; overflow: auto; font-size: 14px; line-height: 1.45; }
+.kp-ok { margin: 0 0 8px; color: #24522f; }
+.kp-warn { margin: 0 0 10px; padding: 8px 12px; background: #fff3cd; border-left: 4px solid #d39e00; border-radius: 4px; }
+.kp-warn ul { margin: 4px 0 0 18px; padding: 0; }
+.kp-ann { margin: 0; padding-left: 22px; }
+.kp-ann li { margin-bottom: 6px; }
+.kp-ann ul { margin: 4px 0 0 16px; }
+.kp-day { margin: 0 0 10px; padding-top: 6px; border-top: 1px solid #eadfc4; }
+.kp-mass { display: grid; grid-template-columns: 52px 1fr; gap: 8px; margin-top: 4px; }
+.kp-mass span { font-weight: 700; }
+.kp-mass ul { margin: 0; padding-left: 16px; }
+.kp-next { margin: 10px 0 0; font-size: 14px; }
+.kp-clear { margin-left: 6px; border: 1px solid #bbb; background: #fff; border-radius: 4px; padding: 3px 10px; cursor: pointer; }
+
+/* Edytor wizualny sekcji strony */
+.kp-visual { padding: 0 !important; overflow: hidden; }
+.kp-toolbar { display: flex; flex-wrap: wrap; gap: 4px; padding: 6px 8px; background: #f3f3f6; border-bottom: 1px solid #dfdfe3; position: sticky; top: 0; z-index: 2; }
+.kp-tb { border: 1px solid #cfd0d6; background: #fff; border-radius: 4px; padding: 4px 10px; font-size: 13px; cursor: pointer; color: #333; }
+.kp-tb:hover { background: #e8eefb; border-color: #3a69c7; }
+.kp-tb:last-child { margin-left: auto; }
+.kp-frame { display: block; width: 100%; border: 0; min-height: 80px; background: #fff; }
+.kp-code { display: block; width: 100%; box-sizing: border-box; min-height: 360px; border: 0; padding: 10px 12px; font: 13px/1.45 ui-monospace, Consolas, monospace; resize: vertical; }

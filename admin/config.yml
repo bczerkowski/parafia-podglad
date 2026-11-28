@@ -1,0 +1,672 @@
+# Kokpit strony parafii (Decap CMS). Formularze dla plików w content/.
+#
+# Na tym komputerze: uruchom serwer (dart tool/serve.dart) i otwórz http://localhost:8044/admin/
+# – kokpit zapisuje wtedy pliki bezpośrednio w folderze strony (bez logowania).
+#
+# Online (po wyborze hostingu): uzupełnić sekcję „backend” poniżej (repozytorium GitHub parafii
+# + logowanie) – reszta konfiguracji zostaje bez zmian.
+
+locale: pl
+
+local_backend:
+  url: http://localhost:8044/api/v1
+
+backend:
+  name: github
+  repo: bczerkowski/parafia-podglad
+  branch: main
+  commit_messages:
+    update: "Kokpit: zmiana {{collection}} – {{slug}}"
+    uploadMedia: "Kokpit: zdjęcie {{path}}"
+
+media_folder: img/kokpit
+public_folder: /img/kokpit
+
+site_url: https://swtrojca.pl
+display_url: https://swtrojca.pl
+logo:
+  src: img/triquetra.svg
+
+editor:
+  preview: false
+
+# ---------- wspólne pola ----------
+_punkty: &punkty
+  label: Punkty ogłoszeń
+  label_singular: punkt
+  name: punkty
+  widget: list
+  summary: "{{fields.tekst}}"
+  fields:
+    - { label: Treść punktu, name: tekst, widget: text }
+    - label: Lista pod punktem (np. liturgia tygodnia)
+      label_singular: pozycję
+      name: lista
+      widget: list
+      required: false
+      collapsed: false
+      field: { label: Pozycja, name: pozycja, widget: string }
+    - { label: Dopisek pod listą, name: dopisek, widget: text, required: false }
+
+_dni: &dni
+  label: Dni tygodnia
+  label_singular: dzień
+  name: dni
+  widget: list
+  summary: "{{fields.data}} {{fields.nazwa}}"
+  fields:
+    - { label: Data, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+    - { label: Nazwa dnia (święto, uroczystość – opcjonalnie), name: nazwa, widget: string, required: false }
+    - label: Msze
+      label_singular: Mszę
+      name: msze
+      widget: list
+      summary: "{{fields.godz}}"
+      collapsed: false
+      fields:
+        - { label: Godzina, name: godz, widget: string, pattern: ['^\d{1,2}:\d{2}$', 'Wpisz godzinę jak 7:30 albo 18:00'] }
+        - { label: Nagłówek (np. „Nowenna do MB Nieustającej Pomocy:”) – opcjonalnie, name: naglowek, widget: string, required: false }
+        - label: Intencje
+          label_singular: intencję
+          name: intencje
+          widget: list
+          collapsed: false
+          field: { label: Intencja, name: intencja, widget: text }
+
+_msza: &msza
+  - { label: Godzina, name: godz, widget: string, pattern: ['^\d{1,2}:\d{2}$', 'Wpisz godzinę jak 7:30 albo 18:00'] }
+  - { label: Uwaga (np. „z udziałem dzieci”), name: uwaga, widget: string, required: false }
+
+collections:
+  # ---------------- co tydzień ----------------
+  - name: tydzien
+    label: Ogłoszenia i intencje
+    description: Co tydzień – wklej tekst przygotowany do druku albo popraw pojedyncze pola i kliknij „Opublikuj”.
+    delete: false
+    files:
+      - name: ogloszenia
+        label: Ogłoszenia parafialne
+        file: content/ogloszenia.json
+        fields:
+          - { label: Wklej nowe ogłoszenia, name: wklej, widget: wklej, tryb: ogloszenia, required: false }
+          - { label: Tytuł niedzieli, name: tytul, widget: string, hint: "np. „I Niedziela Adwentu”" }
+          - { label: Data niedzieli, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+          - *punkty
+          - label: Archiwum – poprzednie tygodnie (uzupełnia się samo)
+            label_singular: tydzień
+            name: archiwum
+            widget: list
+            required: false
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.data}} – {{fields.tytul}}"
+            fields:
+              - { label: Tytuł niedzieli, name: tytul, widget: string }
+              - { label: Data niedzieli, name: data, widget: string }
+              - *punkty
+          - { name: _instrukcja, widget: hidden, required: false }
+
+      - name: intencje
+        label: Intencje mszalne
+        file: content/intencje.json
+        fields:
+          - { label: Wklej nowe intencje, name: wklej, widget: wklej, tryb: intencje, required: false }
+          - { label: Tydzień (napis), name: tydzien, widget: string, hint: "np. „29 listopada – 5 grudnia 2026” – przy wklejaniu uzupełnia się samo" }
+          - *dni
+          - label: Inne tygodnie – archiwum i intencje wpisane z wyprzedzeniem (uzupełnia się samo)
+            label_singular: tydzień
+            name: archiwum
+            widget: list
+            required: false
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.tydzien}}"
+            fields:
+              - { label: Tydzień (napis), name: tydzien, widget: string }
+              - *dni
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  # ---------------- aktualności i galeria ----------------
+  - name: aktualnosci
+    label: Aktualności
+    delete: false
+    files:
+      - name: aktualnosci
+        label: Aktualności i wydarzenia
+        file: content/aktualnosci.json
+        fields:
+          - label: Wpisy (najnowsze na górze)
+            label_singular: wpis
+            name: wpisy
+            widget: list
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.data}} – {{fields.tytul}}"
+            fields:
+              - { label: Tytuł, name: tytul, widget: string }
+              - { label: Data wydarzenia, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+              - { label: Krótki opis (1–2 zdania, na kartę i stronę główną), name: opis, widget: text }
+              - label: Treść – akapity
+                label_singular: akapit
+                name: tresc
+                widget: list
+                required: false
+                collapsed: false
+                field: { label: Akapit, name: akapit, widget: text }
+              - { label: Zdjęcie na kartę, name: zdjecie, widget: image, required: false, choose_url: false }
+              - label: Fotorelacja – zdjęcia
+                label_singular: zdjęcie
+                name: zdjecia
+                widget: list
+                required: false
+                collapsed: false
+                field: { label: Zdjęcie, name: plik, widget: image, choose_url: false }
+              - { label: Autor zdjęć, name: foto, widget: string, required: false }
+              - { label: Film YouTube (identyfikator z adresu, np. dQw4w9WgXcQ), name: youtube, widget: string, required: false }
+              - { label: Link do pełnej relacji, name: link, widget: string, required: false }
+              - { label: Folder zdjęć (tylko starsze wpisy – nie zmieniać), name: katalog, widget: string, required: false }
+              - { label: Album w galerii (tylko starsze wpisy), name: album, widget: string, required: false }
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  - name: galeria
+    label: Galeria
+    delete: false
+    files:
+      - name: galeria
+        label: Albumy zdjęć
+        file: content/galeria.json
+        fields:
+          - label: Albumy
+            label_singular: album
+            name: albumy
+            widget: list
+            add_to_top: true
+            collapsed: true
+            summary: "{{fields.tytul}}"
+            fields:
+              - { label: Tytuł albumu, name: tytul, widget: string }
+              - { label: Autor zdjęć, name: foto, widget: string, required: false }
+              - { label: Okładka, name: okladka, widget: image, required: false, choose_url: false }
+              - label: Zdjęcia
+                label_singular: zdjęcie
+                name: zdjecia
+                widget: list
+                collapsed: false
+                field: { label: Zdjęcie, name: plik, widget: image, choose_url: false }
+              - label: Podpisy zdjęć (w tej samej kolejności – opcjonalnie)
+                label_singular: podpis
+                name: podpisy
+                widget: list
+                required: false
+                field: { label: Podpis, name: podpis, widget: string }
+              - { label: Folder zdjęć (tylko starsze albumy – nie zmieniać), name: katalog, widget: string, required: false }
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  # ---------------- stałe informacje ----------------
+  - name: parafia
+    label: Msze i kancelaria
+    delete: false
+    files:
+      - name: msze
+        label: Porządek Mszy i zmiany
+        file: content/msze.json
+        fields:
+          - label: Zmiany w konkretne dni (np. Wigilia, rekolekcje)
+            label_singular: zmianę
+            name: zmiany
+            widget: list
+            required: false
+            summary: "{{fields.data}} – {{fields.opis}}"
+            fields:
+              - { label: Data, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+              - { label: Opis dnia, name: opis, widget: string }
+              - label: Godziny Mszy tego dnia (pusta lista = tego dnia nie ma Mszy)
+                label_singular: Mszę
+                name: msze
+                widget: list
+                required: false
+                fields: *msza
+          - { label: Niedziele i święta, label_singular: Mszę, name: niedziele, widget: list, summary: "{{fields.godz}}",
+              fields: [ { label: Godzina, name: godz, widget: string }, { label: Uwaga, name: uwaga, widget: string, required: false },
+                        { label: Nie ma jej w wakacje, name: bezWakacji, widget: boolean, required: false },
+                        { label: Nie ma jej w niektóre święta (jak 19:30), name: bezSwiat, widget: boolean, required: false } ] }
+          - { label: Dni powszednie, label_singular: Mszę, name: powszednie, widget: list, summary: "{{fields.godz}}",
+              fields: [ { label: Godzina, name: godz, widget: string }, { label: Uwaga, name: uwaga, widget: string, required: false },
+                        { label: Nie ma jej w wakacje, name: bezWakacji, widget: boolean, required: false } ] }
+          - { label: "Pierwsza informacja pod Mszami niedzielnymi (w którym kościele)", name: kosciolNiedziele, widget: string, required: false }
+          - { label: "Pierwsza informacja pod Mszami w dni powszednie (w którym kościele)", name: kosciolPowszednie, widget: string, required: false }
+          - { label: Uwaga pod Mszami niedzielnymi, name: uwagaNiedziele, widget: text, required: false }
+          - { label: Uwaga pod Mszami w dni powszednie, name: uwagaPowszednie, widget: text, required: false }
+          - { label: Uwaga o świętach zniesionych, name: uwagaSwieta, widget: text, required: false }
+          - { label: Spowiedź, label_singular: punkt, name: spowiedz, widget: list, field: { label: Punkt, name: punkt, widget: text } }
+          - label: Wydarzenia w konkretne dni (np. śniadania po Roratach) – widać je w „Najbliższych nabożeństwach” i w kalendarzu
+            label_singular: wydarzenie
+            name: wydarzenia
+            widget: list
+            required: false
+            summary: "{{fields.data}} – {{fields.tytul}}"
+            fields:
+              - { label: Data, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+              - { label: Co, name: tytul, widget: string }
+              - { label: Kiedy / dopisek (np. po Mszy św. o 6:30), name: godz, widget: string, required: false }
+          - label: Nabożeństwa Triduum i Wielkanocy (co roku, liczone od Wielkanocy)
+            label_singular: nabożeństwo
+            name: nabozenstwaWielkanocne
+            widget: list
+            required: false
+            summary: "{{fields.dni}}: {{fields.tytul}} {{fields.godz}}"
+            fields:
+              - { label: "Dzień (-3 Wielki Czwartek, -2 Wielki Piątek, -1 Wielka Sobota, 0 Wielkanoc)", name: dni, widget: number, value_type: int }
+              - { label: Co, name: tytul, widget: string }
+              - { label: Godzina / dopisek, name: godz, widget: string, required: false }
+
+      - name: kancelaria
+        label: Kancelaria i kontakt
+        file: content/kancelaria.json
+        fields:
+          - { label: Komunikat na złotym tle (np. „Kancelaria nieczynna do 6 stycznia”) – zostaw puste, gdy niepotrzebny, name: uwaga, widget: text, required: false }
+          - label: Godziny kancelarii
+            label_singular: dyżur
+            name: godziny
+            widget: list
+            summary: "{{fields.dzien}} {{fields.godz}}"
+            fields:
+              - { label: Dzień, name: dzien, widget: select, options: [Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota] }
+              - { label: Godziny (np. 16:00 – 18:00), name: godz, widget: string }
+              - { label: Dopisek, name: dopisek, widget: string, required: false }
+          - { label: Dodatkowe informacje o godzinach, label_singular: informację, name: godzinyDodatkowe, widget: list, required: false, field: { label: Informacja, name: info, widget: string } }
+          - label: Telefony
+            label_singular: telefon
+            name: telefony
+            widget: list
+            summary: "{{fields.opis}}: {{fields.numer}}"
+            fields:
+              - { label: Opis, name: opis, widget: string }
+              - { label: Numer, name: numer, widget: string }
+          - { label: E-mail, name: email, widget: string }
+          - { label: Numer konta, name: konto, widget: string }
+          - { label: Odbiorca przelewu, name: odbiorcaKonta, widget: string }
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  # ---------------- kolęda ----------------
+  - name: koleda
+    label: Kolęda
+    description: Plan wizyty duszpasterskiej – strona „Kolęda” oraz pasek z wyszukiwarką ulic na stronie głównej (widoczny w podanym okresie).
+    delete: false
+    files:
+      - name: koleda
+        label: Plan kolędy
+        file: content/koleda.json
+        fields:
+          - { label: Tytuł, name: tytul, widget: string, hint: "np. Kolęda 2026/2027 – rok w tytule strona zmienia sama co roku" }
+          - { label: Wstęp, name: wstep, widget: text, required: false }
+          - { label: "Pasek na stronie głównej – od (co roku, MM-DD)", name: pasekOd, widget: string, required: false, default: "11-22", pattern: ['^(\d{2}-\d{2})?$', "Format MM-DD, np. 11-22"], hint: "Od tego dnia (co roku) na stronie głównej widać pasek Kolędy, a w menu pozycję „Kolęda”. Np. 11-22." }
+          - { label: "Pasek na stronie głównej – do (co roku, MM-DD)", name: pasekDo, widget: string, required: false, default: "02-02", pattern: ['^(\d{2}-\d{2})?$', "Format MM-DD, np. 02-02"], hint: "Ostatni dzień widoczności paska, np. 02-02. Jeśli kolęda trwa dłużej, wpisz późniejszą datę." }
+          - label: Dni kolędy
+            label_singular: dzień
+            name: dni
+            widget: list
+            summary: "{{fields.data}} – {{fields.godz}}"
+            fields:
+              - { label: Data, name: data, widget: datetime, format: YYYY-MM-DD, date_format: DD.MM.YYYY, time_format: false, picker_utc: true }
+              - { label: "Godzina (np. od 16:00)", name: godz, widget: string, required: false }
+              - { label: Ksiądz (opcjonalnie), name: ksiadz, widget: string, required: false }
+              - label: Ulice
+                label_singular: ulicę
+                name: ulice
+                widget: list
+                collapsed: false
+                field: { label: "Ulica z numerami (np. Krzycka 1–20)", name: ulica, widget: string }
+              - { label: Uwaga (opcjonalnie), name: uwaga, widget: string, required: false }
+          - label: Uwagi pod planem
+            label_singular: uwagę
+            name: uwagi
+            widget: list
+            required: false
+            field: { label: Uwaga, name: uwaga, widget: string }
+          - label: Formularze zgłoszeń (przyciski pod planem)
+            label_singular: formularz
+            name: formularze
+            widget: list
+            required: false
+            summary: "{{fields.tekst}}"
+            fields:
+              - { label: Tekst przycisku, name: tekst, widget: string }
+              - { label: Adres (https://…), name: url, widget: string, pattern: ['^https://', 'Adres musi zaczynać się od https://'] }
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  # ---------------- baner na święta ----------------
+  - name: baner
+    label: Baner na święta
+    description: Zdjęcie w banerze strony głównej na wielkie święta (Boże Narodzenie, Wielkanoc, odpust). Napis i cytat zostają – zmienia się tylko zdjęcie w tle.
+    delete: false
+    files:
+      - name: baner
+        label: Zdjęcia banera na święta
+        file: content/baner.json
+        fields:
+          - label: Okresy świąteczne
+            label_singular: okres
+            name: okresy
+            widget: list
+            summary: "{{fields.nazwa}}"
+            hint: "Podgląd przed świętami: dopisz do adresu strony głównej ?swieto=1, ?swieto=2… (numer okresu z listy)."
+            fields:
+              - { label: Nazwa, name: nazwa, widget: string }
+              - label: Kiedy
+                name: rodzaj
+                widget: select
+                default: stala
+                options:
+                  - { label: "Stałe daty (np. Boże Narodzenie)", value: stala }
+                  - { label: "Ruchome – liczone co roku od Wielkanocy", value: wielkanoc }
+                  - { label: "Ruchome – liczone co roku od I niedzieli Adwentu (dni: 0 Adwent, -7 Chrystusa Króla)", value: adwent }
+                  - { label: "Co miesiąc – pierwszy piątek albo pierwsza sobota", value: pierwszy }
+                  - { label: "Święta Rodzina (niedziela po Bożym Narodzeniu, a gdy jej nie ma – 30 grudnia)", value: swietaRodzina }
+              - { label: "Dzień tygodnia (opcjonalnie)", name: dzienTygodnia, widget: select, required: false, hint: "Przy „Co miesiąc”: pierwszy piątek/sobota. Przy okresie ruchomym: tylko ten dzień tygodnia w okresie (np. piątki Wielkiego Postu).", options: [{ label: "Niedziela", value: 0 }, { label: "Piątek", value: 5 }, { label: "Sobota", value: 6 }] }
+              - { label: "Od (tylko stałe daty, MM-DD, np. 12-24)", name: od, widget: string, required: false, pattern: ['^(\d{2}-\d{2})?$', 'Format MM-DD, np. 12-24'] }
+              - { label: "Do (tylko stałe daty, MM-DD, np. 01-06)", name: do, widget: string, required: false, pattern: ['^(\d{2}-\d{2})?$', 'Format MM-DD, np. 01-06'] }
+              - { label: "Ile dni po Niedzieli Zmartwychwstania (np. -46 Popielec, -7 Palmowa, 0 Wielkanoc, 42 Wniebowstąpienie, 49 Zesłanie Ducha Św., 56 Trójca Św., 60 Boże Ciało)", name: dni, widget: number, value_type: int, required: false, default: 0 }
+              - { label: "Ile dni przed uroczystością (tylko ruchome)", name: przed, widget: number, value_type: int, min: 0, required: false, default: 0 }
+              - { label: "Ile dni po uroczystości (tylko ruchome)", name: po, widget: number, value_type: int, min: 0, required: false, default: 0 }
+              - { label: "Zdjęcie (poziome, min. 1600 px szerokości) – puste = zwykłe zdjęcie kościoła", name: zdjecie, widget: image, required: false, choose_url: false }
+              - { label: "Napis na banerze w dniach okresu (np. Wielki Post)", name: podpis, widget: string, required: false }
+              - { label: "Napis w sam dzień uroczystości – strona doda „Dziś” (np. Uroczystość Zmartwychwstania Pańskiego)", name: podpisDnia, widget: string, required: false }
+              - { label: "Dzień uroczystości dla stałych dat, MM-DD (gdy okres jest dłuższy, np. 12-25)", name: glowny, widget: string, required: false }
+              - { label: "Opis zdjęcia (dla niewidomych)", name: opis, widget: string, required: false }
+              - { label: "Kadrowanie (np. 50% 40% – w poziomie i w pionie)", name: pozycja, widget: string, required: false, default: "50% 40%" }
+          - { name: _instrukcja, widget: hidden, required: false }
+
+  # ---------------- strony (teksty podstron) ----------------
+  - name: strony
+    label: Strony
+    description: Teksty wszystkich podstron. Każda sekcja wygląda tu jak na stronie – kliknij w tekst i popraw. Sekcje tworzone automatycznie (godziny Mszy, ogłoszenia, intencje, galeria) zmienia się w ich własnych zakładkach.
+    delete: false
+    files:
+      - name: duszpasterze-lista
+        label: Duszpasterze – księża
+        file: content/duszpasterze.json
+        fields:
+          - label: Księża (kolejność jak na stronie)
+            label_singular: księdza
+            name: ksieza
+            widget: list
+            summary: "{{fields.funkcja}}: {{fields.imie}}"
+            fields:
+              - { label: Funkcja (np. Proboszcz, Wikariusz, Rezydent), name: funkcja, widget: string }
+              - { label: Imię i nazwisko z tytułami, name: imie, widget: string }
+              - { label: Zdjęcie (pionowe, ok. 640×800), name: zdjecie, widget: image, required: false, choose_url: false }
+              - { label: "W parafii od (np. „W parafii od 2025 r.”)", name: od, widget: string, required: false }
+              - label: Zakres posługi
+                label_singular: zadanie
+                name: zadania
+                widget: list
+                required: false
+                summary: "{{fields.tekst}}"
+                fields:
+                  - { label: Zadanie, name: tekst, widget: string }
+                  - { label: "Link (opcjonalnie, np. wspolnoty.html#lso)", name: link, widget: string, required: false }
+              - { label: Kontakt, name: kontakt, widget: wizualny, required: false }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: wspolnoty-lista
+        label: Wspólnoty – karty grup
+        file: content/wspolnoty.json
+        fields:
+          - label: Wspólnoty i grupy (kolejność jak na stronie)
+            label_singular: wspólnotę
+            name: grupy
+            widget: list
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { label: Nazwa (do listy w kokpicie), name: nazwa, widget: string }
+              - { label: Nazwa w spisie na górze strony (puste = nie pokazuj w spisie), name: spis, widget: string, required: false }
+              - { label: Wielkość karty, name: uklad, widget: select, default: mala, options: [ { label: "mała (dwie obok siebie)", value: mala }, { label: "duża (cała szerokość)", value: duza } ] }
+              - label: Treść karty
+                name: html
+                widget: wizualny
+                default: |
+                  <article class="card group" id="nowa-grupa">
+                    <span class="group__emblem" aria-hidden="true"><svg><use href="img/icons.svg#e-krzyz"/></svg></span>
+                    <div class="group__head"><h3>Nazwa wspólnoty</h3><span class="group__who">opiekun</span></div>
+                    <p>Krótki opis wspólnoty.</p>
+                    <p class="group__when"><svg aria-hidden="true"><use href="img/icons.svg#i-calendar"/></svg><span>Termin spotkań</span></p>
+                  </article>
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-index
+        label: "Strona: Strona główna"
+        file: content/strony/index.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-o-parafii
+        label: "Strona: Historia i architektura"
+        file: content/strony/o-parafii.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-duszpasterze
+        label: "Strona: Duszpasterze – nagłówek strony"
+        file: content/strony/duszpasterze.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-wspolnoty
+        label: "Strona: Wspólnoty – nagłówek strony"
+        file: content/strony/wspolnoty.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-sakramenty
+        label: "Strona: Sakramenty"
+        file: content/strony/sakramenty.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-kancelaria
+        label: "Strona: Kancelaria"
+        file: content/strony/kancelaria.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-msze
+        label: "Strona: Msze i nabożeństwa"
+        file: content/strony/msze.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-nowy
+        label: "Strona: Jestem nowy w parafii"
+        file: content/strony/nowy.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-en
+        label: "Strona: English"
+        file: content/strony/en.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-aktualnosci
+        label: "Strona: Aktualności – nagłówek"
+        file: content/strony/aktualnosci.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-galeria
+        label: "Strona: Galeria – nagłówek"
+        file: content/strony/galeria.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-kalendarz
+        label: "Strona: Kalendarz – nagłówek"
+        file: content/strony/kalendarz.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-teren
+        label: "Strona: Terytorium parafii"
+        file: content/strony/teren.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }
+      - name: s-polityka-prywatnosci
+        label: "Strona: Polityka prywatności"
+        file: content/strony/polityka-prywatnosci.json
+        fields:
+          - label: Sekcje strony (od góry)
+            label_singular: sekcję
+            name: bloki
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.nazwa}}"
+            fields:
+              - { name: klucz, widget: hidden }
+              - { name: nazwa, widget: hidden }
+              - { label: Treść sekcji, name: html, widget: wizualny }
+          - { name: _instrukcja, widget: hidden, required: false }

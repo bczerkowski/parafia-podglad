@@ -1,0 +1,31 @@
+name: Wdrożenie na serwer IQ PL (swtrojca.pl)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    name: Wysyłka plików na arche.iq.pl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie kodu z repozytorium
+        uses: actions/checkout@v4
+
+      - name: Synchronizacja plików przez FTPS do /www/swtrojca.pl/
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: /www/swtrojca.pl/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.DS_Store
+            **/KOKPIT.bat
+            **/KOKPIT.command
+            **/tool/**

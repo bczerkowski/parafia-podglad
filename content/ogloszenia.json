@@ -1,37 +1,67 @@
 {
   "_instrukcja": "Ogłoszenia parafialne – najwygodniej edytować w kokpicie (/admin). Każdy punkt: { \"tekst\": \"...\" }, z listą: { \"tekst\": \"...\", \"lista\": [\"...\", \"...\"], \"dopisek\": \"...\" }. Pole \"archiwum\" = poprzednie tygodnie (uzupełnia się samo przy publikacji nowego tygodnia).",
-  "tytul": "Uroczystość Jezusa Chrystusa Króla Wszechświata",
-  "data": "2026-11-22",
+  "tytul": "I Niedziela Adwentu",
+  "data": "2026-11-29",
   "punkty": [
     {
-      "tekst": "Dzisiaj ostatnia niedziela roku kościelnego – Uroczystość Jezusa Chrystusa Króla Wszechświata. Za tydzień I Niedziela Adwentu. Zapraszamy dzisiaj o g. 18.00 na Mszę św. oraz nabożeństwo ku czci św. Rity i św. Jana Pawła II."
+      "tekst": "Rozpoczynamy Adwent – czas przygotowania na przeżycie Narodzenia Pana Jezusa oraz na powtórne Jego przyjście w Paruzji – na końcu czasów. W dni powszednie Adwentu zapraszamy na RORATY przeżywane pod hasłem:”Świeć jak Maryja”: dla dorosłych o g. 6.30, dla dzieci – od poniedziałku do piątku o g. 18.30. Dzieci zapraszamy z lampionami."
     },
     {
-      "tekst": "Liturgia tygodnia:",
-      "lista": [
-        "wtorek – św. Męczenników Andrzeja Dung-Lac, kapłana, i Towarzyszy"
-      ]
+      "tekst": "Przypadają: I-szy czwartek, piątek i sobota m-ca: od g. 17.00 Adoracja wynagradzająca N. Sakramentu, okazja do spowiedzi. W sobotę o g. 7.30 Msza św. i nabożeństwo wynagradzające Niepokalanemu Sercu NMP."
     },
     {
-      "tekst": "LSO oraz schola z Rodzicami zapraszają do kawiarenki na kawę i ciastko. W następną niedzielę, I Adwentu, scholka będzie rozprowadzać lampiony na roraty."
+      "tekst": "Młodzi z PHILEO zapraszają do kawiarenki na kawę i ciasto. W kościele można zaopatrzyć się w opłatki i świece wigilijne Caritas. W wystawionych koszach z logo Caritas można składać dary dla ubogich. W Centrum Handlowym przy ul. Wawrzyniaka w piątek i sobotę można podczas zakupów złożyć dary dla potrzebujących, przy których będą pełnić dyżury wolontariusze Parafialnego Zespołu Caritas oraz Harcerze."
     },
     {
-      "tekst": "Dzisiaj o g. 10.30 uroczysta promocja nowych ministrantów – jest to święto patronalne Liturgicznej Służby Ołtarza."
+      "tekst": "Scholka z Rodzicami rozprowadza lampiony, zbierając fundusze na doposażenie sprzętu muzycznego."
     },
     {
-      "tekst": "W przyszłą niedzielę młodzież ze wspólnoty Phileō będzie rozprowadzać wieńce adwentowe, zbierając fundusze na ferie."
+      "tekst": "Młodzież ze wspólnoty PHILEO rozprowadza także wieńce adwentowe, zbierając fundusze na ferie."
     },
     {
-      "tekst": "W I niedzielę Adwentu po Mszy św. o g. 19.30 Krzycki Wieczór Uwielbienia wprowadzający w czas Adwentu."
+      "tekst": "Dzisiaj po Mszy św. o g. 19.30 Krzycki Wieczór Uwielbienia wprowadzający w czas Adwentu."
     },
     {
-      "tekst": "Od I Niedzieli Adwentu będą rozprowadzane opłatki i świece Wigilijnego Dzieła Pomocy Dzieciom Caritas."
+      "tekst": "W tygodniu, w poniedziałek, środę, piątek i sobotę w kawiarence w domu parafialnym, śniadanie po roratach o g. 6.30."
     },
     {
-      "tekst": "Polecamy prasę katolicką: „Gość Niedzielny”, „Niedziela” oraz „Mały Gość Niedzielny” z materiałami na roraty."
+      "tekst": "Polecamy prasę katolicką: Gość Niedzielny, Niedziela, Mały GN."
     }
   ],
   "archiwum": [
+    {
+      "tytul": "Uroczystość Jezusa Chrystusa Króla Wszechświata",
+      "data": "2026-11-22",
+      "punkty": [
+        {
+          "tekst": "Dzisiaj ostatnia niedziela roku kościelnego – Uroczystość Jezusa Chrystusa Króla Wszechświata. Za tydzień I Niedziela Adwentu. Zapraszamy dzisiaj o g. 18.00 na Mszę św. oraz nabożeństwo ku czci św. Rity i św. Jana Pawła II."
+        },
+        {
+          "tekst": "Liturgia tygodnia:",
+          "lista": [
+            "wtorek – św. Męczenników Andrzeja Dung-Lac, kapłana, i Towarzyszy"
+          ]
+        },
+        {
+          "tekst": "LSO oraz schola z Rodzicami zapraszają do kawiarenki na kawę i ciastko. W następną niedzielę, I Adwentu, scholka będzie rozprowadzać lampiony na roraty."
+        },
+        {
+          "tekst": "Dzisiaj o g. 10.30 uroczysta promocja nowych ministrantów – jest to święto patronalne Liturgicznej Służby Ołtarza."
+        },
+        {
+          "tekst": "W przyszłą niedzielę młodzież ze wspólnoty Phileō będzie rozprowadzać wieńce adwentowe, zbierając fundusze na ferie."
+        },
+        {
+          "tekst": "W I niedzielę Adwentu po Mszy św. o g. 19.30 Krzycki Wieczór Uwielbienia wprowadzający w czas Adwentu."
+        },
+        {
+          "tekst": "Od I Niedzieli Adwentu będą rozprowadzane opłatki i świece Wigilijnego Dzieła Pomocy Dzieciom Caritas."
+        },
+        {
+          "tekst": "Polecamy prasę katolicką: „Gość Niedzielny”, „Niedziela” oraz „Mały Gość Niedzielny” z materiałami na roraty."
+        }
+      ]
+    },
     {
       "tytul": "33 Niedziela Zwykła",
       "data": "2026-11-15",

@@ -1,0 +1,14 @@
+RewriteEngine On
+
+# Wymuszenie HTTPS oraz adresu bez www (https://swtrojca.pl)
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.swtrojca\.pl$ [NC]
+RewriteRule ^(.*)$ https://swtrojca.pl/ [R=301,L]
+
+# Własna strona błędu 404
+ErrorDocument 404 /404.html
+
+# Blokada dostępu z przeglądarki do plików technicznych
+<FilesMatch "^\.(git|htaccess|nojekyll|DS_Store)">
+    Require all denied
+</FilesMatch>

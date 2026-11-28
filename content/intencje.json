@@ -1,205 +1,394 @@
 {
   "_instrukcja": "Intencje mszalne – najwygodniej edytować w kokpicie (/admin). Każdy dzień: data (RRRR-MM-DD), nazwa (opis dnia), msze: lista { godz, naglowek (opcjonalnie), intencje: [ ... ] }. Pole \"archiwum\" = inne tygodnie (poprzednie i wpisane z wyprzedzeniem) – strona sama pokazuje tydzień z dzisiejszą datą.",
-  "tydzien": "22–28 listopada 2026",
+  "tydzien": "29 listopada – 5 grudnia 2026",
   "dni": [
     {
-      "data": "2026-11-22",
-      "nazwa": "Uroczystość Jezusa Chrystusa Króla Wszechświata",
+      "data": "2026-11-29",
+      "nazwa": "I Niedziela adwentu",
       "msze": [
         {
           "godz": "7:00",
           "intencje": [
-            "O Boże błogosławieństwo, zdrowie i potrzebne łaski dla Cecylii Szczepanowskiej"
+            "++ z R. Safarów: Zofia, Adolf, Bronisław, Wacław, z R. Dawidowicz: Maria, Ignacy, Izabela, Włodzimierz, Roman i Michał"
           ]
         },
         {
           "godz": "9:00",
           "intencje": [
-            "+ Jerzy Liwanowski 6 r. śm., ++ z Rodziny i dusze w czyśćcu cierpiące",
-            "++ Kazimierz Jabłoński kol. r. śm., ++ z Rodziny: Krystyna, Janusz, Zenon, Wiesława"
+            "++ Jan Bohdanowicz – 17 r. śm., Anna Smolińska- 17 r. śm., ++ z R. Bohdanowiczów i Smolińskich"
           ]
         },
         {
           "godz": "10:30",
           "intencje": [
-            "+ Maria Kapera 5 r. śm., ++ z R. Kapera"
+            "Dziękczynna Damiana z ok.12 Urodzin, z prośbą o Boże błogosławieństwo oraz opiekę Matki Najświętszej dla niego i całej Rodziny"
           ]
         },
         {
           "godz": "12:00",
           "intencje": [
-            "++ Klara, Ryszard Młyńscy"
+            "+ Józef Zagórny 9 r. śm., ++ zRodziny"
           ]
         },
         {
           "godz": "13:30",
           "intencje": [
-            "Za Parafian"
+            "++ Jerzy – szwagier, ++ Rodzice, Rodzeństwo z obu stron"
           ]
         },
         {
           "godz": "18:00",
-          "naglowek": "Ku czci św. Rity i św. Jana Pawła II:",
           "intencje": [
-            "++ Rodzice: Marian, Alina Kuszak – o dar Nieba",
-            "+ Stefania Walasek – od uczestników pogrzebu"
+            "++ Danuta Gryglicka 13 r. śm., ++ Rodzice, Teściowie, Dziadkowie i Brat"
           ]
         },
         {
           "godz": "19:30",
           "intencje": [
-            "+ Jan"
+            "+ Adam Wołowiec"
           ]
         }
       ]
     },
     {
-      "data": "2026-11-23",
-      "nazwa": "",
+      "data": "2026-11-30",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "+ Adam"
+            "W intencji Bruna z okazji 51 Urodzin- dz.błagalna"
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "+ Wiesław Flisek"
+            "++ Andrzej Pach, ++ Przyjaciele i Dobroczyńcy"
           ]
         },
         {
           "godz": "18:30",
           "intencje": [
-            "+ Zbigniew Trubisz – 5 r. śm."
+            "W intencji Piotra Rymko z ok.33 r. Urodzin-o opanowanie choroby oraz Boże błogosławieństwo i opiekę Matki Bożej"
           ]
         }
       ]
     },
     {
-      "data": "2026-11-24",
-      "nazwa": "św. Męczenników Andrzeja Dung-Lac, kapłana, i Towarzyszy",
+      "data": "2026-12-01",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "+ Elżbieta Romanowska 1 r. śm."
+            "+ Mieczysław Sonecki gr. 1"
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "O uzdrowienie Ewy i Boże błogosławieństwo dla całej Rodziny"
+            "Urodzinowa Kazimierza- dz.błagalna"
           ]
         },
         {
           "godz": "18:30",
           "intencje": [
-            "++ Stanisława Wilusz, jej mąż + Stanisław Wilusz, + zięć Roman Dębski, + syn Jerzy Wilusz"
+            "O powrót do zdrowia dla Zuzanny"
           ]
         }
       ]
     },
     {
-      "data": "2026-11-25",
-      "nazwa": "",
+      "data": "2026-12-02",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "++ Katarzyna, Stanisław Konieczni"
+            "+ Mieczysław Sonecki gr. 2"
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "++ Zbigniew, Bronisława Laszczyńscy"
+            "W intencji Rodziny Wszołek"
           ]
         },
         {
           "godz": "18:30",
           "naglowek": "Nowenna do Matki Bożej Nieustającej Pomocy:",
           "intencje": [
-            "+ Marian Hryniewicz 30 r. śm."
+            "W intencji Barbary – Imieninowa",
+            "+ Barbara Kupiec, Barbara Karpuk",
+            "+ Bożena Biskupska 6 r. śm."
           ]
         }
       ]
     },
     {
-      "data": "2026-11-26",
-      "nazwa": "",
+      "data": "2026-12-03",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "+ Franciszka Graczyk 21 r. śm."
+            "+ Mieczysław Sonecki gr. 3"
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "W intencji małżeństwa Lidii i Macieja"
+            "++ Zofia Szurek 1 r. śm., Jerzy Szurek"
           ]
         },
         {
           "godz": "18:30",
           "intencje": [
-            "++ Józef Borowski – 58 r. śm., Antonina, Jan, Katarzyna, Paulina, Jan"
+            "SKC-I-szy czw.m-ca: Dziękczynna za dar Eucharystii i kapłaństwa, z prośbą o nowe powołania do słuźby w Kościele, wytrwanie i uświęcenie dla powołanych."
           ]
         }
       ]
     },
     {
-      "data": "2026-11-27",
-      "nazwa": "",
+      "data": "2026-12-04",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "Dziękczynna za wysłuchane modlitwy, z prośbą o dalsze prowadzenie dla Marka, Kasi i Anieli"
+            "+ Mieczysław Sonecki gr. 4"
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "+ Teresa Ratajska, ++ z Rodziny"
+            "++ Barbara Moszonkowska, Barbara Niewińska, ++ z Rodziny"
           ]
         },
         {
           "godz": "18:30",
           "intencje": [
-            "SHNSPJ: O radość Nieba dla ++ członków SH, ++ z ich Rodzin, Parafian oraz za dusze czyśćcowe"
+            "SHNSPJ: Wynagradzająca Najśw. Sercu Pana Jezusa z darem nawrócenia i wynagrodzenia za grzechy i świętokradztwa"
           ]
         }
       ]
     },
     {
-      "data": "2026-11-28",
-      "nazwa": "",
+      "data": "2026-12-05",
       "msze": [
         {
           "godz": "6:30",
           "intencje": [
-            "Za Ojczyznę i pokój na świecie"
+            "+ Janina 16 r. śm."
           ]
         },
         {
           "godz": "7:30",
           "intencje": [
-            "++ Maciej Kiełbaska, Brat i Rodzice"
+            "ADS – Isza sobota m-ca: Wynagradzająca przez Niepokalane Serce Najśw. Maryi Panny"
           ]
         },
         {
           "godz": "18:30",
           "intencje": [
-            "++ Bronisława Hofman 2 r. śm., + Waldemar, ++ z R. Hofmanów, Latkiewiczów i Koncurów"
+            "+ Mieczysław Sonecki gr. 5"
           ]
         }
       ]
     }
   ],
   "archiwum": [
+    {
+      "tydzien": "22–28 listopada 2026",
+      "dni": [
+        {
+          "data": "2026-11-22",
+          "nazwa": "Uroczystość Jezusa Chrystusa Króla Wszechświata",
+          "msze": [
+            {
+              "godz": "7:00",
+              "intencje": [
+                "O Boże błogosławieństwo, zdrowie i potrzebne łaski dla Cecylii Szczepanowskiej"
+              ]
+            },
+            {
+              "godz": "9:00",
+              "intencje": [
+                "+ Jerzy Liwanowski 6 r. śm., ++ z Rodziny i dusze w czyśćcu cierpiące",
+                "++ Kazimierz Jabłoński kol. r. śm., ++ z Rodziny: Krystyna, Janusz, Zenon, Wiesława"
+              ]
+            },
+            {
+              "godz": "10:30",
+              "intencje": [
+                "+ Maria Kapera 5 r. śm., ++ z R. Kapera"
+              ]
+            },
+            {
+              "godz": "12:00",
+              "intencje": [
+                "++ Klara, Ryszard Młyńscy"
+              ]
+            },
+            {
+              "godz": "13:30",
+              "intencje": [
+                "Za Parafian"
+              ]
+            },
+            {
+              "godz": "18:00",
+              "naglowek": "Ku czci św. Rity i św. Jana Pawła II:",
+              "intencje": [
+                "++ Rodzice: Marian, Alina Kuszak – o dar Nieba",
+                "+ Stefania Walasek – od uczestników pogrzebu"
+              ]
+            },
+            {
+              "godz": "19:30",
+              "intencje": [
+                "+ Jan"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-23",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "+ Adam"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "+ Wiesław Flisek"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "+ Zbigniew Trubisz – 5 r. śm."
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-24",
+          "nazwa": "św. Męczenników Andrzeja Dung-Lac, kapłana, i Towarzyszy",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "+ Elżbieta Romanowska 1 r. śm."
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "O uzdrowienie Ewy i Boże błogosławieństwo dla całej Rodziny"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Stanisława Wilusz, jej mąż + Stanisław Wilusz, + zięć Roman Dębski, + syn Jerzy Wilusz"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-25",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "++ Katarzyna, Stanisław Konieczni"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "++ Zbigniew, Bronisława Laszczyńscy"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "naglowek": "Nowenna do Matki Bożej Nieustającej Pomocy:",
+              "intencje": [
+                "+ Marian Hryniewicz 30 r. śm."
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-26",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "+ Franciszka Graczyk 21 r. śm."
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "W intencji małżeństwa Lidii i Macieja"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Józef Borowski – 58 r. śm., Antonina, Jan, Katarzyna, Paulina, Jan"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-27",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "Dziękczynna za wysłuchane modlitwy, z prośbą o dalsze prowadzenie dla Marka, Kasi i Anieli"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "+ Teresa Ratajska, ++ z Rodziny"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "SHNSPJ: O radość Nieba dla ++ członków SH, ++ z ich Rodzin, Parafian oraz za dusze czyśćcowe"
+              ]
+            }
+          ]
+        },
+        {
+          "data": "2026-11-28",
+          "msze": [
+            {
+              "godz": "6:30",
+              "intencje": [
+                "Za Ojczyznę i pokój na świecie"
+              ]
+            },
+            {
+              "godz": "7:30",
+              "intencje": [
+                "++ Maciej Kiełbaska, Brat i Rodzice"
+              ]
+            },
+            {
+              "godz": "18:30",
+              "intencje": [
+                "++ Bronisława Hofman 2 r. śm., + Waldemar, ++ z R. Hofmanów, Latkiewiczów i Koncurów"
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "tydzien": "15–21 listopada 2026",
       "dni": [
@@ -278,7 +467,6 @@
         },
         {
           "data": "2026-11-17",
-          "nazwa": "",
           "msze": [
             {
               "godz": "6:30",
@@ -302,7 +490,6 @@
         },
         {
           "data": "2026-11-18",
-          "nazwa": "",
           "msze": [
             {
               "godz": "6:30",
@@ -329,7 +516,6 @@
         },
         {
           "data": "2026-11-19",
-          "nazwa": "",
           "msze": [
             {
               "godz": "6:30",
@@ -353,7 +539,6 @@
         },
         {
           "data": "2026-11-20",
-          "nazwa": "",
           "msze": [
             {
               "godz": "6:30",
@@ -377,7 +562,6 @@
         },
         {
           "data": "2026-11-21",
-          "nazwa": "",
           "msze": [
             {
               "godz": "6:30",
