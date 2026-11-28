@@ -121,14 +121,13 @@ strong { font-weight: 650; }
 [id] { scroll-margin-top: 96px; }
 html[data-contrast="high"] .site-header { background: #fff; border-bottom: 2px solid #000; }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 92px; }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
+.brand { display: flex; align-items: center; gap: 14px; padding: 6px 0; text-decoration: none; color: var(--navy); }
 .brand:hover { color: var(--navy); }
-.brand { gap: 14px; padding: 6px 0; }
-.brand__symbol { width: 61px; height: 61px; flex: none; }
+.brand__symbol { width: 51px; height: auto; flex: none; }
 .wm { display: flex; flex-direction: column; align-items: stretch; line-height: 1; text-align: center; }
 html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4); }
 .wm-main, .wm-top { white-space: nowrap; }
-@media (max-width: 480px) { .brand { gap: 8px; } .brand__symbol { width: 40px; height: 40px; } }
+@media (max-width: 480px) { .brand { gap: 8px; } .brand__symbol { width: 38px; height: auto; } }
 @media (max-width: 400px) {
   .burger { padding: 10px 12px; }
 }
@@ -140,10 +139,6 @@ html[data-contrast="high"] .brand__symbol { filter: brightness(.45) saturate(1.4
 .brand:hover .wm-main { color: var(--navy-2); }
 @media (max-width: 480px) { .wm-top { font-size: .8rem; } .wm-main { font-size: 1.7rem; } .wm-bottom { font-size: .78rem; gap: 8px; } }
 @media (max-width: 400px) { .wm-top { font-size: .7rem; letter-spacing: .04em; } .wm-main { font-size: 1.47rem; } .wm-bottom { font-size: .68rem; } }
-.brand__mark { width: 46px; height: 46px; flex: none; }
-.brand__text { display: flex; flex-direction: column; line-height: 1.05; }
-.brand__small { font-family: var(--sans); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-text); font-weight: 600; }
-.brand__name { font-family: var(--serif); font-size: 1.45rem; font-weight: 700; }
 
 .nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 2px; }
 .nav li { margin: 0; position: relative; }
