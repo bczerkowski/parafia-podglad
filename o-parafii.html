@@ -18,6 +18,65 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/nwpStKy2OAdR1K-IwhWudF-R3wEaZfrc.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css?v=mwy1ht1z">
+<style>
+.historia-portret {
+  float: right;
+  width: 220px;
+  max-width: 100%;
+  margin: 4px 0 18px 24px;
+  padding: 10px;
+  text-align: center;
+}
+.historia-portret img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+.historia-portret figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 8px;
+  line-height: 1.35;
+}
+.historia-photo-box {
+  margin: 24px 0;
+}
+.historia-photo-box img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+.historia-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 22px 0;
+  align-items: start;
+}
+.historia-pair figure {
+  margin: 0;
+}
+.historia-pair img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+@media (max-width: 640px) {
+  .historia-portret {
+    float: none;
+    width: 190px;
+    margin: 0 auto 18px auto;
+  }
+  .historia-pair {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 <script>try{var f=localStorage.getItem('font'),c=localStorage.getItem('contrast');if(f&&f!=='0')document.documentElement.setAttribute('data-font',f);if(c==='high')document.documentElement.setAttribute('data-contrast','high');}catch(e){}</script>
 <script src="js/main.js?v=mwy1ht1z" defer></script>
 </head>
@@ -100,11 +159,11 @@
         <p>Parafia została erygowana w 1960 roku. Przez pierwsze lata życie duszpasterskie toczyło się w skromnej kaplicy. Jej pierwszym administratorem, a następnie długoletnim proboszczem i budowniczym nowego kościoła był ks. prałat Jan Czapliński.</p>
 
         <h2>Ks. prałat Jan Czapliński – założyciel i budowniczy parafii</h2>
-        <figure class="card" style="float:right; max-width:220px; margin:4px 0 18px 24px; padding:10px; text-align:center;">
-          <img src="img/ks-jan-czaplinski.jpg" alt="Portret ks. prałata Jana Czaplińskiego w sutannie prałackiej" loading="lazy" style="border-radius:var(--radius-sm); width:100%; height:auto;">
-          <figcaption style="font-size:0.85rem; color:var(--muted); margin-top:8px; line-height:1.35;">Ks. prałat Jan Czapliński<br>(1925–2011)</figcaption>
+        <figure class="card historia-portret">
+          <img src="img/ks-jan-czaplinski.jpg" alt="Portret ks. prałata Jana Czaplińskiego w sutannie prałackiej" loading="lazy">
+          <figcaption>Ks. prałat Jan Czapliński<br>(1925–2011)</figcaption>
         </figure>
-        <p>Ks. Jan Czapliński urodził się 14 maja 1925 roku w Marchelówce (w źródłach archidiecezjalnych podawana jest też data 14 marca 1925 r.). Do Wrocławia przybył w pierwszych dniach lipca 1946 roku. Początkowo myślał o pracy w Pafawagu, jednak zatrudnił się w Urzędzie Pocztowym i zamieszkał w klasztorze Sióstr Elżbietanek. Z czasem rozpoznał w sobie powołanie do kapłaństwa i wstąpił do Wyższego Seminarium Duchownego we Wrocławiu.</p>
+        <p>Jan Czapliński urodził się 14 maja 1925 roku w Marchelówce (w źródłach archidiecezjalnych podawana jest też data 14 marca 1925 r.). Do Wrocławia przybył w pierwszych dniach lipca 1946 roku. Początkowo myślał o pracy w Pafawagu, jednak zatrudnił się w Urzędzie Pocztowym i zamieszkał w klasztorze Sióstr Elżbietanek. Z czasem rozpoznał w sobie powołanie do kapłaństwa i wstąpił do Wyższego Seminarium Duchownego we Wrocławiu.</p>
         <p>Święcenia kapłańskie przyjął 23 grudnia 1951 roku we Wrocławiu z rąk prymasa Polski, abp. Stefana Wyszyńskiego. Po święceniach pracował w kilku parafiach dolnośląskich (m.in. w Bolesławcu), jednocześnie odbywając specjalistyczne studia teologiczne. W 1958 roku wrócił do Wrocławia jako wicerektor Arcybiskupiego Seminarium Duchownego, a już dwa lata później, w 1960 roku, został mianowany administratorem nowo utworzonej parafii pw. Trójcy Świętej na Krzykach.</p>
         <p>Przez ponad czterdzieści lat (do 2002 roku) pełnił obowiązki proboszcza. W trudnych warunkach komunistycznych z wielką wytrwałością zabiegał o pozwolenia na budowę kościoła. Prace budowlane ruszyły w 1979 roku według projektu architekta Wacława Kamockiego. W 1986 roku otrzymał godność kapelana honorowego Ojca Świętego (prałata).</p>
         <p>Ks. Jan Czapliński zmarł 8 maja 2011 roku we Wrocławiu. Został pochowany 12 maja na sąsiadującym z kościołem cmentarzu przy ul. Krzyckiej – jego pogrzeb był ostatnim pochówkiem na tej zabytkowej nekropolii (poświęconej w listopadzie 1915 r.). Często powtarzał słowa: <em>„Jak Pan Bóg pozwoli…”</em>.</p>
@@ -113,7 +172,7 @@
         <p>Kościół ma nowoczesną, niebanalną bryłę. Nawa główna nakryta jest sklepieniem kolebkowym, a w ścianie południowej zamontowano sześć okien rozświetlających wnętrze. Rzut poziomy górnej kondygnacji świątyni ma kształt rombu, a jej nawa główna z obu stron jest wykończona antresolami. Elipsoidalna kopuła, wsparta na czterech kolumnach posadowionych o ponad metr od ścian budynku, wykonana jest z żelbetonu i zwieńczona złoconą rozetą.</p>
         <p>W wieżę kościoła wkomponowano potrójny krzyż oraz trzy elementy architektoniczne, podkreślające symbolikę Trójcy Świętej.</p>
 
-        <figure class="figure" style="margin:28px 0">
+        <figure class="figure historia-photo-box">
           <img src="img/adwent-2020/43.jpg" alt="Ołtarz główny: mahoniowa nastawa z obrazami Trójcy Świętej, św. Józefa i Matki Bożej Częstochowskiej, nad nimi rozeta z Duchem Świętym" loading="lazy" width="1600" height="1200">
           <figcaption>Ołtarz główny kościoła górnego.</figcaption>
         </figure>
@@ -122,15 +181,21 @@
         <p>Nietypowa bryła kościoła przekłada się na oryginalne w swej budowie wnętrze świątyni. Wystrój ołtarza głównego to połączenie mahoniowego drewna z wkomponowanymi w nie obrazami przedstawiającymi Trójcę Świętą, św. Józefa oraz Matkę Bożą Częstochowską. Nad malowidłami umieszczono rozetę ukazującą Ducha Świętego, a ponad ołtarzem widnieje złoty napis <em>„Gloria tibi Trinitas”</em> z motywem kłosów zboża. Po przeciwległej stronie można podziwiać dzieła ilustrujące św. Kingę, św. Jadwigę i bł. Czesława. Wystrój prezbiterium zaprojektował ks. Czesław Mazur, a witraże wykonała Anna Lamparska.</p>
         <p>Podczas Kongresu Eucharystycznego w 1997 roku przybyły z Rzymu abp Zenon Grocholewski dokonał uroczystej konsekracji kościoła.</p>
 
-        <figure class="figure" style="margin:28px 0">
+        <figure class="figure historia-photo-box">
           <img data-zoom="img/oltarz-kosciol-dolny.jpg" data-cap="Ołtarz w kościele dolnym" style="cursor:zoom-in" src="img/oltarz-kosciol-dolny.jpg" alt="Ołtarz w kościele dolnym z drewnianą płaskorzeźbą, krzyżem i figurą Matki Bożej Fatimskiej" loading="lazy">
           <figcaption>Ołtarz w kościele dolnym.</figcaption>
         </figure>
 
         <p>Staraniem obecnego proboszcza, ks. kan. Andrzeja Szyca, zamontowano w kościele windę dla osób z niepełnosprawnościami, przebudowano schody główne oraz urządzono Kaplicę Miłosierdzia i Kaplicę Fatimską.</p>
-        <div class="chapel-photos">
-          <figure class="figure figure--natural"><img data-zoom="img/kaplica-fatimska.png" data-cap="Kaplica Fatimska – wnętrze kaplicy" style="cursor:zoom-in" src="img/kaplica-fatimska.png" alt="Wnętrze Kaplicy Fatimskiej z figurą Matki Bożej Fatimskiej, witrażem i obrazem Najświętszego Serca Pana Jezusa" loading="lazy"><figcaption>Kaplica Fatimska – wnętrze kaplicy</figcaption></figure>
-          <figure class="figure figure--natural"><img data-zoom="img/kaplica/wejscie.jpg" data-cap="Wejście do Kaplicy Fatimskiej – pod schodami głównymi, po lewej (zaznaczone na czerwono)" style="cursor:zoom-in" src="img/kaplica/thumb/wejscie.jpg" alt="Kościół Trójcy Świętej z zaznaczonym na czerwono wejściem do Kaplicy Fatimskiej pod schodami głównymi" loading="lazy" width="720" height="564"><figcaption>Wejście do Kaplicy Fatimskiej – pod schodami głównymi, po lewej (zaznaczone na czerwono)</figcaption></figure>
+        <div class="historia-pair">
+          <figure class="figure">
+            <img data-zoom="img/kaplica-fatimska.png" data-cap="Kaplica Fatimska – wnętrze kaplicy" style="cursor:zoom-in" src="img/kaplica-fatimska.png" alt="Wnętrze Kaplicy Fatimskiej z figurą Matki Bożej Fatimskiej, witrażem i obrazem Najświętszego Serca Pana Jezusa" loading="lazy">
+            <figcaption>Kaplica Fatimska – wnętrze kaplicy.</figcaption>
+          </figure>
+          <figure class="figure">
+            <img data-zoom="img/kaplica/wejscie.jpg" data-cap="Wejście do Kaplicy Fatimskiej – pod schodami głównymi, po lewej (zaznaczone na czerwono)" style="cursor:zoom-in" src="img/kaplica/thumb/wejscie.jpg" alt="Kościół Trójcy Świętej z zaznaczonym na czerwono wejściem do Kaplicy Fatimskiej pod schodami głównymi" loading="lazy" width="720" height="564">
+            <figcaption>Wejście do Kaplicy Fatimskiej – pod schodami głównymi, po lewej (zaznaczone na czerwono).</figcaption>
+          </figure>
         </div>
       </article>
 
